@@ -1,0 +1,162 @@
+{
+  "stage": "delta_verbalization",
+  "arm": "A_teacher_forced",
+  "layer": 2,
+  "seed": 0,
+  "n_null": 30,
+  "n_rows": 10,
+  "model_path": "/kaggle/input/**/14b-instruct-awq/**/config.json",
+  "readouts": {
+    "belief_ac": {
+      "g0": {
+        "noV": [
+          1.0,
+          1.0
+        ],
+        "V": [
+          1.0,
+          1.0
+        ],
+        "Vs": [
+          1.0,
+          1.0
+        ],
+        "V2": [
+          1.0,
+          1.0
+        ]
+      },
+      "anchors": {
+        "a_h_noV": 89,
+        "a_h_V": 89,
+        "a_v_V": 165,
+        "a_h_Vs": 89
+      },
+      "textual_prior": {
+        "hist_R_V_P": {
+          "acc_hist": 0.0,
+          "acc_V": 1.0
+        },
+        "hist_P_V_R": {
+          "acc_hist": 1.0,
+          "acc_V": 0.0
+        }
+      },
+      "natural_effects": {
+        "noV": 62.884376525878906,
+        "V": 62.157814025878906,
+        "Vs": 52.157814025878906,
+        "V2": 63.41796875
+      },
+      "cond1_hist_noV": {
+        "effect": 63.123435974121094,
+        "lam": 1.0038015714148618,
+        "target_acc": 1.0
+      },
+      "cond2_hist_underV": {
+        "effect": 13.493749618530273,
+        "lam": 0.21708854839895528,
+        "target_acc": 0.0
+      },
+      "cond3_cot": {
+        "effect": 20.9296875,
+        "lam": 0.3367185257075819,
+        "target_acc": 0.0
+      },
+      "cond4_both": {
+        "effect": 61.9453125,
+        "lam": 0.9965812580572664,
+        "target_acc": 1.0
+      },
+      "cond6_hist_underVs": {
+        "effect": 51.5625,
+        "lam": 0.9885862926390372,
+        "target_acc": 1.0
+      },
+      "cond7_cot_beforeMarker": {
+        "effect": 16.919530868530273,
+        "lam": 0.2667939576435941,
+        "target_acc": 0.0
+      },
+      "null_p_hist": 0.03225806451612903,
+      "null_p_cot": 0.03225806451612903
+    },
+    "tell_ac": {
+      "g0": {
+        "noV": [
+          1.0,
+          0.800000011920929
+        ],
+        "V": [
+          1.0,
+          1.0
+        ],
+        "Vs": [
+          0.800000011920929,
+          0.699999988079071
+        ],
+        "V2": [
+          1.0,
+          1.0
+        ]
+      },
+      "anchors": {
+        "a_h_noV": 89,
+        "a_h_V": 89,
+        "a_v_V": 165,
+        "a_h_Vs": 89
+      },
+      "textual_prior": {
+        "hist_R_V_P": {
+          "acc_hist": 0.0,
+          "acc_V": 1.0
+        },
+        "hist_P_V_R": {
+          "acc_hist": 0.800000011920929,
+          "acc_V": 0.20000000298023224
+        }
+      },
+      "natural_effects": {
+        "noV": 50.032814025878906,
+        "V": 62.954689025878906,
+        "Vs": 34.49687576293945,
+        "V2": 63.89531326293945
+      },
+      "cond1_hist_noV": {
+        "effect": 50.517189025878906,
+        "lam": 1.0096811464521955,
+        "target_acc": 0.699999988079071
+      },
+      "cond2_hist_underV": {
+        "effect": 10.939062118530273,
+        "lam": 0.1737608792576758,
+        "target_acc": 0.0
+      },
+      "cond3_cot": {
+        "effect": 36.967185974121094,
+        "lam": 0.5872030589957313,
+        "target_acc": 0.20000000298023224
+      },
+      "cond4_both": {
+        "effect": 62.96406173706055,
+        "lam": 1.000148880271298,
+        "target_acc": 1.0
+      },
+      "cond6_hist_underVs": {
+        "effect": 33.890625,
+        "lam": 0.9824259226515012,
+        "target_acc": 0.699999988079071
+      },
+      "cond7_cot_beforeMarker": {
+        "effect": 32.939064025878906,
+        "lam": 0.5155161207259347,
+        "target_acc": 0.0
+      }
+    }
+  },
+  "gates": {
+    "H1_register": false,
+    "H2_migration": true
+  },
+  "verdict": "LEDGER_MIXED"
+}

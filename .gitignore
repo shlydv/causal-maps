@@ -1,0 +1,38 @@
+# Environment
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Model / HF caches (never commit weights)
+models/
+hf_cache/
+*.safetensors
+*.bin
+*.gguf
+
+# Large run artifacts (activations, caches) — keep JSON summaries + figures small
+activations/
+caches/
+*.pt
+*.npz
+
+# Kaggle staging + pulled run outputs (regenerable)
+kernel/_work/
+runs/
+
+# OS
+.DS_Store
+
+# Secrets — NEVER commit
+kaggle.json
+.kaggle/
+*.key
+.env
+
+# Paper build caches (keep main.pdf, main.bbl, and generated figures)
+paper/generated/.mpl/
+paper/*.aux
+paper/*.blg
+paper/*.log
+paper/*.out

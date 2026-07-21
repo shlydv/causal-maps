@@ -1,0 +1,269 @@
+{
+  "stage": "delta_entity_matrix",
+  "layer": 2,
+  "seed": 0,
+  "n_null": 30,
+  "quantization": "awq",
+  "models": {
+    "qwen14b_awq": {
+      "model_key": "qwen14b_awq",
+      "quantization": "awq",
+      "families": {
+        "keys": {
+          "rows": [
+            {
+              "a": "white",
+              "b": "gray",
+              "w": "brown",
+              "oa": "cage",
+              "ob": "chest",
+              "ow": "shed"
+            },
+            {
+              "a": "black",
+              "b": "white",
+              "w": "pink",
+              "oa": "box",
+              "ob": "cage",
+              "ow": "chest"
+            },
+            {
+              "a": "brown",
+              "b": "gray",
+              "w": "blue",
+              "oa": "safe",
+              "ob": "door",
+              "ow": "shed"
+            },
+            {
+              "a": "blue",
+              "b": "brown",
+              "w": "red",
+              "oa": "gate",
+              "ob": "door",
+              "ow": "shed"
+            },
+            {
+              "a": "red",
+              "b": "gray",
+              "w": "green",
+              "oa": "safe",
+              "ob": "door",
+              "ow": "box"
+            },
+            {
+              "a": "white",
+              "b": "green",
+              "w": "black",
+              "oa": "safe",
+              "ob": "gate",
+              "ow": "cage"
+            },
+            {
+              "a": "brown",
+              "b": "gray",
+              "w": "white",
+              "oa": "shed",
+              "ob": "box",
+              "ow": "safe"
+            },
+            {
+              "a": "green",
+              "b": "black",
+              "w": "pink",
+              "oa": "cage",
+              "ob": "safe",
+              "ow": "shed"
+            },
+            {
+              "a": "green",
+              "b": "pink",
+              "w": "white",
+              "oa": "chest",
+              "ob": "door",
+              "ow": "gate"
+            },
+            {
+              "a": "green",
+              "b": "pink",
+              "w": "blue",
+              "oa": "door",
+              "ob": "cage",
+              "ow": "shed"
+            }
+          ],
+          "val_pos": 27,
+          "values": [
+            "red",
+            "blue",
+            "green",
+            "black",
+            "white",
+            "brown",
+            "pink",
+            "gray"
+          ],
+          "cells": {
+            "retrieve": {
+              "g0_clean": 1.0,
+              "g0_natural": 1.0,
+              "n_rows": 10,
+              "natural_effect": 31.247655868530273,
+              "add_effect": 31.024608612060547,
+              "ratio": 0.9928619523522608,
+              "add_target_acc": 1.0,
+              "wrong_own_target_acc": 1.0,
+              "p": 0.03225806451612903,
+              "verdict": "PASS"
+            },
+            "twohop": {
+              "g0_clean": 0.2,
+              "g0_natural": 0.1,
+              "n_rows": 10,
+              "verdict": "INELICITABLE"
+            },
+            "other": {
+              "g0_clean": 0.4,
+              "g0_natural": 0.4,
+              "n_rows": 10,
+              "verdict": "INELICITABLE"
+            }
+          },
+          "pass": false
+        },
+        "city": {
+          "rows": [
+            {
+              "a": "Miami",
+              "b": "Oslo",
+              "w": "Tokyo",
+              "oa": "north",
+              "ob": "false",
+              "ow": "dog"
+            },
+            {
+              "a": "Delhi",
+              "b": "Lima",
+              "w": "Rome",
+              "oa": "cat",
+              "ob": "true",
+              "ow": "south"
+            },
+            {
+              "a": "Miami",
+              "b": "Tokyo",
+              "w": "Delhi",
+              "oa": "true",
+              "ob": "north",
+              "ow": "dog"
+            },
+            {
+              "a": "Miami",
+              "b": "Cairo",
+              "w": "Oslo",
+              "oa": "left",
+              "ob": "false",
+              "ow": "north"
+            },
+            {
+              "a": "Cairo",
+              "b": "Delhi",
+              "w": "Lima",
+              "oa": "right",
+              "ob": "dog",
+              "ow": "left"
+            },
+            {
+              "a": "Miami",
+              "b": "Paris",
+              "w": "Tokyo",
+              "oa": "true",
+              "ob": "dog",
+              "ow": "false"
+            },
+            {
+              "a": "Delhi",
+              "b": "Oslo",
+              "w": "Lima",
+              "oa": "south",
+              "ob": "cat",
+              "ow": "right"
+            },
+            {
+              "a": "Rome",
+              "b": "Oslo",
+              "w": "Miami",
+              "oa": "north",
+              "ob": "south",
+              "ow": "false"
+            },
+            {
+              "a": "Oslo",
+              "b": "Lima",
+              "w": "Miami",
+              "oa": "dog",
+              "ob": "cat",
+              "ow": "north"
+            },
+            {
+              "a": "Tokyo",
+              "b": "Lima",
+              "w": "Cairo",
+              "oa": "false",
+              "ob": "dog",
+              "ow": "left"
+            }
+          ],
+          "val_pos": 27,
+          "values": [
+            "Paris",
+            "Rome",
+            "Tokyo",
+            "Delhi",
+            "Cairo",
+            "Oslo",
+            "Lima",
+            "Miami"
+          ],
+          "cells": {
+            "retrieve": {
+              "g0_clean": 1.0,
+              "g0_natural": 1.0,
+              "n_rows": 10,
+              "natural_effect": 38.06328201293945,
+              "add_effect": 38.13750076293945,
+              "ratio": 1.0019498778369866,
+              "add_target_acc": 1.0,
+              "wrong_own_target_acc": 1.0,
+              "p": 0.03225806451612903,
+              "verdict": "PASS"
+            },
+            "twohop": {
+              "g0_clean": 1.0,
+              "g0_natural": 0.9,
+              "n_rows": 10,
+              "natural_effect": 36.157814025878906,
+              "add_effect": 36.135353088378906,
+              "ratio": 0.9993788082021794,
+              "add_target_acc": 0.9,
+              "wrong_own_target_acc": 1.0,
+              "p": 0.03225806451612903,
+              "verdict": "PASS"
+            },
+            "other": {
+              "g0_clean": 1.0,
+              "g0_natural": 0.9,
+              "n_rows": 10,
+              "bob_shift": 0.0,
+              "verdict": "PASS",
+              "shift_over_twohop": 0.0
+            }
+          },
+          "pass": true
+        }
+      },
+      "verdict": "WORLD_STATE_PARTIAL"
+    }
+  },
+  "verdict": "qwen14b_awq:WORLD_STATE_PARTIAL"
+}

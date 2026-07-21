@@ -1,0 +1,1616 @@
+{
+  "stage": "delta_structured_workspace",
+  "protocol_variant": "report_only_v1",
+  "protocol_version": "2026-07-14-v1",
+  "model_path": "/kaggle/input/models/qwen-lm/qwen2.5/transformers/14b-instruct-awq/1",
+  "quantization": "awq",
+  "seed": 0,
+  "n_null": 30,
+  "layers": [
+    8,
+    12,
+    16,
+    20,
+    24,
+    26
+  ],
+  "n_rows_per_split": 5,
+  "status": "discovery_only",
+  "design": {
+    "direction_specs": {
+      "ac_paris_rome": {
+        "address": "ac",
+        "source": "Paris",
+        "target": "Rome"
+      },
+      "as_paris_rome": {
+        "address": "as",
+        "source": "Paris",
+        "target": "Rome"
+      },
+      "bc_paris_rome": {
+        "address": "bc",
+        "source": "Paris",
+        "target": "Rome"
+      },
+      "bs_tokyo_delhi": {
+        "address": "bs",
+        "source": "Tokyo",
+        "target": "Delhi"
+      },
+      "ac_tokyo_delhi": {
+        "address": "ac",
+        "source": "Tokyo",
+        "target": "Delhi"
+      },
+      "ac_cairo_oslo": {
+        "address": "ac",
+        "source": "Cairo",
+        "target": "Oslo"
+      }
+    },
+    "rows": {
+      "ac_paris_rome": {
+        "train_clean": [
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Tokyo",
+            "ts": "Cairo"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Delhi",
+            "ts": "Oslo"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Cairo",
+            "ts": "Lima"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Oslo",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Lima",
+            "ts": "Tokyo"
+          }
+        ],
+        "train_natural": [
+          {
+            "ac": "Rome",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Tokyo",
+            "ts": "Cairo"
+          },
+          {
+            "ac": "Rome",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Delhi",
+            "ts": "Oslo"
+          },
+          {
+            "ac": "Rome",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Cairo",
+            "ts": "Lima"
+          },
+          {
+            "ac": "Rome",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Oslo",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Rome",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Lima",
+            "ts": "Tokyo"
+          }
+        ],
+        "test_clean": [
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Oslo",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Lima",
+            "ts": "Tokyo"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Miami",
+            "ts": "Delhi"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Tokyo",
+            "ts": "Cairo"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Delhi",
+            "ts": "Oslo"
+          }
+        ],
+        "test_natural": [
+          {
+            "ac": "Rome",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Oslo",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Rome",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Lima",
+            "ts": "Tokyo"
+          },
+          {
+            "ac": "Rome",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Miami",
+            "ts": "Delhi"
+          },
+          {
+            "ac": "Rome",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Tokyo",
+            "ts": "Cairo"
+          },
+          {
+            "ac": "Rome",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Delhi",
+            "ts": "Oslo"
+          }
+        ]
+      },
+      "as_paris_rome": {
+        "train_clean": [
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Tokyo",
+            "ts": "Cairo"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Delhi",
+            "ts": "Oslo"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Cairo",
+            "ts": "Lima"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Oslo",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Lima",
+            "ts": "Tokyo"
+          }
+        ],
+        "train_natural": [
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Rome",
+            "bs": "Rome",
+            "tc": "Tokyo",
+            "ts": "Cairo"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Rome",
+            "bs": "Rome",
+            "tc": "Delhi",
+            "ts": "Oslo"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Rome",
+            "bs": "Rome",
+            "tc": "Cairo",
+            "ts": "Lima"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Rome",
+            "bs": "Rome",
+            "tc": "Oslo",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Rome",
+            "bs": "Rome",
+            "tc": "Lima",
+            "ts": "Tokyo"
+          }
+        ],
+        "test_clean": [
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Oslo",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Lima",
+            "ts": "Tokyo"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Miami",
+            "ts": "Delhi"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Tokyo",
+            "ts": "Cairo"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Delhi",
+            "ts": "Oslo"
+          }
+        ],
+        "test_natural": [
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Rome",
+            "bs": "Rome",
+            "tc": "Oslo",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Rome",
+            "bs": "Rome",
+            "tc": "Lima",
+            "ts": "Tokyo"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Rome",
+            "bs": "Rome",
+            "tc": "Miami",
+            "ts": "Delhi"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Rome",
+            "bs": "Rome",
+            "tc": "Tokyo",
+            "ts": "Cairo"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Rome",
+            "bs": "Rome",
+            "tc": "Delhi",
+            "ts": "Oslo"
+          }
+        ]
+      },
+      "bc_paris_rome": {
+        "train_clean": [
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Tokyo",
+            "ts": "Cairo"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Delhi",
+            "ts": "Oslo"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Cairo",
+            "ts": "Lima"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Oslo",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Lima",
+            "ts": "Tokyo"
+          }
+        ],
+        "train_natural": [
+          {
+            "ac": "Paris",
+            "bc": "Rome",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Tokyo",
+            "ts": "Cairo"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Rome",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Delhi",
+            "ts": "Oslo"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Rome",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Cairo",
+            "ts": "Lima"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Rome",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Oslo",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Rome",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Lima",
+            "ts": "Tokyo"
+          }
+        ],
+        "test_clean": [
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Oslo",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Lima",
+            "ts": "Tokyo"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Miami",
+            "ts": "Delhi"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Tokyo",
+            "ts": "Cairo"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Paris",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Delhi",
+            "ts": "Oslo"
+          }
+        ],
+        "test_natural": [
+          {
+            "ac": "Paris",
+            "bc": "Rome",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Oslo",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Rome",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Lima",
+            "ts": "Tokyo"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Rome",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Miami",
+            "ts": "Delhi"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Rome",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Tokyo",
+            "ts": "Cairo"
+          },
+          {
+            "ac": "Paris",
+            "bc": "Rome",
+            "as": "Paris",
+            "bs": "Rome",
+            "tc": "Delhi",
+            "ts": "Oslo"
+          }
+        ]
+      },
+      "bs_tokyo_delhi": {
+        "train_clean": [
+          {
+            "ac": "Tokyo",
+            "bc": "Delhi",
+            "as": "Tokyo",
+            "bs": "Tokyo",
+            "tc": "Paris",
+            "ts": "Cairo"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Delhi",
+            "as": "Tokyo",
+            "bs": "Tokyo",
+            "tc": "Rome",
+            "ts": "Oslo"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Delhi",
+            "as": "Tokyo",
+            "bs": "Tokyo",
+            "tc": "Cairo",
+            "ts": "Lima"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Delhi",
+            "as": "Tokyo",
+            "bs": "Tokyo",
+            "tc": "Oslo",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Delhi",
+            "as": "Tokyo",
+            "bs": "Tokyo",
+            "tc": "Lima",
+            "ts": "Paris"
+          }
+        ],
+        "train_natural": [
+          {
+            "ac": "Tokyo",
+            "bc": "Delhi",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Paris",
+            "ts": "Cairo"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Delhi",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Rome",
+            "ts": "Oslo"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Delhi",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Cairo",
+            "ts": "Lima"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Delhi",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Oslo",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Delhi",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Lima",
+            "ts": "Paris"
+          }
+        ],
+        "test_clean": [
+          {
+            "ac": "Tokyo",
+            "bc": "Delhi",
+            "as": "Tokyo",
+            "bs": "Tokyo",
+            "tc": "Oslo",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Delhi",
+            "as": "Tokyo",
+            "bs": "Tokyo",
+            "tc": "Lima",
+            "ts": "Paris"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Delhi",
+            "as": "Tokyo",
+            "bs": "Tokyo",
+            "tc": "Miami",
+            "ts": "Rome"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Delhi",
+            "as": "Tokyo",
+            "bs": "Tokyo",
+            "tc": "Paris",
+            "ts": "Cairo"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Delhi",
+            "as": "Tokyo",
+            "bs": "Tokyo",
+            "tc": "Rome",
+            "ts": "Oslo"
+          }
+        ],
+        "test_natural": [
+          {
+            "ac": "Tokyo",
+            "bc": "Delhi",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Oslo",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Delhi",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Lima",
+            "ts": "Paris"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Delhi",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Miami",
+            "ts": "Rome"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Delhi",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Paris",
+            "ts": "Cairo"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Delhi",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Rome",
+            "ts": "Oslo"
+          }
+        ]
+      },
+      "ac_tokyo_delhi": {
+        "train_clean": [
+          {
+            "ac": "Tokyo",
+            "bc": "Tokyo",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Paris",
+            "ts": "Cairo"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Tokyo",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Rome",
+            "ts": "Oslo"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Tokyo",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Cairo",
+            "ts": "Lima"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Tokyo",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Oslo",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Tokyo",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Lima",
+            "ts": "Paris"
+          }
+        ],
+        "train_natural": [
+          {
+            "ac": "Delhi",
+            "bc": "Tokyo",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Paris",
+            "ts": "Cairo"
+          },
+          {
+            "ac": "Delhi",
+            "bc": "Tokyo",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Rome",
+            "ts": "Oslo"
+          },
+          {
+            "ac": "Delhi",
+            "bc": "Tokyo",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Cairo",
+            "ts": "Lima"
+          },
+          {
+            "ac": "Delhi",
+            "bc": "Tokyo",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Oslo",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Delhi",
+            "bc": "Tokyo",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Lima",
+            "ts": "Paris"
+          }
+        ],
+        "test_clean": [
+          {
+            "ac": "Tokyo",
+            "bc": "Tokyo",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Oslo",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Tokyo",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Lima",
+            "ts": "Paris"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Tokyo",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Miami",
+            "ts": "Rome"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Tokyo",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Paris",
+            "ts": "Cairo"
+          },
+          {
+            "ac": "Tokyo",
+            "bc": "Tokyo",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Rome",
+            "ts": "Oslo"
+          }
+        ],
+        "test_natural": [
+          {
+            "ac": "Delhi",
+            "bc": "Tokyo",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Oslo",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Delhi",
+            "bc": "Tokyo",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Lima",
+            "ts": "Paris"
+          },
+          {
+            "ac": "Delhi",
+            "bc": "Tokyo",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Miami",
+            "ts": "Rome"
+          },
+          {
+            "ac": "Delhi",
+            "bc": "Tokyo",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Paris",
+            "ts": "Cairo"
+          },
+          {
+            "ac": "Delhi",
+            "bc": "Tokyo",
+            "as": "Tokyo",
+            "bs": "Delhi",
+            "tc": "Rome",
+            "ts": "Oslo"
+          }
+        ]
+      },
+      "ac_cairo_oslo": {
+        "train_clean": [
+          {
+            "ac": "Cairo",
+            "bc": "Cairo",
+            "as": "Cairo",
+            "bs": "Oslo",
+            "tc": "Paris",
+            "ts": "Tokyo"
+          },
+          {
+            "ac": "Cairo",
+            "bc": "Cairo",
+            "as": "Cairo",
+            "bs": "Oslo",
+            "tc": "Rome",
+            "ts": "Delhi"
+          },
+          {
+            "ac": "Cairo",
+            "bc": "Cairo",
+            "as": "Cairo",
+            "bs": "Oslo",
+            "tc": "Tokyo",
+            "ts": "Lima"
+          },
+          {
+            "ac": "Cairo",
+            "bc": "Cairo",
+            "as": "Cairo",
+            "bs": "Oslo",
+            "tc": "Delhi",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Cairo",
+            "bc": "Cairo",
+            "as": "Cairo",
+            "bs": "Oslo",
+            "tc": "Lima",
+            "ts": "Paris"
+          }
+        ],
+        "train_natural": [
+          {
+            "ac": "Oslo",
+            "bc": "Cairo",
+            "as": "Cairo",
+            "bs": "Oslo",
+            "tc": "Paris",
+            "ts": "Tokyo"
+          },
+          {
+            "ac": "Oslo",
+            "bc": "Cairo",
+            "as": "Cairo",
+            "bs": "Oslo",
+            "tc": "Rome",
+            "ts": "Delhi"
+          },
+          {
+            "ac": "Oslo",
+            "bc": "Cairo",
+            "as": "Cairo",
+            "bs": "Oslo",
+            "tc": "Tokyo",
+            "ts": "Lima"
+          },
+          {
+            "ac": "Oslo",
+            "bc": "Cairo",
+            "as": "Cairo",
+            "bs": "Oslo",
+            "tc": "Delhi",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Oslo",
+            "bc": "Cairo",
+            "as": "Cairo",
+            "bs": "Oslo",
+            "tc": "Lima",
+            "ts": "Paris"
+          }
+        ],
+        "test_clean": [
+          {
+            "ac": "Cairo",
+            "bc": "Cairo",
+            "as": "Cairo",
+            "bs": "Oslo",
+            "tc": "Delhi",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Cairo",
+            "bc": "Cairo",
+            "as": "Cairo",
+            "bs": "Oslo",
+            "tc": "Lima",
+            "ts": "Paris"
+          },
+          {
+            "ac": "Cairo",
+            "bc": "Cairo",
+            "as": "Cairo",
+            "bs": "Oslo",
+            "tc": "Miami",
+            "ts": "Rome"
+          },
+          {
+            "ac": "Cairo",
+            "bc": "Cairo",
+            "as": "Cairo",
+            "bs": "Oslo",
+            "tc": "Paris",
+            "ts": "Tokyo"
+          },
+          {
+            "ac": "Cairo",
+            "bc": "Cairo",
+            "as": "Cairo",
+            "bs": "Oslo",
+            "tc": "Rome",
+            "ts": "Delhi"
+          }
+        ],
+        "test_natural": [
+          {
+            "ac": "Oslo",
+            "bc": "Cairo",
+            "as": "Cairo",
+            "bs": "Oslo",
+            "tc": "Delhi",
+            "ts": "Miami"
+          },
+          {
+            "ac": "Oslo",
+            "bc": "Cairo",
+            "as": "Cairo",
+            "bs": "Oslo",
+            "tc": "Lima",
+            "ts": "Paris"
+          },
+          {
+            "ac": "Oslo",
+            "bc": "Cairo",
+            "as": "Cairo",
+            "bs": "Oslo",
+            "tc": "Miami",
+            "ts": "Rome"
+          },
+          {
+            "ac": "Oslo",
+            "bc": "Cairo",
+            "as": "Cairo",
+            "bs": "Oslo",
+            "tc": "Paris",
+            "ts": "Tokyo"
+          },
+          {
+            "ac": "Oslo",
+            "bc": "Cairo",
+            "as": "Cairo",
+            "bs": "Oslo",
+            "tc": "Rome",
+            "ts": "Delhi"
+          }
+        ]
+      }
+    },
+    "queries": {
+      "belief_ac": {
+        "question": "Where does Alice believe the cube is?",
+        "command": "BELIEF",
+        "field": "ac"
+      },
+      "search_ac": {
+        "question": "Alice must retrieve the cube using only her own information. Where does she search?",
+        "command": "SEARCH",
+        "field": "ac"
+      },
+      "tell_ac": {
+        "question": "Alice tells a teammate where she believes the cube is. What does she report?",
+        "command": "TELL",
+        "field": "ac"
+      },
+      "belief_as": {
+        "question": "Where does Alice believe the sphere is?",
+        "command": "BELIEF",
+        "field": "as"
+      },
+      "belief_bc": {
+        "question": "Where does Bob believe the cube is?",
+        "command": "BELIEF",
+        "field": "bc"
+      },
+      "belief_bs": {
+        "question": "Where does Bob believe the sphere is?",
+        "command": "BELIEF",
+        "field": "bs"
+      },
+      "search_bs": {
+        "question": "Bob must retrieve the sphere using only his own information. Where does he search?",
+        "command": "SEARCH",
+        "field": "bs"
+      },
+      "truth_cube": {
+        "question": "Where is the cube actually?",
+        "command": "TRUTH",
+        "field": "tc"
+      },
+      "truth_sphere": {
+        "question": "Where is the sphere actually?",
+        "command": "TRUTH",
+        "field": "ts"
+      }
+    },
+    "train_surface": "ledger",
+    "test_surface": "narrative",
+    "marker": "STATECHECK"
+  },
+  "behavior": {
+    "ac_paris_rome_train": {
+      "belief_ac": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      },
+      "tell_ac": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      }
+    },
+    "ac_paris_rome_test": {
+      "belief_ac": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      },
+      "tell_ac": {
+        "clean_acc": 1.0,
+        "natural_acc": 0.800000011920929
+      }
+    },
+    "bs_tokyo_delhi_train": {
+      "belief_bs": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      }
+    },
+    "bs_tokyo_delhi_test": {
+      "belief_bs": {
+        "clean_acc": 0.800000011920929,
+        "natural_acc": 1.0
+      }
+    },
+    "ac_tokyo_delhi_train": {
+      "belief_ac": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      }
+    },
+    "ac_tokyo_delhi_test": {
+      "belief_ac": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      }
+    },
+    "ac_cairo_oslo_train": {
+      "belief_ac": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      }
+    },
+    "ac_cairo_oslo_test": {
+      "belief_ac": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      }
+    },
+    "as_paris_rome_train": {
+      "belief_as": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      }
+    },
+    "as_paris_rome_test": {
+      "belief_as": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      }
+    },
+    "bc_paris_rome_train": {
+      "belief_bc": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      }
+    },
+    "bc_paris_rome_test": {
+      "belief_bc": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      }
+    },
+    "primary_invariants": {
+      "belief_as": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      },
+      "belief_bc": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      },
+      "truth_cube": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      },
+      "truth_sphere": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      }
+    },
+    "composition": {
+      "belief_ac": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      },
+      "belief_bs": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      },
+      "belief_as": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      },
+      "belief_bc": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      },
+      "truth_cube": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      },
+      "truth_sphere": {
+        "clean_acc": 1.0,
+        "natural_acc": 1.0
+      }
+    }
+  },
+  "behavior_pass": true,
+  "workspace_discovery": [
+    {
+      "layer": 8,
+      "specs": {
+        "ac_paris_rome": {
+          "belief_ac": {
+            "forward": {
+              "natural_effect": 63.821876525878906,
+              "effect": 0.01875000074505806,
+              "ratio": 0.00029378642192470143,
+              "target_acc": 0.0,
+              "positive_fraction": 0.20000000298023224,
+              "effect_rows": [
+                0.0,
+                -0.046875,
+                0.0,
+                0.0,
+                0.140625
+              ],
+              "natural_rows": [
+                63.59375,
+                63.796875,
+                63.515625,
+                63.875,
+                64.328125
+              ]
+            },
+            "reverse_clean_acc": 0.0,
+            "pass": false
+          }
+        },
+        "bs_tokyo_delhi": {
+          "belief_bs": {
+            "forward": {
+              "natural_effect": 37.9375,
+              "effect": 0.07500000298023224,
+              "ratio": 0.001976935828144507,
+              "target_acc": 0.0,
+              "positive_fraction": 0.6000000238418579,
+              "effect_rows": [
+                -0.03125,
+                0.15625,
+                0.21875,
+                0.03125,
+                0.0
+              ],
+              "natural_rows": [
+                38.46875,
+                39.3125,
+                38.5,
+                38.375,
+                35.03125
+              ]
+            },
+            "reverse_clean_acc": 0.0,
+            "pass": false
+          }
+        }
+      },
+      "pass": false
+    },
+    {
+      "layer": 12,
+      "specs": {
+        "ac_paris_rome": {
+          "belief_ac": {
+            "forward": {
+              "natural_effect": 63.821876525878906,
+              "effect": 0.0031250000465661287,
+              "ratio": 4.896440243807284e-05,
+              "target_acc": 0.0,
+              "positive_fraction": 0.4000000059604645,
+              "effect_rows": [
+                0.03125,
+                -0.140625,
+                -0.015625,
+                0.0,
+                0.140625
+              ],
+              "natural_rows": [
+                63.59375,
+                63.796875,
+                63.515625,
+                63.875,
+                64.328125
+              ]
+            },
+            "reverse_clean_acc": 0.0,
+            "pass": false
+          }
+        },
+        "bs_tokyo_delhi": {
+          "belief_bs": {
+            "forward": {
+              "natural_effect": 37.9375,
+              "effect": 0.07500000298023224,
+              "ratio": 0.001976935828144507,
+              "target_acc": 0.0,
+              "positive_fraction": 0.4000000059604645,
+              "effect_rows": [
+                -0.03125,
+                0.34375,
+                0.21875,
+                -0.0625,
+                -0.09375
+              ],
+              "natural_rows": [
+                38.46875,
+                39.3125,
+                38.5,
+                38.375,
+                35.03125
+              ]
+            },
+            "reverse_clean_acc": 0.0,
+            "pass": false
+          }
+        }
+      },
+      "pass": false
+    },
+    {
+      "layer": 16,
+      "specs": {
+        "ac_paris_rome": {
+          "belief_ac": {
+            "forward": {
+              "natural_effect": 63.821876525878906,
+              "effect": 0.046875,
+              "ratio": 0.0007344660256266959,
+              "target_acc": 0.0,
+              "positive_fraction": 0.6000000238418579,
+              "effect_rows": [
+                0.09375,
+                -0.09375,
+                0.1875,
+                -0.09375,
+                0.140625
+              ],
+              "natural_rows": [
+                63.59375,
+                63.796875,
+                63.515625,
+                63.875,
+                64.328125
+              ]
+            },
+            "reverse_clean_acc": 0.0,
+            "pass": false
+          }
+        },
+        "bs_tokyo_delhi": {
+          "belief_bs": {
+            "forward": {
+              "natural_effect": 37.9375,
+              "effect": 0.0,
+              "ratio": 0.0,
+              "target_acc": 0.0,
+              "positive_fraction": 0.4000000059604645,
+              "effect_rows": [
+                0.15625,
+                -0.03125,
+                0.34375,
+                -0.125,
+                -0.34375
+              ],
+              "natural_rows": [
+                38.46875,
+                39.3125,
+                38.5,
+                38.375,
+                35.03125
+              ]
+            },
+            "reverse_clean_acc": 0.0,
+            "pass": false
+          }
+        }
+      },
+      "pass": false
+    },
+    {
+      "layer": 20,
+      "specs": {
+        "ac_paris_rome": {
+          "belief_ac": {
+            "forward": {
+              "natural_effect": 63.821876525878906,
+              "effect": -0.0031250000465661287,
+              "ratio": -4.896440243807284e-05,
+              "target_acc": 0.0,
+              "positive_fraction": 0.4000000059604645,
+              "effect_rows": [
+                0.0625,
+                -0.125,
+                0.09375,
+                0.0,
+                -0.046875
+              ],
+              "natural_rows": [
+                63.59375,
+                63.796875,
+                63.515625,
+                63.875,
+                64.328125
+              ]
+            },
+            "reverse_clean_acc": 0.0,
+            "pass": false
+          }
+        },
+        "bs_tokyo_delhi": {
+          "belief_bs": {
+            "forward": {
+              "natural_effect": 37.9375,
+              "effect": 0.02500000037252903,
+              "ratio": 0.0006589785930155922,
+              "target_acc": 0.0,
+              "positive_fraction": 0.4000000059604645,
+              "effect_rows": [
+                -0.0625,
+                0.125,
+                0.375,
+                -0.09375,
+                -0.21875
+              ],
+              "natural_rows": [
+                38.46875,
+                39.3125,
+                38.5,
+                38.375,
+                35.03125
+              ]
+            },
+            "reverse_clean_acc": 0.0,
+            "pass": false
+          }
+        }
+      },
+      "pass": false
+    },
+    {
+      "layer": 24,
+      "specs": {
+        "ac_paris_rome": {
+          "belief_ac": {
+            "forward": {
+              "natural_effect": 63.821876525878906,
+              "effect": -0.0062500000931322575,
+              "ratio": -9.792880487614567e-05,
+              "target_acc": 0.0,
+              "positive_fraction": 0.4000000059604645,
+              "effect_rows": [
+                -0.03125,
+                -0.171875,
+                0.078125,
+                0.0,
+                0.09375
+              ],
+              "natural_rows": [
+                63.59375,
+                63.796875,
+                63.515625,
+                63.875,
+                64.328125
+              ]
+            },
+            "reverse_clean_acc": 0.0,
+            "pass": false
+          }
+        },
+        "bs_tokyo_delhi": {
+          "belief_bs": {
+            "forward": {
+              "natural_effect": 37.9375,
+              "effect": 0.0625,
+              "ratio": 0.0016474464579901153,
+              "target_acc": 0.0,
+              "positive_fraction": 0.6000000238418579,
+              "effect_rows": [
+                -0.0625,
+                0.0625,
+                0.15625,
+                0.15625,
+                0.0
+              ],
+              "natural_rows": [
+                38.46875,
+                39.3125,
+                38.5,
+                38.375,
+                35.03125
+              ]
+            },
+            "reverse_clean_acc": 0.0,
+            "pass": false
+          }
+        }
+      },
+      "pass": false
+    },
+    {
+      "layer": 26,
+      "specs": {
+        "ac_paris_rome": {
+          "belief_ac": {
+            "forward": {
+              "natural_effect": 63.821876525878906,
+              "effect": 0.00937500037252903,
+              "ratio": 0.00014689321096235072,
+              "target_acc": 0.0,
+              "positive_fraction": 0.4000000059604645,
+              "effect_rows": [
+                0.0625,
+                -0.015625,
+                0.015625,
+                0.0,
+                -0.015625
+              ],
+              "natural_rows": [
+                63.59375,
+                63.796875,
+                63.515625,
+                63.875,
+                64.328125
+              ]
+            },
+            "reverse_clean_acc": 0.0,
+            "pass": false
+          }
+        },
+        "bs_tokyo_delhi": {
+          "belief_bs": {
+            "forward": {
+              "natural_effect": 37.9375,
+              "effect": 0.05624999850988388,
+              "ratio": 0.0014827017729129193,
+              "target_acc": 0.0,
+              "positive_fraction": 0.6000000238418579,
+              "effect_rows": [
+                0.125,
+                -0.03125,
+                0.25,
+                0.03125,
+                -0.09375
+              ],
+              "natural_rows": [
+                38.46875,
+                39.3125,
+                38.5,
+                38.375,
+                35.03125
+              ]
+            },
+            "reverse_clean_acc": 0.0,
+            "pass": false
+          }
+        }
+      },
+      "pass": false
+    }
+  ],
+  "selected_layer": null,
+  "verdict": "NO_BIDIRECTIONAL_STRUCTURED_CHECKPOINT"
+}

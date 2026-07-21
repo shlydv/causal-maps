@@ -1,0 +1,514 @@
+{
+  "stage": "delta_entity_matrix",
+  "layer": 2,
+  "seed": 0,
+  "n_null": 30,
+  "models": {
+    "qwen7b": {
+      "model_key": "qwen7b",
+      "families": {
+        "keys": {
+          "rows": [
+            {
+              "a": "white",
+              "b": "gray",
+              "w": "brown",
+              "oa": "cage",
+              "ob": "chest",
+              "ow": "shed"
+            },
+            {
+              "a": "black",
+              "b": "white",
+              "w": "pink",
+              "oa": "box",
+              "ob": "cage",
+              "ow": "chest"
+            },
+            {
+              "a": "brown",
+              "b": "gray",
+              "w": "blue",
+              "oa": "safe",
+              "ob": "door",
+              "ow": "shed"
+            },
+            {
+              "a": "blue",
+              "b": "brown",
+              "w": "red",
+              "oa": "gate",
+              "ob": "door",
+              "ow": "shed"
+            },
+            {
+              "a": "red",
+              "b": "gray",
+              "w": "green",
+              "oa": "safe",
+              "ob": "door",
+              "ow": "box"
+            },
+            {
+              "a": "white",
+              "b": "green",
+              "w": "black",
+              "oa": "safe",
+              "ob": "gate",
+              "ow": "cage"
+            },
+            {
+              "a": "brown",
+              "b": "gray",
+              "w": "white",
+              "oa": "shed",
+              "ob": "box",
+              "ow": "safe"
+            },
+            {
+              "a": "green",
+              "b": "black",
+              "w": "pink",
+              "oa": "cage",
+              "ob": "safe",
+              "ow": "shed"
+            },
+            {
+              "a": "green",
+              "b": "pink",
+              "w": "white",
+              "oa": "chest",
+              "ob": "door",
+              "ow": "gate"
+            },
+            {
+              "a": "green",
+              "b": "pink",
+              "w": "blue",
+              "oa": "door",
+              "ob": "cage",
+              "ow": "shed"
+            }
+          ],
+          "val_pos": 27,
+          "values": [
+            "red",
+            "blue",
+            "green",
+            "black",
+            "white",
+            "brown",
+            "pink",
+            "gray"
+          ],
+          "cells": {
+            "retrieve": {
+              "g0_clean": 1.0,
+              "g0_natural": 1.0,
+              "n_rows": 10,
+              "natural_effect": 18.384374618530273,
+              "add_effect": 19.379688262939453,
+              "ratio": 1.0541391080774631,
+              "add_target_acc": 1.0,
+              "wrong_own_target_acc": 1.0,
+              "p": 0.03225806451612903,
+              "verdict": "PASS"
+            },
+            "twohop": {
+              "g0_clean": 1.0,
+              "g0_natural": 0.8,
+              "n_rows": 10,
+              "verdict": "INELICITABLE"
+            },
+            "other": {
+              "g0_clean": 0.8,
+              "g0_natural": 1.0,
+              "n_rows": 10,
+              "verdict": "INELICITABLE"
+            }
+          },
+          "pass": false
+        },
+        "city": {
+          "rows": [
+            {
+              "a": "Miami",
+              "b": "Oslo",
+              "w": "Tokyo",
+              "oa": "north",
+              "ob": "false",
+              "ow": "dog"
+            },
+            {
+              "a": "Delhi",
+              "b": "Lima",
+              "w": "Rome",
+              "oa": "cat",
+              "ob": "true",
+              "ow": "south"
+            },
+            {
+              "a": "Miami",
+              "b": "Tokyo",
+              "w": "Delhi",
+              "oa": "true",
+              "ob": "north",
+              "ow": "dog"
+            },
+            {
+              "a": "Miami",
+              "b": "Cairo",
+              "w": "Oslo",
+              "oa": "left",
+              "ob": "false",
+              "ow": "north"
+            },
+            {
+              "a": "Cairo",
+              "b": "Delhi",
+              "w": "Lima",
+              "oa": "right",
+              "ob": "dog",
+              "ow": "left"
+            },
+            {
+              "a": "Miami",
+              "b": "Paris",
+              "w": "Tokyo",
+              "oa": "true",
+              "ob": "dog",
+              "ow": "false"
+            },
+            {
+              "a": "Delhi",
+              "b": "Oslo",
+              "w": "Lima",
+              "oa": "south",
+              "ob": "cat",
+              "ow": "right"
+            },
+            {
+              "a": "Rome",
+              "b": "Oslo",
+              "w": "Miami",
+              "oa": "north",
+              "ob": "south",
+              "ow": "false"
+            },
+            {
+              "a": "Oslo",
+              "b": "Lima",
+              "w": "Miami",
+              "oa": "dog",
+              "ob": "cat",
+              "ow": "north"
+            },
+            {
+              "a": "Tokyo",
+              "b": "Lima",
+              "w": "Cairo",
+              "oa": "false",
+              "ob": "dog",
+              "ow": "left"
+            }
+          ],
+          "val_pos": 27,
+          "values": [
+            "Paris",
+            "Rome",
+            "Tokyo",
+            "Delhi",
+            "Cairo",
+            "Oslo",
+            "Lima",
+            "Miami"
+          ],
+          "cells": {
+            "retrieve": {
+              "g0_clean": 1.0,
+              "g0_natural": 1.0,
+              "n_rows": 10,
+              "natural_effect": 17.881250381469727,
+              "add_effect": 18.549999237060547,
+              "ratio": 1.0373994458622335,
+              "add_target_acc": 1.0,
+              "wrong_own_target_acc": 1.0,
+              "p": 0.03225806451612903,
+              "verdict": "PASS"
+            },
+            "twohop": {
+              "g0_clean": 1.0,
+              "g0_natural": 1.0,
+              "n_rows": 10,
+              "natural_effect": 20.876562118530273,
+              "add_effect": 19.815624237060547,
+              "ratio": 0.9491804313638391,
+              "add_target_acc": 1.0,
+              "wrong_own_target_acc": 1.0,
+              "p": 0.03225806451612903,
+              "verdict": "PASS"
+            },
+            "other": {
+              "g0_clean": 1.0,
+              "g0_natural": 1.0,
+              "n_rows": 10,
+              "bob_shift": 0.0,
+              "verdict": "PASS",
+              "shift_over_twohop": 0.0
+            }
+          },
+          "pass": true
+        }
+      },
+      "verdict": "WORLD_STATE_PARTIAL"
+    },
+    "mistral7b": {
+      "model_key": "mistral7b",
+      "families": {
+        "keys": {
+          "rows": [
+            {
+              "a": "white",
+              "b": "gray",
+              "w": "brown",
+              "oa": "cage",
+              "ob": "chest",
+              "ow": "shed"
+            },
+            {
+              "a": "black",
+              "b": "white",
+              "w": "pink",
+              "oa": "box",
+              "ob": "cage",
+              "ow": "chest"
+            },
+            {
+              "a": "brown",
+              "b": "gray",
+              "w": "blue",
+              "oa": "safe",
+              "ob": "door",
+              "ow": "shed"
+            },
+            {
+              "a": "blue",
+              "b": "brown",
+              "w": "red",
+              "oa": "gate",
+              "ob": "door",
+              "ow": "shed"
+            },
+            {
+              "a": "red",
+              "b": "gray",
+              "w": "green",
+              "oa": "safe",
+              "ob": "door",
+              "ow": "box"
+            },
+            {
+              "a": "white",
+              "b": "green",
+              "w": "black",
+              "oa": "safe",
+              "ob": "gate",
+              "ow": "cage"
+            },
+            {
+              "a": "brown",
+              "b": "gray",
+              "w": "white",
+              "oa": "shed",
+              "ob": "box",
+              "ow": "safe"
+            },
+            {
+              "a": "green",
+              "b": "black",
+              "w": "pink",
+              "oa": "cage",
+              "ob": "safe",
+              "ow": "shed"
+            },
+            {
+              "a": "green",
+              "b": "pink",
+              "w": "white",
+              "oa": "chest",
+              "ob": "door",
+              "ow": "gate"
+            },
+            {
+              "a": "green",
+              "b": "pink",
+              "w": "blue",
+              "oa": "door",
+              "ob": "cage",
+              "ow": "shed"
+            }
+          ],
+          "val_pos": 5,
+          "values": [
+            "red",
+            "blue",
+            "green",
+            "black",
+            "white",
+            "brown",
+            "pink",
+            "gray"
+          ],
+          "cells": {
+            "retrieve": {
+              "g0_clean": 1.0,
+              "g0_natural": 1.0,
+              "n_rows": 10,
+              "natural_effect": 16.75341796875,
+              "add_effect": 16.310253143310547,
+              "ratio": 0.9735477962606744,
+              "add_target_acc": 1.0,
+              "wrong_own_target_acc": 1.0,
+              "p": 0.03225806451612903,
+              "verdict": "PASS"
+            },
+            "twohop": {
+              "g0_clean": 0.8,
+              "g0_natural": 0.8,
+              "n_rows": 10,
+              "verdict": "INELICITABLE"
+            },
+            "other": {
+              "g0_clean": 0.7,
+              "g0_natural": 1.0,
+              "n_rows": 10,
+              "verdict": "INELICITABLE"
+            }
+          },
+          "pass": false
+        },
+        "city": {
+          "rows": [
+            {
+              "a": "Miami",
+              "b": "Delhi",
+              "w": "Rome",
+              "oa": "north",
+              "ob": "false",
+              "ow": "dog"
+            },
+            {
+              "a": "Rome",
+              "b": "Miami",
+              "w": "Paris",
+              "oa": "cat",
+              "ob": "true",
+              "ow": "south"
+            },
+            {
+              "a": "Miami",
+              "b": "Delhi",
+              "w": "Rome",
+              "oa": "true",
+              "ob": "north",
+              "ow": "dog"
+            },
+            {
+              "a": "Miami",
+              "b": "Delhi",
+              "w": "Tokyo",
+              "oa": "left",
+              "ob": "false",
+              "ow": "north"
+            },
+            {
+              "a": "Tokyo",
+              "b": "Rome",
+              "w": "Delhi",
+              "oa": "right",
+              "ob": "dog",
+              "ow": "left"
+            },
+            {
+              "a": "Miami",
+              "b": "Paris",
+              "w": "Rome",
+              "oa": "true",
+              "ob": "dog",
+              "ow": "false"
+            },
+            {
+              "a": "Miami",
+              "b": "Tokyo",
+              "w": "Delhi",
+              "oa": "south",
+              "ob": "cat",
+              "ow": "right"
+            },
+            {
+              "a": "Paris",
+              "b": "Tokyo",
+              "w": "Delhi",
+              "oa": "north",
+              "ob": "south",
+              "ow": "false"
+            },
+            {
+              "a": "Tokyo",
+              "b": "Delhi",
+              "w": "Miami",
+              "oa": "dog",
+              "ob": "cat",
+              "ow": "north"
+            },
+            {
+              "a": "Rome",
+              "b": "Delhi",
+              "w": "Tokyo",
+              "oa": "false",
+              "ob": "dog",
+              "ow": "left"
+            }
+          ],
+          "val_pos": 5,
+          "values": [
+            "Paris",
+            "Rome",
+            "Tokyo",
+            "Delhi",
+            "Miami"
+          ],
+          "cells": {
+            "retrieve": {
+              "g0_clean": 1.0,
+              "g0_natural": 1.0,
+              "n_rows": 10,
+              "natural_effect": 21.034374237060547,
+              "add_effect": 20.931249618530273,
+              "ratio": 0.9950973289070526,
+              "add_target_acc": 1.0,
+              "wrong_own_target_acc": 1.0,
+              "p": 0.03225806451612903,
+              "verdict": "PASS"
+            },
+            "twohop": {
+              "g0_clean": 0.8,
+              "g0_natural": 0.5,
+              "n_rows": 10,
+              "verdict": "INELICITABLE"
+            },
+            "other": {
+              "g0_clean": 0.8,
+              "g0_natural": 0.4,
+              "n_rows": 10,
+              "verdict": "INELICITABLE"
+            }
+          },
+          "pass": false
+        }
+      },
+      "verdict": "RETRIEVE_ONLY"
+    }
+  },
+  "verdict": "WORLD_STATE_PARTIAL|RETRIEVE_ONLY"
+}

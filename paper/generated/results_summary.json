@@ -1,0 +1,58 @@
+{
+  "p1": {
+    "variable_gate_rho": 0.36749093489411927,
+    "variable_gate_p": 0.2827172827172827,
+    "variable_pairwise_grid_rho": 0.26449955742368364,
+    "variable_expected_column_r": 0.9993306202667114,
+    "completion_gate_rho": 0.13787049606401444,
+    "completion_gate_p": 0.6363636363636364,
+    "variable_site_ie": 53.335,
+    "variable_site_p": 0.000999000999000999
+  },
+  "transfer": {
+    "variable_7b_mean_ratio": 1.0051565965808782,
+    "variable_7b_ratios": [
+      1.0428571701049805,
+      1.1404958475760516,
+      0.8321167720616024
+    ],
+    "completion_mean_ratio": 0.9967478002131972,
+    "completion_flip_rate": 1.0,
+    "variable_1p5b_mean_ratio": 1.0205249039523474,
+    "short_to_long_mean_ratio": 1.0879763632062611,
+    "long_to_short_mean_ratio": 0.9245652931576583
+  },
+  "controls": {
+    "embed_over_l2": 0.005025126240540383,
+    "matched_mean_ratio": 1.0051565965808782,
+    "wrong_mean_ratio": 0.5881557068643056,
+    "matched_wrong_cosine": 0.774787187576294,
+    "anti_mean_ie": -0.7916666666666666
+  },
+  "boundary": {
+    "store_sig_layers": [
+      2,
+      8,
+      14
+    ],
+    "select_sig_layers": [
+      2,
+      8,
+      14
+    ],
+    "transform_sig_layers": [
+      20,
+      26
+    ],
+    "instruction_sig_layers": [
+      20,
+      26
+    ],
+    "select_best_route": 46.0078125,
+    "transform_best_ratio": 0.5926222421513343,
+    "instruction_best_add": 20.65625,
+    "instruction_verdict": "INSTR_DIRECTION_LAYER_DEPENDENT_WEAK",
+    "select_verdict": "L2_LAYER_DEPENDENT_STRONG",
+    "transform_verdict": "L3_LAYER_DEPENDENT_WEAK"
+  }
+}

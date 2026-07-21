@@ -1,0 +1,114 @@
+{
+  "stage": "delta_anchor_write",
+  "layer": 2,
+  "seed": 0,
+  "n_null": 30,
+  "source": "Paris",
+  "target": "Rome",
+  "model_path": "/kaggle/input/**/14b-instruct-awq/**/config.json",
+  "consequences": {
+    "belief_ac": {
+      "natural_effect": 63.068748474121094,
+      "effect": 63.140625,
+      "ratio": 1.001139653594179,
+      "target_acc": 1.0,
+      "positive_fraction": 1.0,
+      "effect_rows": [
+        62.6875,
+        62.40625,
+        63.921875,
+        61.34375,
+        65.34375
+      ],
+      "natural_rows": [
+        62.6875,
+        62.28125,
+        63.78125,
+        61.421875,
+        65.171875
+      ],
+      "g0_clean": 1.0,
+      "g0_natural": 1.0,
+      "pass": true
+    },
+    "tell_ac": {
+      "natural_effect": 50.44062423706055,
+      "effect": 50.734375,
+      "ratio": 1.0058236940438898,
+      "target_acc": 0.6000000238418579,
+      "positive_fraction": 1.0,
+      "effect_rows": [
+        50.34375,
+        47.96875,
+        50.96875,
+        52.046875,
+        52.34375
+      ],
+      "natural_rows": [
+        49.65625,
+        47.71875,
+        51.15625,
+        51.453125,
+        52.21875
+      ],
+      "g0_clean": 1.0,
+      "g0_natural": 0.800000011920929,
+      "pass": false
+    }
+  },
+  "null": {
+    "p": 0.03225806451612903,
+    "add_effect": 63.140625,
+    "null_mean": -0.27437500438342494
+  },
+  "invariants": {
+    "belief_as": {
+      "clean_acc": 1.0,
+      "add_acc": 1.0
+    },
+    "belief_bc": {
+      "clean_acc": 1.0,
+      "add_acc": 1.0
+    },
+    "truth_cube": {
+      "clean_acc": 1.0,
+      "add_acc": 1.0
+    },
+    "truth_sphere": {
+      "clean_acc": 1.0,
+      "add_acc": 1.0
+    }
+  },
+  "wrong_address": {
+    "own": {
+      "natural_effect": 53.578125,
+      "effect": 53.76250076293945,
+      "ratio": 1.003441250751859,
+      "target_acc": 1.0,
+      "positive_fraction": 1.0,
+      "effect_rows": [
+        54.015625,
+        54.078125,
+        54.671875,
+        51.640625,
+        54.40625
+      ],
+      "natural_rows": [
+        53.75,
+        53.625,
+        54.6875,
+        51.375,
+        54.453125
+      ]
+    },
+    "own_pass": true,
+    "target_preserved_acc": 1.0
+  },
+  "gates": {
+    "consequences": false,
+    "invariants": true,
+    "wrong_address": true,
+    "null": true
+  },
+  "verdict": "TOKEN_ANCHORED_PARTIAL"
+}
