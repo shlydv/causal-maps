@@ -1423,6 +1423,13 @@ def main(stage, config=None, out_dir="/kaggle/working"):
             n_null=config.get("n_null", 30))
         log("=== done ===")
         return res
+    if stage == "delta_preprint_v2_preflight":
+        from .delta_preprint_battery import run_delta_preprint_v2_preflight
+        res = run_delta_preprint_v2_preflight(
+            config["model_path"], out_dir,
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
     if stage == "delta_preprint_battery":
         from .delta_preprint_battery import run_delta_preprint_battery
         res = run_delta_preprint_battery(
@@ -1443,6 +1450,7 @@ def main(stage, config=None, out_dir="/kaggle/working"):
             anchor_null=config.get("anchor_null", 99),
             run_probe=config.get("run_probe", False),
             probe_reps=config.get("probe_reps", 6),
+            run_quorum=config.get("run_quorum", False),
             skip=config.get("skip", []))
         log("=== done ===")
         return res
@@ -1456,6 +1464,50 @@ def main(stage, config=None, out_dir="/kaggle/working"):
             layers=config.get("layers", None),
             n_reps=config.get("n_reps", 6),
             seed=config.get("seed", 2718))
+        log("=== done ===")
+        return res
+    if stage == "delta_preprint_locus":
+        from .delta_preprint_locus import run_delta_preprint_locus
+        res = run_delta_preprint_locus(
+            config["model_path"], out_dir,
+            model_key=config.get("model_key", "qwen14b_locus"),
+            quantization=config.get("quantization", "awq"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30),
+            layers=config.get("layers", None),
+            n_random_loci=config.get("n_random_loci", 3),
+            random_seed=config.get("random_seed", 2718))
+        log("=== done ===")
+        return res
+    if stage == "delta_preprint_locus_preflight":
+        from .delta_preprint_locus import run_delta_preprint_locus_preflight
+        res = run_delta_preprint_locus_preflight(
+            config["model_path"], out_dir,
+            n_world=config.get("n_world", 30),
+            n_random_loci=config.get("n_random_loci", 3),
+            random_seed=config.get("random_seed", 2718))
+        log("=== done ===")
+        return res
+    if stage == "delta_paper1_closeout_preflight":
+        from .delta_paper1_closeout import run_delta_paper1_closeout_preflight
+        res = run_delta_paper1_closeout_preflight(
+            config["model_path"], out_dir,
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_paper1_closeout":
+        from .delta_paper1_closeout import run_delta_paper1_closeout
+        res = run_delta_paper1_closeout(
+            config["model_path"], out_dir,
+            model_key=config.get("model_key", "qwen14b_closeout"),
+            quantization=config.get("quantization", "awq"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30),
+            layers=config.get("layers", None),
+            n_null=config.get("n_null", 20),
+            random_seed=config.get("random_seed", 8849))
         log("=== done ===")
         return res
     spec = STAGE_SPEC[stage]

@@ -1,0 +1,188 @@
+\begin{thebibliography}{23}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Anthropic}(2026)]{anthropic2026workspace}
+{Anthropic}.
+\newblock A global workspace in large language models.
+\newblock \url{https://www.anthropic.com/research/global-workspace}, 2026.
+\newblock Research report, July 2026.
+
+\bibitem[Braun et~al.(2025)Braun, Eickhoff, Krueger, Bahrainian, and
+  Krasheninnikov]{braun2025unreliability}
+Joschka Braun, Carsten Eickhoff, David Krueger, Seyed~Ali Bahrainian, and
+  Dmitrii Krasheninnikov.
+\newblock Understanding (un)reliability of steering vectors in language models.
+\newblock In \emph{ICLR 2025 Workshop on Foundation Models in the Wild}, 2025.
+\newblock URL \url{https://openreview.net/forum?id=jf472MdwsP}.
+
+\bibitem[Cheng and Zhang(2026)]{cheng2026single}
+Bryan Cheng and Jasper Zhang.
+\newblock Single-position intervention fails: Distributed output templates
+  drive in-context learning.
+\newblock \emph{arXiv preprint arXiv:2605.04061}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2605.04061}.
+
+\bibitem[{DeepSeek-AI} et~al.(2025){DeepSeek-AI}, Guo, Yang,
+  et~al.]{deepseek2025r1}
+{DeepSeek-AI}, Daya Guo, Dejian Yang, et~al.
+\newblock {DeepSeek-R1}: Incentivizing reasoning capability in {LLM}s via
+  reinforcement learning.
+\newblock \emph{arXiv preprint arXiv:2501.12948}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2501.12948}.
+
+\bibitem[Feng and Steinhardt(2023)]{feng2023binding}
+Jiahai Feng and Jacob Steinhardt.
+\newblock How do language models bind entities in context?
+\newblock \emph{arXiv preprint arXiv:2310.17191}, 2023.
+
+\bibitem[{Gemma Team} et~al.(2025){Gemma Team}, Kamath, Ferret,
+  et~al.]{gemmateam2025gemma3}
+{Gemma Team}, Aishwarya Kamath, Johan Ferret, et~al.
+\newblock {Gemma 3 Technical Report}.
+\newblock \emph{arXiv preprint arXiv:2503.19786}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2503.19786}.
+
+\bibitem[Grant et~al.(2026)Grant, Han, Tartaglini, and
+  Potts]{grant2026divergent}
+Satchel Grant, Simon~Jerome Han, Alexa~R. Tartaglini, and Christopher Potts.
+\newblock Addressing divergent representations from causal interventions on
+  neural networks.
+\newblock In \emph{International Conference on Learning Representations}, 2026.
+\newblock URL \url{https://openreview.net/forum?id=cZrTMqYVL6}.
+
+\bibitem[Hase et~al.(2023)Hase, Bansal, Kim, and
+  Ghandeharioun]{hase2023localization}
+Peter Hase, Mohit Bansal, Been Kim, and Asma Ghandeharioun.
+\newblock Does localization inform editing? surprising differences in
+  causality-based localization vs. knowledge editing in language models.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2023.
+\newblock URL \url{https://openreview.net/forum?id=EldbUlZtbd}.
+
+\bibitem[Heimersheim and Nanda(2024)]{heimersheim2024patching}
+Stefan Heimersheim and Neel Nanda.
+\newblock How to use and interpret activation patching.
+\newblock \emph{arXiv preprint arXiv:2404.15255}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2404.15255}.
+
+\bibitem[Hendel et~al.(2023)Hendel, Geva, and Globerson]{hendel2023task}
+Roee Hendel, Mor Geva, and Amir Globerson.
+\newblock In-context learning creates task vectors.
+\newblock In \emph{Findings of the Association for Computational Linguistics:
+  EMNLP 2023}, pages 9318--9333, 2023.
+\newblock \doi{10.18653/v1/2023.findings-emnlp.624}.
+\newblock URL \url{https://aclanthology.org/2023.findings-emnlp.624/}.
+
+\bibitem[Jiang et~al.(2023)Jiang, Sablayrolles, Mensch,
+  et~al.]{jiang2023mistral}
+Albert~Q. Jiang, Alexandre Sablayrolles, Arthur Mensch, et~al.
+\newblock {Mistral 7B}.
+\newblock \emph{arXiv preprint arXiv:2310.06825}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2310.06825}.
+
+\bibitem[Makelov et~al.(2024)Makelov, Lange, Geiger, and
+  Nanda]{makelov2024illusion}
+Aleksandar Makelov, Georg Lange, Atticus Geiger, and Neel Nanda.
+\newblock Is this the subspace you are looking for? an interpretability
+  illusion for subspace activation patching.
+\newblock In \emph{International Conference on Learning Representations}, 2024.
+\newblock URL \url{https://openreview.net/forum?id=Ebt7JgMHv1}.
+
+\bibitem[M{\'e}loux et~al.(2025)M{\'e}loux, Portet, and
+  Peyrard]{meloux2025variance}
+Maxime M{\'e}loux, Fran{\c{c}}ois Portet, and Maxime Peyrard.
+\newblock Mechanistic interpretability as statistical estimation: A variance
+  analysis.
+\newblock \emph{arXiv preprint arXiv:2510.00845}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2510.00845}.
+
+\bibitem[Meng et~al.(2022)Meng, Bau, Andonian, and Belinkov]{meng2022locating}
+Kevin Meng, David Bau, Alex Andonian, and Yonatan Belinkov.
+\newblock Locating and editing factual associations in {GPT}.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~35, 2022.
+\newblock URL \url{https://arxiv.org/abs/2202.05262}.
+
+\bibitem[Oh and Demberg(2026)]{oh2026rebinding}
+Soyoung Oh and Vera Demberg.
+\newblock A retrieval conditioned rebinding circuit for dynamic entity tracking
+  in large language models.
+\newblock \emph{arXiv preprint arXiv:2606.08644}, 2026.
+
+\bibitem[Rimsky et~al.(2024)Rimsky, Gabrieli, Schulz, Tong, Hubinger, and
+  Turner]{rimsky2024steering}
+Nina Rimsky, Nick Gabrieli, Julian Schulz, Meg Tong, Evan Hubinger, and
+  Alexander Turner.
+\newblock Steering llama 2 via contrastive activation addition.
+\newblock In \emph{Proceedings of the 62nd Annual Meeting of the Association
+  for Computational Linguistics}, pages 15504--15522, 2024.
+\newblock \doi{10.18653/v1/2024.acl-long.828}.
+\newblock URL \url{https://aclanthology.org/2024.acl-long.828/}.
+
+\bibitem[Shih et~al.(2026)Shih, Winnicki, and Darve]{shih2026registers}
+Benjamin Shih, John Winnicki, and Eric Darve.
+\newblock Do models read what they write? causal registers in scratchpad
+  reasoning.
+\newblock \emph{arXiv preprint arXiv:2606.29522}, 2026.
+
+\bibitem[Tan et~al.(2024)Tan, Chanin, Lynch, Paige, Kanoulas, Garriga-Alonso,
+  and Kirk]{tan2024generalisation}
+Daniel Tan, David Chanin, Aengus Lynch, Brooks Paige, Dimitrios Kanoulas,
+  Adri{\`a} Garriga-Alonso, and Robert Kirk.
+\newblock Analysing the generalisation and reliability of steering vectors.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2024.
+\newblock URL \url{https://openreview.net/forum?id=v8X70gTodR}.
+
+\bibitem[Todd et~al.(2024)Todd, Li, Sharma, Mueller, Wallace, and
+  Bau]{todd2024function}
+Eric Todd, Millicent~L. Li, Arnab~Sen Sharma, Aaron Mueller, Byron~C. Wallace,
+  and David Bau.
+\newblock Function vectors in large language models.
+\newblock In \emph{International Conference on Learning Representations}, 2024.
+\newblock URL \url{https://openreview.net/forum?id=AwyxtyMwaG}.
+
+\bibitem[Turner et~al.(2023)Turner, Thiergart, Leech, Udell, Vazquez, Mini, and
+  MacDiarmid]{turner2023steering}
+Alexander~Matt Turner, Lisa Thiergart, Gavin Leech, David~S. Udell, Juan~J.
+  Vazquez, Ulisse Mini, and Monte~Stuart MacDiarmid.
+\newblock Steering language models with activation engineering.
+\newblock \emph{arXiv preprint arXiv:2308.10248}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2308.10248}.
+
+\bibitem[Yang et~al.(2024)Yang, Yang, Zhang, Hui, Zheng, Yu, Li, Liu, Huang,
+  Wei, Lin, Yang, Tu, Zhang, Yang, Yang, Zhou, Lin, Dang, Lu, Bao, Yang, Yu,
+  Li, Xue, Zhang, Zhu, Men, Lin, Li, Xia, Ren, Ren, Fan, Su, Zhang, Wan, Liu,
+  Cui, Zhang, and Qiu]{yang2024qwen25}
+An~Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo~Zheng, Bowen Yu,
+  Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, Huan Lin, Jian Yang,
+  Jianhong Tu, Jianwei Zhang, Jianxin Yang, Jiaxi Yang, Jingren Zhou, Junyang
+  Lin, Kai Dang, Keming Lu, Keqin Bao, Kexin Yang, Le~Yu, Mei Li, Mingfeng Xue,
+  Pei Zhang, Qin Zhu, Rui Men, Runji Lin, Tianhao Li, Tingyu Xia, Xingzhang
+  Ren, Xuancheng Ren, Yang Fan, Yang Su, Yichang Zhang, Yu~Wan, Yuqiong Liu,
+  Zeyu Cui, Zhenru Zhang, and Zihan Qiu.
+\newblock {Qwen2.5} technical report.
+\newblock \emph{arXiv preprint arXiv:2412.15115}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2412.15115}.
+
+\bibitem[Zhang and Nanda(2024)]{zhang2024bestpractices}
+Fred Zhang and Neel Nanda.
+\newblock Towards best practices of activation patching in language models:
+  Metrics and methods.
+\newblock In \emph{International Conference on Learning Representations}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2309.16042}.
+
+\bibitem[Zou et~al.(2023)Zou, Phan, Chen, Campbell, Guo, Ren, Pan, Yin,
+  Mazeika, Dombrowski, Goel, Li, Byun, Wang, Mallen, Basart, Koyejo, Song,
+  Fredrikson, Kolter, and Hendrycks]{zou2023representation}
+Andy Zou, Long Phan, Sarah Chen, James Campbell, Phillip Guo, Richard Ren,
+  Alexander Pan, Xuwang Yin, Mantas Mazeika, Ann-Kathrin Dombrowski, Shashwat
+  Goel, Nathaniel Li, Michael~J. Byun, Zifan Wang, Alex Mallen, Steven Basart,
+  Sanmi Koyejo, Dawn Song, Matt Fredrikson, J.~Zico Kolter, and Dan Hendrycks.
+\newblock Representation engineering: A top-down approach to {AI} transparency.
+\newblock \emph{arXiv preprint arXiv:2310.01405}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2310.01405}.
+
+\end{thebibliography}

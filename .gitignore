@@ -1,5 +1,6 @@
 # Environment
 .venv/
+.kaggle-venv/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
@@ -36,3 +37,14 @@ paper/*.aux
 paper/*.blg
 paper/*.log
 paper/*.out
+paper_token_anchored/*.aux
+paper_token_anchored/*.blg
+paper_token_anchored/*.log
+paper_token_anchored/*.out
+
+# Local compilation/rendering tools and visual-QA pages
+work/
+tmp/
+
+# Duplicate downloaded paper copies; canonical PDF is under paper_token_anchored/
+/paper1-token-anchored-state-draft*.pdf

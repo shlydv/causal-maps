@@ -264,5 +264,2448 @@
         "draws": 10000
       }
     }
+  },
+  "qwen14": {
+    "model_key": "qwen14b_headline",
+    "matrix": {},
+    "anchor": {
+      "belief_ac": {
+        "estimate": 1.0009940110832236,
+        "low": 0.9999750982318244,
+        "high": 1.0019840199810277,
+        "n": 30,
+        "draws": 10000
+      },
+      "tell_ac": {
+        "estimate": 0.9934080558963588,
+        "low": 0.9902274018319892,
+        "high": 0.9967431646486178,
+        "n": 30,
+        "draws": 10000
+      }
+    }
+  },
+  "deepseek_llama": {
+    "model_key": "deepseek_r1_llama8b_confirm",
+    "matrix": {
+      "0": {
+        "retrieve": {
+          "estimate": 0.9761372110365399,
+          "low": 0.9653612351994137,
+          "high": 0.9863564671019829,
+          "n": 30,
+          "draws": 10000
+        },
+        "add2": {
+          "estimate": 0.9627785058977719,
+          "low": 0.943959025751914,
+          "high": 0.9779983157980187,
+          "n": 30,
+          "draws": 10000
+        },
+        "sub1": {
+          "estimate": 0.9732013201320131,
+          "low": 0.9592303512348537,
+          "high": 0.9852314389301744,
+          "n": 30,
+          "draws": 10000
+        },
+        "max5": {
+          "estimate": 0.9361251425778068,
+          "low": 0.9022519582245431,
+          "high": 0.9700235374825538,
+          "n": 30,
+          "draws": 10000
+        }
+      },
+      "1": {
+        "retrieve": {
+          "estimate": 0.9727865563080009,
+          "low": 0.9626083507438555,
+          "high": 0.9830704854572406,
+          "n": 30,
+          "draws": 10000
+        },
+        "add2": {
+          "estimate": 0.9575247659112498,
+          "low": 0.9359366372076656,
+          "high": 0.9745384860678902,
+          "n": 30,
+          "draws": 10000
+        },
+        "sub1": {
+          "estimate": 0.9770711068650199,
+          "low": 0.9604390007981627,
+          "high": 0.9911936521881066,
+          "n": 30,
+          "draws": 10000
+        },
+        "max5": {
+          "estimate": 0.9448333333333333,
+          "low": 0.9126001919979516,
+          "high": 0.9760310899401337,
+          "n": 30,
+          "draws": 10000
+        }
+      },
+      "2": {
+        "retrieve": {
+          "estimate": 0.975184602348384,
+          "low": 0.9657384794369971,
+          "high": 0.9847823917368762,
+          "n": 30,
+          "draws": 10000
+        },
+        "add2": {
+          "estimate": 0.9522630348053376,
+          "low": 0.932495336878367,
+          "high": 0.9686667540675004,
+          "n": 30,
+          "draws": 10000
+        },
+        "sub1": {
+          "estimate": 0.974090552211463,
+          "low": 0.9582045196008158,
+          "high": 0.9882324365862847,
+          "n": 30,
+          "draws": 10000
+        },
+        "max5": {
+          "estimate": 0.9381257180370918,
+          "low": 0.903978763724936,
+          "high": 0.9728697897768873,
+          "n": 30,
+          "draws": 10000
+        }
+      }
+    },
+    "anchor": {
+      "belief_ac": {
+        "estimate": 1.0546634225466343,
+        "low": 1.0337510698096202,
+        "high": 1.0756250351524617,
+        "n": 30,
+        "draws": 10000
+      },
+      "tell_ac": {
+        "estimate": 1.013092029264536,
+        "low": 0.9966381225399471,
+        "high": 1.029624141088331,
+        "n": 30,
+        "draws": 10000
+      }
+    }
+  },
+  "gemma3": {
+    "model_key": "gemma3_12b_confirm",
+    "matrix": {
+      "0": {
+        "retrieve": {
+          "estimate": 0.9837636932707355,
+          "low": 0.9806284223990145,
+          "high": 0.9869730345988659,
+          "n": 30,
+          "draws": 10000
+        },
+        "add2": {
+          "estimate": 0.9954213764487051,
+          "low": 0.9920521562309523,
+          "high": 0.9992468830334233,
+          "n": 30,
+          "draws": 10000
+        },
+        "sub1": {
+          "estimate": 0.9983096210733906,
+          "low": 0.996434203476824,
+          "high": 1.0002853896553006,
+          "n": 30,
+          "draws": 10000
+        },
+        "max5": {
+          "estimate": 0.9940327655419333,
+          "low": 0.9918023384088921,
+          "high": 0.9962594225433168,
+          "n": 30,
+          "draws": 10000
+        },
+        "gt5label": {
+          "estimate": 0.991519532879188,
+          "low": 0.9883672621520566,
+          "high": 0.9946035699460356,
+          "n": 30,
+          "draws": 10000
+        }
+      },
+      "1": {
+        "retrieve": {
+          "estimate": 0.9820730117340287,
+          "low": 0.9787864021592996,
+          "high": 0.9855577217700832,
+          "n": 30,
+          "draws": 10000
+        },
+        "add2": {
+          "estimate": 0.9966403739409875,
+          "low": 0.9932683195399339,
+          "high": 1.0003125144473233,
+          "n": 30,
+          "draws": 10000
+        },
+        "sub1": {
+          "estimate": 0.9995721620079864,
+          "low": 0.9977486826232218,
+          "high": 1.0014328059220394,
+          "n": 30,
+          "draws": 10000
+        },
+        "max5": {
+          "estimate": 0.9932278686748294,
+          "low": 0.9909865116321754,
+          "high": 0.9954103733658004,
+          "n": 30,
+          "draws": 10000
+        },
+        "gt5label": {
+          "estimate": 0.9923430321592649,
+          "low": 0.9889262569306869,
+          "high": 0.9957194293012789,
+          "n": 30,
+          "draws": 10000
+        }
+      },
+      "2": {
+        "retrieve": {
+          "estimate": 0.9834475623949309,
+          "low": 0.9805097185811255,
+          "high": 0.9862978283350569,
+          "n": 30,
+          "draws": 10000
+        },
+        "add2": {
+          "estimate": 0.9960761517221334,
+          "low": 0.9929455613992698,
+          "high": 0.9998524986275829,
+          "n": 30,
+          "draws": 10000
+        },
+        "sub1": {
+          "estimate": 0.9989403037795832,
+          "low": 0.996808723929186,
+          "high": 1.0010534263831452,
+          "n": 30,
+          "draws": 10000
+        },
+        "max5": {
+          "estimate": 0.9934428006286241,
+          "low": 0.9910670272511528,
+          "high": 0.9958266260823153,
+          "n": 30,
+          "draws": 10000
+        },
+        "gt5label": {
+          "estimate": 0.9923632324354346,
+          "low": 0.9889956051860656,
+          "high": 0.995829988477834,
+          "n": 30,
+          "draws": 10000
+        }
+      }
+    },
+    "anchor": {
+      "belief_ac": {
+        "estimate": 1.072804054054054,
+        "low": 1.0659119268905748,
+        "high": 1.0805074559934718,
+        "n": 30,
+        "draws": 10000
+      },
+      "tell_ac": {
+        "estimate": 1.0133481646273637,
+        "low": 1.0109047807190834,
+        "high": 1.0159197960698712,
+        "n": 30,
+        "draws": 10000
+      }
+    }
+  },
+  "qwen14_locus": {
+    "model_key": "qwen14b_locus_v1",
+    "verdict": "SOURCE_ANCHORS_SUFFICIENT",
+    "per_layer": {
+      "2": {
+        "marker_only": {
+          "forward": {
+            "estimate": 0.00023193591941883486,
+            "low": -0.0003375893672226775,
+            "high": 0.0007862821086087314,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.0006709574811759152,
+            "low": 7.426094915661764e-05,
+            "high": 0.0012885316555197202,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "summary_span": {
+          "forward": {
+            "estimate": -0.00028163647358001373,
+            "low": -0.001029279900925111,
+            "high": 0.0005031920743004478,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.00022365249372530504,
+            "low": -0.000477540899383075,
+            "high": 0.0009291612060197802,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "source_anchors": {
+          "forward": {
+            "estimate": 1.0010851287658524,
+            "low": 1.0002659454007232,
+            "high": 1.001850941573983,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.9983930154154552,
+            "low": 0.9975316019289875,
+            "high": 0.9992333832701568,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        },
+        "anchors_without_ac": {
+          "forward": {
+            "estimate": 0.00014081823679000687,
+            "low": -0.0004880429490821851,
+            "high": 0.0007942972892509274,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.0008034922922723922,
+            "low": 0.00012430340895107012,
+            "high": 0.0015096071423630647,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "full_prequery": {
+          "forward": {
+            "estimate": 1.0000248502770805,
+            "low": 0.9993692016574994,
+            "high": 1.0006732353179857,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.9995941121410171,
+            "low": 0.9987701065245138,
+            "high": 1.000414474098729,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        },
+        "full_matched_prefix": {
+          "forward": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        }
+      },
+      "4": {
+        "marker_only": {
+          "forward": {
+            "estimate": -0.00028163647358001373,
+            "low": -0.0010176451828887046,
+            "high": 0.000438624804403366,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.0005052889673053187,
+            "low": -0.00014107383853615395,
+            "high": 0.0011196796574265483,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "summary_span": {
+          "forward": {
+            "estimate": -8.283425693529816e-06,
+            "low": -0.0007754243936277148,
+            "high": 0.000747361422543734,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.00043902156175708025,
+            "low": -0.0002906166370453722,
+            "high": 0.0011743657134041078,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "source_anchors": {
+          "forward": {
+            "estimate": 1.0003727541562089,
+            "low": 0.9995023989550683,
+            "high": 1.0011968998901022,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.9997100801007265,
+            "low": 0.9990368273690394,
+            "high": 1.0003652241833219,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        },
+        "anchors_without_ac": {
+          "forward": {
+            "estimate": 0.002750097330251899,
+            "low": 0.0019400635394994903,
+            "high": 0.003595324909859925,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": -0.0017892199498024404,
+            "low": -0.0025610315504672183,
+            "high": -0.0009302377983355636,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "full_prequery": {
+          "forward": {
+            "estimate": 0.9997432138035006,
+            "low": 0.9992097145108023,
+            "high": 1.0002908391101033,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.9996603795465653,
+            "low": 0.9988762150770454,
+            "high": 1.0003904648082051,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        },
+        "full_matched_prefix": {
+          "forward": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        }
+      },
+      "8": {
+        "marker_only": {
+          "forward": {
+            "estimate": 0.00023193591941883486,
+            "low": -0.00047883557182739077,
+            "high": 0.0009684950373329946,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.00021536906803177523,
+            "low": -0.00043931304702904357,
+            "high": 0.0008456985959113839,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "summary_span": {
+          "forward": {
+            "estimate": -0.00010768453401588762,
+            "low": -0.0007805637985679076,
+            "high": 0.0005891153091345929,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.00043073813606355046,
+            "low": -0.00024040281001206612,
+            "high": 0.0010934488744383808,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "source_anchors": {
+          "forward": {
+            "estimate": 0.999420160201453,
+            "low": 0.9986766932834692,
+            "high": 1.0001738174260542,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 1.0000994011083224,
+            "low": 0.9991907564535533,
+            "high": 1.0009874738123157,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        },
+        "anchors_without_ac": {
+          "forward": {
+            "estimate": 0.02134638801222634,
+            "low": 0.0190063557495533,
+            "high": 0.023903225839344434,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": -0.057917712449160476,
+            "low": -0.059367272253397906,
+            "high": -0.0564164208009342,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "full_prequery": {
+          "forward": {
+            "estimate": 0.9989065878084541,
+            "low": 0.9981826528582641,
+            "high": 0.9996209050742245,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.9990805397480182,
+            "low": 0.998300918165607,
+            "high": 0.9998343874214894,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        },
+        "full_matched_prefix": {
+          "forward": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        }
+      },
+      "12": {
+        "marker_only": {
+          "forward": {
+            "estimate": -0.00021536906803177523,
+            "low": -0.0008824313103952905,
+            "high": 0.0004623021545495098,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": -0.0001988022166447156,
+            "low": -0.0009183207471974896,
+            "high": 0.0004975243093987669,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "summary_span": {
+          "forward": {
+            "estimate": -9.94011083223578e-05,
+            "low": -0.000875429120924473,
+            "high": 0.0007032402063608949,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": -0.00018223536525765595,
+            "low": -0.0007753875342259788,
+            "high": 0.00038650084596490735,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "source_anchors": {
+          "forward": {
+            "estimate": 1.0008366259950465,
+            "low": 0.9997662948655035,
+            "high": 1.001891547416798,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.9949222600498662,
+            "low": 0.9940623571856231,
+            "high": 0.9957779889027946,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        },
+        "anchors_without_ac": {
+          "forward": {
+            "estimate": 0.009708174912816945,
+            "low": 0.0073588618459633015,
+            "high": 0.011919045717850362,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": -0.0036281404537660596,
+            "low": -0.0054480078214013666,
+            "high": -0.0018327257957515863,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "full_prequery": {
+          "forward": {
+            "estimate": 1.000356187304822,
+            "low": 0.9996101681404386,
+            "high": 1.0011297701870814,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.9991799408563407,
+            "low": 0.9984376306556951,
+            "high": 0.9998918716287638,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        },
+        "full_matched_prefix": {
+          "forward": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        }
+      },
+      "16": {
+        "marker_only": {
+          "forward": {
+            "estimate": 0.00029820332496707336,
+            "low": -0.00044933319799155344,
+            "high": 0.0010823791924315567,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.0003561873048217821,
+            "low": -0.00022434920085074745,
+            "high": 0.0009726684260189426,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "summary_span": {
+          "forward": {
+            "estimate": -0.00013253481109647705,
+            "low": -0.0008892839704663188,
+            "high": 0.0005969411809964419,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": -0.0004721552645311995,
+            "low": -0.0011593464731706742,
+            "high": 0.0002796601778695162,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "source_anchors": {
+          "forward": {
+            "estimate": 1.0011182624686266,
+            "low": 0.9998669608006211,
+            "high": 1.0023935900789067,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.9967777474052169,
+            "low": 0.9959448948355832,
+            "high": 0.9976787527435357,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        },
+        "anchors_without_ac": {
+          "forward": {
+            "estimate": 0.01627693148778609,
+            "low": 0.014223118275740004,
+            "high": 0.01832447721164978,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": -0.001756086247028321,
+            "low": -0.005230785378694478,
+            "high": 0.00171513557688093,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "full_prequery": {
+          "forward": {
+            "estimate": 1.0006046900756278,
+            "low": 0.9997757988565898,
+            "high": 1.0014045632833224,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.9985255502265517,
+            "low": 0.9976329071364545,
+            "high": 0.9993979998832553,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        },
+        "full_matched_prefix": {
+          "forward": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        }
+      },
+      "20": {
+        "marker_only": {
+          "forward": {
+            "estimate": 3.313370277411926e-05,
+            "low": -0.0003574052711337833,
+            "high": 0.00040089125622251755,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": -4.97005541611789e-05,
+            "low": -0.0006878133769355686,
+            "high": 0.0005900491636680847,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "summary_span": {
+          "forward": {
+            "estimate": -0.00024021934511236467,
+            "low": -0.0007787732914797464,
+            "high": 0.00030851422022335785,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": -0.000314770176354133,
+            "low": -0.0009485594224838291,
+            "high": 0.0002736226547670623,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "source_anchors": {
+          "forward": {
+            "estimate": 0.9994118767757594,
+            "low": 0.998255557500754,
+            "high": 1.0005383353803032,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 1.0046138681112962,
+            "low": 1.0033153484365216,
+            "high": 1.0059277332080967,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        },
+        "anchors_without_ac": {
+          "forward": {
+            "estimate": 0.030516140254963842,
+            "low": 0.026713813612946207,
+            "high": 0.0345388327873438,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": -0.018198686248685005,
+            "low": -0.020458543035728412,
+            "high": -0.015938708315462912,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "full_prequery": {
+          "forward": {
+            "estimate": 1.0045724509828284,
+            "low": 1.003693726782752,
+            "high": 1.0054707815917427,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.9955103832741069,
+            "low": 0.994594900429042,
+            "high": 0.9963458368628073,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        },
+        "full_matched_prefix": {
+          "forward": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        }
+      },
+      "24": {
+        "marker_only": {
+          "forward": {
+            "estimate": 1.656685138705963e-05,
+            "low": -0.0004298172554742566,
+            "high": 0.00044693098195645333,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.00020708564233824542,
+            "low": -0.00021466523009180325,
+            "high": 0.0006235192733960911,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "summary_span": {
+          "forward": {
+            "estimate": 0.0002650696221929541,
+            "low": -0.00029627617921831005,
+            "high": 0.0007990299777446401,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": -0.000497005541611789,
+            "low": -0.00106930417493893,
+            "high": 7.368013326994566e-05,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "source_anchors": {
+          "forward": {
+            "estimate": 1.0116382130994095,
+            "low": 1.010578917690196,
+            "high": 1.0127143478017673,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 1.0017560862470283,
+            "low": 1.000298850148182,
+            "high": 1.0032362357526874,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        },
+        "anchors_without_ac": {
+          "forward": {
+            "estimate": 0.006568756574969145,
+            "low": 0.0042918357707993435,
+            "high": 0.009010982045780375,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": -0.02036894378038982,
+            "low": -0.023101546305929557,
+            "high": -0.01777932912712061,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "full_prequery": {
+          "forward": {
+            "estimate": 1.007894104685934,
+            "low": 1.006935590441621,
+            "high": 1.0088725434014079,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 1.0050694565244402,
+            "low": 1.0039922558880416,
+            "high": 1.006091862328965,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        },
+        "full_matched_prefix": {
+          "forward": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        }
+      },
+      "26": {
+        "marker_only": {
+          "forward": {
+            "estimate": -9.111768262882798e-05,
+            "low": -0.00041395645936727793,
+            "high": 0.00022377158816130714,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.00021536906803177523,
+            "low": -0.000256706456339029,
+            "high": 0.0007078422641960854,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "summary_span": {
+          "forward": {
+            "estimate": -0.00028991989927354357,
+            "low": -0.0006043200189168516,
+            "high": 3.318978750238552e-05,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": -0.0001905187909511858,
+            "low": -0.0007281029771213394,
+            "high": 0.00032377115565939026,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "source_anchors": {
+          "forward": {
+            "estimate": 1.0096998914871234,
+            "low": 1.0076346565558694,
+            "high": 1.0117511682136942,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.9851146840287269,
+            "low": 0.9830461462399352,
+            "high": 0.9871124295890276,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        },
+        "anchors_without_ac": {
+          "forward": {
+            "estimate": -0.018057868011895,
+            "low": -0.020248798082081153,
+            "high": -0.01588729222700277,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": -0.027451272748357812,
+            "low": -0.03000950961722724,
+            "high": -0.02491659733754518,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "full_prequery": {
+          "forward": {
+            "estimate": 1.0197725371304558,
+            "low": 1.0176430604443771,
+            "high": 1.0219597795649211,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.977485648964986,
+            "low": 0.9744110153585581,
+            "high": 0.9804214049032108,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        },
+        "full_matched_prefix": {
+          "forward": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        }
+      },
+      "32": {
+        "marker_only": {
+          "forward": {
+            "estimate": -0.00016566851387059633,
+            "low": -0.0004137213162083086,
+            "high": 7.439592070114486e-05,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 3.313370277411926e-05,
+            "low": -0.00025453530338583107,
+            "high": 0.0003156367047982475,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "summary_span": {
+          "forward": {
+            "estimate": -0.0004721552645311995,
+            "low": -0.0007947279752246594,
+            "high": -0.00016496365777306303,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.0002485027708058945,
+            "low": -4.9494252273398044e-05,
+            "high": 0.0005380941699205104,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "source_anchors": {
+          "forward": {
+            "estimate": 1.001341914962352,
+            "low": 0.9992783681286636,
+            "high": 1.0035525826383678,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.962070193749327,
+            "low": 0.9598585887271565,
+            "high": 0.9644012219336435,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        },
+        "anchors_without_ac": {
+          "forward": {
+            "estimate": -0.025363849473588298,
+            "low": -0.0268488461161936,
+            "high": -0.02402181891233627,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": -0.02659807990192424,
+            "low": -0.02848560465584524,
+            "high": -0.024734735976890694,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "full_prequery": {
+          "forward": {
+            "estimate": 0.997357587203764,
+            "low": 0.9952968659974818,
+            "high": 0.9995825554574723,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.9690779718860532,
+            "low": 0.9671453101758615,
+            "high": 0.971143876468606,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        },
+        "full_matched_prefix": {
+          "forward": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        }
+      },
+      "36": {
+        "marker_only": {
+          "forward": {
+            "estimate": 5.7983979854708714e-05,
+            "low": -9.126693654301177e-05,
+            "high": 0.000215461920317156,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 8.283425693529816e-05,
+            "low": -0.00014964857584354367,
+            "high": 0.00031401455230452773,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "summary_span": {
+          "forward": {
+            "estimate": -0.00043073813606355046,
+            "low": -0.0006537667861297235,
+            "high": -0.0001991912007621503,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": -8.283425693529816e-06,
+            "low": -0.00024086673833924858,
+            "high": 0.00020776587366804646,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "source_anchors": {
+          "forward": {
+            "estimate": 0.4015804776223255,
+            "low": 0.3948385103060792,
+            "high": 0.4083442400448271,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.28456052284982974,
+            "low": 0.2806233923036994,
+            "high": 0.2885122696650417,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "anchors_without_ac": {
+          "forward": {
+            "estimate": -0.007960372091482154,
+            "low": -0.008549727437524367,
+            "high": -0.007395793270668726,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": -0.00014910166248353668,
+            "low": -0.00158313606334942,
+            "high": 0.0013033408792080061,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "full_prequery": {
+          "forward": {
+            "estimate": 0.4038501362623527,
+            "low": 0.39740709239486266,
+            "high": 0.41028335563473517,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.3087149921721627,
+            "low": 0.3049690996081913,
+            "high": 0.3125177151263797,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "full_matched_prefix": {
+          "forward": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        }
+      },
+      "41": {
+        "marker_only": {
+          "forward": {
+            "estimate": 0.00014910166248353668,
+            "low": 0.0,
+            "high": 0.00030475418815483754,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.00010768453401588762,
+            "low": -4.98426115708446e-05,
+            "high": 0.00026641307515382084,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "summary_span": {
+          "forward": {
+            "estimate": -0.0004555884131441399,
+            "low": -0.0006698523256555844,
+            "high": -0.00023111453747737653,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.0003396204534347225,
+            "low": 0.00012418909704283438,
+            "high": 0.0005557341193886601,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "source_anchors": {
+          "forward": {
+            "estimate": 0.24462612758132254,
+            "low": 0.2402055131309703,
+            "high": 0.24905596101096064,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.18788466158064332,
+            "low": 0.1811247382915396,
+            "high": 0.19444658173063875,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "anchors_without_ac": {
+          "forward": {
+            "estimate": -0.0019548884636730367,
+            "low": -0.0024485341257235384,
+            "high": -0.001465632167727939,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.007297698035999768,
+            "low": 0.006897051593972395,
+            "high": 0.007724641226202153,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "full_prequery": {
+          "forward": {
+            "estimate": 0.2434747314099219,
+            "low": 0.23902963433869706,
+            "high": 0.24786426933324598,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.18895322349510865,
+            "low": 0.18240172866245175,
+            "high": 0.19549008865692244,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "full_matched_prefix": {
+          "forward": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        }
+      },
+      "46": {
+        "marker_only": {
+          "forward": {
+            "estimate": 8.283425693529816e-05,
+            "low": 8.317765257452936e-06,
+            "high": 0.00016456198744228058,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 3.313370277411926e-05,
+            "low": -9.963980212607037e-05,
+            "high": 0.00016558402319960915,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "summary_span": {
+          "forward": {
+            "estimate": -3.313370277411926e-05,
+            "low": -0.00013226430707495357,
+            "high": 7.409394047718725e-05,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 8.283425693529816e-05,
+            "low": -2.4756989517722956e-05,
+            "high": 0.00019867159089429642,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "source_anchors": {
+          "forward": {
+            "estimate": 0.001217663576948883,
+            "low": 0.001046904436368344,
+            "high": 0.0013946899408142695,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.00018223536525765595,
+            "low": -0.00014924992732528262,
+            "high": 0.0005039177543491326,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "anchors_without_ac": {
+          "forward": {
+            "estimate": 0.000811775717965922,
+            "low": 0.0006311495559379226,
+            "high": 0.0010049297162688007,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.000944310529062399,
+            "low": 0.0007643659398376256,
+            "high": 0.0011181241886828884,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "full_prequery": {
+          "forward": {
+            "estimate": 0.0005715563728535572,
+            "low": 0.0003880057516183146,
+            "high": 0.0007633799979526905,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 0.0001988022166447156,
+            "low": -0.00014934949033351154,
+            "high": 0.0005563497148213975,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "sufficient": false
+        },
+        "full_matched_prefix": {
+          "forward": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "reverse": {
+            "estimate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 30,
+            "draws": 10000
+          },
+          "forward_target_acc": 1.0,
+          "reverse_clean_acc": 1.0,
+          "sufficient": true
+        }
+      }
+    }
+  },
+  "qwen14_reverse_base": {
+    "belief_ac": {
+      "history_reverse": {
+        "estimate": 0.6693889897156685,
+        "low": 0.659928794436401,
+        "high": 0.6788716618516221,
+        "n": 30,
+        "draws": 10000
+      },
+      "verbal_reverse": {
+        "estimate": 0.7810126369563757,
+        "low": 0.7735648893478116,
+        "high": 0.7880443146898761,
+        "n": 30,
+        "draws": 10000
+      },
+      "both_reverse": {
+        "estimate": 0.9995084694494858,
+        "low": 0.99903507239072,
+        "high": 0.9999790032211887,
+        "n": 30,
+        "draws": 10000
+      }
+    },
+    "tell_ac": {
+      "history_reverse": {
+        "estimate": 0.4115757761861685,
+        "low": 0.4038956647297982,
+        "high": 0.41895344227895537,
+        "n": 30,
+        "draws": 10000
+      },
+      "verbal_reverse": {
+        "estimate": 0.8259566945797682,
+        "low": 0.8207729116268324,
+        "high": 0.831453435329725,
+        "n": 30,
+        "draws": 10000
+      },
+      "both_reverse": {
+        "estimate": 0.9974355356742715,
+        "low": 0.9966643493153466,
+        "high": 0.998212250536813,
+        "n": 30,
+        "draws": 10000
+      }
+    }
+  },
+  "qwen14_closeout": {
+    "model_key": "qwen14b_closeout_v1",
+    "verdict": "PAPER1_CLOSEOUT_BOUNDARY",
+    "exact_ac_only": {
+      "2": {
+        "forward": {
+          "estimate": 1.0012010967255618,
+          "low": 1.0005071373399177,
+          "high": 1.0018905678756027,
+          "n": 30,
+          "draws": 10000
+        },
+        "reverse": {
+          "estimate": 0.998467566246697,
+          "low": 0.9976184160336365,
+          "high": 0.9993340930843491,
+          "n": 30,
+          "draws": 10000
+        },
+        "forward_target_acc": 1.0,
+        "reverse_clean_acc": 1.0,
+        "sufficient": true
+      },
+      "4": {
+        "forward": {
+          "estimate": 1.0025347282622201,
+          "low": 1.0016966777039098,
+          "high": 1.0033708703023112,
+          "n": 30,
+          "draws": 10000
+        },
+        "reverse": {
+          "estimate": 0.9961399236268151,
+          "low": 0.9953543693052511,
+          "high": 0.9969710091897478,
+          "n": 30,
+          "draws": 10000
+        },
+        "forward_target_acc": 1.0,
+        "reverse_clean_acc": 1.0,
+        "sufficient": true
+      },
+      "8": {
+        "forward": {
+          "estimate": 1.0618771899306678,
+          "low": 1.0603392409540442,
+          "high": 1.0634466223365102,
+          "n": 30,
+          "draws": 10000
+        },
+        "reverse": {
+          "estimate": 0.9787861467988701,
+          "low": 0.9764289572515181,
+          "high": 0.98099771902054,
+          "n": 30,
+          "draws": 10000
+        },
+        "forward_target_acc": 1.0,
+        "reverse_clean_acc": 1.0,
+        "sufficient": true
+      },
+      "12": {
+        "forward": {
+          "estimate": 1.0016898188414802,
+          "low": 1.0000414986084905,
+          "high": 1.003260764951916,
+          "n": 30,
+          "draws": 10000
+        },
+        "reverse": {
+          "estimate": 0.9905237610066019,
+          "low": 0.988856707625228,
+          "high": 0.9922980062607918,
+          "n": 30,
+          "draws": 10000
+        },
+        "forward_target_acc": 1.0,
+        "reverse_clean_acc": 1.0,
+        "sufficient": true
+      },
+      "16": {
+        "forward": {
+          "estimate": 1.0064859223180338,
+          "low": 1.0039328873909932,
+          "high": 1.0089507803944366,
+          "n": 30,
+          "draws": 10000
+        },
+        "reverse": {
+          "estimate": 0.9864980161195465,
+          "low": 0.9845437605187299,
+          "high": 0.9883885710240154,
+          "n": 30,
+          "draws": 10000
+        },
+        "forward_target_acc": 1.0,
+        "reverse_clean_acc": 1.0,
+        "sufficient": true
+      },
+      "20": {
+        "forward": {
+          "estimate": 1.021371238289307,
+          "low": 1.0190396945811027,
+          "high": 1.023541093269139,
+          "n": 30,
+          "draws": 10000
+        },
+        "reverse": {
+          "estimate": 0.9901592902760866,
+          "low": 0.9883919814269897,
+          "high": 0.9919452464054841,
+          "n": 30,
+          "draws": 10000
+        },
+        "forward_target_acc": 1.0,
+        "reverse_clean_acc": 1.0,
+        "sufficient": true
+      },
+      "24": {
+        "forward": {
+          "estimate": 1.0266477804560854,
+          "low": 1.0246089404503644,
+          "high": 1.0286228998990854,
+          "n": 30,
+          "draws": 10000
+        },
+        "reverse": {
+          "estimate": 1.0022779420657209,
+          "low": 1.00013238580484,
+          "high": 1.0043719471432344,
+          "n": 30,
+          "draws": 10000
+        },
+        "forward_target_acc": 1.0,
+        "reverse_clean_acc": 1.0,
+        "sufficient": true
+      },
+      "26": {
+        "forward": {
+          "estimate": 1.0226137521433365,
+          "low": 1.0205055176511795,
+          "high": 1.024675603790997,
+          "n": 30,
+          "draws": 10000
+        },
+        "reverse": {
+          "estimate": 1.0049452051390373,
+          "low": 1.002883300256446,
+          "high": 1.0070290583947952,
+          "n": 30,
+          "draws": 10000
+        },
+        "forward_target_acc": 1.0,
+        "reverse_clean_acc": 1.0,
+        "sufficient": true
+      },
+      "32": {
+        "forward": {
+          "estimate": 1.0197808205561492,
+          "low": 1.017258718699177,
+          "high": 1.0223576143845357,
+          "n": 30,
+          "draws": 10000
+        },
+        "reverse": {
+          "estimate": 0.9953032976317686,
+          "low": 0.9932633636156317,
+          "high": 0.9974734268358371,
+          "n": 30,
+          "draws": 10000
+        },
+        "forward_target_acc": 1.0,
+        "reverse_clean_acc": 1.0,
+        "sufficient": true
+      },
+      "36": {
+        "forward": {
+          "estimate": 0.3847485566130729,
+          "low": 0.3784957464874849,
+          "high": 0.3911912369337768,
+          "n": 30,
+          "draws": 10000
+        },
+        "reverse": {
+          "estimate": 0.3352882217970064,
+          "low": 0.330270711330667,
+          "high": 0.34021263372905836,
+          "n": 30,
+          "draws": 10000
+        },
+        "forward_target_acc": 0.0,
+        "reverse_clean_acc": 0.0,
+        "sufficient": false
+      },
+      "41": {
+        "forward": {
+          "estimate": 0.2403104627949935,
+          "low": 0.23596946984483388,
+          "high": 0.24459929209495015,
+          "n": 30,
+          "draws": 10000
+        },
+        "reverse": {
+          "estimate": 0.19202637442740822,
+          "low": 0.18486382356670256,
+          "high": 0.19927990662121173,
+          "n": 30,
+          "draws": 10000
+        },
+        "forward_target_acc": 0.0,
+        "reverse_clean_acc": 0.0,
+        "sufficient": false
+      },
+      "46": {
+        "forward": {
+          "estimate": 0.00016566851387059633,
+          "low": -9.124452782799122e-05,
+          "high": 0.0004445430734584568,
+          "n": 30,
+          "draws": 10000
+        },
+        "reverse": {
+          "estimate": -0.0009277436776753394,
+          "low": -0.0013925387666055345,
+          "high": -0.0004858608353545851,
+          "n": 30,
+          "draws": 10000
+        },
+        "forward_target_acc": 0.0,
+        "reverse_clean_acc": 0.0,
+        "sufficient": false
+      }
+    },
+    "naturalized": {
+      "consequences": {
+        "belief_ac": {
+          "estimate": 1.0115943220713544,
+          "low": 1.0057529129717595,
+          "high": 1.0181487474502495,
+          "n": 30,
+          "draws": 10000
+        },
+        "tell_ac": {
+          "estimate": 0.9959102413729242,
+          "low": 0.9911641103632538,
+          "high": 1.0,
+          "n": 30,
+          "draws": 10000
+        }
+      },
+      "trajectory": {
+        "2": {
+          "checkpoint": {
+            "forward": {
+              "estimate": 6.167192591145967e-05,
+              "low": -0.0008905094782087947,
+              "high": 0.0009840078831663246,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": 0.00022613039500868543,
+              "low": -0.004108425968845117,
+              "high": 0.004945237330694172,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          },
+          "readout": {
+            "forward": {
+              "estimate": 0.00038031020978733466,
+              "low": -0.00014583454901633878,
+              "high": 0.0008529597021193569,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": -0.00045226079001737087,
+              "low": -0.0014138641752685995,
+              "high": 0.0005005174995057727,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          }
+        },
+        "4": {
+          "checkpoint": {
+            "forward": {
+              "estimate": -0.00029808097523872175,
+              "low": -0.0013802723771525237,
+              "high": 0.0007169382537530934,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": -0.0016240273823351047,
+              "low": -0.004417877169547158,
+              "high": 0.0009431556502162958,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          },
+          "readout": {
+            "forward": {
+              "estimate": 3.0835962955729836e-05,
+              "low": -0.0004414410076118846,
+              "high": 0.00049434082740296,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": -0.0006167192591145967,
+              "low": -0.0012726122824944944,
+              "high": 4.150099781460129e-05,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          }
+        },
+        "8": {
+          "checkpoint": {
+            "forward": {
+              "estimate": 8.222923454861289e-05,
+              "low": -0.000974070337224974,
+              "high": 0.001088210788730116,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": 0.0008634069627604353,
+              "low": -0.00242728724833149,
+              "high": 0.004340193561044419,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          },
+          "readout": {
+            "forward": {
+              "estimate": -0.00040086751842448786,
+              "low": -0.0008511339636898876,
+              "high": 3.088271613204965e-05,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": -0.0003494742468316048,
+              "low": -0.0009451441337694188,
+              "high": 0.0002279129840900955,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          }
+        },
+        "12": {
+          "checkpoint": {
+            "forward": {
+              "estimate": 0.000503654061610254,
+              "low": -0.0005486568274913006,
+              "high": 0.0015209207866718867,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": -0.0008222923454861289,
+              "low": -0.0039004184881470073,
+              "high": 0.0023171380525436897,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          },
+          "readout": {
+            "forward": {
+              "estimate": 0.00012334385182291934,
+              "low": -0.00033729140098104327,
+              "high": 0.0005567715357840672,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": -0.0006167192591145967,
+              "low": -0.0014827401689230656,
+              "high": 0.00020490718765350417,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          }
+        },
+        "16": {
+          "checkpoint": {
+            "forward": {
+              "estimate": -0.00020557308637153223,
+              "low": -0.001138984350572932,
+              "high": 0.0006369402967405598,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": -0.002137960098263935,
+              "low": -0.005845791937690752,
+              "high": 0.0013350644835515132,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          },
+          "readout": {
+            "forward": {
+              "estimate": -0.00013362250614149595,
+              "low": -0.0006901117545444216,
+              "high": 0.00042113242544202715,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": -0.0003494742468316048,
+              "low": -0.001056133776417369,
+              "high": 0.0003060571048959972,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          }
+        },
+        "20": {
+          "checkpoint": {
+            "forward": {
+              "estimate": -0.00015417981477864917,
+              "low": -0.0011870555703559485,
+              "high": 0.0008506770595055541,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": -0.001952944320529556,
+              "low": -0.00563837580034452,
+              "high": 0.0018148209421629347,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          },
+          "readout": {
+            "forward": {
+              "estimate": -0.0002364090493272621,
+              "low": -0.0008152817873614383,
+              "high": 0.00032743262004404725,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": -0.001007308123220508,
+              "low": -0.0021060759796097854,
+              "high": 4.063428665809407e-05,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          }
+        },
+        "24": {
+          "checkpoint": {
+            "forward": {
+              "estimate": 0.00016445846909722578,
+              "low": -0.0006529402443006222,
+              "high": 0.0009678784903823875,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": 0.00020557308637153223,
+              "low": -0.002113943665108661,
+              "high": 0.0025315339904520033,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          },
+          "readout": {
+            "forward": {
+              "estimate": -0.00027752366660156855,
+              "low": -0.0008321707562010399,
+              "high": 0.0002788928719132603,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": -0.0009045215800347417,
+              "low": -0.0019198658698906755,
+              "high": 0.00010170352301968534,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          }
+        },
+        "26": {
+          "checkpoint": {
+            "forward": {
+              "estimate": -4.1114617274306444e-05,
+              "low": -0.0007321368056598416,
+              "high": 0.0005950695766055881,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": -0.000185015777734379,
+              "low": -0.0018351073780383405,
+              "high": 0.0014867373249804726,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          },
+          "readout": {
+            "forward": {
+              "estimate": -0.0004830967529731008,
+              "low": -0.0011435068627126876,
+              "high": 0.00019131482472522227,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": 0.0005550473332031371,
+              "low": -0.0011575843152258054,
+              "high": 0.002273556042323311,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          }
+        },
+        "32": {
+          "checkpoint": {
+            "forward": {
+              "estimate": 9.25078888671895e-05,
+              "low": -0.00027853481369265887,
+              "high": 0.0004790497742019011,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": 6.167192591145967e-05,
+              "low": -0.0003162832107373043,
+              "high": 0.00045197612989953035,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          },
+          "readout": {
+            "forward": {
+              "estimate": 0.01787457986000473,
+              "low": 0.013754009046052632,
+              "high": 0.022149201958568607,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": -0.035451078744770735,
+              "low": -0.049527352623970775,
+              "high": -0.02233323757885959,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          }
+        },
+        "36": {
+          "checkpoint": {
+            "forward": {
+              "estimate": 6.167192591145967e-05,
+              "low": -0.0002339319357305505,
+              "high": 0.00035153623677077964,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": 0.00012334385182291934,
+              "low": -0.00022381412849065482,
+              "high": 0.0004597740798452101,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          },
+          "readout": {
+            "forward": {
+              "estimate": 0.6553156060808518,
+              "low": 0.6327841567833474,
+              "high": 0.678702358056681,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": 0.5867467031216272,
+              "low": 0.5603615095522884,
+              "high": 0.6117482493741584,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.9666666587193807,
+            "sufficient": false
+          }
+        },
+        "41": {
+          "checkpoint": {
+            "forward": {
+              "estimate": 0.00010278654318576612,
+              "low": -0.00017351126558115825,
+              "high": 0.0003665942058000964,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": 8.222923454861289e-05,
+              "low": -8.186729081972593e-05,
+              "high": 0.0002496158906272396,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          },
+          "readout": {
+            "forward": {
+              "estimate": 0.7739518342258632,
+              "low": 0.7656686946790504,
+              "high": 0.7828287095283538,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": 0.7664586952276208,
+              "low": 0.7516001734731438,
+              "high": 0.7813576708761597,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.8333333333333334,
+            "reverse_clean_acc": 1.0,
+            "sufficient": true
+          }
+        },
+        "46": {
+          "checkpoint": {
+            "forward": {
+              "estimate": -7.195058023003629e-05,
+              "low": -0.0001758503664150958,
+              "high": 3.0346603894782824e-05,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": -2.0557308637153222e-05,
+              "low": -0.00016517966297626427,
+              "high": 0.0001233506350353677,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 0.0,
+            "reverse_clean_acc": 0.0,
+            "sufficient": false
+          },
+          "readout": {
+            "forward": {
+              "estimate": 1.0011717665923179,
+              "low": 0.9995388648895231,
+              "high": 1.0025483645318192,
+              "n": 30,
+              "draws": 10000
+            },
+            "reverse": {
+              "estimate": 0.9916228967303601,
+              "low": 0.9902826718355616,
+              "high": 0.9928082043785643,
+              "n": 30,
+              "draws": 10000
+            },
+            "forward_target_acc": 1.0,
+            "reverse_clean_acc": 1.0,
+            "sufficient": true
+          }
+        }
+      }
+    }
   }
 }

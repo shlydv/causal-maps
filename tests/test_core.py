@@ -18,7 +18,8 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
 from causal_maps import nulls  # noqa: E402
 from causal_maps.model_utils import (  # noqa: E402
-    _bnb_config_kwargs, _load_dtype_and_map, logit_diff, single_token_id,
+    _bnb_config_kwargs, _load_dtype_and_map, get_decoder_layers, logit_diff,
+    model_hidden_size, model_num_hidden_layers, single_token_id,
     validate_single_token)
 from causal_maps.patching import cache_layer_outputs, forward_with_patch, sweep_ie  # noqa: E402
 from causal_maps.tensorize import tensorize_pairs  # noqa: E402
@@ -305,6 +306,17 @@ def test_forward_add_multi():
     check("multi-add: pos0 unchanged", torch.allclose(diff[:, 0, :], torch.zeros(B, D), atol=1e-4))
 
 
+def test_multimodal_text_wrapper():
+    layers = [object(), object(), object()]
+    model = SimpleNamespace(
+        config=SimpleNamespace(
+            text_config=SimpleNamespace(num_hidden_layers=3, hidden_size=17)),
+        model=SimpleNamespace(language_model=SimpleNamespace(layers=layers)))
+    check("nested text config: layer count", model_num_hidden_layers(model) == 3)
+    check("nested text config: hidden size", model_hidden_size(model) == 17)
+    check("nested Gemma wrapper: decoder layers", get_decoder_layers(model) is layers)
+
+
 def main():
     print("== pure math =="); test_logit_diff(); test_nulls(); test_quantization_recipe()
     print("== hooks/sweep (tensor return, 5.x) =="); test_hooks_and_sweep(False)
@@ -312,6 +324,7 @@ def main():
     print("== patch overwrite =="); test_patch_overwrites_value()
     print("== tensorize =="); test_tensorize()
     print("== multi-add =="); test_forward_add_multi()
+    print("== multimodal text wrapper =="); test_multimodal_text_wrapper()
     print(f"\n{len(PASS)} passed, {len(FAIL)} failed")
     if FAIL:
         print("FAILED:", FAIL)

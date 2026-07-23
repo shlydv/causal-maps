@@ -135,8 +135,8 @@ def load_model_and_tokenizer(model_path, device=None, dtype=torch.bfloat16,
     if quantization is None and device_map is None:
         model.to(device or pick_device())
     model.eval()
-    log(f"loaded: layers={model.config.num_hidden_layers} "
-        f"hidden={model.config.hidden_size} input_device={input_device(model)}")
+    log(f"loaded: layers={model_num_hidden_layers(model)} "
+        f"hidden={model_hidden_size(model)} input_device={input_device(model)}")
     return model, tok
 
 
@@ -146,13 +146,35 @@ def input_device(model):
     return model.get_input_embeddings().weight.device
 
 
+def model_text_config(model):
+    """Return the decoder-text config for text-only and multimodal wrappers."""
+    return getattr(model.config, "text_config", model.config)
+
+
+def model_num_hidden_layers(model):
+    return int(model_text_config(model).num_hidden_layers)
+
+
+def model_hidden_size(model):
+    return int(model_text_config(model).hidden_size)
+
+
 def get_decoder_layers(model):
-    """The ModuleList of decoder layers (Qwen2/LLaMA-style: model.model.layers).
+    """Return decoder layers through text-only or multimodal model wrappers.
+
+    Qwen/LLaMA expose ``model.model.layers``. Gemma 3 conditional-generation
+    checkpoints wrap the text stack as ``model.model.language_model.layers``.
     Each layer's forward output is the post-layer residual stream; in
     transformers 5.x it is returned as a bare tensor (older: a tuple)."""
-    if hasattr(model, "model") and hasattr(model.model, "layers"):
-        return model.model.layers
-    raise AttributeError("decoder layers not found (expected model.model.layers)")
+    base = getattr(model, "model", None)
+    if base is not None and hasattr(base, "layers"):
+        return base.layers
+    language_model = getattr(base, "language_model", None)
+    if language_model is not None and hasattr(language_model, "layers"):
+        return language_model.layers
+    raise AttributeError(
+        "decoder layers not found (expected model.model.layers or "
+        "model.model.language_model.layers)")
 
 
 def single_token_id(tokenizer, word, leading_space=True):

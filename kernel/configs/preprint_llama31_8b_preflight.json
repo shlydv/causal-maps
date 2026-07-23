@@ -1,0 +1,5 @@
+{
+  "model_path": "/kaggle/input/**/8b-instruct/**/config.json",
+  "n_world": 30,
+  "required_gpu": "Tesla T4"
+}

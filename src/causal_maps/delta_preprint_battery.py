@@ -8,6 +8,7 @@ PREPRINT_PLAN.md M1/M2 vehicle (pre-registered widening, 2026-07-15):
     3. anchor-write         (all 30 distinct structured worlds, 99 nulls)
     4. checkpoint trajectory (STATECHECK primary plus question/readout
                               controls, full-depth layer sweep)
+    5. optional reverse-base verbalization discriminator (M5)
 
 All protocols identical to the frozen originals except the pre-registered
 row widening and seed sweep; original runs stand as pilots. Sub-results are
@@ -29,7 +30,8 @@ from .delta_structured_workspace import (QUERY, _accuracy, _batch,
 from .delta_trajectory import _forward, _ld
 from .delta_workspace_matrix import run_delta_workspace_matrix
 from .logutil import Heartbeat, log
-from .model_utils import input_device, load_model_and_tokenizer
+from .model_utils import (input_device, load_model_and_tokenizer,
+                          model_num_hidden_layers)
 
 CHECKPOINT_LAYERS = (2, 4, 8, 12, 16, 20, 24, 26)
 
@@ -92,6 +94,71 @@ def _compatible_world_rows(tok, dev, requested):
     return rows, selected
 
 
+def run_delta_preprint_v2_preflight(model_path, out_dir, n_world=30):
+    """Tokenizer-only validation for the frozen 14B v2 launch."""
+    from transformers import AutoTokenizer
+    from .delta_verbalization import (_render_v, _reverse_base_verdict,
+                                      _uniform_diff, _vline_cube)
+
+    os.makedirs(out_dir, exist_ok=True)
+    resolved = _resolve(model_path)
+    tok = AutoTokenizer.from_pretrained(resolved)
+    rows, indices = _compatible_world_rows(
+        tok, torch.device("cpu"), n_world)
+    rome_rows = _counterfactual(rows, {"ac": TARGET})
+    anchors = {}
+
+    def B(rws, query, vline):
+        return _batch(
+            tok, rws, query, "narrative", torch.device("cpu"),
+            render_fn=lambda row: _render_v(tok, row, query, vline, "after"))
+
+    for query in ("belief_ac", "tell_ac"):
+        rome = B(rome_rows, query, _vline_cube(TARGET))
+        hist_p_v_r = B(rows, query, _vline_cube(TARGET))
+        hist_r_v_p = B(rome_rows, query, _vline_cube(SOURCE))
+        a_h = _uniform_diff(rome, hist_p_v_r)
+        a_v = _uniform_diff(rome, hist_r_v_p)
+        assert a_h != a_v
+        anchors[query] = {"history": a_h, "verbalization": a_v,
+                          "sequence_length": int(rome["ids"].shape[1])}
+
+    cases = {
+        "quorum": {"g0": [1.0, 1.0],
+                   "history_reverse": {"rome_acc": 1.0,
+                                       "paris_acc": 0.0},
+                   "verbal_reverse": {"rome_acc": 1.0,
+                                      "paris_acc": 0.0},
+                   "both_reverse": {"paris_acc": 1.0, "lam": 1.0}},
+        "prior": {"g0": [1.0, 1.0],
+                  "history_reverse": {"rome_acc": 0.0,
+                                      "paris_acc": 1.0},
+                  "verbal_reverse": {"rome_acc": 0.0,
+                                     "paris_acc": 1.0},
+                  "both_reverse": {"paris_acc": 1.0, "lam": 1.0}},
+    }
+    verdicts = {name: _reverse_base_verdict(panel)
+                for name, panel in cases.items()}
+    assert verdicts == {
+        "quorum": "QUORUM_REPLICATES_REVERSE_BASE",
+        "prior": "PARIS_PRIOR_REPLICATES_REVERSE_BASE",
+    }
+    layers = _full_depth_layers(48)
+    assert max(layers) == 46 and 32 in layers and 41 in layers
+    result = {"stage": "delta_preprint_v2_preflight",
+              "model_path": model_path, "resolved_model_path": resolved,
+              "requested_worlds": n_world, "selected_worlds": len(rows),
+              "indices_from_30": indices, "reverse_anchors": anchors,
+              "checkpoint_layers_48": layers,
+              "verdict_unit_cases": verdicts, "verdict": "PREFLIGHT_PASS"}
+    with open(os.path.join(out_dir, "results_preprint_v2_preflight.json"),
+              "w") as f:
+        json.dump(result, f, indent=2)
+    log(f"PREPRINT V2 PREFLIGHT PASS: worlds={len(rows)} anchors={anchors} "
+        f"layers={layers}")
+    return result
+
+
 @torch.no_grad()
 def _checkpoint_cell(model, tok, dev, layers, rows, query="belief_ac"):
     """Matched causal trajectory with a query-independent primary site.
@@ -111,7 +178,7 @@ def _checkpoint_cell(model, tok, dev, layers, rows, query="belief_ac"):
     assert len(set(q_positions)) == 1, f"nonuniform question sites: {q_positions}"
     sites = {"checkpoint": marker, "question_end": q_positions[0],
              "readout": int(cb["ids"].shape[1] - 1)}
-    layers = _full_depth_layers(int(model.config.num_hidden_layers), layers)
+    layers = _full_depth_layers(model_num_hidden_layers(model), layers)
     positions = tuple(sites.values())
     cl, cc = _forward(model, cb["ids"], cb["am"], positions, tuple(layers))
     nl, nc = _forward(model, nb["ids"], nb["am"], positions, tuple(layers))
@@ -167,6 +234,7 @@ def run_delta_preprint_battery(model_path, out_dir, model_key="model",
                                matrix_null=50, entity_null=30,
                                anchor_null=99,
                                run_probe=False, probe_reps=6,
+                               run_quorum=False,
                                skip=()):
     os.makedirs(out_dir, exist_ok=True)
     model, tok = load_model_and_tokenizer(
@@ -180,6 +248,9 @@ def run_delta_preprint_battery(model_path, out_dir, model_key="model",
                      "world": n_world},
                "n_null": {"matrix": matrix_null, "entity": entity_null,
                           "anchor": anchor_null},
+               "diagnostics": {"run_probe": bool(run_probe),
+                               "probe_reps": int(probe_reps),
+                               "run_quorum": bool(run_quorum)},
                "per_seed": {}, "skipped": list(skip)}
 
     world_rows, world_indices = _compatible_world_rows(
@@ -235,6 +306,14 @@ def run_delta_preprint_battery(model_path, out_dir, model_key="model",
             max_memory=max_memory, layers=checkpoint_layers,
             n_reps=probe_reps, model=model, tok=tok)
 
+    if run_quorum and "quorum" not in skip:
+        from .delta_verbalization import run_reverse_base_quorum
+        log(f"=== [{model_key}] reverse-base quorum control ===")
+        results["reverse_base"] = run_reverse_base_quorum(
+            model_path, os.path.join(out_dir, "reverse_base"),
+            quantization=quantization, device_map=device_map,
+            seed=0, model=model, tok=tok, clean_rows=world_rows)
+
     # compact cross-seed summary for the paper tables
     summ = {}
     for name, getter in (
@@ -249,6 +328,8 @@ def run_delta_preprint_battery(model_path, out_dir, model_key="model",
             .get(surface, {}).get("checkpoint", {}).get("accuracy")
             for surface in ("ledger", "narrative")
         }
+    if run_quorum:
+        summ["reverse_base"] = results.get("reverse_base", {}).get("verdict")
     results["summary"] = summ
     with open(os.path.join(out_dir,
                            f"results_delta_preprint_battery_{model_key}.json"),

@@ -1,0 +1,15 @@
+{
+  "model_path": "/kaggle/input/**/ai21-jamba-reasoning-3b/**/config.json",
+  "model_key": "jamba_reasoning_3b_confirm",
+  "quantization": "8bit",
+  "seeds": [0, 1, 2],
+  "n_matrix": 30,
+  "n_entity": 30,
+  "n_world": 30,
+  "matrix_null": 50,
+  "entity_null": 30,
+  "anchor_null": 99,
+  "run_probe": false,
+  "run_quorum": false,
+  "required_gpu": "Tesla T4"
+}

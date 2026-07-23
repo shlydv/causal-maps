@@ -1,0 +1,5 @@
+{
+  "model_path": "/kaggle/input/**/ai21-jamba-reasoning-3b/**/config.json",
+  "n_world": 30,
+  "required_gpu": "Tesla T4"
+}

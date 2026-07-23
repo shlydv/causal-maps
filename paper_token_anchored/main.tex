@@ -9,6 +9,8 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
 \usepackage{enumitem}
+\usepackage{placeins}
+\usepackage{float}
 
 \input{generated/pilot_results.tex}
 
@@ -20,32 +22,24 @@
 \maketitle
 
 \begin{abstract}
-Where can the transient state of an in-context task be causally edited? We
-compare textual counterfactuals with residual-stream writes in decoder-only
-language models and find a sharp asymmetry between two candidate storage
-sites. A value displacement extracted from neutral carrier prompts, added at
-the token where a value is \emph{stated}, reproduces the full effect of
-editing the text itself: in widened Qwen2.5-7B and Mistral-7B confirmations
-it passes all thirty pre-registered workspace tests spanning retrieval,
-arithmetic, comparison, and rule-based classification (effect ratios
-\ConfirmMistralRatioMin{}--\ConfirmQwenRatioMax{}), produces each wrong
-value's own consequence rather than a generic shift, and edits one entity
-while leaving its neighbors untouched. In a controlled belief world, the same
-write at a source anchor matches the natural counterfactual effect
-(\ConfirmQwenAnchorBelief{} in Qwen, \ConfirmMistralAnchorBelief{} in
-Mistral; the small overshoot is statistically resolvable and we discuss it),
-and its consequences propagate through an in-context rule. Transplanting
-complete matched state at a designated query-independent summary token, by
-contrast, moves at most \ConfirmQwenCheckpointMax{} of the natural effect at
-any tested depth in either family---even though the identical transplant
-becomes strongly causal at the late, query-specific readout
-(\ConfirmQwenReadoutMax{}), so the method demonstrably detects transportable
-state where it exists. These results support a specific hypothesis: in these
-tasks, bound values remain causally accessible at the tokens where they were
-stated and are recomputed at query time, rather than consolidated into the
-tested summary register. The claim is deliberately local: an editable
-interface in the tested prompt families, not the absence of distributed or
-alternative state representations.
+Where can the transient state of an in-context task be causally edited? Across
+Qwen, Mistral, DeepSeek-Llama, and Gemma, a residual value write applied where
+a fact is stated reproduces textual-counterfactual effects on retrieval,
+computation, and relational inference. We then perform an exhaustive
+mechanistic analysis in Qwen2.5-14B. In a controlled belief world, source-anchor
+writes match direct and inferred consequences, whereas transplanting complete
+matched state at a designated summary token moves at most
+\ConfirmQwenFourteenCheckpointMax{} of the natural effect despite 100\%
+within-surface decoding. Locus controls show that the edited source anchor
+alone is sufficient through layer \ConfirmCloseoutExactLastLayer{}; its effect
+then falls as a query-specific readout becomes sufficient. On 30 held-out
+worlds in three longer prose styles, belief transfer replicates at
+\ConfirmNaturalAnchorBelief{} (95\% CI \ConfirmNaturalAnchorBeliefCI{}), with
+the same checkpoint/readout dissociation. Prespecified behavioral gates fail
+for naturalized report and address-specificity arms, which we retain as a
+boundary. The evidence supports writable source anchors followed by a late
+query-conditioned handoff---a local causal mechanism, not proof that
+alternative or distributed state representations are absent.
 \end{abstract}
 
 \section{Introduction}
@@ -68,6 +62,15 @@ rimsky2024steering}; task-vector work shows that compact activations can mediate
 in-context functions \citep{hendel2023task,todd2024function}. Neither fact by
 itself determines how a transformer stores bound, temporary data.
 
+The distinction also has practical consequences. An editor aimed at the wrong
+site may change an answer without updating the state that supports related
+answers; a diagnostic may confuse readable traces with a component the model
+actually uses. Locating a write interface together with its downstream handoff
+therefore offers a stricter test for coherent editing, helps separate content
+failures from routing failures, and provides a way to evaluate whether a
+steering or safety intervention changes upstream task state or only the final
+output.
+
 We introduce controlled tests that compare a textual counterfactual with an
 activation-space write. For a source value $a$ and target value $b$, we extract
 neutral-carrier states $z(a)$ and $z(b)$ and add
@@ -78,7 +81,7 @@ at the prompt position where $a$ occurs. The critical metric is not whether the
 output changes, but whether the intervention reproduces the effect of replacing
 $a$ by $b$ in the text, including downstream consequences and invariants.
 
-Our current evidence supports three increasingly strong observations:
+Our evidence supports four increasingly strong observations:
 \begin{enumerate}[leftmargin=1.4em]
     \item \textbf{Writable value state.} Early residual differences behave as
     data writes across multiple computations and model families.
@@ -88,12 +91,26 @@ Our current evidence supports three increasingly strong observations:
     controlled belief world, the source anchor is writable while a designated
     query-independent checkpoint is causally inert under matched state
     transplantation.
+    \item \textbf{Query-conditioned handoff.} Minimal and multi-token locus
+    interventions place sufficient causal support at source anchors through
+    middle depth; that support then disappears as a late, query-specific
+    readout becomes sufficient.
 \end{enumerate}
 
-The third observation is the paper's mechanistic hypothesis, not yet a universal
-architectural law. Our confirmatory protocol therefore widens examples, tests
-late layers and query-specific sites, measures linear decodability with grouped
-held-out worlds, and seeks an independent-family replication.
+The last two observations form the paper's mechanistic hypothesis, not a universal
+architectural law. Our confirmatory protocol widens examples, tests late layers
+and query-specific sites, measures linear decodability with grouped held-out
+worlds, includes independent-family replications, and closes with a frozen
+held-out naturalized-surface test. The final test is deliberately reported as
+a split result: the central belief/checkpoint/readout contrast replicates, but
+two behavioral gates fail and therefore bound the broader claim.
+
+The exhaustive probe, locus, and naturalized analyses are conducted on
+Qwen2.5-14B; Qwen2.5-7B, Mistral-7B, DeepSeek-Llama-8B, and Gemma-3-12B test
+which parts replicate across models. In one sentence, our main contribution is
+a depth-dependent causal account: prompt-bound values are editable at their
+source anchors through middle depth and become substitutable at a late,
+query-conditioned readout, while the tested summary checkpoint remains inert.
 
 \section{Related work}
 
@@ -114,6 +131,19 @@ intervention can recruit off-distribution or dormant mechanisms
 \citep{makelov2024illusion}. We therefore compare writes against natural
 counterfactual effects, require wrong-value and wrong-address controls, and do
 not equate decodability with causal storage.
+
+\paragraph{Reliability and statistical variation.}
+Steering effects can vary across inputs, layers, and evaluation criteria
+\citep{tan2024generalisation,braun2025unreliability}, while causal
+interventions may create representations that diverge from the natural
+computation they are meant to model \citep{grant2026divergent}. Mechanistic
+measurements should therefore be treated as statistical estimates over inputs,
+not properties certified by repeated intervention seeds
+\citep{meloux2025variance}. Our frozen gates, distinct-row uncertainty,
+bidirectional swaps, and natural-textual upper bound operationalize these
+concerns. Recent demonstrations that single-position interventions can miss
+distributed output templates \citep{cheng2026single} specifically motivate our
+multi-token, full-prefix, and size-matched locus controls.
 
 \paragraph{Editing versus locating knowledge.}
 Knowledge-editing work has documented dissociations between the site at which
@@ -196,7 +226,21 @@ structured-world nuisance pairs when tokenizer alignment permits. Workspace
 and entity generators use three genuine row seeds. The structured anchor uses
 one exhaustive row set; repeated random-direction seeds are not presented as
 independent data. Full details, gates, and stopping rules appear in the
-supplementary protocol.
+supplementary protocol. Model coverage comprises Qwen2.5-7B and Qwen2.5-14B
+\citep{yang2024qwen25}, Mistral-7B \citep{jiang2023mistral},
+DeepSeek-R1-Distill-Llama-8B \citep{deepseek2025r1}, and Gemma-3-12B
+\citep{gemmateam2025gemma3}.
+The final closeout is fixed before execution: an exact edited-anchor-only sweep
+over 12 layers and 30 new Tokyo-to-Delhi worlds divided equally among case
+notes, witness transcripts, and curator narratives. No prompt, layer, surface,
+or model rescue is permitted after seeing this result.
+
+Uncertainty is computed over distinct rows. We report paired row-bootstrap
+95\% intervals (10,000 resamples) for effect ratios and finite randomization
+$p$-values against prespecified same-norm directions. A causal result is
+interpreted only when clean and textual-counterfactual behavior pass the
+frozen accuracy gate; failure of that gate is an identification boundary, not
+a zero causal effect.
 
 \section{Results}
 
@@ -211,12 +255,17 @@ also satisfies target-accuracy, wrong-value consequence, and same-norm random
 direction gates. The earlier Phi-3.5 pilot passes \PilotPhiComputePass{}/4
 compute cells but misses the frozen family-level criterion, illustrating why
 cell-level measurements and verdict logic are reported separately.
+DeepSeek-Llama passes all \ConfirmDeepseekMatrixEligible{} eligible
+seed--cells; its rule-label cell is behaviorally ineligible across seeds.
+Gemma-3-12B provides the strongest independent-family replication, passing all
+\ConfirmGemmaMatrixPass{}/15 cells with ratios
+\ConfirmGemmaRatioMin{}--\ConfirmGemmaRatioMax{}.
 
 \begin{table}[t]
 \centering
-\caption{Confirmatory workspace results. Every cell is evaluated on 30
-distinct rows under each of three row-generation seeds; ratio ranges span all
-15 seed--cell tests per model.}
+\caption{Confirmatory workspace results. Every seed--cell is evaluated on 30
+distinct rows. Ratio ranges span behaviorally eligible tests; ineligible cells
+are excluded before causal adjudication.}
 \begin{tabular}{lccc}
 \toprule
 Model & Seed--cells passed & Ratio range & Family verdict \\
@@ -226,10 +275,27 @@ Qwen2.5-7B & \ConfirmQwenMatrixPass{}/15 &
 Mistral-7B & \ConfirmMistralMatrixPass{}/15 &
 \ConfirmMistralRatioMin{}--\ConfirmMistralRatioMax{} & general (3/3 seeds) \\
 Phi-3.5-mini (pilot) & \PilotPhiComputePass{}/4 compute & --- & below gate \\
+DeepSeek-R1-Distill-Llama-8B &
+\ConfirmDeepseekMatrixPass{}/\ConfirmDeepseekMatrixEligible{} eligible &
+\ConfirmDeepseekRatioMin{}--\ConfirmDeepseekRatioMax{} & general (3/3 seeds) \\
+Gemma-3-12B & \ConfirmGemmaMatrixPass{}/15 &
+\ConfirmGemmaRatioMin{}--\ConfirmGemmaRatioMax{} & general (3/3 seeds) \\
 \bottomrule
 \end{tabular}
 \label{tab:pilot-matrix}
 \end{table}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/family-overview.pdf}
+    \caption{\textbf{Cross-family confirmation.} (a) Mean effect ratios for
+    each workspace computation; gray denotes a failed behavioral gate rather
+    than a causal negative. (b) Across five model/scale runs, source-anchor and
+    late-readout effects are orders of magnitude larger than the maximum
+    designated-checkpoint effect. The log scale makes the checkpoint values
+    visible.}
+    \label{fig:family-overview}
+\end{figure}
 
 \subsection{The write propagates through a two-hop world model}
 
@@ -242,7 +308,12 @@ cell passes in \ConfirmQwenSpecificityPass{}/3 seeds with exactly zero shift;
 the remaining seed is behaviorally ineligible, not a mechanistic failure. The
 keys surface and Mistral entity two-hop cells fail behavioral eligibility at
 $n=30$ and are not counted as causal negatives. A Qwen2.5-14B pilot independently
-matches the city two-hop natural effect at \PilotCityTwoHopRatio{}.
+matches the city two-hop natural effect at \PilotCityTwoHopRatio{}. Gemma
+independently passes city retrieval and two-hop inference in all three row
+sets, with ratios \ConfirmGemmaCityTwoHopMin{}--
+\ConfirmGemmaCityTwoHopMax{} and zero unrelated-entity shift. Its keys
+two-hop arm is behaviorally ineligible, reproducing the task rather than
+intervention boundary.
 
 \subsection{Source anchors and a designated checkpoint dissociate}
 
@@ -266,80 +337,225 @@ are \ConfirmMistralAnchorBelief{} (95\% interval
 \ConfirmMistralAnchorBeliefCI{}) and \ConfirmMistralAnchorTell{}, all four
 invariants and wrong-address controls are perfect, and $p=\ConfirmAnchorP$.
 
+The exhaustive Qwen2.5-14B confirmation closes the earlier small pilot's strict
+composite verdict. Across \ConfirmQwenFourteenAnchorN{} aligned worlds, the
+belief write reaches \ConfirmQwenFourteenAnchorBelief{} of the natural effect
+(paired bootstrap 95\% interval \ConfirmQwenFourteenAnchorBeliefCI{}) and the
+reporting consequence reaches \ConfirmQwenFourteenAnchorTell{}. Target
+accuracy, all four invariants, and address specificity are each 100\%, yielding
+the frozen verdict \texttt{TOKEN\_ANCHORED\_CONFIRMED}.
+
+Gemma-3-12B confirms the strict composite result in a second independent
+family. Its belief ratio is \ConfirmGemmaAnchorBelief{} (95\% interval
+\ConfirmGemmaAnchorBeliefCI{}) and its reporting ratio is
+\ConfirmGemmaAnchorTell{}; all invariant and wrong-address gates remain at
+100\%. Its checkpoint maximum is only \ConfirmGemmaCheckpointMax{}, while its
+late readout reaches \ConfirmGemmaReadoutMax{} with perfect forward and reverse
+accuracy at the final tested layer.
+
 By contrast, full-state transplantation at \texttt{STATECHECK} reaches at most
 \ConfirmQwenCheckpointMax{} of the matched natural effect in Qwen and
-\ConfirmMistralCheckpointMax{} in Mistral over full-depth grids. This is not a
-generic patching failure: at the query-specific final readout, the matched state
-becomes causally transportable late in depth, reaching
-\ConfirmQwenReadoutMax{} and \ConfirmMistralReadoutMax{}, respectively.
+\ConfirmMistralCheckpointMax{} in Mistral over full-depth grids, and only
+\ConfirmQwenFourteenCheckpointMax{} across all 48 layers at Qwen2.5-14B. This
+is not a generic patching failure: at the query-specific final readout, the
+matched state becomes causally transportable late in depth, reaching
+\ConfirmQwenReadoutMax{}, \ConfirmMistralReadoutMax{}, and
+\ConfirmQwenFourteenReadoutMax{}, respectively.
+
+Nor is the checkpoint null explained by an absence of information. Nested
+grouped cross-validation decodes the eight held-out world labels at
+\ConfirmQwenFourteenProbeCheckpointLedger{} accuracy on the ledger surface and
+\ConfirmQwenFourteenProbeCheckpointNarrative{} on a narrative paraphrase
+(chance 12.5\%). Yet probes trained on one surface transfer to the other at
+only \ConfirmQwenFourteenProbeCheckpointCross{} at the checkpoint, while the
+anchor code transfers at 100\% in both directions. Thus the checkpoint contains
+highly readable but surface-specific traces; decodability there does not imply
+a shared, causally substitutable relational register.
+
+DeepSeek-R1-Distill-Llama-8B broadens the causal trajectory to a Llama-family
+architecture. Its intended anchor consequences are strong: belief ratio
+\ConfirmDeepseekAnchorBelief{} (95\% interval
+\ConfirmDeepseekAnchorBeliefCI{}) and report ratio
+\ConfirmDeepseekAnchorTell{}, both at 100\% target accuracy. The strict anchor
+verdict is nevertheless partial: after the write, an unrelated same-valued
+belief has only \ConfirmDeepseekInvariantBeliefBC{} accuracy, and the
+wrong-address intervention fails its own-target gate. This is evidence for a
+portable content write but not a universally addressed binding interface. The
+checkpoint/readout dissociation survives this boundary: the full-depth
+checkpoint maximum is \ConfirmDeepseekCheckpointMax{}, while the late readout
+reaches \ConfirmDeepseekReadoutMax{} with perfect forward and reverse accuracy.
+
+\subsection{Minimal causal support moves from the source to the readout}
+
+The checkpoint null leaves open a distributed-code objection: perhaps the
+correct query-independent state exists, but no single summary position is a
+sufficient intervention target. We therefore sweep matched-state swaps at the
+marker, the full local summary span, all six source anchors, cumulative and
+leave-one-out source sets, the entire pre-query prefix, and three seeded
+size-matched random loci. Exact full-prefix swaps reproduce the donor run at
+every layer, validating the intervention implementation.
+
+From L2 through L\ConfirmLocusLastSufficientLayer{}, the six source-anchor
+states are bidirectionally sufficient: forward ratios range from
+\ConfirmLocusSourceForwardMin{} to \ConfirmLocusSourceForwardMax{} and reverse
+ratios from \ConfirmLocusSourceReverseMin{} to
+\ConfirmLocusSourceReverseMax{}, with 100\% behavioral recovery. Removing the
+edited Alice-cube anchor collapses the effect to at most
+\ConfirmLocusNoAcMax{}, whereas removing any other anchor preserves it. The
+marker, summary, and size-matched random maxima are respectively
+\ConfirmLocusMarkerMax{}, \ConfirmLocusSummaryMax{}, and
+\ConfirmLocusRandomMax{}. The frozen exact single-anchor closeout then confirms
+that the edited anchor alone is sufficient over precisely the same L2--L32
+interval. Its forward effect drops to \ConfirmLocusLThirtySix{} at L36,
+\ConfirmLocusLFortyOne{} at L41, and \ConfirmLocusLFortySix{} at L46 while the
+query-specific readout rises. Thus the data identify a causal handoff rather
+than a permanently privileged token.
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=\linewidth]{figures/confirm_effect_matching.pdf}
-    \caption{\textbf{Confirmatory effect matching.} Left: early neutral-carrier
-    writes reproduce textual-counterfactual effects across direct and computed
-    workspace cells in two model families. Right: in the structured-belief
-    world, the source-anchor write matches the natural effect while full-state
-    transplantation at the designated query-independent checkpoint is nearly
-    inert; matched state becomes causally sufficient at the late readout.}
-    \label{fig:pilot-effect-matching}
+    \includegraphics[width=\linewidth]{figures/causal-handoff.pdf}
+    \caption{\textbf{A causal handoff and a decodability--substitutability
+    dissociation.} (a) The exact edited source anchor is sufficient through
+    L32 and then loses causal load as the late readout becomes sufficient; the
+    designated checkpoint stays near zero. The band spans forward and reverse
+    source swaps. (b) Within-surface linear decoding is perfect at both anchor
+    and checkpoint, but cross-surface decoding and causal substitution sharply
+    distinguish them.}
+    \label{fig:causal-handoff}
 \end{figure}
 
-\subsection{Verbalization redistributes, but does not cleanly relocate, causal load}
+\subsection{Held-out prose preserves the central contrast, with a boundary}
+
+The final frozen run changes both the transition (Tokyo to Delhi) and the
+surface form. Thirty new worlds are split evenly among longer case notes,
+witness transcripts, and curator narratives. The belief write matches
+\ConfirmNaturalAnchorBelief{} of the natural effect (95\% interval
+\ConfirmNaturalAnchorBeliefCI{}), reaches 100\% target accuracy, and exceeds
+all 20 same-norm random directions ($p=\ConfirmNaturalNullP$). Across the same
+rows, the designated checkpoint moves at most
+\ConfirmNaturalCheckpointMax{} of the natural effect and the late readout
+becomes sufficient from L\ConfirmNaturalReadoutFirstLayer{}, reaching
+\ConfirmNaturalReadoutMax{}.
+
+The composite closeout nevertheless returns
+\texttt{\ConfirmCloseoutVerdict}. The model solves only
+\ConfirmNaturalTellTargetAcc{} of the naturalized report counterfactuals,
+below the frozen 80\% gate, despite a clean accuracy of
+\ConfirmNaturalTellCleanAcc{} and a numerical write ratio of
+\ConfirmNaturalAnchorTell{}. The unrelated-belief control is likewise below
+gate before intervention (\ConfirmNaturalInvariantClean{} clean;
+\ConfirmNaturalInvariant{} after the write). Consequently these rows cannot
+identify naturalized report transfer or address specificity. We retain the
+positive belief/checkpoint/readout result and report the two failed behavioral
+gates as the prespecified surface boundary; no prompt or model rescue is run.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/naturalized-closeout.pdf}
+    \caption{\textbf{Held-out naturalized closeout.} (a) Paired-bootstrap 95\%
+    intervals for the two numerical effect ratios. Belief transfer is
+    behaviorally eligible and beats the random-direction panel. The report
+    ratio is shown descriptively only. (b) Frozen behavioral gates explain the
+    split verdict: belief passes, while the report target and unrelated-belief
+    baseline do not. Red bars are identification failures, not causal zeros.}
+    \label{fig:naturalized-closeout}
+\end{figure}
+\FloatBarrier
+
+\subsection{A reverse-base control rejects the quorum interpretation}
 
 Without an explicit verbalized belief, the history-anchor write retains
 \PilotVerbalHistoryNoV{} of the natural effect. Adding a contradictory
 verbalization reduces the history-only intervention to
 \PilotVerbalHistoryV{}, while editing both history and verbalization restores
-\PilotVerbalBoth{}. This is consistent with corroborating textual witnesses
-rather than a relocation of state, complementing the trained-scratchpad
-registers of \citet{shih2026registers}: in stock models, a written statement
-appears to join, not replace, the original anchor. A lexical-prior confound
-remains, and we report the result as mixed unless the pre-registered
-reverse-base control resolves that ambiguity.
+\PilotVerbalBoth{}. This initially admitted a corroborating-witness or quorum
+interpretation, but that interpretation was confounded with a Paris/default
+prior. The pre-registered reverse-base control begins from two Rome-consistent
+sites and applies the Paris-minus-Rome write. Editing history alone produces
+\ConfirmReverseHistory{} of the full natural effect, editing verbalization
+alone produces \ConfirmReverseVerbal{}, and editing both produces
+\ConfirmReverseBoth{}; both one-site conditions select Paris rather than the
+untouched Rome witness. The frozen verdict is
+\texttt{\ConfirmReverseVerdict}. We therefore reject the quorum and
+tamper-evidence claims. Verbalization changes the relative efficacy of the two
+sites, but this asymmetric redistribution remains a boundary result rather
+than evidence for a cleanly relocated memory register.
 
 \section{What the experiments do and do not establish}
 
 The results support an operational statement: for the tested tasks, source
-tokens expose a content- and address-specific write interface whose effects
-propagate through downstream computation. The checkpoint intervention is inert
-across two model families even though query-specific state becomes causally
-sufficient at the late readout. If the grouped probe succeeds, the additional
-dissociation will be that the state is linearly readable at a summary position
-without that position serving as a causally sufficient register under matched
-state transplantation.
+tokens expose a writable value interface whose effects propagate through
+downstream computation. Address specificity holds in Qwen, Mistral, and Gemma
+structured worlds but fails in the DeepSeek-Llama run, so content efficacy and
+routing specificity must be separated. The checkpoint intervention is inert
+across four model families even though query-specific state becomes causally
+sufficient at the late readout. At 14B, the state is linearly readable at the
+summary position without that position serving as a causally sufficient
+register under matched state transplantation. Poor cross-surface transfer
+further shows that this readable checkpoint code is not a common
+surface-invariant coordinate system.
+
+The multi-token controls sharpen ``token anchored'' into a depth-dependent
+claim. Early and middle layers admit a minimal sufficient intervention at the
+edited source anchor; the summary span and arbitrary same-sized positions do
+not. After L32 the anchor loses sufficiency while the readout gains it. This
+supports repeated access followed by query-conditioned transport, but does not
+show that the anchor is the only necessary state at every step or identify the
+attention path that performs the transport.
 
 This does not imply that state is literally stored in one token, that the model
 uses no distributed representation, or that every internal edit follows the
 model's natural computation. Autoregressive attention can repeatedly access
-the prompt; source-token interventions may alter many later activations. Our
+the prompt; source-token interventions may alter many later activations. The
+DeepSeek-Llama spillover shows directly that content efficacy does not
+guarantee binding specificity. Our
 claim concerns causal access and substitutability under specified
-interventions.
+interventions. The naturalized closeout adds a second boundary: surface changes
+preserve the belief/checkpoint/readout contrast, but they can also make a
+downstream report or invariant control behaviorally unidentifiable. Broader
+surface robustness therefore cannot be inferred from the positive belief arm.
 
 \section{Limitations}
 
-The tasks use synthetic, tightly controlled prompts and single-token values.
-Models are at most 14B parameters and mostly instruction tuned. Quantized
-weights are used in several experiments, although residual interventions remain
-in floating point. A failed patch is conditional on the tested site, layer,
+The tasks use synthetic, controlled worlds and single-token values. The three
+naturalized prose styles vary wording and length but are not a natural-corpus
+benchmark. Models are open-weight, at most 14B parameters, and mostly
+instruction tuned. Several runs use 8-bit, NF4, or AWQ weights; residual
+interventions remain in floating point, but an unquantized replication is not
+available at the largest scale. A failed patch is conditional on site, layer,
 position, and intervention semantics; it is not proof of representational
-absence. Linear probes establish decodability, not use. Finally, many pilot
-cells were selected during an exploratory research sequence. We separate those
-from the frozen confirmatory battery and will release per-row artifacts so the
-distinction is auditable.
+absence. Linear probes establish decodability, not use, and the cross-surface
+probe result is measured only on Qwen2.5-14B. The locus experiment establishes
+sufficiency and one leave-one-out necessity result, not a complete minimal
+causal graph. Finally, pilots were selected during an exploratory sequence. We
+keep them separate from frozen confirmation and release row-level artifacts,
+configs, exclusions, and hashes so that this distinction is auditable.
+
+\section{Ethics and broader impacts}
+
+The experiments use synthetic prompts, open-weight models, and no personal or
+human-subject data. More reliable activation editing could improve debugging
+and causal auditing, but it could also support covert steering or create false
+confidence when a low-dimensional intervention succeeds off distribution. We
+therefore release negative controls and failed eligibility gates alongside
+positive results, and frame the method as a local diagnostic rather than a
+general-purpose truth or safety editor.
 
 \section{Conclusion}
 
-Controlled residual writes provide a way to ask not only what information a
-language model represents, but where a bound value can be changed so that its
-consequences update coherently. Widened confirmation identifies a reusable
-early value write and a sharp causal advantage for source anchors over a
-designated summary checkpoint in Qwen and Mistral. The emergence of a strong
-late-readout patch effect supplies a matched process control: the intervention
-works once query-specific answer state has formed, but not at the earlier
-query-independent marker. These findings support token-anchored recomputation
-as a concrete mechanism for temporary state in the tested transformer tasks,
-while leaving distributed and alternative state representations open.
+Controlled residual writes reveal where a bound value can be changed so that
+its consequences update coherently. Across Qwen, Mistral, DeepSeek-Llama, and
+Gemma, source anchors dominate a designated query-independent summary
+checkpoint. At 14B, exact and multi-token controls identify the stronger
+sequence: a single edited anchor is causally sufficient through middle depth,
+then loses sufficiency as a late query-specific readout forms. Perfect
+within-surface decoding at the inert checkpoint makes the result a direct
+dissociation between readable information and causal substitutability. The
+DeepSeek address spillover and naturalized behavioral failures prevent a
+universal storage claim. Together the results support token-anchored access
+followed by query-conditioned transport as a concrete mechanism for temporary
+state in the tested tasks, while leaving distributed representations and the
+routing circuit itself open.
 
 \bibliographystyle{plainnat}
 \bibliography{references}
@@ -353,5 +569,71 @@ rows, model identifier, quantization, layer grid, gates, per-row effects, and
 random-control summaries. Failed behavioral gates are labeled ineligible.
 Discovery pilots and confirmatory artifacts occupy separate directories and
 are not pooled.
+
+\subsection{Behavioral and causal gates}
+
+Unless a protocol specifies a stricter condition, clean and natural textual
+counterfactual accuracy must each reach 80\% before the causal cell is
+interpreted. A sufficient bidirectional matched-state swap requires a forward
+effect ratio in $[0.7,1.3]$, a reverse ratio in the same interval, and at least
+80\% donor-target and clean-state recovery. Checkpoint inertness requires the
+maximum absolute ratio to stay below 0.3. Random-direction tests use
+prespecified, norm-matched draws and the finite-sample value
+$(1+\#\{T_{0}\geq T_{\mathrm{obs}}\})/(1+N_0)$. No ineligible cell contributes
+to a pass/fail causal count.
+
+\subsection{Models and mechanism coverage}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{llll}
+\toprule
+Model & Size/runtime & Workspace & Anchor/checkpoint \\
+\midrule
+Qwen2.5-Instruct & 7B, 8-bit & yes & yes \\
+Mistral-Instruct v0.3 & 7B, 8-bit & yes & yes \\
+DeepSeek-R1-Distill-Llama & 8B, quantized & yes & yes \\
+Gemma-3-Instruct & 12B, quantized & yes & yes \\
+Qwen2.5-Instruct-AWQ & 14B, AWQ & --- & exhaustive \\
+\bottomrule
+\end{tabular}
+\caption{Frozen confirmatory model coverage. The 14B run concentrates compute
+on the exhaustive mechanism, locus, probe, and closeout arms rather than
+repeating the widened workspace matrix.}
+\label{tab:model-coverage}
+\end{table}
+
+The final Qwen2.5-14B kernels ran on two Tesla T4 GPUs. The archived provenance
+record identifies Python 3.12.13, PyTorch 2.10.0+cu128, Transformers 5.0.0,
+Accelerate 1.13.0, and GPTQModel 7.1.0, together with the exact Kaggle model
+source. Each artifact additionally stores model key, quantization recipe,
+layer grid, row count, random seed, and protocol version.
+
+\subsection{Evidence regeneration and integrity}
+
+The confirmatory ledger contains seven immutable JSON artifacts: Qwen-7B,
+Mistral-7B, Qwen-14B, DeepSeek-Llama-8B, Gemma-3-12B, the Qwen-14B locus sweep,
+and the final closeout. A deterministic audit verifies file hashes, row counts
+and uniqueness, tokenizer-selected exclusions, layer coverage, full-prefix
+sanity controls, null panels, and the final adjudicated verdict. The final
+manifest status is
+{\small\ttfamily PAPER1\_EVIDENCE\_FROZEN\_WITH\_BOUNDARY}. The archived closeout
+artifact has SHA-256
+{\footnotesize\ttfamily 597F79E4C253A5ECF7F8440EDD061ABFD5155FACC221C7CFD66DEA445FB59422}.
+Running \texttt{rebuild\_evidence.py} recomputes all paired-bootstrap summaries,
+regenerates the TeX macros used in this paper, and reruns the audit before
+returning success. \texttt{build\_figures.py} reads only those immutable
+artifacts and the generated uncertainty summary.
+
+\subsection{Closeout surface construction}
+
+The naturalized closeout uses 30 held-out nuisance worlds for the unseen
+Tokyo-to-Delhi transition. Ten rows each are rendered as a case note, witness
+transcript, or curator narrative. Clean and natural prompts differ only at the
+aligned source value. Tokenizer preflight checks single source anchors, stable
+query positions, and absence of target leakage before weights are loaded. The
+report and unrelated-belief arms are retained in the artifact despite failing
+behavioral gates; no replacement rows or alternate phrasings are introduced.
 
 \end{document}

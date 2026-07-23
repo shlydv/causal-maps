@@ -1,0 +1,7 @@
+{
+  "model_path": "/kaggle/input/**/14b-instruct-awq/**/config.json",
+  "n_world": 30,
+  "n_random_loci": 3,
+  "random_seed": 2718,
+  "required_gpu": "Tesla T4"
+}

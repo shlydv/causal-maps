@@ -41,6 +41,21 @@ LAM_HIGH, LAM_LOW = 0.7, 0.3
 READOUTS = ("belief_ac", "tell_ac")
 
 
+def _reverse_base_verdict(primary):
+    """Frozen M5 verdict for the Rome-base quorum/prior discriminator."""
+    if min(primary.get("g0", (0.0, 0.0))) < G0:
+        return "REVERSE_BASE_INELICITABLE"
+    both = primary["both_reverse"]
+    if both["paris_acc"] < G0 or not (0.6 <= both["lam"] <= 1.4):
+        return "REVERSE_BASE_SANITY_FAIL"
+    hist, verbal = primary["history_reverse"], primary["verbal_reverse"]
+    if hist["rome_acc"] >= G0 and verbal["rome_acc"] >= G0:
+        return "QUORUM_REPLICATES_REVERSE_BASE"
+    if hist["paris_acc"] >= G0 and verbal["paris_acc"] >= G0:
+        return "PARIS_PRIOR_REPLICATES_REVERSE_BASE"
+    return "REVERSE_BASE_MIXED"
+
+
 def _vline_cube(loc):
     return f"Alice believes the cube is in {loc}."
 
@@ -256,4 +271,127 @@ def run_delta_verbalization(model_path, out_dir, quantization="awq",
               "w") as f:
         json.dump(result, f, indent=2, default=float)
     log(f"VERDICT verbalization armA: {result['verdict']}")
+    return result
+
+
+@torch.no_grad()
+def run_reverse_base_quorum(model_path, out_dir, quantization="awq",
+                            device_map=None, seed=0, model=None, tok=None,
+                            clean_rows=None):
+    """M5: resolve quorum versus Paris-prior with the base value reversed.
+
+    The base prompt has Rome at both the history and verbalization anchors.
+    A Rome->Paris write is applied at one anchor or both. The untouched-witness
+    account predicts Rome after either single edit and Paris only after the
+    double edit. A Paris prior predicts Paris after both single edits.
+
+    This cell reuses the already null-validated L2 neutral-carrier write. It
+    adds no new direction search, coefficient, layer sweep, or random null.
+    """
+    if quantization != "awq" or seed != 0:
+        raise ValueError("reverse-base M5 is frozen to 14B-AWQ, seed 0")
+    os.makedirs(out_dir, exist_ok=True)
+    if model is None or tok is None:
+        model, tok = load_model_and_tokenizer(
+            _resolve(model_path), quantization=quantization,
+            device_map=device_map)
+    dev = input_device(model)
+    rows = (list(clean_rows) if clean_rows is not None else
+            _rows(SOURCE, TARGET, "ac", "train") +
+            _rows(SOURCE, TARGET, "ac", "test"))
+    rome_rows = _counterfactual(rows, {"ac": TARGET})
+    Z = _neutral_states(model, tok, dev, LAYER, (SOURCE, TARGET))
+    reverse_delta = Z[SOURCE] - Z[TARGET]
+    result = {"stage": "delta_verbalization_reverse_base",
+              "protocol": "M5_frozen_2026-07-21",
+              "model_path": model_path, "quantization": quantization,
+              "layer": LAYER, "seed": seed, "n_rows": len(rows),
+              "readouts": {}}
+
+    def B(rws, query, vline):
+        return _batch(
+            tok, rws, query, "narrative", dev,
+            render_fn=lambda row: _render_v(tok, row, query, vline, "after"))
+
+    for query in READOUTS:
+        paris = B(rows, query, _vline_cube(SOURCE))       # P history, P V
+        rome = B(rome_rows, query, _vline_cube(TARGET))   # R history, R V
+        hist_p_v_r = B(rows, query, _vline_cube(TARGET))  # P history, R V
+        hist_r_v_p = B(rome_rows, query, _vline_cube(SOURCE))
+        a_h = _uniform_diff(rome, hist_p_v_r)
+        a_v = _uniform_diff(rome, hist_r_v_p)
+        assert a_h != a_v
+
+        paris_expected = _locations(rows, query)
+        rome_expected = _locations(rome_rows, query)
+        sid = torch.tensor([rome["amap"][x] for x in rome_expected])
+        tid = torch.tensor([rome["amap"][x] for x in paris_expected])
+
+        def forward(batch, add=None):
+            logits, _ = _forward(model, batch["ids"], batch["am"],
+                                 (batch["marker"],), add=add)
+            return logits
+
+        def margin(logits):
+            return _ld(logits, tid, sid)  # Paris minus Rome
+
+        lg_paris, lg_rome = forward(paris), forward(rome)
+        natural_rows = margin(lg_paris) - margin(lg_rome)
+        natural_effect = float(natural_rows.mean())
+
+        def score(logits):
+            effect_rows = margin(logits) - margin(lg_rome)
+            return {
+                "effect": float(effect_rows.mean()),
+                "effect_rows": effect_rows.detach().cpu().tolist(),
+                "lam": float(effect_rows.mean()) / natural_effect,
+                "paris_acc": float(_accuracy(
+                    logits, rome, paris_expected)),
+                "rome_acc": float(_accuracy(
+                    logits, rome, rome_expected)),
+                "positive_fraction": float((effect_rows > 0).float().mean()),
+            }
+
+        lg_hist = forward(rome, add=(LAYER, a_h, reverse_delta))
+        lg_verbal = forward(rome, add=(LAYER, a_v, reverse_delta))
+        lg_both = forward(rome, add=[(LAYER, a_h, reverse_delta),
+                                    (LAYER, a_v, reverse_delta)])
+        lg_text_hist = forward(hist_p_v_r)
+        lg_text_verbal = forward(hist_r_v_p)
+        out = {
+            "g0": [float(_accuracy(lg_paris, paris, paris_expected)),
+                   float(_accuracy(lg_rome, rome, rome_expected))],
+            "anchors": {"history": a_h, "verbalization": a_v},
+            "natural_effect": natural_effect,
+            "natural_effect_rows": natural_rows.detach().cpu().tolist(),
+            "history_reverse": score(lg_hist),
+            "verbal_reverse": score(lg_verbal),
+            "both_reverse": score(lg_both),
+            "textual_conflicts": {
+                "history_Paris_V_Rome": {
+                    "paris_acc": float(_accuracy(
+                        lg_text_hist, hist_p_v_r, paris_expected)),
+                    "rome_acc": float(_accuracy(
+                        lg_text_hist, hist_p_v_r, rome_expected)),
+                },
+                "history_Rome_V_Paris": {
+                    "paris_acc": float(_accuracy(
+                        lg_text_verbal, hist_r_v_p, paris_expected)),
+                    "rome_acc": float(_accuracy(
+                        lg_text_verbal, hist_r_v_p, rome_expected)),
+                },
+            },
+        }
+        out["verdict"] = _reverse_base_verdict(out)
+        result["readouts"][query] = out
+        log(f"  [reverse-base/{query}] hist Rome={out['history_reverse']['rome_acc']:.0%} "
+            f"V Rome={out['verbal_reverse']['rome_acc']:.0%} "
+            f"both Paris={out['both_reverse']['paris_acc']:.0%} "
+            f"both lam={out['both_reverse']['lam']:.3f} verdict={out['verdict']}")
+
+    result["verdict"] = result["readouts"]["belief_ac"]["verdict"]
+    with open(os.path.join(out_dir, "results_reverse_base_quorum.json"),
+              "w") as f:
+        json.dump(result, f, indent=2, default=float)
+    log(f"VERDICT reverse-base M5: {result['verdict']}")
     return result

@@ -1,0 +1,547 @@
+{
+  "schema": "paper1-evidence-audit-v1",
+  "artifacts": {
+    "qwen7": {
+      "filename": "results_delta_preprint_battery_qwen7b_confirm.json",
+      "status": "present",
+      "bytes": 157421,
+      "sha256": "5861941AE7F21F7046ACA0C5954AE00D505DDF7582F63E947DC7D6EE8DC28CBE",
+      "stage": "delta_preprint_battery",
+      "model_key": "qwen7b_confirm",
+      "verdict": {
+        "matrix": [
+          "WORKSPACE_GENERAL",
+          "WORKSPACE_GENERAL",
+          "WORKSPACE_GENERAL"
+        ],
+        "entity": [
+          "RETRIEVE_ONLY",
+          "WORLD_STATE_PARTIAL",
+          "WORLD_STATE_PARTIAL"
+        ],
+        "anchor": "TOKEN_ANCHORED_PARTIAL",
+        "checkpoint": "CHECKPOINT_INERT"
+      }
+    },
+    "mistral7": {
+      "filename": "results_delta_preprint_battery_mistral7b_confirm.json",
+      "status": "present",
+      "bytes": 150396,
+      "sha256": "E4034664D4B0AA7E13AFF42978D394F36B16481AD2D54F56429ABD44771324EF",
+      "stage": "delta_preprint_battery",
+      "model_key": "mistral7b_confirm",
+      "verdict": {
+        "matrix": [
+          "WORKSPACE_GENERAL",
+          "WORKSPACE_GENERAL",
+          "WORKSPACE_GENERAL"
+        ],
+        "entity": [
+          "RETRIEVE_ONLY",
+          "RETRIEVE_ONLY",
+          "RETRIEVE_ONLY"
+        ],
+        "anchor": "TOKEN_ANCHORED_CONFIRMED",
+        "checkpoint": "CHECKPOINT_INERT"
+      }
+    },
+    "qwen14": {
+      "filename": "results_delta_preprint_battery_qwen14b_headline.json",
+      "status": "present",
+      "bytes": 30235,
+      "sha256": "EFEEABEFA71178630B50D656B1DA738548546ACAC4DADC6658597415394366BA",
+      "stage": "delta_preprint_battery",
+      "model_key": "qwen14b_headline",
+      "verdict": {
+        "matrix": [],
+        "entity": [],
+        "anchor": "TOKEN_ANCHORED_CONFIRMED",
+        "checkpoint": "CHECKPOINT_INERT",
+        "probe_checkpoint": {
+          "ledger": 1.0,
+          "narrative": 1.0
+        },
+        "reverse_base": "PARIS_PRIOR_REPLICATES_REVERSE_BASE"
+      }
+    },
+    "deepseek_llama8": {
+      "filename": "results_delta_preprint_battery_deepseek_r1_llama8b_confirm.json",
+      "status": "present",
+      "bytes": 142163,
+      "sha256": "542FE89EFC94E0C62E0CBEF80A45F773A370F75D0CC3CA84B3319082DC87116F",
+      "stage": "delta_preprint_battery",
+      "model_key": "deepseek_r1_llama8b_confirm",
+      "verdict": {
+        "matrix": [
+          "WORKSPACE_GENERAL",
+          "WORKSPACE_GENERAL",
+          "WORKSPACE_GENERAL"
+        ],
+        "entity": [
+          "RETRIEVE_ONLY",
+          "RETRIEVE_ONLY",
+          "WORLD_STATE_DEAD_OR_INELICITABLE"
+        ],
+        "anchor": "TOKEN_ANCHORED_PARTIAL",
+        "checkpoint": "CHECKPOINT_INERT"
+      }
+    },
+    "gemma3_12": {
+      "filename": "results_delta_preprint_battery_gemma3_12b_confirm.json",
+      "status": "present",
+      "bytes": 157566,
+      "sha256": "C73FAADEEF32076CBF529D77A9BFC8208179B58488365D798E428C9CAF0712AB",
+      "stage": "delta_preprint_battery",
+      "model_key": "gemma3_12b_confirm",
+      "verdict": {
+        "matrix": [
+          "WORKSPACE_GENERAL",
+          "WORKSPACE_GENERAL",
+          "WORKSPACE_GENERAL"
+        ],
+        "entity": [
+          "WORLD_STATE_PARTIAL",
+          "WORLD_STATE_PARTIAL",
+          "WORLD_STATE_PARTIAL"
+        ],
+        "anchor": "TOKEN_ANCHORED_CONFIRMED",
+        "checkpoint": "CHECKPOINT_INERT"
+      }
+    },
+    "qwen14_locus": {
+      "filename": "results_delta_preprint_locus_qwen14b_locus_v1.json",
+      "status": "present",
+      "bytes": 517420,
+      "sha256": "E7DC87A9F6E1FC6FE9329972BD2D1EE7292BCE33B4785ADCADA61CAE47F47023",
+      "stage": "delta_preprint_locus",
+      "model_key": "qwen14b_locus_v1",
+      "verdict": "SOURCE_ANCHORS_SUFFICIENT"
+    },
+    "qwen14_closeout": {
+      "filename": "results_delta_paper1_closeout_qwen14b_closeout_v1.json",
+      "status": "present",
+      "bytes": 108026,
+      "sha256": "597F79E4C253A5ECF7F8440EDD061ABFD5155FACC221C7CFD66DEA445FB59422",
+      "stage": "delta_paper1_closeout",
+      "model_key": "qwen14b_closeout_v1",
+      "verdict": "PAPER1_CLOSEOUT_BOUNDARY"
+    }
+  },
+  "checks": {
+    "qwen7": {
+      "selected_worlds": 30,
+      "checkpoint_layers": [
+        2,
+        4,
+        8,
+        12,
+        16,
+        18,
+        20,
+        21,
+        24,
+        26
+      ],
+      "checkpoint_verdict": "CHECKPOINT_INERT",
+      "anchor_verdict": "TOKEN_ANCHORED_PARTIAL",
+      "audited_cells": 33,
+      "exclusions": [
+        {
+          "seed": "0",
+          "family": "keys",
+          "cell": "twohop",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "0",
+          "family": "keys",
+          "cell": "other",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "0",
+          "family": "city",
+          "cell": "other",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "1",
+          "family": "keys",
+          "cell": "twohop",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "1",
+          "family": "keys",
+          "cell": "other",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "2",
+          "family": "keys",
+          "cell": "twohop",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "2",
+          "family": "keys",
+          "cell": "other",
+          "reason": "behavioral_gate_or_dependency"
+        }
+      ]
+    },
+    "mistral7": {
+      "selected_worlds": 18,
+      "checkpoint_layers": [
+        2,
+        4,
+        8,
+        12,
+        16,
+        20,
+        21,
+        24,
+        26,
+        27,
+        30
+      ],
+      "checkpoint_verdict": "CHECKPOINT_INERT",
+      "anchor_verdict": "TOKEN_ANCHORED_CONFIRMED",
+      "audited_cells": 33,
+      "exclusions": [
+        {
+          "seed": "0",
+          "family": "keys",
+          "cell": "twohop",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "0",
+          "family": "keys",
+          "cell": "other",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "0",
+          "family": "city",
+          "cell": "twohop",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "0",
+          "family": "city",
+          "cell": "other",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "1",
+          "family": "keys",
+          "cell": "twohop",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "1",
+          "family": "keys",
+          "cell": "other",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "1",
+          "family": "city",
+          "cell": "twohop",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "1",
+          "family": "city",
+          "cell": "other",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "2",
+          "family": "keys",
+          "cell": "twohop",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "2",
+          "family": "keys",
+          "cell": "other",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "2",
+          "family": "city",
+          "cell": "twohop",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "2",
+          "family": "city",
+          "cell": "other",
+          "reason": "behavioral_gate_or_dependency"
+        }
+      ]
+    },
+    "qwen14": {
+      "selected_worlds": 30,
+      "checkpoint_layers": [
+        2,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        26,
+        32,
+        36,
+        41,
+        46
+      ],
+      "checkpoint_verdict": "CHECKPOINT_INERT",
+      "anchor_verdict": "TOKEN_ANCHORED_CONFIRMED",
+      "audited_cells": 0,
+      "exclusions": []
+    },
+    "deepseek_llama8": {
+      "selected_worlds": 30,
+      "checkpoint_layers": [
+        2,
+        4,
+        8,
+        12,
+        16,
+        20,
+        21,
+        24,
+        26,
+        27,
+        30
+      ],
+      "checkpoint_verdict": "CHECKPOINT_INERT",
+      "anchor_verdict": "TOKEN_ANCHORED_PARTIAL",
+      "audited_cells": 33,
+      "exclusions": [
+        {
+          "seed": "0",
+          "family": "matrix",
+          "cell": "gt5label",
+          "reason": "behavioral_gate"
+        },
+        {
+          "seed": "0",
+          "family": "keys",
+          "cell": "twohop",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "0",
+          "family": "keys",
+          "cell": "other",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "0",
+          "family": "city",
+          "cell": "twohop",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "0",
+          "family": "city",
+          "cell": "other",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "1",
+          "family": "matrix",
+          "cell": "gt5label",
+          "reason": "behavioral_gate"
+        },
+        {
+          "seed": "1",
+          "family": "keys",
+          "cell": "twohop",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "1",
+          "family": "keys",
+          "cell": "other",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "1",
+          "family": "city",
+          "cell": "twohop",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "1",
+          "family": "city",
+          "cell": "other",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "2",
+          "family": "matrix",
+          "cell": "gt5label",
+          "reason": "behavioral_gate"
+        },
+        {
+          "seed": "2",
+          "family": "keys",
+          "cell": "retrieve",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "2",
+          "family": "keys",
+          "cell": "twohop",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "2",
+          "family": "keys",
+          "cell": "other",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "2",
+          "family": "city",
+          "cell": "retrieve",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "2",
+          "family": "city",
+          "cell": "twohop",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "2",
+          "family": "city",
+          "cell": "other",
+          "reason": "behavioral_gate_or_dependency"
+        }
+      ]
+    },
+    "gemma3_12": {
+      "selected_worlds": 30,
+      "checkpoint_layers": [
+        2,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        26,
+        32,
+        36,
+        41,
+        46
+      ],
+      "checkpoint_verdict": "CHECKPOINT_INERT",
+      "anchor_verdict": "TOKEN_ANCHORED_CONFIRMED",
+      "audited_cells": 33,
+      "exclusions": [
+        {
+          "seed": "0",
+          "family": "keys",
+          "cell": "twohop",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "0",
+          "family": "keys",
+          "cell": "other",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "1",
+          "family": "keys",
+          "cell": "twohop",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "1",
+          "family": "keys",
+          "cell": "other",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "2",
+          "family": "keys",
+          "cell": "twohop",
+          "reason": "behavioral_gate_or_dependency"
+        },
+        {
+          "seed": "2",
+          "family": "keys",
+          "cell": "other",
+          "reason": "behavioral_gate_or_dependency"
+        }
+      ]
+    },
+    "qwen14_locus": {
+      "verdict": "SOURCE_ANCHORS_SUFFICIENT",
+      "sufficient_layers": [
+        2,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        26,
+        32
+      ],
+      "random_controls_sufficient": 0
+    },
+    "qwen14_closeout": {
+      "verdict": "PAPER1_CLOSEOUT_BOUNDARY",
+      "exact_ac_verdict": "AC_ONLY_SUFFICIENT",
+      "naturalized_verdict": "NATURALIZED_NOT_CONFIRMED",
+      "naturalized_null_p": 0.047619047619047616,
+      "naturalized_checkpoint_max": 0.002137960098263935,
+      "naturalized_readout_layers": [
+        41,
+        46
+      ]
+    }
+  },
+  "totals": {
+    "bytes": 1263227,
+    "exclusions": 42
+  },
+  "runtime": {
+    "schema": "paper1-kaggle-runtime-v1",
+    "kernel": "shlydv/cm-paper1-runtime-provenance-t4",
+    "hardware_guard": [
+      "Tesla T4",
+      "Tesla T4"
+    ],
+    "python": "3.12.13",
+    "packages_before_awq_runtime_install": {
+      "accelerate": "1.13.0",
+      "bitsandbytes": null,
+      "gptqmodel": null,
+      "numpy": "2.0.2",
+      "safetensors": "0.7.0",
+      "tokenizers": "0.22.2",
+      "torch": "2.10.0+cu128",
+      "transformers": "5.0.0"
+    },
+    "awq_runtime": {
+      "package": "gptqmodel",
+      "version": "7.1.0",
+      "installation": "kernel/run_kaggle.py installs the pinned version before importing causal_maps for quantization=awq"
+    },
+    "model_source": "qwen-lm/qwen2.5/transformers/14b-instruct-awq/1",
+    "code_dataset": "shlydv/causal-maps-code",
+    "provenance_log_sha256": "51F3FC2834C4A6839E11DCF8F8EE0F8FB139BCCB66EDB2AB60487D313655B7D4"
+  },
+  "status": "PAPER1_EVIDENCE_FROZEN_WITH_BOUNDARY"
+}

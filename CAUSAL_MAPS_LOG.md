@@ -10,10 +10,10 @@
 ## STATUS HEADER (keep current — top of file)
 
 - **Date started:** 2026-07-11
-- **Project lead (agent):** Grok (Cursor). Prior lead: Opus (Claude). Researcher: Sahil.
-- **Repo:** `/Users/sahilyadav/causal-maps` — local only, **no git remote, never pushed to GitHub**.
-- **Current phase:** **router-read DEMOTED → `ROUTER_READ_AMBIGUOUS`.** OOD control failed (span-keep harsher than res-keep). Generator hypothesis **not** licensed.
-- **Currently blocking on:** Sahil — redesign matched control or pick next why-question (do not treat residual-read as settled).
+- **Project lead (agent):** Codex. Prior leads: Grok, Opus, GPT variants. Researcher: Sahil.
+- **Repo:** `https://github.com/shlydv/causal-maps` — `main`, commit `4f8bc36` as of 2026-07-21.
+- **Current phase:** **Paper 1 confirmatory closeout.** Qwen-7B and Mistral-7B widened batteries complete; Qwen-14B headline v2 frozen for launch.
+- **Currently blocking on:** Windows launch environment lacks Kaggle CLI credentials; the scientific run is no longer quota-blocked.
 - **Gate status:** P0 ✅ · P1 FAIL (foil) · delta_transfer ✅ · K1 NONTRIVIAL+GENERIC_BOOST · K2 ✅ · K3 ✅ · K4 ✅ · note frozen · **July-2026 literature gate: SHORT NOTE YES, claim narrowed** · **delta_decompose ✅** · **delta_centroid → CENTROID_MATTERS** · **delta_multislot ✅** · **delta_crossskill ✅** · **delta_capacity k*=8** · **delta_transform v2 → L3_LAYER_DEPENDENT_WEAK** · **delta_select v2 → L2_LAYER_DEPENDENT_STRONG** · **delta_instruction v2 → INSTR_DIRECTION_LAYER_DEPENDENT_WEAK** · **delta_instruction_s3 → INJECTION_PARTIAL** · **delta_typology v3 → TYPOLOGY_FALSIFIED** · **delta_explicit → EXPLICITNESS_FALSIFIED (demoted)** · **delta_protocol → PROTOCOL_COMPATIBLE (line stopped)** · **delta_chain → CHAIN_INELICITABLE (branch CLOSED permanent)** · **delta_necessity → ROUTE_NECESSARY_ONLY** · **delta_asymmetry → ASYM_INCOMPLETE_BASIS solid** · **delta_bindmiss → BIND_MISS_LINEAR_READOUT** · **delta_router_read → ROUTER_READ_AMBIGUOUS (OOD_FAIL)** · **delta_router_ood → OOD_FAIL**.
 
 ---
@@ -3896,3 +3896,258 @@ strength), while no query-independent consolidated world-state exists to
 edit at a checkpoint. Scope: 14B-AWQ, one world family, n=5 rows/split,
 L2 write site, layers ≤L26 for the checkpoint null. The general-tier tests
 Sahil required before any paper have now RUN, with both branches measured.
+
+### 2026-07-21 — Qwen-14B headline v2 + reverse-base M5 FROZEN before launch
+
+**Program decision:** close the existing Paper 1 loop before any new discovery
+branch. The next GPU job is `cm-preprint-headline-qwen14b-v2`: exhaustive
+14B-AWQ anchor census, full-depth checkpoint trajectory (including late layers
+and question/readout process controls), grouped cross-surface probe audit, and
+the reverse-base verbalization discriminator in one model load. Workspace and
+entity widening remain skipped because their Qwen/Mistral confirmations are
+already frozen.
+
+**M5 reverse-base question:** the original verbalization run began from the
+Paris-consistent world, so both one-site Paris→Rome edits left an unedited
+Paris witness. Their rejection was therefore confounded between an
+untouched-witness/quorum rule and a Paris lexical prior. The v2 cell reverses
+the base: history=Rome and verbalization=Rome, with the already validated L2
+neutral-carrier write `z(Paris)-z(Rome)` applied to history only,
+verbalization only, or both. It uses the same mechanically selected structured
+world rows as the 14B anchor/checkpoint census.
+
+**Frozen gates and exhaustive verdicts (written before GPU output):** G0
+requires Paris-consistent and Rome-consistent behavior ≥80%. The two-site
+reverse edit is the sanity gate: Paris accuracy ≥80% and effect ratio versus
+the full Rome→Paris textual counterfactual in [0.6, 1.4]. Conditional on those
+gates: Rome accuracy ≥80% after BOTH one-site edits yields
+`QUORUM_REPLICATES_REVERSE_BASE`; Paris accuracy ≥80% after BOTH yields
+`PARIS_PRIOR_REPLICATES_REVERSE_BASE`; other eligible splits yield
+`REVERSE_BASE_MIXED`. Failed G0 or two-site sanity has its own printed verdict
+and does not resolve the confound. No new direction, coefficient, layer search,
+or random null is introduced; this cell reuses the already null-validated L2
+write and is diagnostic rather than a new efficacy claim.
+
+**Implementation:** `run_reverse_base_quorum` added to
+`delta_verbalization.py`; `delta_preprint_battery` accepts
+`run_quorum=true`; verdict unit cases and the exact v2 launch command are
+recorded in `tests/test_preprint_confirmatory.py` and `PREPRINT_LAUNCH.md`.
+Python syntax compilation passes locally. Full tests await the project ML
+environment. Kaggle quota is available (30 h per Sahil); this Windows checkout
+currently has no Kaggle CLI credential, so launch awaits credential setup only.
+
+### 2026-07-21 - Qwen2.5-14B headline v2 COMPLETE on dual T4
+
+**Artifact:** Kaggle kernel `cm-preprint-headline-qwen14b-v2-t4` completed on
+two Tesla T4 GPUs. The result was copied byte-for-byte to
+`evidence/confirmatory/results_delta_preprint_battery_qwen14b_headline.json`.
+The earlier P100 launches were cancelled by Sahil and are not evidence. One
+initial T4 attempt failed before model execution because the GPU guard imported
+Torch before the runtime dependency install; the guard was moved to
+`nvidia-smi`, and that failed attempt produced no scientific output.
+
+**Anchor (n=30, L2, 99 nulls):** belief ratio 1.000994 (paired bootstrap 95%
+CI [0.999975, 1.001984]), target accuracy 100%, positive fraction 100%; tell
+ratio 0.993408 (95% CI [0.990227, 0.996743]), target accuracy 83.3%, positive
+fraction 100%. All four invariants and wrong-address specificity are 100%; the
+null p-value is .01. Frozen verdict: `TOKEN_ANCHORED_CONFIRMED`. This upgrades
+the old n=5 14B pilot from PARTIAL to a full exhaustive confirmation.
+
+**Checkpoint/process trajectory:** at `STATECHECK`, max absolute effect ratio
+is 0.000298 across all 48 layers and every forward/reverse target accuracy is
+0%. At the question end it remains only 0.000663. At the query-specific
+readout, causal transport appears late: 0.656 at L36, 0.810 at L41, and 0.999
+with 100% forward/reverse accuracy at L46. Frozen verdict: `CHECKPOINT_INERT`.
+This is a matched negative plus positive process control, not a generic failure
+of state transplantation.
+
+**Grouped probe (48 rows, eight labels, six held-out replicate groups):**
+behavior is 100% on both ledger and narrative surfaces. Within-surface probe
+accuracy is 100% at anchor and checkpoint on both surfaces (chance 12.5%, exact
+binomial p=4.48e-44); narrative readout is 47/48 and the other readout is
+48/48. Anchor probes transfer across surfaces at 100% in both directions, but
+checkpoint probes transfer at only 18.75% ledger-to-narrative and 16.67%
+narrative-to-ledger. The checkpoint therefore contains readable,
+surface-specific traces while remaining causally inert under matched swaps; it
+is not evidence for a shared relational register.
+
+**M5 reverse-base discriminator (n=30):** from a Rome-consistent base, the
+Paris-minus-Rome write yields belief ratios 0.669 history-only, 0.781
+verbalization-only, and 0.9995 at both sites. Both one-site edits select Paris
+at 100%, not the untouched Rome witness; both textual conflicts also select
+Paris at 100%. Frozen verdict: `PARIS_PRIOR_REPLICATES_REVERSE_BASE`. This
+falsifies the earlier quorum/tamper-evidence interpretation. The defensible
+description is a Paris/majority/default prior plus asymmetric redistribution
+of intervention efficacy; the verbalization result is a boundary, not a
+headline mechanism.
+
+**Program decision:** Paper 1's current experimental loop is closed. The core
+claim is now an exhaustive 14B anchor/checkpoint/probe dissociation with a late
+causal positive control, alongside widened Qwen/Mistral confirmation. Do not
+spend evidence budget trying to rescue quorum. The next coverage experiment is
+the frozen Llama-3.1-8B family battery (Gemma fallback if license/mount access
+blocks it); the next discovery-level experiment should test causal path/edge
+necessity between source anchors and the late readout.
+
+### 2026-07-21 - DeepSeek-R1-Distill-Llama-8B confirmation COMPLETE
+
+**Why this model:** Meta Llama-3.1-8B remained gated (`403 Forbidden`) while
+license approval was under review. The official DeepSeek distillation uses the
+Llama-8B architecture, is a major open-weight reasoning model, and was directly
+accessible. A frozen tokenizer preflight selected all 30/30 structured worlds
+and confirmed two Tesla T4s. The full run used the unchanged gates and layer
+selection. Immutable artifact:
+`evidence/confirmatory/results_delta_preprint_battery_deepseek_r1_llama8b_confirm.json`
+(SHA-256 `542FE89EFC94E0C62E0CBEF80A45F773A370F75D0CC3CA84B3319082DC87116F`).
+
+**Workspace matrix:** all 12/12 behaviorally eligible retrieval/arithmetic
+seed-cells pass across three genuine row seeds, with effect ratios 0.936--0.977,
+100% intervention target accuracy, and frozen null/control gates. The
+rule-classification cell is behaviorally ineligible for all three seeds and is
+not a causal failure. Entity two-hop cells are likewise behaviorally
+ineligible; direct retrieval passes where eligible.
+
+**Structured anchor:** intended effects replicate strongly. Belief ratio is
+1.05466 (paired bootstrap 95% CI [1.03391, 1.07584]) and tell ratio is 1.01309
+(95% CI [0.99663, 1.02935]), both with 100% target accuracy and p=.01. The
+strict verdict is `TOKEN_ANCHORED_PARTIAL`, because address binding fails: an
+unrelated same-valued belief falls from 96.7% clean accuracy to 0% after the
+Alice-anchor write, and the wrong-address write reaches only 6.7% own-target
+accuracy. This is a portable content write, not a universally addressed write
+interface.
+
+**Checkpoint/process trajectory:** the designated checkpoint remains inert at
+all 32 layers (max absolute ratio 0.00535; forward/reverse target accuracy 0%).
+At the late readout, causal transport emerges from 0.356 at L24 to 0.568 at
+L26, 0.828 at L27, and 0.953 at L30; forward and reverse accuracy are both
+100% at L27/L30. Frozen verdict: `CHECKPOINT_INERT`. Thus the central
+checkpoint-to-readout dissociation replicates in a Llama-family architecture
+even though address specificity does not.
+
+**Architecture exploration note:** an AI21 Jamba Reasoning 3B tokenizer
+preflight passed all 30 worlds, but the full run stopped before evidence
+generation because Kaggle lacks the required fast Mamba CUDA kernels. This is
+an infrastructure incompatibility, not an experimental negative.
+
+### 2026-07-21 - Qwen-14B multi-token locus control FROZEN and launched
+
+Paper 1 robustness follow-up only; completed batteries remain immutable and
+will not be rerun. `MULTITOKEN_LOCUS_PROTOCOL.md` was frozen before launch.
+The new isolated stage tests the existing structured-world headline cell at
+marker, summary-span, six source-anchor, cumulative, leave-one-out,
+full-prequery, exact full-matched-prefix, and three seeded size-matched random
+loci across the original 12-layer depth grid. Both forward and reverse swaps
+are required. The exact matched prefix is the intervention sanity bound;
+full-prequery is the substantive distributed-support arm.
+
+Tokenizer preflight kernel `cm-preprint-qwen14b-locus-preflight-t4` completed
+on two Tesla T4s: all 30/30 worlds retained, sequence length 198, `STATECHECK`
+at 157, summary span 147--157, and six distinct anchors at 89, 105, 114, 126,
+140, and 145. The union has 17 tokens and all random-control contracts pass.
+Frozen verdict: `PREFLIGHT_PASS`.
+
+Full kernel `cm-preprint-qwen14b-locus-v1-t4` launched on two Tesla T4s. It is
+additive evidence: replication on another family is conditional on this run
+revealing a claim-changing positive mechanism, not automatically required.
+
+### 2026-07-22 - Gemma-3-12B confirmation COMPLETE
+
+Kernel `cm-preprint-gemma3-12b-confirm-t4` completed the frozen battery on two
+Tesla T4s. Immutable artifact:
+`evidence/confirmatory/results_delta_preprint_battery_gemma3_12b_confirm.json`
+(SHA-256 `C73FAADEEF32076CBF529D77A9BFC8208179B58488365D798E428C9CAF0712AB`).
+The preserved `kernel_failure_v1_stale.txt` belongs to the earlier config
+adapter failure; the completed v2 artifact has no failure trace.
+
+All 15/15 workspace seed-cells pass (ratios 0.9821--0.9996, 100% target
+accuracy, p=.0196). City retrieval and two-hop pass in all three seeds
+(two-hop ratios 0.9923--1.0068, zero other-entity shift); keys retrieval passes
+but keys two-hop is behaviorally ineligible, yielding `WORLD_STATE_PARTIAL`.
+
+The anchor verdict is `TOKEN_ANCHORED_CONFIRMED`: belief ratio 1.07280 and
+tell ratio 1.01335, both 100%; all four invariants remain 100%; a Bob-address
+write reaches ratio 1.00487 with 100% own-target and Alice preservation; the
+99-draw null gives p=.01. The designated checkpoint is inert over all 48
+layers (maximum absolute ratio 0.002365). The late readout rises to 0.616 at
+L41 and 0.936 at L46, reaching 100% forward/reverse accuracy at L46. Gemma is
+a clean independent-family replication, not merely coverage.
+
+### 2026-07-22 - Qwen-14B multi-token locus curve COMPLETE
+
+Immutable artifact:
+`evidence/confirmatory/results_delta_preprint_locus_qwen14b_locus_v1.json`
+(SHA-256 `E7DC87A9F6E1FC6FE9329972BD2D1EE7292BCE33B4785ADCADA61CAE47F47023`).
+Frozen verdict: `SOURCE_ANCHORS_SUFFICIENT`; no size-matched random locus is
+sufficient.
+
+From L2 through L32, swapping the six source-anchor states is bidirectionally
+sufficient: forward ratios 0.9994--1.0116, reverse ratios 0.9621--1.0046, and
+100% target/recovery accuracy. Removing the edited Alice-cube anchor reduces
+the maximum forward ratio to 0.0305, whereas removing any other single anchor
+preserves the effect. The marker maximum is 0.000298, the 11-token summary
+span maximum 0.000472, and all 17-token size-matched random controls remain
+below 0.00319. Exact full-prefix swaps are 1.000 in both directions at every
+layer, validating the intervention.
+
+The source/pre-query intervention then loses sufficiency at L36 (0.402
+forward), L41 (0.245), and L46 (0.001), while prior headline runs show the
+query-specific readout becoming causally sufficient over this late interval.
+This is a layerwise causal handoff from source anchors to the late readout,
+not a distributed-summary rescue of `STATECHECK`. A direct `ac`-only matched
+swap remains a useful minimal-support follow-up but is not needed to validate
+the completed prespecified curve.
+
+### 2026-07-22 - Paper 1 final closeout FROZEN and launched
+
+`PAPER1_CLOSEOUT_PROTOCOL.md` freezes the final experimental work before
+writing: (i) an exact single-`ac` matched-state swap over the existing 12-layer
+grid and (ii) a naturalized 30-world Tokyo→Delhi replication across three
+fixed longer prose styles. The latter includes Alice belief/report, unrelated
+Bob-belief specificity, 20 seeded norm-matched null directions, full-depth
+`STATECHECK`, and bidirectional late-readout controls. No rescue prompt/model
+is permitted and no additional architecture or scale point is required after
+this run.
+
+Tokenizer preflight `cm-paper1-qwen14b-closeout-preflight-t4` passed on two
+Tesla T4s. It retained all 30 standard and all 30 held-out naturalized worlds;
+each prose group has 10 aligned rows, and clean/natural prompts differ at one
+uniform source anchor for all three queries. Full frozen kernel
+`cm-paper1-qwen14b-closeout-v1-t4` launched on two Tesla T4s.
+
+In parallel, `paper_token_anchored/audit_evidence.py` now provides a
+deterministic integrity gate over every confirmatory artifact: SHA-256,
+row uniqueness/counts, exclusions, layer coverage, locus sanity controls, and
+closeout verdict. Pre-closeout audit status is `AUDIT_PASS_CLOSEOUT_PENDING`;
+`rebuild_evidence.py` will require `PAPER1_EVIDENCE_FROZEN` before writing.
+
+### 2026-07-22 - Paper 1 final closeout COMPLETE: frozen boundary
+
+Immutable artifact:
+`evidence/confirmatory/results_delta_paper1_closeout_qwen14b_closeout_v1.json`
+(SHA-256 `597F79E4C253A5ECF7F8440EDD061ABFD5155FACC221C7CFD66DEA445FB59422`).
+The kernel completed normally on two Tesla T4s; this is an experimental
+boundary, not an infrastructure failure.
+
+The exact edited-`ac`-only arm passes bidirectionally from L2 through L32
+(layers 2, 4, 8, 12, 16, 20, 24, 26, and 32), then loses sufficiency at L36,
+L41, and L46. Verdict: `AC_ONLY_SUFFICIENT`. This closes the minimal-support
+doubt left by the earlier six-anchor curve: the edited source anchor alone is
+sufficient throughout the same early/middle-depth interval.
+
+On the held-out naturalized Tokyo→Delhi worlds, the central belief result
+replicates: the neutral-carrier anchor write has ratio 1.01159, 100% target
+accuracy on 30 distinct rows, and beats all 20 norm-matched random directions
+(exact p=.0476). The causal trajectory also replicates: maximum checkpoint
+ratio 0.002138, with sufficient late readout at L41 and L46. However, the
+frozen all-arm verdict is `NATURALIZED_NOT_CONFIRMED`: the target report is
+only behaviorally eligible on 30% of naturalized counterfactual prompts
+(despite a 0.99591 effect ratio and 90% clean accuracy), and the unrelated
+Bob-belief control starts below its 80% behavioral gate (70% clean, 73.3%
+after the write). These are prespecified behavioral-gate failures, so the run
+does not establish naturalized report transfer or naturalized address
+specificity.
+
+Overall verdict: `PAPER1_CLOSEOUT_BOUNDARY`. Per the frozen stopping rule,
+there is no prompt, layer, or model rescue. Paper 1 freezes with the positive
+naturalized belief/checkpoint/readout replication and the explicit
+report/address-specificity surface boundary.

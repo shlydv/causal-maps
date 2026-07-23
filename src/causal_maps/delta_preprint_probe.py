@@ -19,7 +19,8 @@ from .delta_structured_workspace import (LOCATIONS, _accuracy, _batch,
                                          _locations)
 from .delta_trajectory import _forward
 from .logutil import log
-from .model_utils import input_device, load_model_and_tokenizer
+from .model_utils import (input_device, load_model_and_tokenizer,
+                          model_num_hidden_layers)
 
 
 def _balanced_rows(n_reps=6, seed=2718):
@@ -109,7 +110,7 @@ def run_delta_preprint_probe(model_path, out_dir, quantization="awq",
             _resolve(model_path), quantization=quantization,
             device_map=device_map, max_memory=max_memory)
     dev = input_device(model)
-    layers = _full_depth_layers(int(model.config.num_hidden_layers), layers)
+    layers = _full_depth_layers(model_num_hidden_layers(model), layers)
     rows, labels, reps = _balanced_rows(n_reps, seed)
     changed = [dict(row, ac=LOCATIONS[(labels[i] + 1) % len(LOCATIONS)])
                for i, row in enumerate(rows)]

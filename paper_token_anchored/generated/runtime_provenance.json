@@ -1,0 +1,27 @@
+{
+  "schema": "paper1-kaggle-runtime-v1",
+  "kernel": "shlydv/cm-paper1-runtime-provenance-t4",
+  "hardware_guard": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "python": "3.12.13",
+  "packages_before_awq_runtime_install": {
+    "accelerate": "1.13.0",
+    "bitsandbytes": null,
+    "gptqmodel": null,
+    "numpy": "2.0.2",
+    "safetensors": "0.7.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.10.0+cu128",
+    "transformers": "5.0.0"
+  },
+  "awq_runtime": {
+    "package": "gptqmodel",
+    "version": "7.1.0",
+    "installation": "kernel/run_kaggle.py installs the pinned version before importing causal_maps for quantization=awq"
+  },
+  "model_source": "qwen-lm/qwen2.5/transformers/14b-instruct-awq/1",
+  "code_dataset": "shlydv/causal-maps-code",
+  "provenance_log_sha256": "51F3FC2834C4A6839E11DCF8F8EE0F8FB139BCCB66EDB2AB60487D313655B7D4"
+}

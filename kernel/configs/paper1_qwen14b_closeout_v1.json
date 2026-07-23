@@ -1,0 +1,10 @@
+{
+  "model_path": "/kaggle/input/**/14b-instruct-awq/**/config.json",
+  "model_key": "qwen14b_closeout_v1",
+  "quantization": "awq",
+  "n_world": 30,
+  "layers": [2, 4, 8, 12, 16, 20, 24, 26, 32, 36, 41, 46],
+  "n_null": 20,
+  "random_seed": 8849,
+  "required_gpu": "Tesla T4"
+}

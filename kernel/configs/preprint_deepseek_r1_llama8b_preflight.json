@@ -1,0 +1,5 @@
+{
+  "model_path": "/kaggle/input/**/deepseek-r1-distill-llama-8b/**/config.json",
+  "n_world": 30,
+  "required_gpu": "Tesla T4"
+}

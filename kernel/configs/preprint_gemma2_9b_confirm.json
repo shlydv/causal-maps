@@ -1,0 +1,15 @@
+{
+  "model_path": "/kaggle/input/**/gemma-2-9b-it/**/config.json",
+  "model_key": "gemma2_9b_confirm",
+  "quantization": "8bit",
+  "seeds": [0, 1, 2],
+  "n_matrix": 30,
+  "n_entity": 30,
+  "n_world": 30,
+  "matrix_null": 50,
+  "entity_null": 30,
+  "anchor_null": 99,
+  "run_probe": false,
+  "run_quorum": false,
+  "required_gpu": "Tesla T4"
+}

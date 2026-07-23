@@ -156,6 +156,17 @@ else:
 STAGE = {stage!r}
 CONFIG = json.loads({config_json!r})
 
+if CONFIG.get("required_gpu"):
+    import subprocess
+    _gpu_names = subprocess.check_output(
+        ["nvidia-smi", "--query-gpu=name", "--format=csv,noheader"],
+        text=True).strip().splitlines()
+    print("GPU GUARD:", _gpu_names, flush=True)
+    if not _gpu_names or not all(CONFIG["required_gpu"] in name
+                                 for name in _gpu_names):
+        raise RuntimeError(f"required GPU {{CONFIG['required_gpu']!r}}; "
+                           f"received {{_gpu_names!r}}")
+
 # Transformers 5 delegates AWQ execution to gptqmodel. Install it before any
 # causal_maps import (model_utils imports transformers at module scope), so pip
 # cannot leave old and upgraded Transformers modules mixed in one process.
@@ -171,8 +182,34 @@ if CONFIG.get("quantization") == "awq":
         subprocess.run([sys.executable, "-m", "pip", "install", "-q",
                         "gptqmodel==7.1.0"], check=True)
 
-from causal_maps import experiments
-experiments.main(STAGE, CONFIG, out_dir="/kaggle/working")
+# Machine-readable runtime provenance for reproducibility logs. This is
+# intentionally emitted after any AWQ runtime installation and before the
+# experiment package import.
+import importlib.metadata, platform
+_runtime_packages = {{}}
+for _package in ("torch", "transformers", "accelerate", "bitsandbytes",
+                 "gptqmodel", "numpy", "safetensors", "tokenizers"):
+    try:
+        _runtime_packages[_package] = importlib.metadata.version(_package)
+    except importlib.metadata.PackageNotFoundError:
+        _runtime_packages[_package] = None
+print("RUNTIME_PROVENANCE:", json.dumps({{
+    "python": platform.python_version(), "packages": _runtime_packages,
+}}, sort_keys=True), flush=True)
+
+try:
+    from causal_maps import experiments
+    experiments.main(STAGE, CONFIG, out_dir="/kaggle/working")
+except BaseException:
+    # Kaggle's API exposes output files but not the live console traceback.
+    # Persist failures so the local orchestrator can diagnose them without UI.
+    import traceback
+    _failure = traceback.format_exc()
+    print(_failure, flush=True)
+    os.makedirs("/kaggle/working", exist_ok=True)
+    with open("/kaggle/working/kernel_failure.txt", "w") as _f:
+        _f.write(_failure)
+    raise
 '''
 
 
@@ -205,7 +242,15 @@ def push_kernel(work, accelerator=None):
     cmd = ["kernels", "push", "-p", work]
     if accelerator:  # pass explicitly too (CLI acc overrides metadata machine_shape)
         cmd += ["--accelerator", accelerator]
-    rc, out = _run(cmd, check=True)
+    rc, out = _run(cmd)
+    if rc != 0 and "unrecognized arguments: --accelerator" in out:
+        # kaggle 1.7.4+ removed the push-time flag; machine_shape in the
+        # generated metadata remains the supported accelerator declaration.
+        _log("installed Kaggle CLI does not accept --accelerator; "
+             "retrying with kernel metadata machine_shape")
+        rc, out = _run(["kernels", "push", "-p", work])
+    if rc != 0:
+        raise RuntimeError(f"kaggle {' '.join(cmd)} failed:\n{out}")
     _log(f"pushed: {out.strip().splitlines()[-1] if out.strip() else 'ok'}")
 
 
@@ -305,6 +350,8 @@ def main():
     rp = sub.add_parser("run")
     rp.add_argument("stage")
     rp.add_argument("--config", default="{}", help="JSON config for experiments.main")
+    rp.add_argument("--config-file",
+                    help="path to a JSON config (avoids native-shell quoting issues)")
     rp.add_argument("--max-wait", type=int, default=3600)
     rp.add_argument("--poll", type=int, default=30)
     rp.add_argument("--accelerator", default="NvidiaTeslaT4")
@@ -328,7 +375,12 @@ def main():
     elif a.cmd == "smoke":
         do_smoke(a.max_wait, a.poll, accelerator=a.accelerator)
     elif a.cmd == "run":
-        do_run(a.stage, json.loads(a.config), a.max_wait, a.poll,
+        if a.config_file:
+            with open(a.config_file) as f:
+                config = json.load(f)
+        else:
+            config = json.loads(a.config)
+        do_run(a.stage, config, a.max_wait, a.poll,
                refresh_code=not a.no_refresh_code, accelerator=a.accelerator,
                slug_suffix=a.slug_suffix, code_slug=a.code_dataset,
                dataset_sources=a.dataset_source, internet=not a.no_internet,
