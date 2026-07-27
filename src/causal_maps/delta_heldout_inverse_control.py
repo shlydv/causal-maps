@@ -27,6 +27,7 @@ from .delta_heterogeneous_family_screen import (
     VALUES,
     _family_alignment,
     _family_batch,
+    _validate_history_change,
 )
 from .delta_prospective_causal_sensitivity import _prospective_rows
 from .logutil import Heartbeat, log
@@ -494,12 +495,19 @@ def _self_check():
     identity_ok = bool(torch.allclose(
         recovered, dynamic, atol=1e-5))
 
+    repeated_clean = {
+        "ids": torch.tensor([[1, 2, 3, 2], [4, 5, 6, 5]])}
+    repeated_natural = {
+        "ids": torch.tensor([[1, 7, 3, 7], [4, 8, 6, 8]])}
+    _validate_history_change(repeated_clean, repeated_natural)
+    repeated_history_ok = True
+
     rows = _pilot_rows()
     passed = bool(
         boundary_blocked
         and min(progress.tolist()) >= 0.95
         and min(metadata["predicted_target_cosine"]) >= 0.95
-        and cap_ok and sign_ok and identity_ok
+        and cap_ok and sign_ok and identity_ok and repeated_history_ok
         and len(rows["training"]) == TRAIN_N
         and all(
             len(rows[f"identify_{direction}"]) == IDENTIFICATION_N
@@ -513,6 +521,7 @@ def _self_check():
         "norm_cap_check": cap_ok,
         "coefficient_to_patch_sign_check": sign_ok,
         "direct_identity_removal_check": identity_ok,
+        "repeated_history_state_check": repeated_history_ok,
         "row_split_check": True,
         "pass": True,
     }

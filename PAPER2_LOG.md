@@ -2161,3 +2161,22 @@ T4-only self-test passed under protocol SHA-256
 `490A2C297BDFF4FA875D7485B484249961A31D86FFC1591009A2E78C067656CE`.
 The uploaded source ZIP SHA-256 is
 `1647091E473858F923FB127603F7D4A5530697FE856B62F4DF29038687133CF8`.
+
+## 2026-07-27: held-out inverse-control implementation repair
+
+Kernel `cm-p2-heldout-inverse-control-v1` stopped after freezing predictions
+and partially evaluating the first held-out family. It produced no final
+experimental verdict. The failure was an inherited single-anchor assertion:
+the new set-intersection history mentions its changed shared member twice, so
+its clean and natural token sequences correctly differ at two positions.
+
+The assertion was unrelated to the intervention, which acts only on the
+three-token answer prefix. It was replaced by the applicable invariant:
+clean/natural histories must have equal shapes and every row must differ.
+A repeated-state regression check was added to both the test suite and the
+Kaggle self-check. No prompt, split, basis, layer, intervention, control,
+threshold or adjudication rule changed.
+
+The repaired immutable source dataset is
+`shlydv/causal-maps-code-heldout-inverse-v4`; clean T4 rerun
+`cm-p2-heldout-inverse-control-v2` was launched.

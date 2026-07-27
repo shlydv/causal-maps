@@ -7,7 +7,7 @@ import os
 
 import torch
 
-from .delta_anchor_write import _anchor_position, _resolve
+from .delta_anchor_write import _resolve
 from .delta_content_cancelled_controller import PATCH_WIDTH
 from .delta_cross_domain_controller import (
     _domain_rows,
@@ -262,6 +262,28 @@ def _family_batch(tok, rows, spec, command, dev):
     }
 
 
+def _validate_history_change(clean_batch, natural_batch):
+    """Require aligned, non-identical histories without assuming one anchor.
+
+    Some computations mention the changed state more than once (for example,
+    set intersection places the shared member in both sets).  This experiment
+    intervenes only on the answer-prefix command positions, so it requires
+    equal sequence shapes and a real history change, not a single changed
+    token position.
+    """
+    clean_ids = clean_batch["ids"]
+    natural_ids = natural_batch["ids"]
+    if clean_ids.shape != natural_ids.shape:
+        raise ValueError("clean/natural family shapes differ")
+    unchanged_rows = [
+        row for row in range(clean_ids.shape[0])
+        if not bool((clean_ids[row] != natural_ids[row]).any())
+    ]
+    if unchanged_rows:
+        raise ValueError(
+            f"clean/natural histories are identical for rows {unchanged_rows}")
+
+
 def _family_alignment(tok, dev, rows, spec):
     natural_rows = [
         {**row, "state": row["target"]}
@@ -303,8 +325,8 @@ def _family_alignment(tok, dev, rows, spec):
     if groups[1] != list(range(
             readout - PATCH_WIDTH + 1, readout + 1)):
         raise ValueError("answer-prefix command is not final")
-    _anchor_position(batches[0][0], batches[1][0])
-    _anchor_position(batches[0][1], batches[1][1])
+    _validate_history_change(batches[0][0], batches[1][0])
+    _validate_history_change(batches[0][1], batches[1][1])
     return {
         "batches": batches,
         "marker": marker,
