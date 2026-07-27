@@ -2295,3 +2295,38 @@ rescue rerun is licensed.
 
 Result JSON SHA-256:
 `D0040E139E9C87ADF42E7BA25DCAAAF31D0B05C714B1569757FB429F2326A605`.
+
+## 2026-07-27: causal atlas and parallel transport — frozen
+
+The fixed-vector shared-controller branch is closed. The next experiment
+tests a different theory: context-conditioned causal control may form local
+coordinate charts rather than one global direction.
+
+Across all eight established heterogeneous computations, a per-family
+low-rank atlas is learned from two position-matched lexical panels and must
+predict a disjoint third panel from source states alone. Predictions are
+hashed before target evaluation. The causal test asks whether atlas transport
+recreates downstream target-frame computation, not merely target-like L21
+activations.
+
+The same fitted charts must also satisfy held-out inverse, composition, and
+content-equivariance laws. Independent pairwise reduced-rank fits, mean
+translation, wrong-target transport, exact target states, 19 row-shuffled
+displacements, instruction positions, and identical-token positions are
+frozen controls. Six of eight families plus an add-one randomization
+`p = 0.05` are required for the full verdict.
+
+This is a decisive high-risk assay. A pass would support a genuine
+context-conditioned causal atlas; a causal-only pass would support transport
+without an algebra; failure closes this particular low-rank construction.
+There is no post-output prompt, rank, split, threshold, or family rescue.
+Full details are frozen in `PAPER2_CAUSAL_ATLAS_PROTOCOL.md`.
+
+The T4-only pre-run self-test passed. Its synthetic rank-two atlas achieved
+exact `1.0` transport progress in all six directions; median inverse and
+composition errors were below `7.2e-8`. The prediction boundary, disjoint
+split, add-one randomization test, and complete verdict taxonomy also passed.
+Protocol SHA-256:
+`46477A04C5D9BF650E1942167AA2A4CAD7D83FBC4EE7D56031C89672E4E1FCA0`.
+Uploaded source ZIP SHA-256:
+`77FEF163539EA40085098B34A7787F7C87346C7EAE793AB4CC16F8AE2274F974`.
