@@ -1955,3 +1955,53 @@ This does not negate the exact causal locus. It rejects the stronger proposed
 theory that a hidden-state-conditioned linear operator explains the required
 variation, and it does not license further rescue runs under the frozen
 stopping rule.
+
+## 2026-07-27: theory pivot — context-conditioned causal geometry
+
+This is a research-direction note, not an empirical result.
+
+The universal additive-controller branch is closed. A generic
+`instruction representation -> circuit selector` claim is also not a
+sufficient Paper 2 target: recent work already reports instruction vectors
+acting as circuit selectors, and prompt-specific circuit variation makes a
+single compact selector an unnecessarily strong assumption.
+
+The retained observations instead motivate the following tentative
+factorization:
+
+`h(context, operation) = carrier(context) + T_context z_operation`.
+
+- Paper 1 localized the causal interface and its write, anchor, checkpoint
+  and readout sequence.
+- Early Paper 2 experiments showed that a relatively low-energy, distributed
+  component can change the operation while much of the carrier remains
+  stable.
+- Exact matched-state transport passed all eight computation families.
+- Fixed within-family templates often worked, while universal and
+  source-conditioned cross-family linear predictors did not.
+
+The new hypothesis is therefore **covariant causal control**: an abstract
+operation effect may be shared, but its activation-space coordinates are
+determined by the current computation's local downstream geometry. The
+context map `T_context` may be implemented by distributed attention/MLP
+gating, a circuit selector, or another nonlinear mechanism; no implementation
+is assumed in advance.
+
+The decisive missing result is a prospective transformation law. Given
+training computations and only a held-out computation's unaltered baseline,
+can a constrained estimate of its local causal response map predict the
+intervention that produces the same downstream operation change, without
+observing the held-out opposite-operation state?
+
+Success would explain why exact states and family templates work while global
+vectors fail. Failure would favor unrelated computation-specific templates
+over a shared abstract operation. Any mapping must be low-complexity, frozen
+before held-out causal outcomes, behavior-preserving, and compared with
+global, family-template, shuffled, norm-matched and exact-oracle controls.
+Unconstrained nonlinear alignment is explicitly out of scope.
+
+Research strategy now changes to **width before depth**: screen several
+distinct mechanistic explanations with small matched experiments, then fund
+only the branch that makes a new held-out causal prediction. Do not begin
+another exhaustive confirmation battery until a candidate beats its strongest
+simple alternative.
