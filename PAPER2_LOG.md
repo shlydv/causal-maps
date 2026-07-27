@@ -2180,3 +2180,46 @@ threshold or adjudication rule changed.
 The repaired immutable source dataset is
 `shlydv/causal-maps-code-heldout-inverse-v4`; clean T4 rerun
 `cm-p2-heldout-inverse-control-v2` was launched.
+
+## 2026-07-27: prospective held-out inverse control — completed
+
+The repaired T4 run completed under the original frozen protocol. Prediction
+artifacts matched the pre-failure freeze exactly:
+
+- prediction JSON SHA-256:
+  `CF9EF61C31FD60CA47B15B2A6C32534F17FFB60332F6AF75732624FDCF3579E9`;
+- prediction NPZ SHA-256:
+  `9F67BDD81BA74EABF47BBA6E74ACA6FCEE512AE7155603A30517A793C5E97CF2`.
+
+The preregistered verdict was `LOCAL_MAP_OR_RANK4_CAPACITY_FAILED`. Exact L21
+state interchange passed in all four held-out family/direction cells, so the
+assay was eligible. The target-informed rank-four inverse reached its capacity
+gate in only one cell, and the locally identified inverse did not beat the
+frozen controls in any cell. The hypothesis that generic within-family probes
+could synthesize the full unseen operation-state transition is therefore not
+supported.
+
+A narrower prospective effect was broad and internally consistent. The
+training-only shared inverse moved the processed L27 state in the predicted
+direction for all 12/12 rows in every held-out cell:
+
+- minimum score, BELIEF→SEARCH: `+0.2735`;
+- minimum score, SEARCH→BELIEF: `+0.3795`;
+- set intersection, BELIEF→SEARCH: `+0.3333`;
+- set intersection, SEARCH→BELIEF: `+0.3450`.
+
+All patched value accuracies remained `100%`. The negative local inverse moved
+oppositely in every cell (`-0.0424`, `-0.1156`, `-0.1664`, `-0.1999`).
+However, the shared intervention was a preregistered control rather than the
+primary claim, and this experiment measured hidden-state transport rather than
+an independently observable route or behavior switch.
+
+Interpretation: the evidence supports a shared causal operation component that
+generalizes to unseen computations, embedded inside a larger
+context-dependent state that a rank-four local inverse does not reconstruct.
+This rules out both a universal *full-state* controller and the tested simple
+local-Jacobian reconstruction. A separate frozen behavioral/readout experiment
+is required before promoting the shared component to the Paper 2 headline.
+
+Result JSON SHA-256:
+`64C04CB57EC88E8F07759C92C0797CCE12C382A07BD4D38D4800E259866ACFBB`.
