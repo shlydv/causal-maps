@@ -1,0 +1,47 @@
+{
+  "artifact_type": "derived_adjudication_correction",
+  "date": "2026-07-27",
+  "protocol_sha256": "B0B08F1DDD55CE381856F9C04D75F39B037E45ACB857451F33EDADD69DC74A58",
+  "prediction_freeze_sha256": "9EFF4E595C08FEF87AEB5056E5AF38B13A8210D1A964C8A267C131006AC094C2",
+  "raw_result_sha256": "7984DFF32EC064A00A69858465810734CFCFAD7C733945FFED95BFEEB91C6813",
+  "raw_result_verdict": "GLOBAL_TEMPLATE_TRANSPORT",
+  "corrected_verdict": "ORACLE_ONLY_STATE_TRANSPORT",
+  "correction_reason": "The raw global_pass implementation gated route-progress score but omitted the frozen per-direction value-accuracy, target-distance, positive-row, and recovery gates. Raw activations and metrics are unchanged.",
+  "threshold_changes": false,
+  "rerun_used": false,
+  "exact_reference_families": [
+    "private_belief",
+    "latest_update",
+    "key_value_lookup",
+    "two_hop_pointer",
+    "conditional_selection",
+    "maximum_score",
+    "constraint_elimination",
+    "temporal_slot"
+  ],
+  "predicted_families": [],
+  "exemplar_families": [],
+  "strict_global_template_families": [
+    "private_belief",
+    "temporal_slot"
+  ],
+  "control_failure_families": [],
+  "aggregate_bidirectional_scores": {
+    "exact_mean": 0.696,
+    "conditional_mean": 0.424,
+    "mean_displacement_mean": 0.380,
+    "target_centroid_mean": 0.447,
+    "nearest_neighbor_mean": 0.417,
+    "row_shuffled_mean": 0.422,
+    "instruction_control_mean": 0.095,
+    "identical_control_mean": -0.007
+  },
+  "conditionality": {
+    "mean_gain_over_best_global": -0.027,
+    "families_with_positive_gain_over_best_global": 3,
+    "mean_gain_over_row_shuffle": 0.002,
+    "families_with_positive_gain_over_row_shuffle": 5,
+    "families_passing_complete_conditional_gate": 0
+  },
+  "interpretation": "Exact matched operation states transport broadly, but neither the global templates nor the donor-trained source-only linear predictor recover the effect across unseen computations under the frozen functional gates."
+}

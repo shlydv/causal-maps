@@ -5,6 +5,7 @@ import torch
 from causal_maps.delta_predictive_conditional_transport import (
     FAMILY_ORDER,
     _derange_rows,
+    _family_adjudication,
     _fit_low_rank,
     _overall_adjudication,
     _predict_low_rank,
@@ -79,3 +80,38 @@ def test_overall_verdict_requires_six_predictive_families():
         families[name]["predicted_pass"] = False
     assert _overall_adjudication(families)["verdict"] == (
         "PARTIAL_STATE_CONDITIONED_TRANSPORT")
+
+
+def test_global_template_cannot_pass_by_destroying_the_answer():
+    def direction(progress, accuracy=1.0):
+        return {
+            "mean_progress": progress,
+            "median_distance_ratio": 0.5,
+            "positive_rows": 24,
+            "minimum_answer_accuracy": accuracy,
+        }
+
+    arms = {}
+    for arm in (
+            "exact", "conditional", "mean_displacement",
+            "target_centroid", "nearest_neighbor", "row_shuffled",
+            "instruction_control", "identical_control"):
+        progress = {
+            "exact": 0.8,
+            "conditional": 0.45,
+            "mean_displacement": 0.2,
+            "target_centroid": 0.6,
+            "nearest_neighbor": 0.2,
+            "row_shuffled": 0.2,
+            "instruction_control": 0.0,
+            "identical_control": 0.0,
+        }[arm]
+        accuracy = 0.0 if arm == "target_centroid" else 1.0
+        arms[arm] = {
+            name: direction(progress, accuracy)
+            for name in ("belief_to_search", "search_to_belief")
+        }
+    result = _family_adjudication(arms)
+    assert not result["global_pass"]
+    assert not result["arm_direction_pass"]["target_centroid"][
+        "belief_to_search"]

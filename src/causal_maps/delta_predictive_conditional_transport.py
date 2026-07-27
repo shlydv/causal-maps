@@ -426,6 +426,16 @@ def _family_adjudication(arms):
     exact_pass = all(
         _direction_pass(arms["exact"][direction])
         for direction in DIRECTIONS)
+    arm_direction_pass = {}
+    for arm in (
+            "conditional", "mean_displacement", "target_centroid",
+            "nearest_neighbor", "row_shuffled"):
+        arm_direction_pass[arm] = {}
+        for direction in DIRECTIONS:
+            passed, _recovery = _predicted_direction_pass(
+                arms[arm][direction],
+                arms["exact"][direction])
+            arm_direction_pass[arm][direction] = passed
     predicted_direction = {}
     recovery = {}
     for direction in DIRECTIONS:
@@ -456,16 +466,17 @@ def _family_adjudication(arms):
         and locus_specific)
     exemplar_pass = bool(
         exact_pass
-        and scores["nearest_neighbor"]
-        >= MINIMUM_PREDICTED_PROGRESS - 1e-9
+        and all(arm_direction_pass["nearest_neighbor"].values())
         and scores["nearest_neighbor"] - global_baseline
         >= MINIMUM_CONDITIONAL_GAIN - 1e-9)
     global_pass = bool(
         exact_pass
-        and global_baseline
-        >= MINIMUM_PREDICTED_PROGRESS - 1e-9)
+        and (
+            all(arm_direction_pass["mean_displacement"].values())
+            or all(arm_direction_pass["target_centroid"].values())))
     return {
         "exact_pass": exact_pass,
+        "arm_direction_pass": arm_direction_pass,
         "predicted_direction_pass": predicted_direction,
         "recovery_of_exact": recovery,
         "scores": scores,

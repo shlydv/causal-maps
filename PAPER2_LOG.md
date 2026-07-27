@@ -1856,3 +1856,50 @@ replaces the earlier mediation scalar.
 The complete fixed design, gates and stopping rule are in
 `PAPER2_PREDICTIVE_CONDITIONAL_TRANSPORT_PROTOCOL.md`. No prompt, split,
 hyperparameter, threshold or locus rescue follows the run.
+
+## 2026-07-27: predictive conditional transport — completed; hypothesis not supported
+
+The full T4 run completed with prediction-freeze SHA-256
+`9EFF4E595C08FEF87AEB5056E5AF38B13A8210D1A964C8A267C131006AC094C2`.
+The protocol SHA-256 was
+`B0B08F1DDD55CE381856F9C04D75F39B037E45ACB857451F33EDADD69DC74A58`.
+
+Exact matched answer-prefix transplantation generalized strongly: all eight
+held-out computation families passed bidirectionally, with terminal
+bidirectional progress from `0.553` to `0.838` and no position-control
+failure. This substantially broadens the exact causal-transport observation
+beyond the two families used to discover it.
+
+The source-only reduced-rank predictor did not establish state-conditioned
+generalization. Across families its mean bidirectional progress was `0.424`,
+versus `0.696` for exact transplantation, `0.447` for the target-state
+centroid, and `0.422` after deterministically shuffling predicted
+displacements across rows. Conditional prediction exceeded the best global
+baseline in only three of eight families (mean gain `-0.027`) and exceeded
+the shuffled control by only `0.002` on average. No family passed the complete
+prospective conditionality gate.
+
+### Adjudication correction
+
+The original result file printed `GLOBAL_TEMPLATE_TRANSPORT`. Its raw
+measurements are valid, but that label exposed a code error: `global_pass`
+used route progress without requiring the already-recorded value-accuracy and
+target-distance gates. In `latest_update` and `constraint_elimination`, the
+target-centroid arm had 0% answer accuracy yet contributed to that verdict.
+Reapplying the frozen per-direction gates without changing any threshold
+leaves only two globally passing families (`private_belief` and
+`temporal_slot`), below the required six. The corrected verdict is therefore:
+
+`ORACLE_ONLY_STATE_TRANSPORT`.
+
+The correction changes no activation, intervention, metric or threshold and
+does not license a rerun. It is preserved in a separate derived adjudication
+artifact keyed to the immutable raw-result hash.
+
+Supported boundary:
+
+> Exact row-matched operation states are broadly causally transportable, but
+> neither a global template nor a donor-trained linear function of the origin
+> state recovers that transport across unseen computations. The causally
+> required variation is computation-specific, nonlinear, or inseparable from
+> the matched state under this representation.
