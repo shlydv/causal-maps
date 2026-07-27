@@ -1923,3 +1923,35 @@ establish `FAMILY_SPECIFIC_CONTROL_LAWS` and continue the research branch.
 Fewer than three with valid exact references closes the learnable control-law
 branch. The complete frozen design is in
 `PAPER2_WITHIN_FAMILY_CONDITIONAL_TRANSPORT_PROTOCOL.md`.
+
+## 2026-07-27: within-family conditional transport — completed
+
+The frozen T4 run completed under protocol
+`57BA943FA1C24D68358C214A4C4861B33C1BA36703934927060C13A240BBC0FA`.
+The raw-result SHA-256 is
+`E3A8E9D11F7A15291B20888007C05131ABF2F5B021401D1A8BC663F26F7AA99A`.
+
+Exact matched-state transport passed all eight families. Conditional
+source-only predictors also caused substantial bidirectional movement while
+preserving the value answer (minimum directional accuracy was 0.83), and all
+position controls passed. However, **zero of eight** families passed the
+complete conditionality gate. Conditional gains over the best same-family
+global template ranged from `-0.017` to `+0.029`, and gains over row-shuffled
+predictions ranged from `+0.003` to `+0.050`; both are far below the frozen
+`+0.10` requirement. Simple same-family global templates themselves passed
+in six of eight families.
+
+Frozen verdict: `WITHIN_FAMILY_GLOBAL_TEMPLATE_ONLY`.
+
+Decision: close the proposed learnable state-conditioned control-law branch.
+The supported result is narrower and cleaner:
+
+> Exact operation-state transport generalizes across computations. Its
+> portable intervention is computation-dependent, but within a computation
+> most tested variation behaves like a family-specific template rather than
+> a source-state-conditioned linear law.
+
+This does not negate the exact causal locus. It rejects the stronger proposed
+theory that a hidden-state-conditioned linear operator explains the required
+variation, and it does not license further rescue runs under the frozen
+stopping rule.
