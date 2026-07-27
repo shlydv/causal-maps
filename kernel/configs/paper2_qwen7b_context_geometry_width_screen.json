@@ -1,0 +1,7 @@
+{
+  "model_path": "/kaggle/input/**/qwen2-5-7b-instruct/config.json",
+  "model_key": "qwen7b_context_geometry_width_screen",
+  "quantization": "8bit",
+  "n_world": 8,
+  "required_gpu": "Tesla T4"
+}

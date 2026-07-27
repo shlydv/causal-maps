@@ -2026,6 +2026,22 @@ def main(stage, config=None, out_dir="/kaggle/working"):
             self_test_only=config.get("self_test_only", False))
         log("=== done ===")
         return res
+    if stage == "delta_context_geometry_width_screen":
+        from .delta_context_geometry_width_screen import (
+            run_delta_context_geometry_width_screen,
+        )
+        res = run_delta_context_geometry_width_screen(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key",
+                "qwen7b_context_geometry_width_screen"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 8),
+            self_test_only=config.get("self_test_only", False))
+        log("=== done ===")
+        return res
     if stage == "delta_controller_circuit_epistasis":
         from .delta_controller_circuit_epistasis import (
             run_delta_controller_circuit_epistasis,

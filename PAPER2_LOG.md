@@ -2005,3 +2005,29 @@ distinct mechanistic explanations with small matched experiments, then fund
 only the branch that makes a new held-out causal prediction. Do not begin
 another exhaustive confirmation battery until a candidate beats its strongest
 simple alternative.
+
+## 2026-07-27: context-geometry width screen — frozen, not launched
+
+The first width-first run combines two orthogonal diagnostics in one model
+load across private belief, two-hop pointer, maximum-score comparison and
+constraint elimination.
+
+First, exact same-row operation residuals are applied at seven signed doses.
+Smooth monotonic responses support local geometry; threshold-like responses
+support gating; irregular responses support independent templates or a wrong
+representation level.
+
+Second, four calibration-only family templates define a frozen rank-four
+intervention basis. Matched positive and negative probes estimate the entire
+L24/L27 final-token response vector at unchanged test states, after removing
+the exact direct residual identity carry-through. This prevents the skip path
+from manufacturing shared geometry or linear dose curves. The diagnostic is
+deliberately different from the earlier scalar route-readout Jacobian. It asks
+whether the downstream-computed multi-output maps replicate within
+computation families and differ across them.
+
+Only smooth dose response plus stable context-specific maps licenses a
+held-out covariant-transport pilot. Gated response plus stable maps licenses a
+selector-mediation factorial. Mixed or unstable results license neither.
+The frozen design and all thresholds are in
+`PAPER2_CONTEXT_GEOMETRY_WIDTH_SCREEN_PROTOCOL.md`.
