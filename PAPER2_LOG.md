@@ -2255,3 +2255,43 @@ and frozen intervention artifact SHA-256
 `9F67BDD81BA74EABF47BBA6E74ACA6FCEE512AE7155603A30517A793C5E97CF2`.
 The full specification is
 `PAPER2_SHARED_TANGENT_BREADTH_PROTOCOL.md`.
+
+## 2026-07-27: shared-tangent breadth screen — completed and closed
+
+The full T4 run completed under the frozen protocol and exact frozen
+intervention artifact. The preregistered verdict was
+`NO_SHARED_TANGENT_BREADTH`.
+
+The exact-state oracle made the assay interpretable: all 16 processed-L27
+cells moved positively (mean `+0.656`), although the weakest cell was `+0.481`
+against the frozen `+0.500` minimum. The selected shared tangent retained a
+real but narrower effect:
+
+- processed L24: mean `+0.273`, positive in 16/16 cells;
+- processed L27: mean `+0.221`, positive in 14/16 cells;
+- anchor panel L27 mean: `+0.331`;
+- synonym panel L27 mean: `+0.110`;
+- the two negative cells were both conditional-selection synonyms.
+
+This was not a privileged broad direction. The synonym panel missed its
+`+0.150` gate, minimum answer accuracy was `75%`, two of 19 random rank-four
+directions beat the selected panel-minimum score (`p=0.15`), and the best
+random score (`+0.140`) exceeded the selected score (`+0.110`).
+
+The independent consequence assay failed more decisively. Ten cells were
+exact-oracle resolved. The selected tangent had mean normalized progress
+`+0.134`, only `60%` positive cells, one nonfunctional cell, and a synonym
+mean of `-0.139`. The instruction-position control averaged `+0.354` and the
+best frozen random control averaged `+0.504`, both above the selected
+intervention.
+
+Interpretation: a fixed training-only vector can provide an early shared
+operation-correlated bias, especially under the anchor wording, but it is
+neither lexical-coordinate invariant nor a specific downstream causal
+controller. Context-dependent computation can preserve, redirect, or erase
+that bias between L24 and L27. Per the frozen stopping rule, the
+context-independent shared-controller branch is closed; no threshold or
+rescue rerun is licensed.
+
+Result JSON SHA-256:
+`D0040E139E9C87ADF42E7BA25DCAAAF31D0B05C714B1569757FB429F2326A605`.
