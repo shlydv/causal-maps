@@ -2479,3 +2479,96 @@ Protocol SHA-256:
 `AC2F443846B746AD6FE07D92608542206AC0CDDFF0EDB471334C45CFB0015A1F`.
 Uploaded source ZIP SHA-256:
 `DCE51CA9F4342F06AEDA70B30ADDFF2893084238BA56042C42CABD779DEDB75B`.
+
+## 2026-07-27: latent-instruction compiler test — contextual toggle, not portable code
+
+The frozen T4 run completed cleanly with verdict
+`CONTEXTUAL_COMPILER_WITHOUT_PORTABLE_CODE`.
+
+All behavioral baselines were eligible apart from one `91.7%` cell, which
+remained above the frozen `80%` gate. The exact matched L21 oracle and the
+exact early target-state oracle passed all four held-out family-direction
+cells. Exact early target states produced `0.851` to `0.989` processed-L27
+progress, so the frozen layers between L2 and L21 can transform a
+context-matched early state into the later target computation.
+
+The training-derived L2 program moved the processed route positively in all
+`96/96` held-out row interventions, with cell means from `0.275` to `0.515`,
+and its generated L21 residual matched the correct receiver better than all
+nineteen row derangements in every cell (`18.6%` to `20.8%` median-error
+reduction; add-one `p = 0.05`). However, it passed the full portable-code gate
+in only the two search-to-epistemic cells. The two epistemic-to-search cells
+recovered only `29.9%` and `40.3%` of their exact early effects. L21
+block/rescue mediation passed the same two cells and failed the same two.
+
+Specificity also failed. One of nineteen same-norm random programs exceeded
+the four-cell primary breadth (`p = 0.10`), and sign reversal retained
+substantial positive breadth (`0.174`, above the frozen maximum `0.138`).
+The identical-position control was below its limit.
+
+The sign result changes the interpretation. By construction, the two learned
+directional programs are negatives of one another: the mean of `search -
+epistemic` is exactly the negative of the mean of `epistemic - search`.
+Nevertheless, both signs moved each source toward the only other binary mode.
+The supported phenomenon is therefore an unsigned, source-conditioned
+toggle-like response at the command positions, not a signed latent
+instruction. In a two-mode assay, “move away from the source” is
+observationally confounded with “select this target.”
+
+This closes the present binary portable-compiler claim. The decisive next
+design must contain at least three operation modes, so target selection can be
+distinguished from generic source destabilization. A true latent instruction
+must send the same source to different preregistered destinations according
+to code identity, while sign, matched-position and same-norm random controls
+do not.
+
+Result artifact:
+`runs/delta_latent_instruction_compiler/results_delta_latent_instruction_compiler_qwen7b_latent_instruction_compiler.json`.
+
+## 2026-07-27: random-control audit and three-mode selector — frozen
+
+The binary result's random-code concern was audited before designing another
+model run. All nineteen random programs were exactly norm-matched to the
+learned program by construction. The learned program's per-cell processed-L27
+ranks among the nineteen random controls were:
+
+- maximum-score, epistemic to search: `94.7th` percentile;
+- maximum-score, search to epistemic: `100th` percentile;
+- two-hop, epistemic to search: `84.2nd` percentile;
+- two-hop, search to epistemic: `100th` percentile.
+
+Thus the learned program is not indistinguishable from norm-matched random
+noise. It exceeds the random median in all four cells. However, one random
+program had greater minimum breadth across all four cells, so the frozen
+global add-one test was correctly `p = 0.10`. The evidence supports a mixture
+of learned structure and generic perturbation sensitivity; it does not license
+either a portable semantic code or a clean toggle mechanism.
+
+The next assay removes the binary ambiguity with three pretrained lexical
+route modes: epistemic, communication and search. For each destination it
+fits one early code equal to the destination state minus the mean of both
+alternative source states. The same destination code must select its target
+from either alternative source on unseen KNOW/SAY/LOOK labels, unseen worlds
+and two held-out computation families.
+
+The primary criterion is destination identity, not displacement. In every
+source-target cell, the intended code must beat the competing destination
+code, select its preregistered target rather than the third mode, and survive
+exactly norm-matched random, sign, position, mediation and receiver-context
+controls. All twelve family/source/target cells must pass. If codes merely
+evict the source without selecting their named destination, the frozen verdict
+is `GENERIC_EVICTION_NOT_SELECTION`.
+
+Full design and stopping rule:
+`PAPER2_THREE_MODE_SELECTOR_PROTOCOL.md`.
+
+The T4-only pre-run guard passed. It verifies three modes, six transitions,
+unique decoys, exact native-target destination scoring, deterministic
+calibration-layer selection, all nineteen per-destination norm matches and
+reachability of all seven frozen verdicts. Maximum random-code norm error was
+`1.91e-6`.
+
+Protocol SHA-256:
+`DE5EE58776084C01CE54777B8C5FAB9379367586FBB004CD4305C4C71CD2E038`.
+Uploaded source ZIP SHA-256:
+`CDB38F960FF5CABD1ED9FEE61E3BD5F7D8C367AEAF1D6FCC9C70C65A76036F5E`.

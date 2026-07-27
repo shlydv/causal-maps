@@ -2117,6 +2117,21 @@ def main(stage, config=None, out_dir="/kaggle/working"):
             self_test_only=config.get("self_test_only", False))
         log("=== done ===")
         return res
+    if stage == "delta_three_mode_selector":
+        from .delta_three_mode_selector import (
+            run_delta_three_mode_selector,
+        )
+        res = run_delta_three_mode_selector(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_three_mode_selector"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 12),
+            self_test_only=config.get("self_test_only", False))
+        log("=== done ===")
+        return res
     if stage == "delta_controller_circuit_epistasis":
         from .delta_controller_circuit_epistasis import (
             run_delta_controller_circuit_epistasis,
