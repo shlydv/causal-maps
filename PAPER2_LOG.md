@@ -2031,3 +2031,44 @@ held-out covariant-transport pilot. Gated response plus stable maps licenses a
 selector-mediation factorial. Mixed or unstable results license neither.
 The frozen design and all thresholds are in
 `PAPER2_CONTEXT_GEOMETRY_WIDTH_SCREEN_PROTOCOL.md`.
+
+## 2026-07-27: context-geometry width screen — completed
+
+The run completed cleanly under frozen protocol hash
+`265E236CC043C6F7F3DA2E504632A83C48FC7F7611128FC3409EC2BB30781D99`.
+This was not a behavioral-ineligibility failure: all probe arms preserved
+`100%` value-answer accuracy and the post-identity response was nontrivial.
+
+The dose screen passed decisively. All four computation families were smooth
+in both BELIEF-to-SEARCH and SEARCH-to-BELIEF directions. At L27, exact-dose
+processed progress ranged from `0.598` to `0.910`; every curve had Spearman
+`1.000`, linear-fit R-squared from `0.987` to `0.999`, and no largest adjacent
+step above `0.336`. The processed target retained `0.956` to `0.976` of the
+raw target norm. This rejects the discrete-gate explanation at the tested
+causal interface and shows a graded downstream response after removing the
+tautological residual identity path.
+
+The response-map screen was stable but did not pass context specificity. At
+L27, median within-family map cosine was `0.806`, median cross-family cosine
+was `0.677`, and their separation was `0.128`, below the frozen `0.150`
+threshold. L24 separation was only `0.084`. The L27 map verdict was therefore
+`MIXED_RESPONSE_MAPS`, and the frozen overall verdict was
+`NO_DEEPER_BRANCH_LICENSED`.
+
+Interpretation: the evidence supports smooth local causal dynamics, but not
+the clean computation-specific transformation law required for the proposed
+covariant-control pilot. The maps appear to contain both substantial shared
+structure and weaker computation dependence. The `0.128` result is not to be
+rescued as a near-pass by changing the threshold after observation.
+
+Decision: close this predeclared branch without another GPU rescue run. The
+smooth dose result is a useful mechanistic observation, but it does not by
+itself establish a predictive cross-context law or an ICML/ICLR-level Paper 2
+claim.
+
+Artifacts:
+
+- result JSON SHA-256:
+  `7BC9AA6460ABE18E94200B1FFF68A094FE8F574F5D2F4D2A41185C474911F5C0`
+- response-map NPZ SHA-256:
+  `49B64B7A97B87E1EC90595B8B29E5A75D7F66B15C06EAAA5B01F138D742EFF72`
