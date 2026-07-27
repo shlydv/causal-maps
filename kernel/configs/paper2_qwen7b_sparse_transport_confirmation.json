@@ -1,0 +1,9 @@
+{
+  "model_path": "/kaggle/input/qwen2-5-7b-instruct",
+  "model_key": "qwen7b_sparse_transport_confirmation",
+  "quantization": "8bit",
+  "n_world": 30,
+  "n_random": 99,
+  "random_seed": 9407,
+  "required_gpu": "Tesla T4"
+}

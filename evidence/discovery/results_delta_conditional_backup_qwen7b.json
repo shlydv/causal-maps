@@ -1,0 +1,6885 @@
+{
+  "stage": "delta_conditional_backup",
+  "protocol_version": "2026-07-24-p2-conditional-backup-v1",
+  "protocol_sha256": "8647A535E8E9597C8EA68A6E52FF47369414795CA3C8B1A70F8CA80191C022C6",
+  "model_key": "qwen7b_conditional_backup",
+  "model_path": "/kaggle/input/**/qwen2-5-7b-instruct/config.json",
+  "quantization": "8bit",
+  "world_selection": {
+    "requested": 30,
+    "selected": 30,
+    "indices_from_30": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "n_discovery": 15,
+    "n_evaluation": 15
+  },
+  "backup_layers": [
+    22,
+    23,
+    24
+  ],
+  "n_heads": 28,
+  "head_dim": 128,
+  "n_candidates": 76,
+  "frozen_top8": [
+    {
+      "layer": 23,
+      "head": 11
+    },
+    {
+      "layer": 24,
+      "head": 21
+    },
+    {
+      "layer": 22,
+      "head": 1
+    },
+    {
+      "layer": 23,
+      "head": 6
+    },
+    {
+      "layer": 22,
+      "head": 25
+    },
+    {
+      "layer": 23,
+      "head": 4
+    },
+    {
+      "layer": 23,
+      "head": 13
+    },
+    {
+      "layer": 24,
+      "head": 27
+    }
+  ],
+  "discovery": {
+    "belief_ac": [
+      {
+        "layer": 24,
+        "head": 23,
+        "forward_residual_ratio": 0.3232937330014599,
+        "absolute_residual_reduction": 0.02155290288453099,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 15,
+        "forward_residual_ratio": 0.32357004821507585,
+        "absolute_residual_reduction": 0.02127658767091506,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 19,
+        "forward_residual_ratio": 0.32992539299498874,
+        "absolute_residual_reduction": 0.014921242891002162,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 24,
+        "forward_residual_ratio": 0.33324123880287776,
+        "absolute_residual_reduction": 0.011605397083113145,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 5,
+        "forward_residual_ratio": 0.33489916170682227,
+        "absolute_residual_reduction": 0.009947474179168636,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 17,
+        "forward_residual_ratio": 0.33572810734766995,
+        "absolute_residual_reduction": 0.009118528538320958,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 4,
+        "forward_residual_ratio": 0.3387676063196939,
+        "absolute_residual_reduction": 0.006079029566297023,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 7,
+        "forward_residual_ratio": 0.3398728987964066,
+        "absolute_residual_reduction": 0.004973737089584318,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 3,
+        "forward_residual_ratio": 0.3398728987964066,
+        "absolute_residual_reduction": 0.004973737089584318,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 18,
+        "forward_residual_ratio": 0.34014921401002246,
+        "absolute_residual_reduction": 0.004697421875968444,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 26,
+        "forward_residual_ratio": 0.34014921401002246,
+        "absolute_residual_reduction": 0.004697421875968444,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 18,
+        "forward_residual_ratio": 0.3404255292236384,
+        "absolute_residual_reduction": 0.004421106662352514,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 13,
+        "forward_residual_ratio": 0.34097819127311935,
+        "absolute_residual_reduction": 0.0038684446128715577,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 22,
+        "forward_residual_ratio": 0.34097819127311935,
+        "absolute_residual_reduction": 0.0038684446128715577,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 25,
+        "forward_residual_ratio": 0.34097819127311935,
+        "absolute_residual_reduction": 0.0038684446128715577,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 27,
+        "forward_residual_ratio": 0.34180713691396697,
+        "absolute_residual_reduction": 0.003039498972023935,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 0,
+        "forward_residual_ratio": 0.3423597673411988,
+        "absolute_residual_reduction": 0.0024868685447921313,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 10,
+        "forward_residual_ratio": 0.3429123977684305,
+        "absolute_residual_reduction": 0.0019342381175603829,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 17,
+        "forward_residual_ratio": 0.3429123977684305,
+        "absolute_residual_reduction": 0.0019342381175603829,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 11,
+        "forward_residual_ratio": 0.3429123977684305,
+        "absolute_residual_reduction": 0.0019342381175603829,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 11,
+        "forward_residual_ratio": 0.3431887446042956,
+        "absolute_residual_reduction": 0.0016578912816953006,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 14,
+        "forward_residual_ratio": 0.3434650598179115,
+        "absolute_residual_reduction": 0.0013815760680794265,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 3,
+        "forward_residual_ratio": 0.3437413750315274,
+        "absolute_residual_reduction": 0.0011052608544634968,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 6,
+        "forward_residual_ratio": 0.3440176902451433,
+        "absolute_residual_reduction": 0.0008289456408476226,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 12,
+        "forward_residual_ratio": 0.3440176902451433,
+        "absolute_residual_reduction": 0.0008289456408476226,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 0,
+        "forward_residual_ratio": 0.3440176902451433,
+        "absolute_residual_reduction": 0.0008289456408476226,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 18,
+        "forward_residual_ratio": 0.3440176902451433,
+        "absolute_residual_reduction": 0.0008289456408476226,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 26,
+        "forward_residual_ratio": 0.34429400545875916,
+        "absolute_residual_reduction": 0.0005526304272317484,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 3,
+        "forward_residual_ratio": 0.34429400545875916,
+        "absolute_residual_reduction": 0.0005526304272317484,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 13,
+        "forward_residual_ratio": 0.34429400545875916,
+        "absolute_residual_reduction": 0.0005526304272317484,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 14,
+        "forward_residual_ratio": 0.34429400545875916,
+        "absolute_residual_reduction": 0.0005526304272317484,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 19,
+        "forward_residual_ratio": 0.34429400545875916,
+        "absolute_residual_reduction": 0.0005526304272317484,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 25,
+        "forward_residual_ratio": 0.34457032067237503,
+        "absolute_residual_reduction": 0.0002763152136158742,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 6,
+        "forward_residual_ratio": 0.34457032067237503,
+        "absolute_residual_reduction": 0.0002763152136158742,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 7,
+        "forward_residual_ratio": 0.34457032067237503,
+        "absolute_residual_reduction": 0.0002763152136158742,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 2,
+        "forward_residual_ratio": 0.3448466358859909,
+        "absolute_residual_reduction": 0.0,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 1,
+        "forward_residual_ratio": 0.3448466358859909,
+        "absolute_residual_reduction": 0.0,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 19,
+        "forward_residual_ratio": 0.3448466358859909,
+        "absolute_residual_reduction": 0.0,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 27,
+        "forward_residual_ratio": 0.3448466358859909,
+        "absolute_residual_reduction": 0.0,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 8,
+        "forward_residual_ratio": 0.3448466358859909,
+        "absolute_residual_reduction": 0.0,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 9,
+        "forward_residual_ratio": 0.3448466358859909,
+        "absolute_residual_reduction": 0.0,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 16,
+        "forward_residual_ratio": 0.3448466358859909,
+        "absolute_residual_reduction": 0.0,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 21,
+        "forward_residual_ratio": 0.345122982721856,
+        "absolute_residual_reduction": -0.00027634683586508224,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 12,
+        "forward_residual_ratio": 0.345122982721856,
+        "absolute_residual_reduction": -0.00027634683586508224,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 16,
+        "forward_residual_ratio": 0.345122982721856,
+        "absolute_residual_reduction": -0.00027634683586508224,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 5,
+        "forward_residual_ratio": 0.3453992979354719,
+        "absolute_residual_reduction": -0.0005526620494810119,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 20,
+        "forward_residual_ratio": 0.3453992979354719,
+        "absolute_residual_reduction": -0.0005526620494810119,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 2,
+        "forward_residual_ratio": 0.3453992979354719,
+        "absolute_residual_reduction": -0.0005526620494810119,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 15,
+        "forward_residual_ratio": 0.3453992979354719,
+        "absolute_residual_reduction": -0.0005526620494810119,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 15,
+        "forward_residual_ratio": 0.3453992979354719,
+        "absolute_residual_reduction": -0.0005526620494810119,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 24,
+        "forward_residual_ratio": 0.3456756131490878,
+        "absolute_residual_reduction": -0.0008289772630968861,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 17,
+        "forward_residual_ratio": 0.3456756131490878,
+        "absolute_residual_reduction": -0.0008289772630968861,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 20,
+        "forward_residual_ratio": 0.3456756131490878,
+        "absolute_residual_reduction": -0.0008289772630968861,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 9,
+        "forward_residual_ratio": 0.34595192836270366,
+        "absolute_residual_reduction": -0.0011052924767127603,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 10,
+        "forward_residual_ratio": 0.34595192836270366,
+        "absolute_residual_reduction": -0.0011052924767127603,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 9,
+        "forward_residual_ratio": 0.34595192836270366,
+        "absolute_residual_reduction": -0.0011052924767127603,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 21,
+        "forward_residual_ratio": 0.34595192836270366,
+        "absolute_residual_reduction": -0.0011052924767127603,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 23,
+        "forward_residual_ratio": 0.34595192836270366,
+        "absolute_residual_reduction": -0.0011052924767127603,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 4,
+        "forward_residual_ratio": 0.34595192836270366,
+        "absolute_residual_reduction": -0.0011052924767127603,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 12,
+        "forward_residual_ratio": 0.34595192836270366,
+        "absolute_residual_reduction": -0.0011052924767127603,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 14,
+        "forward_residual_ratio": 0.34622824357631954,
+        "absolute_residual_reduction": -0.0013816076903286345,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 20,
+        "forward_residual_ratio": 0.34622824357631954,
+        "absolute_residual_reduction": -0.0013816076903286345,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 22,
+        "forward_residual_ratio": 0.34622824357631954,
+        "absolute_residual_reduction": -0.0013816076903286345,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 5,
+        "forward_residual_ratio": 0.34622824357631954,
+        "absolute_residual_reduction": -0.0013816076903286345,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 23,
+        "forward_residual_ratio": 0.3465045587899354,
+        "absolute_residual_reduction": -0.0016579229039445087,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 1,
+        "forward_residual_ratio": 0.3465045587899354,
+        "absolute_residual_reduction": -0.0016579229039445087,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 2,
+        "forward_residual_ratio": 0.3465045587899354,
+        "absolute_residual_reduction": -0.0016579229039445087,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 10,
+        "forward_residual_ratio": 0.3465045587899354,
+        "absolute_residual_reduction": -0.0016579229039445087,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 26,
+        "forward_residual_ratio": 0.3467808740035513,
+        "absolute_residual_reduction": -0.0019342381175603829,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 7,
+        "forward_residual_ratio": 0.34705718921716716,
+        "absolute_residual_reduction": -0.002210553331176257,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 0,
+        "forward_residual_ratio": 0.3484387969074958,
+        "absolute_residual_reduction": -0.0035921610215048916,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 16,
+        "forward_residual_ratio": 0.3536888808329452,
+        "absolute_residual_reduction": -0.008842244946954292,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 8,
+        "forward_residual_ratio": 0.3545178264737929,
+        "absolute_residual_reduction": -0.00967119058780197,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 8,
+        "forward_residual_ratio": 0.3558994341641215,
+        "absolute_residual_reduction": -0.011052798278130604,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 22,
+        "forward_residual_ratio": 0.35893893313614544,
+        "absolute_residual_reduction": -0.01409229725015454,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 24,
+        "forward_residual_ratio": 0.3655705931296742,
+        "absolute_residual_reduction": -0.02072395724368331,
+        "origin_accuracy": 1.0
+      }
+    ],
+    "tell_ac": [
+      {
+        "layer": 22,
+        "head": 24,
+        "forward_residual_ratio": 0.37359043325565255,
+        "absolute_residual_reduction": 0.022552990479981827,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 15,
+        "forward_residual_ratio": 0.38080738607966924,
+        "absolute_residual_reduction": 0.01533603765596514,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 23,
+        "forward_residual_ratio": 0.3812584391787055,
+        "absolute_residual_reduction": 0.014884984556928882,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 17,
+        "forward_residual_ratio": 0.3884754178125814,
+        "absolute_residual_reduction": 0.007668005923053001,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 26,
+        "forward_residual_ratio": 0.3887009443620995,
+        "absolute_residual_reduction": 0.0074424793735348715,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 19,
+        "forward_residual_ratio": 0.389603050560172,
+        "absolute_residual_reduction": 0.006540373175462355,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 25,
+        "forward_residual_ratio": 0.39095623566713994,
+        "absolute_residual_reduction": 0.005187188068494442,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 5,
+        "forward_residual_ratio": 0.39118176221665807,
+        "absolute_residual_reduction": 0.0049616615189763125,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 13,
+        "forward_residual_ratio": 0.3920838942245898,
+        "absolute_residual_reduction": 0.004059529511044602,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 18,
+        "forward_residual_ratio": 0.392534947323626,
+        "absolute_residual_reduction": 0.003608476412008399,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 15,
+        "forward_residual_ratio": 0.392534947323626,
+        "absolute_residual_reduction": 0.003608476412008399,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 18,
+        "forward_residual_ratio": 0.392534947323626,
+        "absolute_residual_reduction": 0.003608476412008399,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 15,
+        "forward_residual_ratio": 0.392534947323626,
+        "absolute_residual_reduction": 0.003608476412008399,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 22,
+        "forward_residual_ratio": 0.39321152697218037,
+        "absolute_residual_reduction": 0.0029318967634540116,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 3,
+        "forward_residual_ratio": 0.39321152697218037,
+        "absolute_residual_reduction": 0.0029318967634540116,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 7,
+        "forward_residual_ratio": 0.3934370793315577,
+        "absolute_residual_reduction": 0.002706344404076688,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 4,
+        "forward_residual_ratio": 0.3936626058810758,
+        "absolute_residual_reduction": 0.002480817854558559,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 5,
+        "forward_residual_ratio": 0.3936626058810758,
+        "absolute_residual_reduction": 0.002480817854558559,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 27,
+        "forward_residual_ratio": 0.3936626058810758,
+        "absolute_residual_reduction": 0.002480817854558559,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 5,
+        "forward_residual_ratio": 0.3936626058810758,
+        "absolute_residual_reduction": 0.002480817854558559,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 10,
+        "forward_residual_ratio": 0.39388813243059395,
+        "absolute_residual_reduction": 0.00225529130504043,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 0,
+        "forward_residual_ratio": 0.3943391855296302,
+        "absolute_residual_reduction": 0.0018042382060041717,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 10,
+        "forward_residual_ratio": 0.3943391855296302,
+        "absolute_residual_reduction": 0.0018042382060041717,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 21,
+        "forward_residual_ratio": 0.3945647120791483,
+        "absolute_residual_reduction": 0.0015787116564860981,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 14,
+        "forward_residual_ratio": 0.3947902386286664,
+        "absolute_residual_reduction": 0.001353185106967969,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 25,
+        "forward_residual_ratio": 0.3947902386286664,
+        "absolute_residual_reduction": 0.001353185106967969,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 7,
+        "forward_residual_ratio": 0.3947902386286664,
+        "absolute_residual_reduction": 0.001353185106967969,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 11,
+        "forward_residual_ratio": 0.3947902386286664,
+        "absolute_residual_reduction": 0.001353185106967969,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 24,
+        "forward_residual_ratio": 0.39501579098804374,
+        "absolute_residual_reduction": 0.0011276327475906456,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 1,
+        "forward_residual_ratio": 0.39501579098804374,
+        "absolute_residual_reduction": 0.0011276327475906456,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 3,
+        "forward_residual_ratio": 0.39501579098804374,
+        "absolute_residual_reduction": 0.0011276327475906456,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 16,
+        "forward_residual_ratio": 0.39501579098804374,
+        "absolute_residual_reduction": 0.0011276327475906456,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 18,
+        "forward_residual_ratio": 0.39501579098804374,
+        "absolute_residual_reduction": 0.0011276327475906456,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 19,
+        "forward_residual_ratio": 0.39501579098804374,
+        "absolute_residual_reduction": 0.0011276327475906456,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 1,
+        "forward_residual_ratio": 0.39524131753756186,
+        "absolute_residual_reduction": 0.0009021061980725165,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 22,
+        "forward_residual_ratio": 0.39524131753756186,
+        "absolute_residual_reduction": 0.0009021061980725165,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 6,
+        "forward_residual_ratio": 0.39524131753756186,
+        "absolute_residual_reduction": 0.0009021061980725165,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 17,
+        "forward_residual_ratio": 0.39546684408708,
+        "absolute_residual_reduction": 0.0006765796485543873,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 6,
+        "forward_residual_ratio": 0.3956923706365981,
+        "absolute_residual_reduction": 0.00045105309903625823,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 2,
+        "forward_residual_ratio": 0.3956923706365981,
+        "absolute_residual_reduction": 0.00045105309903625823,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 0,
+        "forward_residual_ratio": 0.3956923706365981,
+        "absolute_residual_reduction": 0.00045105309903625823,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 4,
+        "forward_residual_ratio": 0.3956923706365981,
+        "absolute_residual_reduction": 0.00045105309903625823,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 8,
+        "forward_residual_ratio": 0.3956923706365981,
+        "absolute_residual_reduction": 0.00045105309903625823,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 9,
+        "forward_residual_ratio": 0.3956923706365981,
+        "absolute_residual_reduction": 0.00045105309903625823,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 12,
+        "forward_residual_ratio": 0.3956923706365981,
+        "absolute_residual_reduction": 0.00045105309903625823,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 13,
+        "forward_residual_ratio": 0.3956923706365981,
+        "absolute_residual_reduction": 0.00045105309903625823,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 11,
+        "forward_residual_ratio": 0.39591789718611625,
+        "absolute_residual_reduction": 0.00022552654951812912,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 20,
+        "forward_residual_ratio": 0.39591789718611625,
+        "absolute_residual_reduction": 0.00022552654951812912,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 2,
+        "forward_residual_ratio": 0.3961434237356344,
+        "absolute_residual_reduction": 0.0,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 10,
+        "forward_residual_ratio": 0.3961434237356344,
+        "absolute_residual_reduction": 0.0,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 16,
+        "forward_residual_ratio": 0.3961434237356344,
+        "absolute_residual_reduction": 0.0,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 19,
+        "forward_residual_ratio": 0.3961434237356344,
+        "absolute_residual_reduction": 0.0,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 23,
+        "forward_residual_ratio": 0.3961434237356344,
+        "absolute_residual_reduction": 0.0,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 27,
+        "forward_residual_ratio": 0.3961434237356344,
+        "absolute_residual_reduction": 0.0,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 14,
+        "forward_residual_ratio": 0.3961434237356344,
+        "absolute_residual_reduction": 0.0,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 17,
+        "forward_residual_ratio": 0.3961434237356344,
+        "absolute_residual_reduction": 0.0,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 3,
+        "forward_residual_ratio": 0.3963689502851525,
+        "absolute_residual_reduction": -0.00022552654951812912,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 26,
+        "forward_residual_ratio": 0.3963689502851525,
+        "absolute_residual_reduction": -0.00022552654951812912,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 2,
+        "forward_residual_ratio": 0.3963689502851525,
+        "absolute_residual_reduction": -0.00022552654951812912,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 20,
+        "forward_residual_ratio": 0.3965944768346706,
+        "absolute_residual_reduction": -0.0004510530990362027,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 21,
+        "forward_residual_ratio": 0.3965944768346706,
+        "absolute_residual_reduction": -0.0004510530990362027,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 20,
+        "forward_residual_ratio": 0.3965944768346706,
+        "absolute_residual_reduction": -0.0004510530990362027,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 12,
+        "forward_residual_ratio": 0.3968200291940479,
+        "absolute_residual_reduction": -0.0006766054584135262,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 7,
+        "forward_residual_ratio": 0.3968200291940479,
+        "absolute_residual_reduction": -0.0006766054584135262,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 9,
+        "forward_residual_ratio": 0.3968200291940479,
+        "absolute_residual_reduction": -0.0006766054584135262,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 23,
+        "forward_residual_ratio": 0.39704555574356604,
+        "absolute_residual_reduction": -0.0009021320079316553,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 12,
+        "forward_residual_ratio": 0.39794766194163855,
+        "absolute_residual_reduction": -0.0018042382060041717,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 14,
+        "forward_residual_ratio": 0.3981731884911567,
+        "absolute_residual_reduction": -0.002029764755522301,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 9,
+        "forward_residual_ratio": 0.39839874085053395,
+        "absolute_residual_reduction": -0.0022553171148995688,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 8,
+        "forward_residual_ratio": 0.39907532049908834,
+        "absolute_residual_reduction": -0.002931896763453956,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 16,
+        "forward_residual_ratio": 0.4008795587050925,
+        "absolute_residual_reduction": -0.004736134969458128,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 22,
+        "forward_residual_ratio": 0.4008795587050925,
+        "absolute_residual_reduction": -0.004736134969458128,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 24,
+        "forward_residual_ratio": 0.40606674677358695,
+        "absolute_residual_reduction": -0.00992332303795257,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 22,
+        "head": 0,
+        "forward_residual_ratio": 0.40741993188055486,
+        "absolute_residual_reduction": -0.011276508144920483,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 24,
+        "head": 26,
+        "forward_residual_ratio": 0.4150879378036078,
+        "absolute_residual_reduction": -0.018944514067973428,
+        "origin_accuracy": 1.0
+      },
+      {
+        "layer": 23,
+        "head": 8,
+        "forward_residual_ratio": 0.41824536111657995,
+        "absolute_residual_reduction": -0.02210193738094557,
+        "origin_accuracy": 1.0
+      }
+    ],
+    "search_ac": [
+      {
+        "layer": 24,
+        "head": 23,
+        "forward_residual_ratio": 0.44183961251744724,
+        "absolute_residual_reduction": 0.029565469705027103,
+        "origin_accuracy": 0.06666667014360428
+      },
+      {
+        "layer": 22,
+        "head": 15,
+        "forward_residual_ratio": 0.44990293797189573,
+        "absolute_residual_reduction": 0.021502144250578614,
+        "origin_accuracy": 0.13333334028720856
+      },
+      {
+        "layer": 22,
+        "head": 24,
+        "forward_residual_ratio": 0.46035539056529745,
+        "absolute_residual_reduction": 0.011049691657176897,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 19,
+        "forward_residual_ratio": 0.4630431543245235,
+        "absolute_residual_reduction": 0.008361927897950872,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 5,
+        "forward_residual_ratio": 0.46543228146347665,
+        "absolute_residual_reduction": 0.005972800758997698,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 26,
+        "forward_residual_ratio": 0.46602955470402235,
+        "absolute_residual_reduction": 0.005375527518451995,
+        "origin_accuracy": 0.06666667014360428
+      },
+      {
+        "layer": 24,
+        "head": 25,
+        "forward_residual_ratio": 0.4684186818429755,
+        "absolute_residual_reduction": 0.0029864003794988214,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 13,
+        "forward_residual_ratio": 0.4687173184632484,
+        "absolute_residual_reduction": 0.0026877637592259696,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 17,
+        "forward_residual_ratio": 0.4687173184632484,
+        "absolute_residual_reduction": 0.0026877637592259696,
+        "origin_accuracy": 0.06666667014360428
+      },
+      {
+        "layer": 24,
+        "head": 11,
+        "forward_residual_ratio": 0.4690159550835212,
+        "absolute_residual_reduction": 0.002389127138953173,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 3,
+        "forward_residual_ratio": 0.46991189912111014,
+        "absolute_residual_reduction": 0.0014931831013642038,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 21,
+        "forward_residual_ratio": 0.470210535741383,
+        "absolute_residual_reduction": 0.001194546481091352,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 27,
+        "forward_residual_ratio": 0.47050917236165585,
+        "absolute_residual_reduction": 0.0008959098608185001,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 14,
+        "forward_residual_ratio": 0.4708078089819287,
+        "absolute_residual_reduction": 0.0005972732405456482,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 16,
+        "forward_residual_ratio": 0.4708078089819287,
+        "absolute_residual_reduction": 0.0005972732405456482,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 25,
+        "forward_residual_ratio": 0.4708078089819287,
+        "absolute_residual_reduction": 0.0005972732405456482,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 4,
+        "forward_residual_ratio": 0.47140508222247435,
+        "absolute_residual_reduction": 0.0,
+        "origin_accuracy": 0.06666667014360428
+      },
+      {
+        "layer": 24,
+        "head": 7,
+        "forward_residual_ratio": 0.47140508222247435,
+        "absolute_residual_reduction": 0.0,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 5,
+        "forward_residual_ratio": 0.47170375301951767,
+        "absolute_residual_reduction": -0.0002986707970433211,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 14,
+        "forward_residual_ratio": 0.4723010262600634,
+        "absolute_residual_reduction": -0.0008959440375890249,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 20,
+        "forward_residual_ratio": 0.4723010262600634,
+        "absolute_residual_reduction": -0.0008959440375890249,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 7,
+        "forward_residual_ratio": 0.47259966288033617,
+        "absolute_residual_reduction": -0.0011945806578618212,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 9,
+        "forward_residual_ratio": 0.47259966288033617,
+        "absolute_residual_reduction": -0.0011945806578618212,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 15,
+        "forward_residual_ratio": 0.472898299500609,
+        "absolute_residual_reduction": -0.001493217278134673,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 18,
+        "forward_residual_ratio": 0.472898299500609,
+        "absolute_residual_reduction": -0.001493217278134673,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 0,
+        "forward_residual_ratio": 0.4731969361208819,
+        "absolute_residual_reduction": -0.001791853898407525,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 12,
+        "forward_residual_ratio": 0.4731969361208819,
+        "absolute_residual_reduction": -0.001791853898407525,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 18,
+        "forward_residual_ratio": 0.4731969361208819,
+        "absolute_residual_reduction": -0.001791853898407525,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 22,
+        "forward_residual_ratio": 0.4734955727411547,
+        "absolute_residual_reduction": -0.002090490518680377,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 3,
+        "forward_residual_ratio": 0.4734955727411547,
+        "absolute_residual_reduction": -0.002090490518680377,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 4,
+        "forward_residual_ratio": 0.4734955727411547,
+        "absolute_residual_reduction": -0.002090490518680377,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 5,
+        "forward_residual_ratio": 0.4734955727411547,
+        "absolute_residual_reduction": -0.002090490518680377,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 10,
+        "forward_residual_ratio": 0.473794243538198,
+        "absolute_residual_reduction": -0.0023891613157236424,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 22,
+        "forward_residual_ratio": 0.473794243538198,
+        "absolute_residual_reduction": -0.0023891613157236424,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 9,
+        "forward_residual_ratio": 0.473794243538198,
+        "absolute_residual_reduction": -0.0023891613157236424,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 13,
+        "forward_residual_ratio": 0.473794243538198,
+        "absolute_residual_reduction": -0.0023891613157236424,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 15,
+        "forward_residual_ratio": 0.473794243538198,
+        "absolute_residual_reduction": -0.0023891613157236424,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 7,
+        "forward_residual_ratio": 0.47409288015847084,
+        "absolute_residual_reduction": -0.0026877979359964943,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 11,
+        "forward_residual_ratio": 0.47409288015847084,
+        "absolute_residual_reduction": -0.0026877979359964943,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 12,
+        "forward_residual_ratio": 0.47409288015847084,
+        "absolute_residual_reduction": -0.0026877979359964943,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 17,
+        "forward_residual_ratio": 0.47409288015847084,
+        "absolute_residual_reduction": -0.0026877979359964943,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 10,
+        "forward_residual_ratio": 0.4743915167787437,
+        "absolute_residual_reduction": -0.002986434556269346,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 1,
+        "forward_residual_ratio": 0.4743915167787437,
+        "absolute_residual_reduction": -0.002986434556269346,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 8,
+        "forward_residual_ratio": 0.4743915167787437,
+        "absolute_residual_reduction": -0.002986434556269346,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 10,
+        "forward_residual_ratio": 0.4743915167787437,
+        "absolute_residual_reduction": -0.002986434556269346,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 19,
+        "forward_residual_ratio": 0.4743915167787437,
+        "absolute_residual_reduction": -0.002986434556269346,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 9,
+        "forward_residual_ratio": 0.47469015339901655,
+        "absolute_residual_reduction": -0.003285071176542198,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 18,
+        "forward_residual_ratio": 0.47469015339901655,
+        "absolute_residual_reduction": -0.003285071176542198,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 2,
+        "forward_residual_ratio": 0.47469015339901655,
+        "absolute_residual_reduction": -0.003285071176542198,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 6,
+        "forward_residual_ratio": 0.47469015339901655,
+        "absolute_residual_reduction": -0.003285071176542198,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 16,
+        "forward_residual_ratio": 0.47469015339901655,
+        "absolute_residual_reduction": -0.003285071176542198,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 21,
+        "forward_residual_ratio": 0.47498879001928934,
+        "absolute_residual_reduction": -0.0035837077968149944,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 1,
+        "forward_residual_ratio": 0.47498879001928934,
+        "absolute_residual_reduction": -0.0035837077968149944,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 17,
+        "forward_residual_ratio": 0.47498879001928934,
+        "absolute_residual_reduction": -0.0035837077968149944,
+        "origin_accuracy": 0.06666667014360428
+      },
+      {
+        "layer": 23,
+        "head": 20,
+        "forward_residual_ratio": 0.47498879001928934,
+        "absolute_residual_reduction": -0.0035837077968149944,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 26,
+        "forward_residual_ratio": 0.47498879001928934,
+        "absolute_residual_reduction": -0.0035837077968149944,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 2,
+        "forward_residual_ratio": 0.47498879001928934,
+        "absolute_residual_reduction": -0.0035837077968149944,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 23,
+        "forward_residual_ratio": 0.4752874266395622,
+        "absolute_residual_reduction": -0.0038823444170878463,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 0,
+        "forward_residual_ratio": 0.47558606325983505,
+        "absolute_residual_reduction": -0.004180981037360698,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 12,
+        "forward_residual_ratio": 0.47558606325983505,
+        "absolute_residual_reduction": -0.004180981037360698,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 2,
+        "forward_residual_ratio": 0.4758846998801079,
+        "absolute_residual_reduction": -0.00447961765763355,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 6,
+        "forward_residual_ratio": 0.4758846998801079,
+        "absolute_residual_reduction": -0.00447961765763355,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 20,
+        "forward_residual_ratio": 0.4758846998801079,
+        "absolute_residual_reduction": -0.00447961765763355,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 3,
+        "forward_residual_ratio": 0.47618337067715116,
+        "absolute_residual_reduction": -0.004778288454676816,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 14,
+        "forward_residual_ratio": 0.47618337067715116,
+        "absolute_residual_reduction": -0.004778288454676816,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 23,
+        "forward_residual_ratio": 0.476482007297424,
+        "absolute_residual_reduction": -0.0050769250749496675,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 24,
+        "forward_residual_ratio": 0.4770792805379697,
+        "absolute_residual_reduction": -0.005674198315495371,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 27,
+        "forward_residual_ratio": 0.4770792805379697,
+        "absolute_residual_reduction": -0.005674198315495371,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 19,
+        "forward_residual_ratio": 0.47767655377851537,
+        "absolute_residual_reduction": -0.0062714715560410195,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 0,
+        "forward_residual_ratio": 0.48006568091746854,
+        "absolute_residual_reduction": -0.008660598694994193,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 8,
+        "forward_residual_ratio": 0.48126026157533036,
+        "absolute_residual_reduction": -0.009855179352856014,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 22,
+        "head": 16,
+        "forward_residual_ratio": 0.4836493887142836,
+        "absolute_residual_reduction": -0.012244306491809243,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 22,
+        "forward_residual_ratio": 0.4857398792329639,
+        "absolute_residual_reduction": -0.014334797010489564,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 26,
+        "forward_residual_ratio": 0.48693442571405526,
+        "absolute_residual_reduction": -0.015529343491580916,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 24,
+        "head": 24,
+        "forward_residual_ratio": 0.497386878307457,
+        "absolute_residual_reduction": -0.025981796084982633,
+        "origin_accuracy": 0.0
+      },
+      {
+        "layer": 23,
+        "head": 8,
+        "forward_residual_ratio": 0.49917873220586445,
+        "absolute_residual_reduction": -0.027773649983390103,
+        "origin_accuracy": 0.0
+      }
+    ]
+  },
+  "evaluation_tasks": {
+    "belief_ac": {
+      "source_position": 89,
+      "readout_position": 197,
+      "eligible": true,
+      "g0_clean": 1.0,
+      "g0_natural": 1.0,
+      "source_intervention": {
+        "natural_effect": 29.558332443237305,
+        "forward_ratio": 1.1224978591126753,
+        "reverse_ratio": 1.1621088077307988,
+        "forward_target_acc": 1.0,
+        "reverse_clean_acc": 1.0,
+        "forward_effect_rows": [
+          33.5,
+          30.75,
+          32.125,
+          33.875,
+          35.25,
+          33.5625,
+          33.25,
+          31.75,
+          31.75,
+          30.8125,
+          31.4375,
+          35.0625,
+          34.5,
+          35.0625,
+          35.0
+        ],
+        "reverse_effect_rows": [
+          34.5625,
+          33.875,
+          34.3125,
+          34.3125,
+          34.8125,
+          34.0625,
+          34.1875,
+          33.1875,
+          33.1875,
+          33.0625,
+          33.875,
+          35.625,
+          35.125,
+          34.625,
+          36.4375
+        ],
+        "natural_effect_rows": [
+          30.625,
+          28.25,
+          28.625,
+          29.75,
+          30.75,
+          29.75,
+          29.875,
+          27.75,
+          28.125,
+          27.25,
+          28.0,
+          31.25,
+          31.0,
+          31.0,
+          31.375
+        ],
+        "sufficient": true
+      },
+      "blocked_intervention": {
+        "natural_effect": 29.558332443237305,
+        "forward_ratio": 0.34987312770361434,
+        "reverse_ratio": 0.2469692836953338,
+        "forward_target_acc": 0.0,
+        "reverse_clean_acc": 0.0,
+        "forward_effect_rows": [
+          9.5,
+          8.25,
+          9.375,
+          11.5,
+          11.875,
+          10.875,
+          10.875,
+          9.625,
+          10.0,
+          9.25,
+          9.75,
+          10.75,
+          10.875,
+          11.25,
+          11.375
+        ],
+        "reverse_effect_rows": [
+          7.125,
+          7.0,
+          7.5,
+          7.375,
+          7.75,
+          6.875,
+          7.375,
+          7.125,
+          7.0,
+          7.0,
+          7.0,
+          7.625,
+          7.375,
+          7.5,
+          7.875
+        ],
+        "natural_effect_rows": [
+          30.625,
+          28.25,
+          28.625,
+          29.75,
+          30.75,
+          29.75,
+          29.875,
+          27.75,
+          28.125,
+          27.25,
+          28.0,
+          31.25,
+          31.0,
+          31.0,
+          31.375
+        ],
+        "sufficient": false
+      },
+      "mediation": {
+        "forward_fraction": 0.6883084231624406,
+        "reverse_fraction": 0.787481789955985,
+        "minimum_fraction": 0.6883084231624406,
+        "origin_forward_acc": 1.0,
+        "origin_reverse_acc": 1.0,
+        "pass": false
+      }
+    },
+    "tell_ac": {
+      "source_position": 89,
+      "readout_position": 203,
+      "eligible": true,
+      "g0_clean": 1.0,
+      "g0_natural": 1.0,
+      "source_intervention": {
+        "natural_effect": 36.62083435058594,
+        "forward_ratio": 1.1092274403610358,
+        "reverse_ratio": 1.011832896316349,
+        "forward_target_acc": 1.0,
+        "reverse_clean_acc": 1.0,
+        "forward_effect_rows": [
+          40.125,
+          39.9375,
+          39.4375,
+          40.8125,
+          40.0,
+          40.4375,
+          41.5,
+          39.625,
+          40.375,
+          40.1875,
+          39.6875,
+          42.0,
+          43.1875,
+          41.4375,
+          40.5625
+        ],
+        "reverse_effect_rows": [
+          36.5,
+          37.125,
+          35.0,
+          37.875,
+          36.1875,
+          38.4375,
+          37.25,
+          36.3125,
+          36.875,
+          35.75,
+          35.5,
+          38.625,
+          38.6875,
+          38.4375,
+          37.25
+        ],
+        "natural_effect_rows": [
+          36.375,
+          36.25,
+          34.75,
+          37.0,
+          35.75,
+          36.75,
+          37.6875,
+          35.8125,
+          36.0,
+          36.3125,
+          35.375,
+          37.875,
+          39.0,
+          37.6875,
+          36.6875
+        ],
+        "sufficient": true
+      },
+      "blocked_intervention": {
+        "natural_effect": 36.62083435058594,
+        "forward_ratio": 0.3919672295595427,
+        "reverse_ratio": 0.18136306850923528,
+        "forward_target_acc": 0.0,
+        "reverse_clean_acc": 0.0,
+        "forward_effect_rows": [
+          12.5,
+          13.0,
+          12.375,
+          15.25,
+          14.0625,
+          15.0,
+          15.625,
+          14.6875,
+          14.375,
+          14.8125,
+          14.25,
+          14.625,
+          15.875,
+          14.6875,
+          14.1875
+        ],
+        "reverse_effect_rows": [
+          6.375,
+          6.625,
+          6.375,
+          7.125,
+          6.8125,
+          6.5,
+          6.6875,
+          7.125,
+          6.5,
+          5.875,
+          5.875,
+          7.125,
+          7.0,
+          6.75,
+          6.875
+        ],
+        "natural_effect_rows": [
+          36.375,
+          36.25,
+          34.75,
+          37.0,
+          35.75,
+          36.75,
+          37.6875,
+          35.8125,
+          36.0,
+          36.3125,
+          35.375,
+          37.875,
+          39.0,
+          37.6875,
+          36.6875
+        ],
+        "sufficient": false
+      },
+      "mediation": {
+        "forward_fraction": 0.6466304246566749,
+        "reverse_fraction": 0.820757884854801,
+        "minimum_fraction": 0.6466304246566749,
+        "origin_forward_acc": 1.0,
+        "origin_reverse_acc": 1.0,
+        "pass": false
+      }
+    },
+    "search_ac": {
+      "source_position": 89,
+      "readout_position": 201,
+      "eligible": true,
+      "g0_clean": 0.800000011920929,
+      "g0_natural": 1.0,
+      "source_intervention": {
+        "natural_effect": 27.745832443237305,
+        "forward_ratio": 1.1326025017036385,
+        "reverse_ratio": 1.0599189224136953,
+        "forward_target_acc": 1.0,
+        "reverse_clean_acc": 1.0,
+        "forward_effect_rows": [
+          28.75,
+          28.875,
+          30.75,
+          32.625,
+          33.3125,
+          31.8125,
+          32.75,
+          30.9375,
+          30.3125,
+          30.5,
+          31.0,
+          33.25,
+          32.125,
+          33.1875,
+          31.1875
+        ],
+        "reverse_effect_rows": [
+          29.8125,
+          27.375,
+          28.1875,
+          29.5625,
+          30.25,
+          31.375,
+          30.0,
+          28.9375,
+          28.4375,
+          29.1875,
+          28.5,
+          30.75,
+          30.875,
+          29.0625,
+          28.8125
+        ],
+        "natural_effect_rows": [
+          26.875,
+          25.25,
+          26.375,
+          29.0,
+          28.75,
+          29.1875,
+          28.875,
+          26.8125,
+          26.25,
+          26.3125,
+          26.5625,
+          29.6875,
+          29.3125,
+          29.6875,
+          27.25
+        ],
+        "sufficient": true
+      },
+      "blocked_intervention": {
+        "natural_effect": 27.745832443237305,
+        "forward_ratio": 0.48340594606087783,
+        "reverse_ratio": 0.3018471338761833,
+        "forward_target_acc": 0.0,
+        "reverse_clean_acc": 0.0,
+        "forward_effect_rows": [
+          10.5,
+          10.25,
+          11.5,
+          15.0,
+          15.5,
+          14.8125,
+          14.25,
+          13.9375,
+          13.25,
+          13.4375,
+          13.4375,
+          14.0625,
+          13.4375,
+          14.0625,
+          13.75
+        ],
+        "reverse_effect_rows": [
+          7.875,
+          7.125,
+          7.75,
+          8.875,
+          8.625,
+          9.0,
+          8.5,
+          8.375,
+          7.875,
+          8.25,
+          7.875,
+          9.125,
+          8.875,
+          8.75,
+          8.75
+        ],
+        "natural_effect_rows": [
+          26.875,
+          25.25,
+          26.375,
+          29.0,
+          28.75,
+          29.1875,
+          28.875,
+          26.8125,
+          26.25,
+          26.3125,
+          26.5625,
+          29.6875,
+          29.3125,
+          29.6875,
+          27.25
+        ],
+        "sufficient": false
+      },
+      "mediation": {
+        "forward_fraction": 0.5731901127414534,
+        "reverse_fraction": 0.7152167703650357,
+        "minimum_fraction": 0.5731901127414534,
+        "origin_forward_acc": 0.0,
+        "origin_reverse_acc": 0.9333333373069763,
+        "pass": false
+      }
+    }
+  },
+  "nested_complements": {
+    "belief_ac": {
+      "1": {
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 23
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 29.558332443237305,
+          "forward_ratio": 0.3270369532219588,
+          "reverse_ratio": 0.23287285300668598,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            9.0,
+            7.625,
+            8.625,
+            10.625,
+            11.25,
+            10.25,
+            10.0,
+            9.125,
+            9.625,
+            8.625,
+            8.875,
+            10.0,
+            10.125,
+            10.5,
+            10.75
+          ],
+          "reverse_effect_rows": [
+            6.75,
+            6.625,
+            7.0,
+            6.875,
+            7.25,
+            6.375,
+            6.875,
+            6.625,
+            6.75,
+            6.625,
+            6.625,
+            7.125,
+            7.25,
+            7.125,
+            7.375
+          ],
+          "natural_effect_rows": [
+            30.625,
+            28.25,
+            28.625,
+            29.75,
+            30.75,
+            29.75,
+            29.875,
+            27.75,
+            28.125,
+            27.25,
+            28.0,
+            31.25,
+            31.0,
+            31.0,
+            31.375
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.7086524926822768,
+          "reverse_fraction": 0.7996118337133964,
+          "minimum_fraction": 0.7086524926822768,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": true
+        }
+      },
+      "2": {
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 23
+          },
+          {
+            "layer": 22,
+            "head": 15
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 29.558332443237305,
+          "forward_ratio": 0.31068509749482465,
+          "reverse_ratio": 0.2094727980673003,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            8.25,
+            7.25,
+            8.0,
+            10.125,
+            11.0,
+            9.625,
+            9.75,
+            8.875,
+            9.0,
+            8.375,
+            8.375,
+            9.375,
+            9.5,
+            10.125,
+            10.125
+          ],
+          "reverse_effect_rows": [
+            5.875,
+            6.0,
+            6.375,
+            6.25,
+            6.375,
+            5.875,
+            6.375,
+            6.25,
+            6.0,
+            5.75,
+            6.0,
+            6.5,
+            6.375,
+            6.25,
+            6.625
+          ],
+          "natural_effect_rows": [
+            30.625,
+            28.25,
+            28.625,
+            29.75,
+            30.75,
+            29.75,
+            29.875,
+            27.75,
+            28.125,
+            27.25,
+            28.0,
+            31.25,
+            31.0,
+            31.0,
+            31.375
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.723219875233955,
+          "reverse_fraction": 0.8197476891373631,
+          "minimum_fraction": 0.723219875233955,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": true
+        }
+      },
+      "4": {
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 23
+          },
+          {
+            "layer": 22,
+            "head": 15
+          },
+          {
+            "layer": 22,
+            "head": 19
+          },
+          {
+            "layer": 22,
+            "head": 24
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 29.558332443237305,
+          "forward_ratio": 0.2793910387886646,
+          "reverse_ratio": 0.18579081903112193,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            7.25,
+            6.5,
+            7.375,
+            9.25,
+            9.75,
+            8.375,
+            8.875,
+            7.875,
+            8.125,
+            7.25,
+            7.75,
+            8.75,
+            8.625,
+            9.0,
+            9.125
+          ],
+          "reverse_effect_rows": [
+            5.25,
+            5.125,
+            5.75,
+            5.375,
+            5.875,
+            5.0,
+            5.375,
+            5.5,
+            5.375,
+            5.125,
+            5.0,
+            5.875,
+            5.875,
+            5.75,
+            6.125
+          ],
+          "natural_effect_rows": [
+            30.625,
+            28.25,
+            28.625,
+            29.75,
+            30.75,
+            29.75,
+            29.875,
+            27.75,
+            28.125,
+            27.25,
+            28.0,
+            31.25,
+            31.0,
+            31.0,
+            31.375
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.751098822576356,
+          "reverse_fraction": 0.8401261415495956,
+          "minimum_fraction": 0.751098822576356,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": true
+        }
+      },
+      "8": {
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 23
+          },
+          {
+            "layer": 22,
+            "head": 15
+          },
+          {
+            "layer": 22,
+            "head": 19
+          },
+          {
+            "layer": 22,
+            "head": 24
+          },
+          {
+            "layer": 23,
+            "head": 5
+          },
+          {
+            "layer": 22,
+            "head": 17
+          },
+          {
+            "layer": 22,
+            "head": 4
+          },
+          {
+            "layer": 22,
+            "head": 7
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 29.558332443237305,
+          "forward_ratio": 0.26360304738718826,
+          "reverse_ratio": 0.1615449756692858,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            6.75,
+            6.25,
+            7.0,
+            8.75,
+            9.25,
+            7.875,
+            8.375,
+            7.5,
+            7.75,
+            6.75,
+            7.25,
+            8.0,
+            8.0,
+            8.625,
+            8.75
+          ],
+          "reverse_effect_rows": [
+            4.5,
+            4.625,
+            4.75,
+            4.875,
+            5.125,
+            4.375,
+            4.5,
+            4.625,
+            4.625,
+            4.5,
+            4.375,
+            5.125,
+            5.0,
+            5.0,
+            5.625
+          ],
+          "natural_effect_rows": [
+            30.625,
+            28.25,
+            28.625,
+            29.75,
+            30.75,
+            29.75,
+            29.875,
+            27.75,
+            28.125,
+            27.25,
+            28.0,
+            31.25,
+            31.0,
+            31.0,
+            31.375
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.7651638751493351,
+          "reverse_fraction": 0.8609898018200827,
+          "minimum_fraction": 0.7651638751493351,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": true
+        }
+      }
+    },
+    "tell_ac": {
+      "1": {
+        "extra_sites": [
+          {
+            "layer": 22,
+            "head": 24
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 36.62083435058594,
+          "forward_ratio": 0.37831379951441324,
+          "reverse_ratio": 0.1793150461899105,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            12.0,
+            12.5,
+            12.0,
+            14.75,
+            13.9375,
+            14.75,
+            15.25,
+            14.1875,
+            13.875,
+            14.1875,
+            13.5,
+            13.875,
+            15.25,
+            14.0625,
+            13.6875
+          ],
+          "reverse_effect_rows": [
+            6.375,
+            6.75,
+            6.125,
+            6.875,
+            6.4375,
+            6.25,
+            6.5625,
+            6.75,
+            6.75,
+            6.0,
+            5.875,
+            7.0,
+            7.125,
+            6.75,
+            6.875
+          ],
+          "natural_effect_rows": [
+            36.375,
+            36.25,
+            34.75,
+            37.0,
+            35.75,
+            36.75,
+            37.6875,
+            35.8125,
+            36.0,
+            36.3125,
+            35.375,
+            37.875,
+            39.0,
+            37.6875,
+            36.6875
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6589393791130175,
+          "reverse_fraction": 0.8227819565436942,
+          "minimum_fraction": 0.6589393791130175,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      },
+      "2": {
+        "extra_sites": [
+          {
+            "layer": 22,
+            "head": 24
+          },
+          {
+            "layer": 22,
+            "head": 15
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 36.62083435058594,
+          "forward_ratio": 0.36124701195800135,
+          "reverse_ratio": 0.1547388695044923,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            11.5,
+            11.875,
+            11.375,
+            14.25,
+            13.3125,
+            13.875,
+            14.5,
+            13.5625,
+            13.375,
+            13.8125,
+            13.125,
+            13.125,
+            14.375,
+            13.3125,
+            13.0625
+          ],
+          "reverse_effect_rows": [
+            5.125,
+            5.5,
+            5.5,
+            6.125,
+            6.0625,
+            5.625,
+            5.6875,
+            6.125,
+            5.75,
+            4.875,
+            4.75,
+            6.125,
+            6.0,
+            5.75,
+            6.0
+          ],
+          "natural_effect_rows": [
+            36.375,
+            36.25,
+            34.75,
+            37.0,
+            35.75,
+            36.75,
+            37.6875,
+            35.8125,
+            36.0,
+            36.3125,
+            35.375,
+            37.875,
+            39.0,
+            37.6875,
+            36.6875
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6743255721834458,
+          "reverse_fraction": 0.8470707267298481,
+          "minimum_fraction": 0.6743255721834458,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      },
+      "4": {
+        "extra_sites": [
+          {
+            "layer": 22,
+            "head": 24
+          },
+          {
+            "layer": 22,
+            "head": 15
+          },
+          {
+            "layer": 24,
+            "head": 23
+          },
+          {
+            "layer": 22,
+            "head": 17
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 36.62083435058594,
+          "forward_ratio": 0.3464557873951607,
+          "reverse_ratio": 0.13767208194808048,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            10.875,
+            11.125,
+            10.75,
+            13.5,
+            12.5625,
+            13.5,
+            14.0,
+            13.0625,
+            13.125,
+            13.4375,
+            12.625,
+            12.625,
+            13.875,
+            12.6875,
+            12.5625
+          ],
+          "reverse_effect_rows": [
+            4.75,
+            4.875,
+            4.75,
+            5.375,
+            5.1875,
+            5.25,
+            5.3125,
+            5.25,
+            5.125,
+            4.375,
+            4.125,
+            5.375,
+            5.125,
+            5.375,
+            5.375
+          ],
+          "natural_effect_rows": [
+            36.375,
+            36.25,
+            34.75,
+            37.0,
+            35.75,
+            36.75,
+            37.6875,
+            35.8125,
+            36.0,
+            36.3125,
+            35.375,
+            37.875,
+            39.0,
+            37.6875,
+            36.6875
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.687660280670306,
+          "reverse_fraction": 0.8639379264606976,
+          "minimum_fraction": 0.687660280670306,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      },
+      "8": {
+        "extra_sites": [
+          {
+            "layer": 22,
+            "head": 24
+          },
+          {
+            "layer": 22,
+            "head": 15
+          },
+          {
+            "layer": 24,
+            "head": 23
+          },
+          {
+            "layer": 22,
+            "head": 17
+          },
+          {
+            "layer": 22,
+            "head": 26
+          },
+          {
+            "layer": 22,
+            "head": 19
+          },
+          {
+            "layer": 24,
+            "head": 25
+          },
+          {
+            "layer": 23,
+            "head": 5
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 36.62083435058594,
+          "forward_ratio": 0.32347252563872325,
+          "reverse_ratio": 0.11832973139809741,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            10.25,
+            10.5,
+            9.75,
+            12.375,
+            12.0625,
+            12.375,
+            13.0,
+            12.3125,
+            12.25,
+            12.3125,
+            12.0,
+            11.875,
+            13.0,
+            12.0625,
+            11.5625
+          ],
+          "reverse_effect_rows": [
+            3.875,
+            4.125,
+            4.0,
+            4.625,
+            4.6875,
+            4.25,
+            4.4375,
+            4.625,
+            4.375,
+            3.875,
+            3.5,
+            4.75,
+            4.625,
+            4.625,
+            4.625
+          ],
+          "natural_effect_rows": [
+            36.375,
+            36.25,
+            34.75,
+            37.0,
+            35.75,
+            36.75,
+            37.6875,
+            35.8125,
+            36.0,
+            36.3125,
+            35.375,
+            37.875,
+            39.0,
+            37.6875,
+            36.6875
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.7083803430489981,
+          "reverse_fraction": 0.883054077576559,
+          "minimum_fraction": 0.7083803430489981,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": true
+        }
+      }
+    },
+    "search_ac": {
+      "1": {
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 23
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 27.745832443237305,
+          "forward_ratio": 0.4518696783424706,
+          "reverse_ratio": 0.2745157064364709,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            9.75,
+            9.5,
+            10.5,
+            14.125,
+            14.375,
+            14.0625,
+            13.5,
+            12.9375,
+            12.625,
+            12.8125,
+            12.5625,
+            13.3125,
+            12.1875,
+            12.9375,
+            12.875
+          ],
+          "reverse_effect_rows": [
+            7.375,
+            6.625,
+            6.875,
+            7.875,
+            7.875,
+            8.25,
+            7.875,
+            7.625,
+            7.25,
+            7.5,
+            6.875,
+            8.375,
+            8.125,
+            7.875,
+            7.875
+          ],
+          "natural_effect_rows": [
+            26.875,
+            25.25,
+            26.375,
+            29.0,
+            28.75,
+            29.1875,
+            28.875,
+            26.8125,
+            26.25,
+            26.3125,
+            26.5625,
+            29.6875,
+            29.3125,
+            29.6875,
+            27.25
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6010341866075899,
+          "reverse_fraction": 0.7410031082270602,
+          "minimum_fraction": 0.6010341866075899,
+          "origin_forward_acc": 0.0,
+          "origin_reverse_acc": 0.9333333373069763,
+          "pass": false
+        }
+      },
+      "2": {
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 23
+          },
+          {
+            "layer": 22,
+            "head": 15
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 27.745832443237305,
+          "forward_ratio": 0.4290433976335838,
+          "reverse_ratio": 0.2414777002265858,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            9.0,
+            9.0,
+            10.125,
+            13.375,
+            13.875,
+            13.4375,
+            12.75,
+            12.3125,
+            12.125,
+            12.3125,
+            12.1875,
+            12.4375,
+            11.4375,
+            12.1875,
+            12.0
+          ],
+          "reverse_effect_rows": [
+            6.25,
+            5.625,
+            6.0,
+            7.125,
+            7.125,
+            7.25,
+            6.75,
+            7.0,
+            6.375,
+            6.625,
+            6.25,
+            7.5,
+            7.0,
+            6.75,
+            6.875
+          ],
+          "natural_effect_rows": [
+            26.875,
+            25.25,
+            26.375,
+            29.0,
+            28.75,
+            29.1875,
+            28.875,
+            26.8125,
+            26.25,
+            26.3125,
+            26.5625,
+            29.6875,
+            29.3125,
+            29.6875,
+            27.25
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6211880187548366,
+          "reverse_fraction": 0.7721734227777708,
+          "minimum_fraction": 0.6211880187548366,
+          "origin_forward_acc": 0.06666667014360428,
+          "origin_reverse_acc": 0.9333333373069763,
+          "pass": false
+        }
+      },
+      "4": {
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 23
+          },
+          {
+            "layer": 22,
+            "head": 15
+          },
+          {
+            "layer": 22,
+            "head": 24
+          },
+          {
+            "layer": 22,
+            "head": 19
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 27.745832443237305,
+          "forward_ratio": 0.40471544717682717,
+          "reverse_ratio": 0.22105421485278523,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            8.625,
+            8.25,
+            9.375,
+            12.75,
+            13.125,
+            12.6875,
+            12.125,
+            11.8125,
+            11.5,
+            11.6875,
+            11.5625,
+            11.5625,
+            10.6875,
+            11.3125,
+            11.375
+          ],
+          "reverse_effect_rows": [
+            5.5,
+            5.375,
+            5.25,
+            6.375,
+            6.625,
+            6.625,
+            6.5,
+            6.5,
+            5.75,
+            5.875,
+            5.75,
+            6.75,
+            6.375,
+            6.0,
+            6.75
+          ],
+          "natural_effect_rows": [
+            26.875,
+            25.25,
+            26.375,
+            29.0,
+            28.75,
+            29.1875,
+            28.875,
+            26.8125,
+            26.25,
+            26.3125,
+            26.5625,
+            29.6875,
+            29.3125,
+            29.6875,
+            27.25
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6426677086020364,
+          "reverse_fraction": 0.7914423356558343,
+          "minimum_fraction": 0.6426677086020364,
+          "origin_forward_acc": 0.20000000298023224,
+          "origin_reverse_acc": 0.9333333373069763,
+          "pass": false
+        }
+      },
+      "8": {
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 23
+          },
+          {
+            "layer": 22,
+            "head": 15
+          },
+          {
+            "layer": 22,
+            "head": 24
+          },
+          {
+            "layer": 22,
+            "head": 19
+          },
+          {
+            "layer": 23,
+            "head": 5
+          },
+          {
+            "layer": 22,
+            "head": 26
+          },
+          {
+            "layer": 24,
+            "head": 25
+          },
+          {
+            "layer": 22,
+            "head": 13
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 27.745832443237305,
+          "forward_ratio": 0.3755819404217022,
+          "reverse_ratio": 0.20693798989702689,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            7.875,
+            7.75,
+            8.5,
+            12.0,
+            12.0,
+            11.9375,
+            11.25,
+            10.9375,
+            10.625,
+            11.0625,
+            10.8125,
+            10.9375,
+            9.9375,
+            10.3125,
+            10.375
+          ],
+          "reverse_effect_rows": [
+            5.125,
+            4.875,
+            4.875,
+            6.0,
+            6.25,
+            6.125,
+            6.125,
+            6.0,
+            5.5,
+            5.75,
+            5.5,
+            6.25,
+            5.75,
+            5.75,
+            6.25
+          ],
+          "natural_effect_rows": [
+            26.875,
+            25.25,
+            26.375,
+            29.0,
+            28.75,
+            29.1875,
+            28.875,
+            26.8125,
+            26.25,
+            26.3125,
+            26.5625,
+            29.6875,
+            29.3125,
+            29.6875,
+            27.25
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6683903312444046,
+          "reverse_fraction": 0.8047605476975745,
+          "minimum_fraction": 0.6683903312444046,
+          "origin_forward_acc": 0.3333333432674408,
+          "origin_reverse_acc": 0.9333333373069763,
+          "pass": false
+        }
+      }
+    }
+  },
+  "random_complements": {
+    "belief_ac": [
+      {
+        "random_index": 0,
+        "extra_sites": [
+          {
+            "layer": 23,
+            "head": 21
+          },
+          {
+            "layer": 24,
+            "head": 3
+          },
+          {
+            "layer": 24,
+            "head": 17
+          },
+          {
+            "layer": 23,
+            "head": 16
+          },
+          {
+            "layer": 22,
+            "head": 11
+          },
+          {
+            "layer": 24,
+            "head": 18
+          },
+          {
+            "layer": 22,
+            "head": 8
+          },
+          {
+            "layer": 22,
+            "head": 2
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 29.558332443237305,
+          "forward_ratio": 0.3617141333537759,
+          "reverse_ratio": 0.25993798573266613,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            9.625,
+            8.75,
+            9.75,
+            11.75,
+            12.25,
+            11.0,
+            11.25,
+            10.125,
+            10.625,
+            9.625,
+            9.875,
+            11.25,
+            11.25,
+            11.5,
+            11.75
+          ],
+          "reverse_effect_rows": [
+            7.25,
+            7.25,
+            7.875,
+            7.625,
+            7.75,
+            7.25,
+            7.75,
+            7.75,
+            7.375,
+            7.5,
+            7.75,
+            8.0,
+            7.75,
+            8.0,
+            8.375
+          ],
+          "natural_effect_rows": [
+            30.625,
+            28.25,
+            28.625,
+            29.75,
+            30.75,
+            29.75,
+            29.875,
+            27.75,
+            28.125,
+            27.25,
+            28.0,
+            31.25,
+            31.0,
+            31.0,
+            31.375
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6777596229540181,
+          "reverse_fraction": 0.7763221619150825,
+          "minimum_fraction": 0.6777596229540181,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 1,
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 16
+          },
+          {
+            "layer": 24,
+            "head": 26
+          },
+          {
+            "layer": 24,
+            "head": 18
+          },
+          {
+            "layer": 22,
+            "head": 3
+          },
+          {
+            "layer": 23,
+            "head": 9
+          },
+          {
+            "layer": 23,
+            "head": 12
+          },
+          {
+            "layer": 24,
+            "head": 14
+          },
+          {
+            "layer": 23,
+            "head": 20
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 29.558332443237305,
+          "forward_ratio": 0.35325628139341614,
+          "reverse_ratio": 0.28615731390412347,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            9.125,
+            8.25,
+            9.375,
+            11.625,
+            12.0,
+            10.875,
+            10.75,
+            9.75,
+            10.25,
+            9.125,
+            9.75,
+            11.25,
+            11.25,
+            11.625,
+            11.625
+          ],
+          "reverse_effect_rows": [
+            8.375,
+            7.75,
+            8.5,
+            8.375,
+            8.75,
+            8.125,
+            8.375,
+            8.375,
+            8.125,
+            8.25,
+            8.375,
+            9.0,
+            8.75,
+            8.5,
+            9.25
+          ],
+          "natural_effect_rows": [
+            30.625,
+            28.25,
+            28.625,
+            29.75,
+            30.75,
+            29.75,
+            29.875,
+            27.75,
+            28.125,
+            27.25,
+            28.0,
+            31.25,
+            31.0,
+            31.0,
+            31.375
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6852944720334146,
+          "reverse_fraction": 0.7537603088450118,
+          "minimum_fraction": 0.6852944720334146,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 2,
+        "extra_sites": [
+          {
+            "layer": 22,
+            "head": 21
+          },
+          {
+            "layer": 23,
+            "head": 22
+          },
+          {
+            "layer": 22,
+            "head": 2
+          },
+          {
+            "layer": 24,
+            "head": 14
+          },
+          {
+            "layer": 24,
+            "head": 13
+          },
+          {
+            "layer": 23,
+            "head": 10
+          },
+          {
+            "layer": 22,
+            "head": 8
+          },
+          {
+            "layer": 22,
+            "head": 10
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 29.558332443237305,
+          "forward_ratio": 0.3622779815473613,
+          "reverse_ratio": 0.2537355588107927,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            9.75,
+            8.625,
+            10.0,
+            11.625,
+            12.25,
+            11.0,
+            11.125,
+            10.125,
+            10.5,
+            9.5,
+            10.0,
+            11.375,
+            11.375,
+            11.75,
+            11.625
+          ],
+          "reverse_effect_rows": [
+            7.125,
+            7.25,
+            7.375,
+            7.625,
+            7.625,
+            7.125,
+            7.375,
+            7.5,
+            7.125,
+            7.375,
+            7.375,
+            7.875,
+            7.75,
+            8.0,
+            8.0
+          ],
+          "natural_effect_rows": [
+            30.625,
+            28.25,
+            28.625,
+            29.75,
+            30.75,
+            29.75,
+            29.875,
+            27.75,
+            28.125,
+            27.25,
+            28.0,
+            31.25,
+            31.0,
+            31.0,
+            31.375
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6772573073469033,
+          "reverse_fraction": 0.7816593789472679,
+          "minimum_fraction": 0.6772573073469033,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 3,
+        "extra_sites": [
+          {
+            "layer": 22,
+            "head": 12
+          },
+          {
+            "layer": 23,
+            "head": 26
+          },
+          {
+            "layer": 22,
+            "head": 0
+          },
+          {
+            "layer": 22,
+            "head": 3
+          },
+          {
+            "layer": 22,
+            "head": 5
+          },
+          {
+            "layer": 23,
+            "head": 17
+          },
+          {
+            "layer": 22,
+            "head": 26
+          },
+          {
+            "layer": 24,
+            "head": 5
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 29.558332443237305,
+          "forward_ratio": 0.3464900062779573,
+          "reverse_ratio": 0.2514801337723064,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            9.25,
+            8.25,
+            9.375,
+            11.5,
+            12.0,
+            10.75,
+            10.75,
+            9.75,
+            9.875,
+            9.125,
+            9.375,
+            10.75,
+            10.5,
+            11.125,
+            11.25
+          ],
+          "reverse_effect_rows": [
+            7.375,
+            7.0,
+            7.25,
+            7.5,
+            7.625,
+            7.125,
+            7.375,
+            7.375,
+            7.25,
+            7.375,
+            7.25,
+            7.75,
+            7.625,
+            7.625,
+            8.0
+          ],
+          "natural_effect_rows": [
+            30.625,
+            28.25,
+            28.625,
+            29.75,
+            30.75,
+            29.75,
+            29.875,
+            27.75,
+            28.125,
+            27.25,
+            28.0,
+            31.25,
+            31.0,
+            31.0,
+            31.375
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6913223455482984,
+          "reverse_fraction": 0.7836001826168403,
+          "minimum_fraction": 0.6913223455482984,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 4,
+        "extra_sites": [
+          {
+            "layer": 22,
+            "head": 8
+          },
+          {
+            "layer": 23,
+            "head": 19
+          },
+          {
+            "layer": 24,
+            "head": 8
+          },
+          {
+            "layer": 23,
+            "head": 8
+          },
+          {
+            "layer": 23,
+            "head": 9
+          },
+          {
+            "layer": 22,
+            "head": 18
+          },
+          {
+            "layer": 24,
+            "head": 13
+          },
+          {
+            "layer": 22,
+            "head": 13
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 29.558332443237305,
+          "forward_ratio": 0.36819848437244207,
+          "reverse_ratio": 0.2647307599064314,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            10.0,
+            9.0,
+            10.0,
+            12.0,
+            12.5,
+            11.25,
+            11.25,
+            10.25,
+            10.625,
+            9.75,
+            10.125,
+            11.375,
+            11.25,
+            11.875,
+            12.0
+          ],
+          "reverse_effect_rows": [
+            7.625,
+            7.25,
+            8.0,
+            7.875,
+            7.875,
+            7.25,
+            7.625,
+            7.875,
+            7.625,
+            7.625,
+            7.625,
+            8.25,
+            8.125,
+            8.125,
+            8.625
+          ],
+          "natural_effect_rows": [
+            30.625,
+            28.25,
+            28.625,
+            29.75,
+            30.75,
+            29.75,
+            29.875,
+            27.75,
+            28.125,
+            27.25,
+            28.0,
+            31.25,
+            31.0,
+            31.0,
+            31.375
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6719829072426919,
+          "reverse_fraction": 0.772197957587672,
+          "minimum_fraction": 0.6719829072426919,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 5,
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 3
+          },
+          {
+            "layer": 24,
+            "head": 1
+          },
+          {
+            "layer": 24,
+            "head": 7
+          },
+          {
+            "layer": 22,
+            "head": 5
+          },
+          {
+            "layer": 23,
+            "head": 23
+          },
+          {
+            "layer": 24,
+            "head": 17
+          },
+          {
+            "layer": 23,
+            "head": 1
+          },
+          {
+            "layer": 24,
+            "head": 25
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 29.558332443237305,
+          "forward_ratio": 0.34564420172343446,
+          "reverse_ratio": 0.2455596309472256,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            9.0,
+            8.125,
+            9.125,
+            11.5,
+            11.75,
+            10.75,
+            10.875,
+            9.625,
+            10.0,
+            9.125,
+            9.375,
+            10.75,
+            10.75,
+            11.375,
+            11.125
+          ],
+          "reverse_effect_rows": [
+            7.0,
+            6.875,
+            7.25,
+            7.25,
+            7.625,
+            6.75,
+            7.375,
+            7.125,
+            7.125,
+            7.0,
+            7.125,
+            7.5,
+            7.25,
+            7.5,
+            8.125
+          ],
+          "natural_effect_rows": [
+            30.625,
+            28.25,
+            28.625,
+            29.75,
+            30.75,
+            29.75,
+            29.875,
+            27.75,
+            28.125,
+            27.25,
+            28.0,
+            31.25,
+            31.0,
+            31.0,
+            31.375
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6920758477021389,
+          "reverse_fraction": 0.7886948026607598,
+          "minimum_fraction": 0.6920758477021389,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 6,
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 24
+          },
+          {
+            "layer": 23,
+            "head": 3
+          },
+          {
+            "layer": 22,
+            "head": 14
+          },
+          {
+            "layer": 22,
+            "head": 6
+          },
+          {
+            "layer": 22,
+            "head": 3
+          },
+          {
+            "layer": 24,
+            "head": 4
+          },
+          {
+            "layer": 24,
+            "head": 13
+          },
+          {
+            "layer": 24,
+            "head": 7
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 29.558332443237305,
+          "forward_ratio": 0.36791656027564934,
+          "reverse_ratio": 0.2661404126545396,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            9.875,
+            8.875,
+            9.875,
+            12.0,
+            12.625,
+            11.125,
+            11.25,
+            10.5,
+            10.75,
+            9.625,
+            10.125,
+            11.375,
+            11.375,
+            11.875,
+            11.875
+          ],
+          "reverse_effect_rows": [
+            7.5,
+            7.5,
+            7.75,
+            8.0,
+            8.0,
+            7.5,
+            7.75,
+            7.875,
+            7.625,
+            7.5,
+            7.875,
+            8.25,
+            8.125,
+            8.125,
+            8.625
+          ],
+          "natural_effect_rows": [
+            30.625,
+            28.25,
+            28.625,
+            29.75,
+            30.75,
+            29.75,
+            29.875,
+            27.75,
+            28.125,
+            27.25,
+            28.0,
+            31.25,
+            31.0,
+            31.0,
+            31.375
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6722340650462495,
+          "reverse_fraction": 0.7709849448828971,
+          "minimum_fraction": 0.6722340650462495,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 7,
+        "extra_sites": [
+          {
+            "layer": 23,
+            "head": 7
+          },
+          {
+            "layer": 22,
+            "head": 27
+          },
+          {
+            "layer": 24,
+            "head": 0
+          },
+          {
+            "layer": 24,
+            "head": 20
+          },
+          {
+            "layer": 23,
+            "head": 26
+          },
+          {
+            "layer": 23,
+            "head": 17
+          },
+          {
+            "layer": 24,
+            "head": 10
+          },
+          {
+            "layer": 23,
+            "head": 23
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 29.558332443237305,
+          "forward_ratio": 0.3414152757432546,
+          "reverse_ratio": 0.24837892031136966,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            9.125,
+            8.125,
+            9.0,
+            11.25,
+            11.75,
+            10.375,
+            10.375,
+            9.375,
+            9.875,
+            9.0,
+            9.25,
+            10.75,
+            10.75,
+            11.125,
+            11.25
+          ],
+          "reverse_effect_rows": [
+            7.125,
+            7.0,
+            7.25,
+            7.25,
+            7.75,
+            7.0,
+            7.125,
+            7.25,
+            7.25,
+            6.875,
+            7.25,
+            7.5,
+            7.875,
+            7.625,
+            8.0
+          ],
+          "natural_effect_rows": [
+            30.625,
+            28.25,
+            28.625,
+            29.75,
+            30.75,
+            29.75,
+            29.875,
+            27.75,
+            28.125,
+            27.25,
+            28.0,
+            31.25,
+            31.0,
+            31.0,
+            31.375
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6958432722418372,
+          "reverse_fraction": 0.7862687911329329,
+          "minimum_fraction": 0.6958432722418372,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 8,
+        "extra_sites": [
+          {
+            "layer": 23,
+            "head": 15
+          },
+          {
+            "layer": 24,
+            "head": 15
+          },
+          {
+            "layer": 23,
+            "head": 2
+          },
+          {
+            "layer": 24,
+            "head": 13
+          },
+          {
+            "layer": 22,
+            "head": 2
+          },
+          {
+            "layer": 22,
+            "head": 16
+          },
+          {
+            "layer": 23,
+            "head": 8
+          },
+          {
+            "layer": 22,
+            "head": 23
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 29.558332443237305,
+          "forward_ratio": 0.36678883162433384,
+          "reverse_ratio": 0.2647307599064314,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            9.875,
+            8.875,
+            9.5,
+            12.125,
+            12.375,
+            11.5,
+            11.5,
+            10.25,
+            10.375,
+            9.75,
+            10.0,
+            11.375,
+            11.375,
+            11.875,
+            11.875
+          ],
+          "reverse_effect_rows": [
+            7.75,
+            7.25,
+            7.875,
+            7.875,
+            8.0,
+            7.625,
+            7.75,
+            7.625,
+            7.625,
+            7.625,
+            7.75,
+            8.125,
+            8.0,
+            8.0,
+            8.5
+          ],
+          "natural_effect_rows": [
+            30.625,
+            28.25,
+            28.625,
+            29.75,
+            30.75,
+            29.75,
+            29.875,
+            27.75,
+            28.125,
+            27.25,
+            28.0,
+            31.25,
+            31.0,
+            31.0,
+            31.375
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6732387250036476,
+          "reverse_fraction": 0.772197957587672,
+          "minimum_fraction": 0.6732387250036476,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      }
+    ],
+    "tell_ac": [
+      {
+        "random_index": 0,
+        "extra_sites": [
+          {
+            "layer": 23,
+            "head": 2
+          },
+          {
+            "layer": 22,
+            "head": 12
+          },
+          {
+            "layer": 23,
+            "head": 9
+          },
+          {
+            "layer": 23,
+            "head": 21
+          },
+          {
+            "layer": 23,
+            "head": 3
+          },
+          {
+            "layer": 22,
+            "head": 11
+          },
+          {
+            "layer": 23,
+            "head": 16
+          },
+          {
+            "layer": 24,
+            "head": 0
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 36.62083435058594,
+          "forward_ratio": 0.38969164052412036,
+          "reverse_ratio": 0.17772214428185534,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            12.25,
+            13.0,
+            12.125,
+            15.125,
+            14.0625,
+            15.0,
+            15.75,
+            14.5625,
+            14.375,
+            14.8125,
+            14.25,
+            14.375,
+            15.75,
+            14.5625,
+            14.0625
+          ],
+          "reverse_effect_rows": [
+            6.25,
+            6.5,
+            6.625,
+            6.875,
+            6.6875,
+            6.125,
+            6.3125,
+            7.0,
+            6.5,
+            5.75,
+            5.75,
+            6.75,
+            7.125,
+            6.625,
+            6.75
+          ],
+          "natural_effect_rows": [
+            36.375,
+            36.25,
+            34.75,
+            37.0,
+            35.75,
+            36.75,
+            37.6875,
+            35.8125,
+            36.0,
+            36.3125,
+            35.375,
+            37.875,
+            39.0,
+            37.6875,
+            36.6875
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6486819327177102,
+          "reverse_fraction": 0.8243562302343937,
+          "minimum_fraction": 0.6486819327177102,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 1,
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 20
+          },
+          {
+            "layer": 23,
+            "head": 16
+          },
+          {
+            "layer": 24,
+            "head": 12
+          },
+          {
+            "layer": 24,
+            "head": 14
+          },
+          {
+            "layer": 23,
+            "head": 1
+          },
+          {
+            "layer": 22,
+            "head": 20
+          },
+          {
+            "layer": 23,
+            "head": 12
+          },
+          {
+            "layer": 23,
+            "head": 27
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 36.62083435058594,
+          "forward_ratio": 0.38969164052412036,
+          "reverse_ratio": 0.18250085000602087,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            12.375,
+            12.75,
+            12.25,
+            15.25,
+            14.0625,
+            15.125,
+            15.625,
+            14.5625,
+            14.5,
+            14.6875,
+            14.125,
+            14.375,
+            15.625,
+            14.5625,
+            14.1875
+          ],
+          "reverse_effect_rows": [
+            6.25,
+            7.0,
+            6.625,
+            7.125,
+            6.8125,
+            6.375,
+            6.5625,
+            7.0,
+            6.75,
+            5.875,
+            5.875,
+            7.0,
+            7.125,
+            6.75,
+            7.125
+          ],
+          "natural_effect_rows": [
+            36.375,
+            36.25,
+            34.75,
+            37.0,
+            35.75,
+            36.75,
+            37.6875,
+            35.8125,
+            36.0,
+            36.3125,
+            35.375,
+            37.875,
+            39.0,
+            37.6875,
+            36.6875
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6486819327177102,
+          "reverse_fraction": 0.819633409162295,
+          "minimum_fraction": 0.6486819327177102,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 2,
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 9
+          },
+          {
+            "layer": 23,
+            "head": 14
+          },
+          {
+            "layer": 23,
+            "head": 25
+          },
+          {
+            "layer": 23,
+            "head": 1
+          },
+          {
+            "layer": 22,
+            "head": 12
+          },
+          {
+            "layer": 22,
+            "head": 18
+          },
+          {
+            "layer": 22,
+            "head": 6
+          },
+          {
+            "layer": 23,
+            "head": 21
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 36.62083435058594,
+          "forward_ratio": 0.3880987386160652,
+          "reverse_ratio": 0.1788599387995665,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            12.375,
+            12.625,
+            12.5,
+            15.25,
+            13.9375,
+            14.875,
+            15.5,
+            14.5625,
+            14.25,
+            14.9375,
+            14.0,
+            14.375,
+            15.375,
+            14.3125,
+            14.3125
+          ],
+          "reverse_effect_rows": [
+            6.5,
+            6.625,
+            6.5,
+            7.0,
+            6.6875,
+            6.125,
+            6.4375,
+            6.75,
+            6.625,
+            5.875,
+            5.625,
+            6.875,
+            7.25,
+            6.5,
+            6.875
+          ],
+          "natural_effect_rows": [
+            36.375,
+            36.25,
+            34.75,
+            37.0,
+            35.75,
+            36.75,
+            37.6875,
+            35.8125,
+            36.0,
+            36.3125,
+            35.375,
+            37.875,
+            39.0,
+            37.6875,
+            36.6875
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6501179789694481,
+          "reverse_fraction": 0.8232317416732358,
+          "minimum_fraction": 0.6501179789694481,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 3,
+        "extra_sites": [
+          {
+            "layer": 23,
+            "head": 17
+          },
+          {
+            "layer": 24,
+            "head": 1
+          },
+          {
+            "layer": 23,
+            "head": 25
+          },
+          {
+            "layer": 24,
+            "head": 3
+          },
+          {
+            "layer": 24,
+            "head": 17
+          },
+          {
+            "layer": 22,
+            "head": 20
+          },
+          {
+            "layer": 24,
+            "head": 15
+          },
+          {
+            "layer": 24,
+            "head": 24
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 36.62083435058594,
+          "forward_ratio": 0.4058482132998442,
+          "reverse_ratio": 0.193196029930212,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            13.0,
+            13.375,
+            12.875,
+            15.875,
+            14.6875,
+            15.625,
+            16.125,
+            15.0625,
+            15.0,
+            15.1875,
+            14.75,
+            15.0,
+            16.5,
+            15.0625,
+            14.8125
+          ],
+          "reverse_effect_rows": [
+            6.625,
+            7.25,
+            6.875,
+            7.625,
+            7.1875,
+            6.875,
+            7.0625,
+            7.375,
+            7.25,
+            6.25,
+            6.375,
+            7.5,
+            7.5,
+            7.125,
+            7.25
+          ],
+          "natural_effect_rows": [
+            36.375,
+            36.25,
+            34.75,
+            37.0,
+            35.75,
+            36.75,
+            37.6875,
+            35.8125,
+            36.0,
+            36.3125,
+            35.375,
+            37.875,
+            39.0,
+            37.6875,
+            36.6875
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6341163240897222,
+          "reverse_fraction": 0.8090633041942438,
+          "minimum_fraction": 0.6341163240897222,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 4,
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 13
+          },
+          {
+            "layer": 23,
+            "head": 9
+          },
+          {
+            "layer": 23,
+            "head": 26
+          },
+          {
+            "layer": 24,
+            "head": 6
+          },
+          {
+            "layer": 23,
+            "head": 14
+          },
+          {
+            "layer": 22,
+            "head": 18
+          },
+          {
+            "layer": 24,
+            "head": 5
+          },
+          {
+            "layer": 22,
+            "head": 16
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 36.62083435058594,
+          "forward_ratio": 0.3978837037595683,
+          "reverse_ratio": 0.18682443531891685,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            12.625,
+            13.0,
+            12.5,
+            15.5,
+            14.3125,
+            15.125,
+            15.875,
+            14.9375,
+            14.75,
+            14.9375,
+            14.625,
+            14.75,
+            16.125,
+            14.8125,
+            14.6875
+          ],
+          "reverse_effect_rows": [
+            6.5,
+            6.75,
+            6.75,
+            7.125,
+            7.1875,
+            6.625,
+            6.8125,
+            7.125,
+            7.0,
+            6.0,
+            6.25,
+            7.5,
+            7.125,
+            6.75,
+            7.125
+          ],
+          "natural_effect_rows": [
+            36.375,
+            36.25,
+            34.75,
+            37.0,
+            35.75,
+            36.75,
+            37.6875,
+            35.8125,
+            36.0,
+            36.3125,
+            35.375,
+            37.875,
+            39.0,
+            37.6875,
+            36.6875
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6412965553484112,
+          "reverse_fraction": 0.81536038608839,
+          "minimum_fraction": 0.6412965553484112,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 5,
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 1
+          },
+          {
+            "layer": 22,
+            "head": 3
+          },
+          {
+            "layer": 23,
+            "head": 20
+          },
+          {
+            "layer": 23,
+            "head": 14
+          },
+          {
+            "layer": 24,
+            "head": 9
+          },
+          {
+            "layer": 24,
+            "head": 26
+          },
+          {
+            "layer": 22,
+            "head": 23
+          },
+          {
+            "layer": 23,
+            "head": 7
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 36.62083435058594,
+          "forward_ratio": 0.4101717855918146,
+          "reverse_ratio": 0.2311980699446621,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            13.125,
+            13.625,
+            13.0,
+            16.0,
+            14.8125,
+            16.0,
+            16.375,
+            15.3125,
+            14.875,
+            15.3125,
+            15.0,
+            15.25,
+            16.5,
+            15.3125,
+            14.8125
+          ],
+          "reverse_effect_rows": [
+            8.25,
+            8.625,
+            8.125,
+            8.625,
+            8.3125,
+            8.375,
+            8.1875,
+            8.875,
+            8.625,
+            7.875,
+            7.875,
+            9.0,
+            9.0,
+            8.5,
+            8.75
+          ],
+          "natural_effect_rows": [
+            36.375,
+            36.25,
+            34.75,
+            37.0,
+            35.75,
+            36.75,
+            37.6875,
+            35.8125,
+            36.0,
+            36.3125,
+            35.375,
+            37.875,
+            39.0,
+            37.6875,
+            36.6875
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6302185010331964,
+          "reverse_fraction": 0.7715056796568333,
+          "minimum_fraction": 0.6302185010331964,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 6,
+        "extra_sites": [
+          {
+            "layer": 22,
+            "head": 16
+          },
+          {
+            "layer": 23,
+            "head": 14
+          },
+          {
+            "layer": 24,
+            "head": 5
+          },
+          {
+            "layer": 22,
+            "head": 0
+          },
+          {
+            "layer": 24,
+            "head": 11
+          },
+          {
+            "layer": 23,
+            "head": 16
+          },
+          {
+            "layer": 23,
+            "head": 22
+          },
+          {
+            "layer": 22,
+            "head": 14
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 36.62083435058594,
+          "forward_ratio": 0.4069859817757042,
+          "reverse_ratio": 0.20047786536404633,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            13.0,
+            13.25,
+            12.875,
+            16.125,
+            14.8125,
+            15.75,
+            16.125,
+            15.1875,
+            15.0,
+            15.3125,
+            14.75,
+            15.125,
+            16.375,
+            15.0625,
+            14.8125
+          ],
+          "reverse_effect_rows": [
+            7.125,
+            7.5,
+            7.25,
+            7.5,
+            7.5625,
+            7.125,
+            7.3125,
+            7.375,
+            7.5,
+            6.625,
+            6.625,
+            7.75,
+            7.875,
+            7.375,
+            7.625
+          ],
+          "natural_effect_rows": [
+            36.375,
+            36.25,
+            34.75,
+            37.0,
+            35.75,
+            36.75,
+            37.6875,
+            35.8125,
+            36.0,
+            36.3125,
+            35.375,
+            37.875,
+            39.0,
+            37.6875,
+            36.6875
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.633090593536672,
+          "reverse_fraction": 0.8018666263037103,
+          "minimum_fraction": 0.633090593536672,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 7,
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 11
+          },
+          {
+            "layer": 23,
+            "head": 15
+          },
+          {
+            "layer": 22,
+            "head": 21
+          },
+          {
+            "layer": 24,
+            "head": 1
+          },
+          {
+            "layer": 24,
+            "head": 18
+          },
+          {
+            "layer": 23,
+            "head": 3
+          },
+          {
+            "layer": 22,
+            "head": 11
+          },
+          {
+            "layer": 23,
+            "head": 17
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 36.62083435058594,
+          "forward_ratio": 0.3878711849208932,
+          "reverse_ratio": 0.17635680908989773,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            12.25,
+            12.625,
+            12.25,
+            15.125,
+            14.0625,
+            14.875,
+            15.5,
+            14.6875,
+            14.25,
+            14.5625,
+            14.125,
+            14.375,
+            15.5,
+            14.5625,
+            14.3125
+          ],
+          "reverse_effect_rows": [
+            6.0,
+            6.625,
+            6.25,
+            7.0,
+            6.5625,
+            6.375,
+            6.5625,
+            6.75,
+            6.625,
+            5.875,
+            5.375,
+            7.0,
+            6.875,
+            6.375,
+            6.625
+          ],
+          "natural_effect_rows": [
+            36.375,
+            36.25,
+            34.75,
+            37.0,
+            35.75,
+            36.75,
+            37.6875,
+            35.8125,
+            36.0,
+            36.3125,
+            35.375,
+            37.875,
+            39.0,
+            37.6875,
+            36.6875
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6503231250800581,
+          "reverse_fraction": 0.8257055984916705,
+          "minimum_fraction": 0.6503231250800581,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 8,
+        "extra_sites": [
+          {
+            "layer": 22,
+            "head": 4
+          },
+          {
+            "layer": 22,
+            "head": 22
+          },
+          {
+            "layer": 24,
+            "head": 16
+          },
+          {
+            "layer": 24,
+            "head": 20
+          },
+          {
+            "layer": 24,
+            "head": 4
+          },
+          {
+            "layer": 24,
+            "head": 10
+          },
+          {
+            "layer": 24,
+            "head": 7
+          },
+          {
+            "layer": 24,
+            "head": 9
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 36.62083435058594,
+          "forward_ratio": 0.3878711849208932,
+          "reverse_ratio": 0.18227329631084888,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            12.25,
+            12.625,
+            12.25,
+            15.0,
+            14.1875,
+            14.875,
+            15.5,
+            14.4375,
+            14.375,
+            14.6875,
+            14.125,
+            14.375,
+            15.625,
+            14.5625,
+            14.1875
+          ],
+          "reverse_effect_rows": [
+            6.25,
+            6.75,
+            6.5,
+            7.125,
+            6.6875,
+            6.625,
+            6.5625,
+            7.0,
+            6.625,
+            5.875,
+            5.875,
+            7.125,
+            7.25,
+            6.875,
+            7.0
+          ],
+          "natural_effect_rows": [
+            36.375,
+            36.25,
+            34.75,
+            37.0,
+            35.75,
+            36.75,
+            37.6875,
+            35.8125,
+            36.0,
+            36.3125,
+            35.375,
+            37.875,
+            39.0,
+            37.6875,
+            36.6875
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6503231250800581,
+          "reverse_fraction": 0.8198583017270658,
+          "minimum_fraction": 0.6503231250800581,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      }
+    ],
+    "search_ac": [
+      {
+        "random_index": 0,
+        "extra_sites": [
+          {
+            "layer": 22,
+            "head": 16
+          },
+          {
+            "layer": 22,
+            "head": 27
+          },
+          {
+            "layer": 22,
+            "head": 17
+          },
+          {
+            "layer": 23,
+            "head": 14
+          },
+          {
+            "layer": 23,
+            "head": 12
+          },
+          {
+            "layer": 24,
+            "head": 22
+          },
+          {
+            "layer": 24,
+            "head": 1
+          },
+          {
+            "layer": 24,
+            "head": 18
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 27.745832443237305,
+          "forward_ratio": 0.4906142289507244,
+          "reverse_ratio": 0.304850576487335,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            10.625,
+            10.5,
+            11.5,
+            15.125,
+            15.75,
+            15.1875,
+            14.5,
+            14.1875,
+            13.625,
+            13.5625,
+            13.6875,
+            14.4375,
+            13.6875,
+            14.0625,
+            13.75
+          ],
+          "reverse_effect_rows": [
+            7.875,
+            7.375,
+            7.875,
+            9.0,
+            9.0,
+            9.0,
+            8.75,
+            8.5,
+            7.875,
+            8.25,
+            7.875,
+            9.375,
+            8.875,
+            8.375,
+            8.875
+          ],
+          "natural_effect_rows": [
+            26.875,
+            25.25,
+            26.375,
+            29.0,
+            28.75,
+            29.1875,
+            28.875,
+            26.8125,
+            26.25,
+            26.3125,
+            26.5625,
+            29.6875,
+            29.3125,
+            29.6875,
+            27.25
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.5668257590701486,
+          "reverse_fraction": 0.7123831171981386,
+          "minimum_fraction": 0.5668257590701486,
+          "origin_forward_acc": 0.0,
+          "origin_reverse_acc": 0.9333333373069763,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 1,
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 18
+          },
+          {
+            "layer": 22,
+            "head": 20
+          },
+          {
+            "layer": 22,
+            "head": 27
+          },
+          {
+            "layer": 22,
+            "head": 23
+          },
+          {
+            "layer": 22,
+            "head": 18
+          },
+          {
+            "layer": 24,
+            "head": 7
+          },
+          {
+            "layer": 24,
+            "head": 20
+          },
+          {
+            "layer": 23,
+            "head": 3
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 27.745832443237305,
+          "forward_ratio": 0.47890076495824824,
+          "reverse_ratio": 0.294338510162402,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            10.375,
+            10.25,
+            11.25,
+            14.875,
+            15.25,
+            14.8125,
+            14.0,
+            13.6875,
+            13.25,
+            13.3125,
+            13.1875,
+            14.1875,
+            13.4375,
+            13.9375,
+            13.5
+          ],
+          "reverse_effect_rows": [
+            7.875,
+            6.875,
+            7.375,
+            8.5,
+            8.375,
+            9.0,
+            8.375,
+            8.375,
+            7.625,
+            8.125,
+            7.625,
+            8.875,
+            8.625,
+            8.25,
+            8.625
+          ],
+          "natural_effect_rows": [
+            26.875,
+            25.25,
+            26.375,
+            29.0,
+            28.75,
+            29.1875,
+            28.875,
+            26.8125,
+            26.25,
+            26.3125,
+            26.5625,
+            29.6875,
+            29.3125,
+            29.6875,
+            27.25
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.5771678375794729,
+          "reverse_fraction": 0.7223009194966338,
+          "minimum_fraction": 0.5771678375794729,
+          "origin_forward_acc": 0.0,
+          "origin_reverse_acc": 0.9333333373069763,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 2,
+        "extra_sites": [
+          {
+            "layer": 23,
+            "head": 14
+          },
+          {
+            "layer": 22,
+            "head": 11
+          },
+          {
+            "layer": 24,
+            "head": 20
+          },
+          {
+            "layer": 24,
+            "head": 19
+          },
+          {
+            "layer": 24,
+            "head": 0
+          },
+          {
+            "layer": 24,
+            "head": 4
+          },
+          {
+            "layer": 23,
+            "head": 18
+          },
+          {
+            "layer": 24,
+            "head": 13
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 27.745832443237305,
+          "forward_ratio": 0.4786003897625094,
+          "reverse_ratio": 0.31416127951652895,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            10.25,
+            10.25,
+            11.375,
+            14.75,
+            15.375,
+            14.9375,
+            14.0,
+            13.8125,
+            13.25,
+            13.5625,
+            13.3125,
+            13.9375,
+            13.0625,
+            13.8125,
+            13.5
+          ],
+          "reverse_effect_rows": [
+            8.25,
+            7.375,
+            8.0,
+            9.125,
+            8.875,
+            9.375,
+            9.0,
+            8.875,
+            8.25,
+            8.5,
+            8.25,
+            9.5,
+            9.25,
+            8.875,
+            9.25
+          ],
+          "natural_effect_rows": [
+            26.875,
+            25.25,
+            26.375,
+            29.0,
+            28.75,
+            29.1875,
+            28.875,
+            26.8125,
+            26.25,
+            26.3125,
+            26.5625,
+            29.6875,
+            29.3125,
+            29.6875,
+            27.25
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.577433045536622,
+          "reverse_fraction": 0.7035987631949181,
+          "minimum_fraction": 0.577433045536622,
+          "origin_forward_acc": 0.0,
+          "origin_reverse_acc": 0.9333333373069763,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 3,
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 0
+          },
+          {
+            "layer": 22,
+            "head": 16
+          },
+          {
+            "layer": 23,
+            "head": 26
+          },
+          {
+            "layer": 24,
+            "head": 6
+          },
+          {
+            "layer": 24,
+            "head": 10
+          },
+          {
+            "layer": 24,
+            "head": 8
+          },
+          {
+            "layer": 22,
+            "head": 9
+          },
+          {
+            "layer": 22,
+            "head": 22
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 27.745832443237305,
+          "forward_ratio": 0.4861090478480948,
+          "reverse_ratio": 0.30875507594209506,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            10.5,
+            10.375,
+            11.5,
+            15.0,
+            15.5,
+            15.0625,
+            14.25,
+            13.8125,
+            13.5,
+            13.6875,
+            13.4375,
+            14.3125,
+            13.5625,
+            13.9375,
+            13.875
+          ],
+          "reverse_effect_rows": [
+            8.0,
+            7.25,
+            8.0,
+            9.0,
+            9.125,
+            9.125,
+            8.875,
+            8.625,
+            7.875,
+            8.375,
+            8.0,
+            9.625,
+            9.0,
+            8.625,
+            9.0
+          ],
+          "natural_effect_rows": [
+            26.875,
+            25.25,
+            26.375,
+            29.0,
+            28.75,
+            29.1875,
+            28.875,
+            26.8125,
+            26.25,
+            26.3125,
+            26.5625,
+            29.6875,
+            29.3125,
+            29.6875,
+            27.25
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.5708034839081682,
+          "reverse_fraction": 0.708699345381075,
+          "minimum_fraction": 0.5708034839081682,
+          "origin_forward_acc": 0.0,
+          "origin_reverse_acc": 0.9333333373069763,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 4,
+        "extra_sites": [
+          {
+            "layer": 23,
+            "head": 24
+          },
+          {
+            "layer": 24,
+            "head": 11
+          },
+          {
+            "layer": 23,
+            "head": 17
+          },
+          {
+            "layer": 23,
+            "head": 18
+          },
+          {
+            "layer": 22,
+            "head": 16
+          },
+          {
+            "layer": 22,
+            "head": 8
+          },
+          {
+            "layer": 23,
+            "head": 19
+          },
+          {
+            "layer": 22,
+            "head": 11
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 27.745832443237305,
+          "forward_ratio": 0.4882114679874422,
+          "reverse_ratio": 0.3369875602254158,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            10.875,
+            10.125,
+            11.375,
+            15.25,
+            15.625,
+            14.9375,
+            14.375,
+            14.1875,
+            13.625,
+            13.6875,
+            13.6875,
+            14.5625,
+            13.3125,
+            13.9375,
+            13.625
+          ],
+          "reverse_effect_rows": [
+            8.875,
+            8.0,
+            8.375,
+            9.75,
+            10.0,
+            10.125,
+            9.375,
+            9.25,
+            9.125,
+            9.125,
+            8.625,
+            10.375,
+            10.0,
+            9.5,
+            9.75
+          ],
+          "natural_effect_rows": [
+            26.875,
+            25.25,
+            26.375,
+            29.0,
+            28.75,
+            29.1875,
+            28.875,
+            26.8125,
+            26.25,
+            26.3125,
+            26.5625,
+            29.6875,
+            29.3125,
+            29.6875,
+            27.25
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.5689472102939168,
+          "reverse_fraction": 0.682062888868884,
+          "minimum_fraction": 0.5689472102939168,
+          "origin_forward_acc": 0.0,
+          "origin_reverse_acc": 0.8666666746139526,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 5,
+        "extra_sites": [
+          {
+            "layer": 22,
+            "head": 4
+          },
+          {
+            "layer": 22,
+            "head": 22
+          },
+          {
+            "layer": 22,
+            "head": 0
+          },
+          {
+            "layer": 23,
+            "head": 20
+          },
+          {
+            "layer": 24,
+            "head": 4
+          },
+          {
+            "layer": 24,
+            "head": 5
+          },
+          {
+            "layer": 23,
+            "head": 1
+          },
+          {
+            "layer": 22,
+            "head": 3
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 27.745832443237305,
+          "forward_ratio": 0.48580870702416,
+          "reverse_ratio": 0.3030485315437264,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            10.625,
+            10.125,
+            11.375,
+            15.125,
+            15.5,
+            14.9375,
+            14.375,
+            13.9375,
+            13.375,
+            13.6875,
+            13.5625,
+            14.4375,
+            13.3125,
+            13.9375,
+            13.875
+          ],
+          "reverse_effect_rows": [
+            8.125,
+            7.125,
+            7.625,
+            9.0,
+            8.625,
+            9.25,
+            8.625,
+            8.5,
+            7.75,
+            8.125,
+            8.0,
+            9.125,
+            8.875,
+            8.5,
+            8.875
+          ],
+          "natural_effect_rows": [
+            26.875,
+            25.25,
+            26.375,
+            29.0,
+            28.75,
+            29.1875,
+            28.875,
+            26.8125,
+            26.25,
+            26.3125,
+            26.5625,
+            29.6875,
+            29.3125,
+            29.6875,
+            27.25
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.5710686615176851,
+          "reverse_fraction": 0.7140832896410505,
+          "minimum_fraction": 0.5710686615176851,
+          "origin_forward_acc": 0.0,
+          "origin_reverse_acc": 0.9333333373069763,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 6,
+        "extra_sites": [
+          {
+            "layer": 22,
+            "head": 8
+          },
+          {
+            "layer": 22,
+            "head": 27
+          },
+          {
+            "layer": 22,
+            "head": 3
+          },
+          {
+            "layer": 23,
+            "head": 15
+          },
+          {
+            "layer": 24,
+            "head": 4
+          },
+          {
+            "layer": 24,
+            "head": 1
+          },
+          {
+            "layer": 23,
+            "head": 19
+          },
+          {
+            "layer": 22,
+            "head": 20
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 27.745832443237305,
+          "forward_ratio": 0.48400662770874736,
+          "reverse_ratio": 0.3099564736096382,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            10.5,
+            10.125,
+            11.5,
+            14.875,
+            15.625,
+            14.9375,
+            14.25,
+            13.8125,
+            13.375,
+            13.6875,
+            13.4375,
+            14.3125,
+            13.3125,
+            13.9375,
+            13.75
+          ],
+          "reverse_effect_rows": [
+            8.25,
+            7.375,
+            8.0,
+            8.875,
+            9.125,
+            9.375,
+            8.625,
+            8.875,
+            8.0,
+            8.125,
+            8.125,
+            9.5,
+            9.125,
+            8.75,
+            8.875
+          ],
+          "natural_effect_rows": [
+            26.875,
+            25.25,
+            26.375,
+            29.0,
+            28.75,
+            29.1875,
+            28.875,
+            26.8125,
+            26.25,
+            26.3125,
+            26.5625,
+            29.6875,
+            29.3125,
+            29.6875,
+            27.25
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.5726597575224193,
+          "reverse_fraction": 0.7075658646570897,
+          "minimum_fraction": 0.5726597575224193,
+          "origin_forward_acc": 0.0,
+          "origin_reverse_acc": 0.9333333373069763,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 7,
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 20
+          },
+          {
+            "layer": 24,
+            "head": 7
+          },
+          {
+            "layer": 22,
+            "head": 3
+          },
+          {
+            "layer": 23,
+            "head": 2
+          },
+          {
+            "layer": 24,
+            "head": 0
+          },
+          {
+            "layer": 23,
+            "head": 26
+          },
+          {
+            "layer": 23,
+            "head": 20
+          },
+          {
+            "layer": 24,
+            "head": 8
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 27.745832443237305,
+          "forward_ratio": 0.483105570865139,
+          "reverse_ratio": 0.30004505456077063,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            10.5,
+            10.125,
+            11.375,
+            15.0,
+            15.5,
+            14.9375,
+            14.125,
+            14.0625,
+            13.375,
+            13.5625,
+            13.4375,
+            14.1875,
+            13.1875,
+            14.0625,
+            13.625
+          ],
+          "reverse_effect_rows": [
+            7.875,
+            7.125,
+            7.5,
+            8.875,
+            8.625,
+            9.0,
+            8.625,
+            8.375,
+            7.75,
+            8.0,
+            7.875,
+            9.25,
+            8.75,
+            8.5,
+            8.75
+          ],
+          "natural_effect_rows": [
+            26.875,
+            25.25,
+            26.375,
+            29.0,
+            28.75,
+            29.1875,
+            28.875,
+            26.8125,
+            26.25,
+            26.3125,
+            26.5625,
+            29.6875,
+            29.3125,
+            29.6875,
+            27.25
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.5734553206986025,
+          "reverse_fraction": 0.7169169752366582,
+          "minimum_fraction": 0.5734553206986025,
+          "origin_forward_acc": 0.0,
+          "origin_reverse_acc": 0.9333333373069763,
+          "pass": false
+        }
+      },
+      {
+        "random_index": 8,
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 1
+          },
+          {
+            "layer": 22,
+            "head": 10
+          },
+          {
+            "layer": 23,
+            "head": 20
+          },
+          {
+            "layer": 24,
+            "head": 19
+          },
+          {
+            "layer": 23,
+            "head": 2
+          },
+          {
+            "layer": 22,
+            "head": 12
+          },
+          {
+            "layer": 22,
+            "head": 22
+          },
+          {
+            "layer": 22,
+            "head": 5
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 27.745832443237305,
+          "forward_ratio": 0.48400662770874736,
+          "reverse_ratio": 0.2994443729129011,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            10.5,
+            10.0,
+            11.625,
+            15.125,
+            15.5,
+            14.9375,
+            14.125,
+            13.9375,
+            13.375,
+            13.4375,
+            13.6875,
+            14.3125,
+            13.3125,
+            13.9375,
+            13.625
+          ],
+          "reverse_effect_rows": [
+            7.875,
+            7.0,
+            7.75,
+            8.75,
+            8.75,
+            8.625,
+            8.5,
+            8.375,
+            7.875,
+            8.375,
+            7.875,
+            9.375,
+            8.625,
+            8.25,
+            8.625
+          ],
+          "natural_effect_rows": [
+            26.875,
+            25.25,
+            26.375,
+            29.0,
+            28.75,
+            29.1875,
+            28.875,
+            26.8125,
+            26.25,
+            26.3125,
+            26.5625,
+            29.6875,
+            29.3125,
+            29.6875,
+            27.25
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.5726597575224193,
+          "reverse_fraction": 0.7174836993842955,
+          "minimum_fraction": 0.5726597575224193,
+          "origin_forward_acc": 0.0,
+          "origin_reverse_acc": 0.9333333373069763,
+          "pass": false
+        }
+      }
+    ]
+  },
+  "cross_query_transfer": {
+    "belief_ac": {
+      "belief_ac": {
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 23
+          },
+          {
+            "layer": 22,
+            "head": 15
+          },
+          {
+            "layer": 22,
+            "head": 19
+          },
+          {
+            "layer": 22,
+            "head": 24
+          },
+          {
+            "layer": 23,
+            "head": 5
+          },
+          {
+            "layer": 22,
+            "head": 17
+          },
+          {
+            "layer": 22,
+            "head": 4
+          },
+          {
+            "layer": 22,
+            "head": 7
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 29.558332443237305,
+          "forward_ratio": 0.26360304738718826,
+          "reverse_ratio": 0.1615449756692858,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            6.75,
+            6.25,
+            7.0,
+            8.75,
+            9.25,
+            7.875,
+            8.375,
+            7.5,
+            7.75,
+            6.75,
+            7.25,
+            8.0,
+            8.0,
+            8.625,
+            8.75
+          ],
+          "reverse_effect_rows": [
+            4.5,
+            4.625,
+            4.75,
+            4.875,
+            5.125,
+            4.375,
+            4.5,
+            4.625,
+            4.625,
+            4.5,
+            4.375,
+            5.125,
+            5.0,
+            5.0,
+            5.625
+          ],
+          "natural_effect_rows": [
+            30.625,
+            28.25,
+            28.625,
+            29.75,
+            30.75,
+            29.75,
+            29.875,
+            27.75,
+            28.125,
+            27.25,
+            28.0,
+            31.25,
+            31.0,
+            31.0,
+            31.375
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.7651638751493351,
+          "reverse_fraction": 0.8609898018200827,
+          "minimum_fraction": 0.7651638751493351,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": true
+        }
+      },
+      "tell_ac": {
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 23
+          },
+          {
+            "layer": 22,
+            "head": 15
+          },
+          {
+            "layer": 22,
+            "head": 19
+          },
+          {
+            "layer": 22,
+            "head": 24
+          },
+          {
+            "layer": 23,
+            "head": 5
+          },
+          {
+            "layer": 22,
+            "head": 17
+          },
+          {
+            "layer": 22,
+            "head": 4
+          },
+          {
+            "layer": 22,
+            "head": 7
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 36.62083435058594,
+          "forward_ratio": 0.33325746474037526,
+          "reverse_ratio": 0.11491637388681503,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            10.5,
+            10.875,
+            10.125,
+            13.0,
+            12.0625,
+            12.875,
+            13.375,
+            12.6875,
+            12.375,
+            13.1875,
+            12.375,
+            12.125,
+            13.25,
+            12.4375,
+            11.8125
+          ],
+          "reverse_effect_rows": [
+            3.875,
+            4.0,
+            3.875,
+            4.625,
+            4.5625,
+            4.125,
+            4.3125,
+            4.5,
+            4.25,
+            3.375,
+            3.125,
+            4.625,
+            4.5,
+            4.625,
+            4.75
+          ],
+          "natural_effect_rows": [
+            36.375,
+            36.25,
+            34.75,
+            37.0,
+            35.75,
+            36.75,
+            37.6875,
+            35.8125,
+            36.0,
+            36.3125,
+            35.375,
+            37.875,
+            39.0,
+            37.6875,
+            36.6875
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6995589429054285,
+          "reverse_fraction": 0.8864275175227289,
+          "minimum_fraction": 0.6995589429054285,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": false
+        }
+      },
+      "search_ac": {
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 23
+          },
+          {
+            "layer": 22,
+            "head": 15
+          },
+          {
+            "layer": 22,
+            "head": 19
+          },
+          {
+            "layer": 22,
+            "head": 24
+          },
+          {
+            "layer": 23,
+            "head": 5
+          },
+          {
+            "layer": 22,
+            "head": 17
+          },
+          {
+            "layer": 22,
+            "head": 4
+          },
+          {
+            "layer": 22,
+            "head": 7
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 27.745832443237305,
+          "forward_ratio": 0.39600542579550274,
+          "reverse_ratio": 0.19702658803406137,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            8.5,
+            8.125,
+            9.125,
+            12.5,
+            12.5,
+            12.3125,
+            11.75,
+            11.6875,
+            11.125,
+            11.6875,
+            11.3125,
+            11.3125,
+            10.6875,
+            11.0625,
+            11.125
+          ],
+          "reverse_effect_rows": [
+            5.0,
+            4.75,
+            4.625,
+            6.0,
+            6.0,
+            5.75,
+            5.75,
+            5.875,
+            5.0,
+            5.375,
+            5.0,
+            6.0,
+            5.5,
+            5.5,
+            5.875
+          ],
+          "natural_effect_rows": [
+            26.875,
+            25.25,
+            26.375,
+            29.0,
+            28.75,
+            29.1875,
+            28.875,
+            26.8125,
+            26.25,
+            26.3125,
+            26.5625,
+            29.6875,
+            29.3125,
+            29.6875,
+            27.25
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6503579806685584,
+          "reverse_fraction": 0.8141116420627876,
+          "minimum_fraction": 0.6503579806685584,
+          "origin_forward_acc": 0.13333334028720856,
+          "origin_reverse_acc": 0.9333333373069763,
+          "pass": false
+        }
+      }
+    },
+    "tell_ac": {
+      "belief_ac": {
+        "extra_sites": [
+          {
+            "layer": 22,
+            "head": 24
+          },
+          {
+            "layer": 22,
+            "head": 15
+          },
+          {
+            "layer": 24,
+            "head": 23
+          },
+          {
+            "layer": 22,
+            "head": 17
+          },
+          {
+            "layer": 22,
+            "head": 26
+          },
+          {
+            "layer": 22,
+            "head": 19
+          },
+          {
+            "layer": 24,
+            "head": 25
+          },
+          {
+            "layer": 23,
+            "head": 5
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 29.558332443237305,
+          "forward_ratio": 0.25627290794607166,
+          "reverse_ratio": 0.1711305401488887,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            6.625,
+            6.0,
+            6.875,
+            8.625,
+            9.0,
+            7.75,
+            8.0,
+            7.375,
+            7.375,
+            6.875,
+            6.875,
+            7.375,
+            7.875,
+            8.375,
+            8.625
+          ],
+          "reverse_effect_rows": [
+            4.625,
+            4.875,
+            5.125,
+            5.125,
+            5.25,
+            4.375,
+            4.875,
+            4.875,
+            5.125,
+            4.875,
+            4.75,
+            5.375,
+            5.375,
+            5.375,
+            5.875
+          ],
+          "natural_effect_rows": [
+            30.625,
+            28.25,
+            28.625,
+            29.75,
+            30.75,
+            29.75,
+            29.875,
+            27.75,
+            28.125,
+            27.25,
+            28.0,
+            31.25,
+            31.0,
+            31.0,
+            31.375
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.7716940786429177,
+          "reverse_fraction": 0.8527413792835388,
+          "minimum_fraction": 0.7716940786429177,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": true
+        }
+      },
+      "tell_ac": {
+        "extra_sites": [
+          {
+            "layer": 22,
+            "head": 24
+          },
+          {
+            "layer": 22,
+            "head": 15
+          },
+          {
+            "layer": 24,
+            "head": 23
+          },
+          {
+            "layer": 22,
+            "head": 17
+          },
+          {
+            "layer": 22,
+            "head": 26
+          },
+          {
+            "layer": 22,
+            "head": 19
+          },
+          {
+            "layer": 24,
+            "head": 25
+          },
+          {
+            "layer": 23,
+            "head": 5
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 36.62083435058594,
+          "forward_ratio": 0.32347252563872325,
+          "reverse_ratio": 0.11832973139809741,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            10.25,
+            10.5,
+            9.75,
+            12.375,
+            12.0625,
+            12.375,
+            13.0,
+            12.3125,
+            12.25,
+            12.3125,
+            12.0,
+            11.875,
+            13.0,
+            12.0625,
+            11.5625
+          ],
+          "reverse_effect_rows": [
+            3.875,
+            4.125,
+            4.0,
+            4.625,
+            4.6875,
+            4.25,
+            4.4375,
+            4.625,
+            4.375,
+            3.875,
+            3.5,
+            4.75,
+            4.625,
+            4.625,
+            4.625
+          ],
+          "natural_effect_rows": [
+            36.375,
+            36.25,
+            34.75,
+            37.0,
+            35.75,
+            36.75,
+            37.6875,
+            35.8125,
+            36.0,
+            36.3125,
+            35.375,
+            37.875,
+            39.0,
+            37.6875,
+            36.6875
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.7083803430489981,
+          "reverse_fraction": 0.883054077576559,
+          "minimum_fraction": 0.7083803430489981,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": true
+        }
+      },
+      "search_ac": {
+        "extra_sites": [
+          {
+            "layer": 22,
+            "head": 24
+          },
+          {
+            "layer": 22,
+            "head": 15
+          },
+          {
+            "layer": 24,
+            "head": 23
+          },
+          {
+            "layer": 22,
+            "head": 17
+          },
+          {
+            "layer": 22,
+            "head": 26
+          },
+          {
+            "layer": 22,
+            "head": 19
+          },
+          {
+            "layer": 24,
+            "head": 25
+          },
+          {
+            "layer": 23,
+            "head": 5
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 27.745832443237305,
+          "forward_ratio": 0.3752815995977674,
+          "reverse_ratio": 0.1976272696819309,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            8.0,
+            7.625,
+            8.5,
+            11.875,
+            12.0,
+            11.8125,
+            11.25,
+            11.0625,
+            10.625,
+            11.0625,
+            10.6875,
+            10.6875,
+            9.8125,
+            10.4375,
+            10.75
+          ],
+          "reverse_effect_rows": [
+            4.875,
+            4.625,
+            4.625,
+            6.0,
+            5.625,
+            5.875,
+            6.0,
+            5.75,
+            5.0,
+            5.5,
+            5.125,
+            6.125,
+            5.75,
+            5.375,
+            6.0
+          ],
+          "natural_effect_rows": [
+            26.875,
+            25.25,
+            26.375,
+            29.0,
+            28.75,
+            29.1875,
+            28.875,
+            26.8125,
+            26.25,
+            26.3125,
+            26.5625,
+            29.6875,
+            29.3125,
+            29.6875,
+            27.25
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6686555088539217,
+          "reverse_fraction": 0.8135449179151504,
+          "minimum_fraction": 0.6686555088539217,
+          "origin_forward_acc": 0.3333333432674408,
+          "origin_reverse_acc": 0.9333333373069763,
+          "pass": false
+        }
+      }
+    },
+    "search_ac": {
+      "belief_ac": {
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 23
+          },
+          {
+            "layer": 22,
+            "head": 15
+          },
+          {
+            "layer": 22,
+            "head": 24
+          },
+          {
+            "layer": 22,
+            "head": 19
+          },
+          {
+            "layer": 23,
+            "head": 5
+          },
+          {
+            "layer": 22,
+            "head": 26
+          },
+          {
+            "layer": 24,
+            "head": 25
+          },
+          {
+            "layer": 22,
+            "head": 13
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 29.558332443237305,
+          "forward_ratio": 0.2633211232903956,
+          "reverse_ratio": 0.1731040410905823,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            6.75,
+            6.0,
+            7.0,
+            8.625,
+            9.25,
+            8.0,
+            8.125,
+            7.5,
+            7.625,
+            7.0,
+            7.375,
+            8.125,
+            8.125,
+            8.625,
+            8.625
+          ],
+          "reverse_effect_rows": [
+            5.0,
+            4.625,
+            5.125,
+            5.125,
+            5.375,
+            4.625,
+            5.125,
+            5.25,
+            4.75,
+            5.125,
+            4.75,
+            5.75,
+            5.25,
+            5.25,
+            5.625
+          ],
+          "natural_effect_rows": [
+            30.625,
+            28.25,
+            28.625,
+            29.75,
+            30.75,
+            29.75,
+            29.875,
+            27.75,
+            28.125,
+            27.25,
+            28.0,
+            31.25,
+            31.0,
+            31.0,
+            31.375
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.7654150329528926,
+          "reverse_fraction": 0.8510431726022323,
+          "minimum_fraction": 0.7654150329528926,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": true
+        }
+      },
+      "tell_ac": {
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 23
+          },
+          {
+            "layer": 22,
+            "head": 15
+          },
+          {
+            "layer": 22,
+            "head": 24
+          },
+          {
+            "layer": 22,
+            "head": 19
+          },
+          {
+            "layer": 23,
+            "head": 5
+          },
+          {
+            "layer": 22,
+            "head": 26
+          },
+          {
+            "layer": 24,
+            "head": 25
+          },
+          {
+            "layer": 22,
+            "head": 13
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 36.62083435058594,
+          "forward_ratio": 0.32119693660330095,
+          "reverse_ratio": 0.1203777406964966,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            9.75,
+            10.375,
+            10.0,
+            12.625,
+            11.5625,
+            12.375,
+            12.875,
+            12.4375,
+            12.0,
+            12.4375,
+            11.75,
+            11.625,
+            13.0,
+            11.9375,
+            11.6875
+          ],
+          "reverse_effect_rows": [
+            4.125,
+            4.25,
+            4.125,
+            4.625,
+            4.6875,
+            4.125,
+            4.4375,
+            5.0,
+            4.625,
+            3.875,
+            3.625,
+            4.625,
+            4.625,
+            4.5,
+            4.875
+          ],
+          "natural_effect_rows": [
+            36.375,
+            36.25,
+            34.75,
+            37.0,
+            35.75,
+            36.75,
+            37.6875,
+            35.8125,
+            36.0,
+            36.3125,
+            35.375,
+            37.875,
+            39.0,
+            37.6875,
+            36.6875
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.7104318511100334,
+          "reverse_fraction": 0.8810300187563179,
+          "minimum_fraction": 0.7104318511100334,
+          "origin_forward_acc": 1.0,
+          "origin_reverse_acc": 1.0,
+          "pass": true
+        }
+      },
+      "search_ac": {
+        "extra_sites": [
+          {
+            "layer": 24,
+            "head": 23
+          },
+          {
+            "layer": 22,
+            "head": 15
+          },
+          {
+            "layer": 22,
+            "head": 24
+          },
+          {
+            "layer": 22,
+            "head": 19
+          },
+          {
+            "layer": 23,
+            "head": 5
+          },
+          {
+            "layer": 22,
+            "head": 26
+          },
+          {
+            "layer": 24,
+            "head": 25
+          },
+          {
+            "layer": 22,
+            "head": 13
+          }
+        ],
+        "blocked_intervention": {
+          "natural_effect": 27.745832443237305,
+          "forward_ratio": 0.3755819404217022,
+          "reverse_ratio": 0.20693798989702689,
+          "forward_target_acc": 0.0,
+          "reverse_clean_acc": 0.0,
+          "forward_effect_rows": [
+            7.875,
+            7.75,
+            8.5,
+            12.0,
+            12.0,
+            11.9375,
+            11.25,
+            10.9375,
+            10.625,
+            11.0625,
+            10.8125,
+            10.9375,
+            9.9375,
+            10.3125,
+            10.375
+          ],
+          "reverse_effect_rows": [
+            5.125,
+            4.875,
+            4.875,
+            6.0,
+            6.25,
+            6.125,
+            6.125,
+            6.0,
+            5.5,
+            5.75,
+            5.5,
+            6.25,
+            5.75,
+            5.75,
+            6.25
+          ],
+          "natural_effect_rows": [
+            26.875,
+            25.25,
+            26.375,
+            29.0,
+            28.75,
+            29.1875,
+            28.875,
+            26.8125,
+            26.25,
+            26.3125,
+            26.5625,
+            29.6875,
+            29.3125,
+            29.6875,
+            27.25
+          ],
+          "sufficient": false
+        },
+        "mediation": {
+          "forward_fraction": 0.6683903312444046,
+          "reverse_fraction": 0.8047605476975745,
+          "minimum_fraction": 0.6683903312444046,
+          "origin_forward_acc": 0.3333333432674408,
+          "origin_reverse_acc": 0.9333333373069763,
+          "pass": false
+        }
+      }
+    }
+  },
+  "verdict": "PARTIAL_BACKUP_LOCALIZATION"
+}

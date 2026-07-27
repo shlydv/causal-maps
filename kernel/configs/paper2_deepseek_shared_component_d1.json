@@ -1,0 +1,10 @@
+{
+  "model_path": "/kaggle/input/**/deepseek-r1-distill-llama-8b/**/config.json",
+  "model_key": "deepseek_shared_component_d1",
+  "quantization": "8bit",
+  "n_world": 30,
+  "n_donor": 15,
+  "layers": [2, 8, 16, 24, 30],
+  "random_seed": 7319,
+  "required_gpu": "Tesla T4"
+}

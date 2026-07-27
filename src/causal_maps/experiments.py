@@ -1510,6 +1510,520 @@ def main(stage, config=None, out_dir="/kaggle/working"):
             random_seed=config.get("random_seed", 8849))
         log("=== done ===")
         return res
+    if stage == "delta_shared_component":
+        from .delta_shared_component import run_delta_shared_component
+        res = run_delta_shared_component(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "deepseek_shared_component_d1"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30),
+            n_donor=config.get("n_donor", 15),
+            layers=config.get("layers", None),
+            random_seed=config.get("random_seed", 7319))
+        log("=== done ===")
+        return res
+    if stage == "delta_binding_divergence":
+        from .delta_binding_divergence import run_delta_binding_divergence
+        res = run_delta_binding_divergence(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "deepseek_direct_binding_diagnostic"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_rows=config.get("n_rows", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_content_aliasing":
+        from .delta_content_aliasing import run_delta_content_aliasing
+        res = run_delta_content_aliasing(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "deepseek_content_aliasing_d1"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_rows=config.get("n_rows", 30),
+            loads=config.get("loads", (1, 2, 3)))
+        log("=== done ===")
+        return res
+    if stage == "delta_sparse_transport":
+        from .delta_sparse_transport import run_delta_sparse_transport
+        res = run_delta_sparse_transport(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_sparse_transport_d1"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30),
+            n_donor=config.get("n_donor", 15),
+            layers=config.get("layers", (21, 22, 23, 24)),
+            top_k=config.get("top_k", (1, 2, 4, 8)),
+            n_random=config.get("n_random", 5),
+            random_seed=config.get("random_seed", 4283))
+        log("=== done ===")
+        return res
+    if stage == "delta_sparse_transport_confirmation":
+        from .delta_sparse_transport_confirmation import (
+            run_delta_sparse_transport_confirmation,
+        )
+        res = run_delta_sparse_transport_confirmation(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_sparse_transport_confirmation"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30),
+            n_random=config.get("n_random", 99),
+            random_seed=config.get("random_seed", 9407))
+        log("=== done ===")
+        return res
+    if stage == "delta_source_head_mediation":
+        from .delta_source_head_mediation import (
+            run_delta_source_head_mediation,
+        )
+        res = run_delta_source_head_mediation(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_source_head_mediation"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30),
+            n_random=config.get("n_random", 39),
+            random_seed=config.get("random_seed", 6113))
+        log("=== done ===")
+        return res
+    if stage == "delta_conditional_backup":
+        from .delta_conditional_backup import run_delta_conditional_backup
+        res = run_delta_conditional_backup(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_conditional_backup"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30),
+            n_donor=config.get("n_donor", 15),
+            n_random=config.get("n_random", 9),
+            random_seed=config.get("random_seed", 7759))
+        log("=== done ===")
+        return res
+    if stage == "delta_operation_handoff_depth":
+        from .delta_operation_handoff_depth import (
+            run_delta_operation_handoff_depth,
+        )
+        res = run_delta_operation_handoff_depth(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_operation_handoff_depth"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_depth_replication":
+        from .delta_depth_replication import run_delta_depth_replication
+        res = run_delta_depth_replication(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_depth_replication"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_semantic_command_factor":
+        from .delta_semantic_command_factor import (
+            run_delta_semantic_command_factor,
+        )
+        res = run_delta_semantic_command_factor(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_semantic_command_factor"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_prompt_factorial":
+        from .delta_prompt_factorial import run_delta_prompt_factorial
+        res = run_delta_prompt_factorial(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_prompt_factorial"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_token_length_ladder":
+        from .delta_token_length_ladder import (
+            run_delta_token_length_ladder,
+        )
+        res = run_delta_token_length_ladder(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_token_length_ladder"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_position_matched_label":
+        from .delta_position_matched_label import (
+            run_delta_position_matched_label,
+        )
+        res = run_delta_position_matched_label(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_position_matched_label"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_label_meaning_codebook":
+        from .delta_label_meaning_codebook import (
+            run_delta_label_meaning_codebook,
+        )
+        res = run_delta_label_meaning_codebook(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_label_meaning_codebook"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_lexical_class":
+        from .delta_lexical_class import run_delta_lexical_class
+        res = run_delta_lexical_class(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_lexical_class"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_label_route_switch":
+        from .delta_label_route_switch import (
+            run_delta_label_route_switch,
+        )
+        res = run_delta_label_route_switch(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_label_route_switch"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_paired_route_transplant":
+        from .delta_paired_route_transplant import (
+            run_delta_paired_route_transplant,
+        )
+        res = run_delta_paired_route_transplant(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_paired_route_transplant"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_distributed_label_transplant":
+        from .delta_distributed_label_transplant import (
+            run_delta_distributed_label_transplant,
+        )
+        res = run_delta_distributed_label_transplant(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_distributed_label_transplant"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_distributed_replication":
+        from .delta_distributed_replication import (
+            run_delta_distributed_replication,
+        )
+        res = run_delta_distributed_replication(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen14b_distributed_replication"),
+            quantization=config.get("quantization", "awq"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30),
+            source_layer=config.get("source_layer", 32),
+            route_start=config.get("route_start", 33),
+            route_checkpoints=config.get(
+                "route_checkpoints",
+                [34, 36, 38, 40, 41, 42, 44, 46, 47]),
+            decision_layer=config.get("decision_layer", 41),
+            replication_spec=config.get("replication_spec", "qwen14b"))
+        log("=== done ===")
+        return res
+    if stage == "delta_replication_behavior_screen":
+        from .delta_replication_behavior_screen import (
+            run_delta_replication_behavior_screen,
+        )
+        res = run_delta_replication_behavior_screen(
+            config["model_path"], out_dir,
+            model_key=config.get("model_key", "qwen14b_behavior_screen"),
+            quantization=config.get("quantization", "awq"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_synonym_prefix_transfer":
+        from .delta_synonym_prefix_transfer import (
+            run_delta_synonym_prefix_transfer,
+        )
+        res = run_delta_synonym_prefix_transfer(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_synonym_prefix_transfer"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_content_cancelled_controller":
+        from .delta_content_cancelled_controller import (
+            run_delta_content_cancelled_controller,
+        )
+        res = run_delta_content_cancelled_controller(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_content_cancelled_controller"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_cross_domain_controller":
+        from .delta_cross_domain_controller import (
+            run_delta_cross_domain_controller,
+        )
+        res = run_delta_cross_domain_controller(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_cross_domain_controller"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_controller_matrix":
+        from .delta_controller_matrix import (
+            run_delta_controller_matrix,
+        )
+        res = run_delta_controller_matrix(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_controller_matrix"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_leave_color_out_shared":
+        from .delta_leave_color_out_shared import (
+            run_delta_leave_color_out_shared,
+        )
+        res = run_delta_leave_color_out_shared(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_leave_color_out_shared"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_shared_adapter_decomposition":
+        from .delta_shared_adapter_decomposition import (
+            run_delta_shared_adapter_decomposition,
+        )
+        res = run_delta_shared_adapter_decomposition(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_shared_adapter_decomposition"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_residual_only_confirmation":
+        from .delta_residual_only_confirmation import (
+            run_delta_residual_only_confirmation,
+        )
+        res = run_delta_residual_only_confirmation(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_residual_only_confirmation"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_endogenous_residual_necessity":
+        from .delta_endogenous_residual_necessity import (
+            run_delta_endogenous_residual_necessity,
+        )
+        res = run_delta_endogenous_residual_necessity(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_endogenous_residual_necessity"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_endogenous_controller_factorial":
+        from .delta_endogenous_controller_factorial import (
+            run_delta_endogenous_controller_factorial,
+        )
+        res = run_delta_endogenous_controller_factorial(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_endogenous_controller_factorial"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_causal_rank_spectrum":
+        from .delta_causal_rank_spectrum import (
+            run_delta_causal_rank_spectrum,
+        )
+        res = run_delta_causal_rank_spectrum(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_causal_rank_spectrum"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 30))
+        log("=== done ===")
+        return res
+    if stage == "delta_prospective_causal_sensitivity":
+        from .delta_prospective_causal_sensitivity import (
+            run_delta_prospective_causal_sensitivity,
+        )
+        res = run_delta_prospective_causal_sensitivity(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key",
+                "qwen7b_prospective_causal_sensitivity"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 50))
+        log("=== done ===")
+        return res
+    if stage == "delta_heterogeneous_family_screen":
+        from .delta_heterogeneous_family_screen import (
+            run_delta_heterogeneous_family_screen,
+        )
+        res = run_delta_heterogeneous_family_screen(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_heterogeneous_family_screen"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 15))
+        log("=== done ===")
+        return res
+    if stage == "delta_cross_family_causal_subspace":
+        from .delta_cross_family_causal_subspace import (
+            run_delta_cross_family_causal_subspace,
+        )
+        res = run_delta_cross_family_causal_subspace(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_cross_family_causal_subspace"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 50))
+        log("=== done ===")
+        return res
+    if stage == "delta_exact_transplant_locus_diagnostic":
+        from .delta_exact_transplant_locus_diagnostic import (
+            run_delta_exact_transplant_locus_diagnostic,
+        )
+        res = run_delta_exact_transplant_locus_diagnostic(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key",
+                "qwen7b_exact_transplant_locus_diagnostic"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 12))
+        log("=== done ===")
+        return res
+    if stage == "delta_predictive_conditional_transport":
+        from .delta_predictive_conditional_transport import (
+            run_delta_predictive_conditional_transport,
+        )
+        res = run_delta_predictive_conditional_transport(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key",
+                "qwen7b_predictive_conditional_transport"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 12),
+            self_test_only=config.get("self_test_only", False))
+        log("=== done ===")
+        return res
+    if stage == "delta_controller_circuit_epistasis":
+        from .delta_controller_circuit_epistasis import (
+            run_delta_controller_circuit_epistasis,
+        )
+        res = run_delta_controller_circuit_epistasis(
+            config["model_path"], out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_controller_circuit_epistasis"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 60))
+        log("=== done ===")
+        return res
     spec = STAGE_SPEC[stage]
     size = config.get("model_size", spec["size"])
     model_path = config.get("model_path", DEFAULT_MODELS[size])

@@ -1,0 +1,7 @@
+{
+  "model_path": "/kaggle/input/**/14b-instruct-awq/**/config.json",
+  "model_key": "qwen14b_behavior_screen",
+  "quantization": "awq",
+  "n_world": 30,
+  "required_gpu": "Tesla T4"
+}

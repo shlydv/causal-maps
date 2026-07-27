@@ -1,0 +1,12 @@
+{
+  "model_path": "/kaggle/input/datasets/ragnar123/qwen2-5-7b-instruct",
+  "model_key": "qwen7b_sparse_transport_d1",
+  "quantization": "8bit",
+  "n_world": 30,
+  "n_donor": 15,
+  "layers": [21, 22, 23, 24],
+  "top_k": [1, 2, 4, 8],
+  "n_random": 5,
+  "random_seed": 4283,
+  "required_gpu": "Tesla T4"
+}

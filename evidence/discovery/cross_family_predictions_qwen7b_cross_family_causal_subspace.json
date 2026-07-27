@@ -1,0 +1,87 @@
+{
+  "protocol_sha256": "FDB053176FC5FCF4D059FAEEB562BAD7822FBB5FFA08DB55E3C3204091F98C2B",
+  "geometry_artifact_sha256": "E9A940A3CDEC8D988FD8956CA0B34D4B370D5D7B1ABFCF39969559E4221B436B",
+  "statement": "Frozen before any test-row causal intervention.",
+  "predictions": {
+    "private_belief": {
+      "calibration_search_minus_belief_gap": 0.03092365339594305,
+      "predicted_orientation_sign": 1,
+      "rank_energy": {
+        "1": 0.7824097275733948,
+        "2": 0.7828643918037415,
+        "3": 0.7858150601387024,
+        "7": 0.793635904788971
+      }
+    },
+    "latest_update": {
+      "calibration_search_minus_belief_gap": 0.029827201834457417,
+      "predicted_orientation_sign": 1,
+      "rank_energy": {
+        "1": 0.8745204210281372,
+        "2": 0.8798598051071167,
+        "3": 0.8800588250160217,
+        "7": 0.880519688129425
+      }
+    },
+    "key_value_lookup": {
+      "calibration_search_minus_belief_gap": 0.01950609683527249,
+      "predicted_orientation_sign": 1,
+      "rank_energy": {
+        "1": 0.8511908054351807,
+        "2": 0.8571257591247559,
+        "3": 0.8582029342651367,
+        "7": 0.8738186955451965
+      }
+    },
+    "two_hop_pointer": {
+      "calibration_search_minus_belief_gap": -0.01965159871153932,
+      "predicted_orientation_sign": -1,
+      "rank_energy": {
+        "1": 0.8045172691345215,
+        "2": 0.8110951781272888,
+        "3": 0.817165732383728,
+        "7": 0.8246868252754211
+      }
+    },
+    "conditional_selection": {
+      "calibration_search_minus_belief_gap": -0.0131847123965676,
+      "predicted_orientation_sign": -1,
+      "rank_energy": {
+        "1": 0.8585788011550903,
+        "2": 0.8590917587280273,
+        "3": 0.8597408533096313,
+        "7": 0.8639060854911804
+      }
+    },
+    "maximum_score": {
+      "calibration_search_minus_belief_gap": -0.044665955534291424,
+      "predicted_orientation_sign": -1,
+      "rank_energy": {
+        "1": 0.7253268957138062,
+        "2": 0.7279565334320068,
+        "3": 0.7291505932807922,
+        "7": 0.7404589653015137
+      }
+    },
+    "constraint_elimination": {
+      "calibration_search_minus_belief_gap": 0.025694788294256865,
+      "predicted_orientation_sign": 1,
+      "rank_energy": {
+        "1": 0.8476987481117249,
+        "2": 0.8522017598152161,
+        "3": 0.853374719619751,
+        "7": 0.8575592637062073
+      }
+    },
+    "temporal_slot": {
+      "calibration_search_minus_belief_gap": 0.038994369960663855,
+      "predicted_orientation_sign": 1,
+      "rank_energy": {
+        "1": 0.8791794180870056,
+        "2": 0.880877673625946,
+        "3": 0.8813455104827881,
+        "7": 0.8925556540489197
+      }
+    }
+  }
+}

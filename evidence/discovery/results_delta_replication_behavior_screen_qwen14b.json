@@ -1,0 +1,1165 @@
+{
+  "stage": "delta_replication_behavior_screen",
+  "protocol_version": "2026-07-24-p2-qwen14b-behavior-screen-v1",
+  "protocol_sha256": "F6EB5BBB8A5DB609B44CD669D1AECC30D0049CD43E173A8175AE85D30CD13E33",
+  "model_key": "qwen14b_behavior_screen",
+  "model_path": "/kaggle/input/**/14b-instruct-awq/**/config.json",
+  "quantization": "awq",
+  "selection_rule": "all candidate rows correct in BELIEF/SEARCH x clean/natural; preserve order",
+  "minimum_eligible": 8,
+  "candidate": {
+    "alignment": {
+      "marker_position": 157,
+      "readout_position": 197,
+      "differing_positions": [
+        172,
+        173,
+        174,
+        195,
+        196,
+        197
+      ],
+      "instruction_positions": [
+        172,
+        173,
+        174
+      ],
+      "answer_prefix_positions": [
+        195,
+        196,
+        197
+      ]
+    },
+    "rows": [
+      {
+        "compatible_position": 0,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Oslo",
+          "ts": "Miami"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 24.6875
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 16.03125
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 20.4375
+        },
+        "search_natural": {
+          "predicted": "Paris",
+          "expected": "Rome",
+          "correct": false,
+          "gold_margin": -2.59375
+        },
+        "eligible": false
+      },
+      {
+        "compatible_position": 1,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Lima",
+          "ts": "Tokyo"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 21.21875
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 14.65625
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 22.171875
+        },
+        "search_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 0.84375
+        },
+        "eligible": true
+      },
+      {
+        "compatible_position": 2,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Miami",
+          "ts": "Delhi"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 17.59375
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 15.09375
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 12.96875
+        },
+        "search_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 4.03125
+        },
+        "eligible": true
+      },
+      {
+        "compatible_position": 3,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Tokyo",
+          "ts": "Cairo"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 8.15625
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 7.28125
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 10.25
+        },
+        "search_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 3.0625
+        },
+        "eligible": true
+      },
+      {
+        "compatible_position": 4,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Delhi",
+          "ts": "Oslo"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 19.59375
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 21.15625
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 17.5
+        },
+        "search_natural": {
+          "predicted": "Paris",
+          "expected": "Rome",
+          "correct": false,
+          "gold_margin": -2.09375
+        },
+        "eligible": false
+      },
+      {
+        "compatible_position": 5,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Tokyo",
+          "ts": "Delhi"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 9.3125
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 7.5
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 10.84375
+        },
+        "search_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 2.21875
+        },
+        "eligible": true
+      },
+      {
+        "compatible_position": 6,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Tokyo",
+          "ts": "Oslo"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 9.59375
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 7.625
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 11.15625
+        },
+        "search_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 3.03125
+        },
+        "eligible": true
+      },
+      {
+        "compatible_position": 7,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Tokyo",
+          "ts": "Lima"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 8.65625
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 7.4375
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 10.0625
+        },
+        "search_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 1.03125
+        },
+        "eligible": true
+      },
+      {
+        "compatible_position": 8,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Tokyo",
+          "ts": "Miami"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 8.90625
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 6.53125
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 10.53125
+        },
+        "search_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 1.25
+        },
+        "eligible": true
+      },
+      {
+        "compatible_position": 9,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Delhi",
+          "ts": "Tokyo"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 19.46875
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 20.71875
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 18.84375
+        },
+        "search_natural": {
+          "predicted": "Paris",
+          "expected": "Rome",
+          "correct": false,
+          "gold_margin": -2.71875
+        },
+        "eligible": false
+      },
+      {
+        "compatible_position": 10,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Delhi",
+          "ts": "Cairo"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 18.90625
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 21.21875
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 18.609375
+        },
+        "search_natural": {
+          "predicted": "Paris",
+          "expected": "Rome",
+          "correct": false,
+          "gold_margin": -2.59375
+        },
+        "eligible": false
+      },
+      {
+        "compatible_position": 11,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Delhi",
+          "ts": "Lima"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 20.0
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 20.59375
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 17.625
+        },
+        "search_natural": {
+          "predicted": "Paris",
+          "expected": "Rome",
+          "correct": false,
+          "gold_margin": -4.03125
+        },
+        "eligible": false
+      },
+      {
+        "compatible_position": 12,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Delhi",
+          "ts": "Miami"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 20.40625
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 21.125
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 17.84375
+        },
+        "search_natural": {
+          "predicted": "Paris",
+          "expected": "Rome",
+          "correct": false,
+          "gold_margin": -4.03125
+        },
+        "eligible": false
+      },
+      {
+        "compatible_position": 13,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Cairo",
+          "ts": "Tokyo"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 17.6875
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 10.0625
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 15.40625
+        },
+        "search_natural": {
+          "predicted": "Paris",
+          "expected": "Rome",
+          "correct": false,
+          "gold_margin": -2.9375
+        },
+        "eligible": false
+      },
+      {
+        "compatible_position": 14,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Cairo",
+          "ts": "Delhi"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 17.6875
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 10.5625
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 14.6875
+        },
+        "search_natural": {
+          "predicted": "Paris",
+          "expected": "Rome",
+          "correct": false,
+          "gold_margin": -3.21875
+        },
+        "eligible": false
+      }
+    ],
+    "accuracies": {
+      "belief_clean": 1.0,
+      "belief_natural": 1.0,
+      "search_clean": 1.0,
+      "search_natural": 0.4666666666666667
+    }
+  },
+  "diagnostic": {
+    "alignment": {
+      "marker_position": 157,
+      "readout_position": 197,
+      "differing_positions": [
+        172,
+        173,
+        174,
+        195,
+        196,
+        197
+      ],
+      "instruction_positions": [
+        172,
+        173,
+        174
+      ],
+      "answer_prefix_positions": [
+        195,
+        196,
+        197
+      ]
+    },
+    "rows": [
+      {
+        "compatible_position": 15,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Cairo",
+          "ts": "Oslo"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 18.40625
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 10.90625
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 15.0
+        },
+        "search_natural": {
+          "predicted": "Paris",
+          "expected": "Rome",
+          "correct": false,
+          "gold_margin": -2.0625
+        },
+        "eligible": false
+      },
+      {
+        "compatible_position": 16,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Cairo",
+          "ts": "Lima"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 16.875
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 10.5625
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 14.28125
+        },
+        "search_natural": {
+          "predicted": "Paris",
+          "expected": "Rome",
+          "correct": false,
+          "gold_margin": -3.15625
+        },
+        "eligible": false
+      },
+      {
+        "compatible_position": 17,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Cairo",
+          "ts": "Miami"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 17.40625
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 10.6875
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 14.6875
+        },
+        "search_natural": {
+          "predicted": "Paris",
+          "expected": "Rome",
+          "correct": false,
+          "gold_margin": -3.25
+        },
+        "eligible": false
+      },
+      {
+        "compatible_position": 18,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Oslo",
+          "ts": "Tokyo"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 24.875
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 16.40625
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 23.4375
+        },
+        "search_natural": {
+          "predicted": "Paris",
+          "expected": "Rome",
+          "correct": false,
+          "gold_margin": -1.84375
+        },
+        "eligible": false
+      },
+      {
+        "compatible_position": 19,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Oslo",
+          "ts": "Delhi"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 24.71875
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 16.9375
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 20.28125
+        },
+        "search_natural": {
+          "predicted": "Paris",
+          "expected": "Rome",
+          "correct": false,
+          "gold_margin": -1.75
+        },
+        "eligible": false
+      },
+      {
+        "compatible_position": 20,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Oslo",
+          "ts": "Cairo"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 24.28125
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 16.46875
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 22.03125
+        },
+        "search_natural": {
+          "predicted": "Paris",
+          "expected": "Rome",
+          "correct": false,
+          "gold_margin": -1.25
+        },
+        "eligible": false
+      },
+      {
+        "compatible_position": 21,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Oslo",
+          "ts": "Lima"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 23.65625
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 16.59375
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 19.75
+        },
+        "search_natural": {
+          "predicted": "Paris",
+          "expected": "Rome",
+          "correct": false,
+          "gold_margin": -2.5625
+        },
+        "eligible": false
+      },
+      {
+        "compatible_position": 22,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Lima",
+          "ts": "Delhi"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 23.25
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 15.40625
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 21.859375
+        },
+        "search_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 1.0
+        },
+        "eligible": true
+      },
+      {
+        "compatible_position": 23,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Lima",
+          "ts": "Cairo"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 21.1875
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 14.9375
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 21.078125
+        },
+        "search_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 1.875
+        },
+        "eligible": true
+      },
+      {
+        "compatible_position": 24,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Lima",
+          "ts": "Oslo"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 22.15625
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 14.9375
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 22.265625
+        },
+        "search_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 1.3125
+        },
+        "eligible": true
+      },
+      {
+        "compatible_position": 25,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Lima",
+          "ts": "Miami"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 20.9375
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 12.90625
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 20.5625
+        },
+        "search_natural": {
+          "predicted": "Paris",
+          "expected": "Rome",
+          "correct": false,
+          "gold_margin": -0.375
+        },
+        "eligible": false
+      },
+      {
+        "compatible_position": 26,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Miami",
+          "ts": "Tokyo"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 17.09375
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 13.96875
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 15.25
+        },
+        "search_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 5.03125
+        },
+        "eligible": true
+      },
+      {
+        "compatible_position": 27,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Miami",
+          "ts": "Cairo"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 17.1875
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 15.53125
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 14.3125
+        },
+        "search_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 5.46875
+        },
+        "eligible": true
+      },
+      {
+        "compatible_position": 28,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Miami",
+          "ts": "Oslo"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 18.125
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 15.65625
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 14.65625
+        },
+        "search_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 4.71875
+        },
+        "eligible": true
+      },
+      {
+        "compatible_position": 29,
+        "world": {
+          "ac": "Paris",
+          "bc": "Paris",
+          "as": "Paris",
+          "bs": "Rome",
+          "tc": "Miami",
+          "ts": "Lima"
+        },
+        "belief_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 16.21875
+        },
+        "belief_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 15.34375
+        },
+        "search_clean": {
+          "predicted": "Paris",
+          "expected": "Paris",
+          "correct": true,
+          "gold_margin": 13.0625
+        },
+        "search_natural": {
+          "predicted": "Rome",
+          "expected": "Rome",
+          "correct": true,
+          "gold_margin": 3.78125
+        },
+        "eligible": true
+      }
+    ],
+    "accuracies": {
+      "belief_clean": 1.0,
+      "belief_natural": 1.0,
+      "search_clean": 1.0,
+      "search_natural": 0.4666666666666667
+    }
+  },
+  "eligible_compatible_positions": [
+    1,
+    2,
+    3,
+    5,
+    6,
+    7,
+    8
+  ],
+  "eligible_candidate_count": 7,
+  "verdict": "ELIGIBLE_BUCKET_TOO_SMALL"
+}

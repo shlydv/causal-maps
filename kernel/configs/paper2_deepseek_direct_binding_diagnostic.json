@@ -1,0 +1,7 @@
+{
+  "model_path": "/kaggle/input/**/deepseek-r1-distill-llama-8b/**/config.json",
+  "model_key": "deepseek_direct_binding_diagnostic",
+  "quantization": "8bit",
+  "n_rows": 30,
+  "required_gpu": "Tesla T4"
+}

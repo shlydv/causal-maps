@@ -1,0 +1,9 @@
+{
+  "model_path": "/kaggle/input/**/qwen2-5-7b-instruct/config.json",
+  "model_key": "qwen7b_source_head_mediation",
+  "quantization": "8bit",
+  "n_world": 30,
+  "n_random": 39,
+  "random_seed": 6113,
+  "required_gpu": "Tesla T4"
+}
