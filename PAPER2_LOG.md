@@ -2411,3 +2411,71 @@ rule changed. The failed kernel produced no scientific result.
 The repaired T4-only guard passed, including the new rank-two/rank-three
 direct-state equivalence check. Repaired source ZIP SHA-256:
 `5E47A18CA7235ACA38F7D6A653AA6FBDA9C1624975DBF92F5E619DFB58F48229`.
+
+## 2026-07-27: functional causal-rank test — completed; static basis closed
+
+The repaired frozen run completed cleanly with verdict
+`TRAIN_DIFFERENCE_SPAN_INSUFFICIENT`.
+
+The exact held-out target-state oracle passed all four family-direction cells,
+moving the processed route by `0.674` to `0.807`. In contrast, projecting the
+held-out KNOW/LOOK difference into the entire BELIEF/SEARCH training-
+difference span moved the route by only `0.037` to `0.087`, recovering
+`4.8%` to `13.0%` of the exact effect. Causally ordered rank-two/rank-four
+projections moved it by only `0.011` to `0.054`. They exceeded equal-rank PCA
+and all nineteen random breadth controls (`p = 0.05`), but the effect was far
+below every functional-compression gate. Central-difference even/odd ratios
+were `1.126` to `1.218`, also rejecting the frozen local-linearity condition
+at the intervention scale.
+
+Interpretation: there is weak shared causal structure, but no fixed reusable
+late control space spanning the unseen lexical realization. This closes the
+static global-vector, Euclidean-atlas and causally reordered training-span
+branches. It does not negate exact context-matched state transport.
+
+Result artifact:
+`runs/delta_functional_causal_rank/results_delta_functional_causal_rank_qwen7b_functional_causal_rank.json`.
+
+## 2026-07-27: pivot to prospective latent-instruction compilation — frozen
+
+The retained positive and negative evidence motivates a distinct dynamical
+hypothesis:
+
+`portable early operation code + receiver context -> receiver-specific L21 state -> downstream route`.
+
+This is not another late vector or subspace. The primary intervention is
+learned only from BELIEF/SEARCH and THINK/FIND in four training computations.
+Its layer is selected on two disjoint calibration computations, frozen, and
+tested on unseen KNOW/LOOK wording, unseen worlds and the held-out
+maximum-score and two-hop computations. No held-out target state enters the
+program.
+
+The test separately measures:
+
+1. whether exact target states placed early can cause the frozen intervening
+   layers to construct the later target computation;
+2. whether the training-derived early program has that prospective capacity;
+3. whether the generated L21 answer state is necessary and sufficient for
+   the route change;
+4. whether receiver-specific residual structure beats nineteen frozen row
+   derangements;
+5. whether identical-position, sign-reversal and nineteen same-norm random
+   programs are null.
+
+Instruction-only and answer-only arms localize the portable program and are
+not treated as nulls. A positive requires the six-position primary to pass,
+but an equally strong occurrence ablation would imply an even more compact
+site.
+
+Full design and stopping rule:
+`PAPER2_LATENT_INSTRUCTION_COMPILER_PROTOCOL.md`.
+
+The final T4-only guard passed before the model run. It verifies the
+same-receiver derangement statistic, exact norm matching for all nineteen
+random programs, deterministic calibration-layer selection, prediction-
+boundary enforcement and reachability of all six frozen verdicts.
+
+Protocol SHA-256:
+`AC2F443846B746AD6FE07D92608542206AC0CDDFF0EDB471334C45CFB0015A1F`.
+Uploaded source ZIP SHA-256:
+`DCE51CA9F4342F06AEDA70B30ADDFF2893084238BA56042C42CABD779DEDB75B`.

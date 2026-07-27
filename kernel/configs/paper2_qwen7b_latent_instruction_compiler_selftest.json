@@ -1,0 +1,8 @@
+{
+  "model_path": "unused",
+  "model_key": "latent_instruction_compiler_selftest",
+  "quantization": "8bit",
+  "n_world": 12,
+  "self_test_only": true,
+  "required_gpu": "Tesla T4"
+}
