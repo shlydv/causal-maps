@@ -1,0 +1,9 @@
+{
+  "model_path": "/kaggle/input/**/qwen2-5-7b-instruct/config.json",
+  "controller_archive_path": "/kaggle/input/**/heldout_inverse_predictions_qwen7b_heldout_inverse_control.npz",
+  "model_key": "qwen7b_shared_tangent_breadth_selftest",
+  "quantization": "8bit",
+  "n_world": 8,
+  "self_test_only": true,
+  "required_gpu": "Tesla T4"
+}

@@ -2223,3 +2223,35 @@ is required before promoting the shared component to the Paper 2 headline.
 
 Result JSON SHA-256:
 `64C04CB57EC88E8F07759C92C0797CCE12C382A07BD4D38D4800E259866ACFBB`.
+
+## 2026-07-27: final shared-tangent breadth screen — frozen
+
+The remaining positive result is now tested prospectively rather than
+re-described. The exact training-only shared L21 intervention frozen by the
+held-out inverse experiment is applied unchanged to four additional
+established computation families (`latest_update`, `key_value_lookup`,
+`conditional_selection`, and `temporal_slot`), two position-matched lexical
+panels, both operation directions, eight new directed world pairs and both
+history states.
+
+The primary outcome is processed L24/L27 state transport with the direct
+final-position identity contribution removed. A separate downstream outcome
+asks whether the same patch moves L22–24 content-intervention mediation toward
+the opposite operation. Sign reversal, instruction-position patching, exact
+matched-state interchange, 19 norm-matched random directions in the same
+frozen rank-four basis, and functional-validity gates prevent a state-only or
+behavior-broken effect from being called a controller.
+
+The stopping rule is decisive: a two-outcome pass licenses deeper
+confirmation; a state-only pass remains a causal tangent without demonstrated
+propagation; failure of state breadth closes the shared-controller branch.
+No post-output prompt, family, vector, layer, threshold, outcome, or seed
+changes are allowed.
+
+T4-only self-test `cm-p2-shared-tangent-selftest-v2` passed with protocol
+SHA-256
+`C7597575FA19B456661ADCDF151379534C990440CACA8D71CF8AF7A68A5D1A46`
+and frozen intervention artifact SHA-256
+`9F67BDD81BA74EABF47BBA6E74ACA6FCEE512AE7155603A30517A793C5E97CF2`.
+The full specification is
+`PAPER2_SHARED_TANGENT_BREADTH_PROTOCOL.md`.

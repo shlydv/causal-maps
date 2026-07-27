@@ -2057,6 +2057,23 @@ def main(stage, config=None, out_dir="/kaggle/working"):
             self_test_only=config.get("self_test_only", False))
         log("=== done ===")
         return res
+    if stage == "delta_shared_tangent_breadth":
+        from .delta_shared_tangent_breadth import (
+            run_delta_shared_tangent_breadth,
+        )
+        res = run_delta_shared_tangent_breadth(
+            config["model_path"],
+            config["controller_archive_path"],
+            out_dir,
+            model_key=config.get(
+                "model_key", "qwen7b_shared_tangent_breadth"),
+            quantization=config.get("quantization", "8bit"),
+            device_map=config.get("device_map", None),
+            max_memory=config.get("max_memory", None),
+            n_world=config.get("n_world", 8),
+            self_test_only=config.get("self_test_only", False))
+        log("=== done ===")
+        return res
     if stage == "delta_controller_circuit_epistasis":
         from .delta_controller_circuit_epistasis import (
             run_delta_controller_circuit_epistasis,
