@@ -1903,3 +1903,23 @@ Supported boundary:
 > state recovers that transport across unseen computations. The causally
 > required variation is computation-specific, nonlinear, or inseparable from
 > the matched state under this representation.
+
+## 2026-07-27: within-family conditional transport — frozen, not launched
+
+The final control-law test changes only the training scope. For each of the
+eight computations independently, fit source-only BELIEF-to-SEARCH and
+SEARCH-to-BELIEF displacement predictors on 24 directed pairs, select rank and
+ridge on eight disjoint validation pairs, and test on twelve histories from
+the six remaining directed pairs.
+
+All interventions, direct L24/L27 convergence metrics, exact upper bound,
+global templates, nearest-neighbour, row-shuffle and position controls are
+unchanged. The corrected functional adjudicator requires answer accuracy for
+every arm, and a regression test explicitly prevents the verdict-only bug
+found in the cross-family result.
+
+At least six of eight families must pass the complete conditionality gate to
+establish `FAMILY_SPECIFIC_CONTROL_LAWS` and continue the research branch.
+Fewer than three with valid exact references closes the learnable control-law
+branch. The complete frozen design is in
+`PAPER2_WITHIN_FAMILY_CONDITIONAL_TRANSPORT_PROTOCOL.md`.

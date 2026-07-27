@@ -1,9 +1,9 @@
-"""Prospective test of state-conditioned, non-oracle causal transport.
+"""Prospective tests of state-conditioned, non-oracle causal transport.
 
-The held-out target operation state is never an input to prediction.  Each
-leave-one-family-out predictor receives only the origin L21 answer-prefix
-state and is frozen before target-family counterpart states or interventions
-are evaluated.
+The held-out target operation state is never an input to prediction. Each
+predictor receives only the origin L21 answer-prefix state and is frozen
+before test-row counterpart states or interventions are evaluated. Training
+scope is explicitly selected as leave-one-family-out or within-family.
 """
 from __future__ import annotations
 
@@ -168,6 +168,19 @@ def _row_splits():
         "validation": validation,
         "test": test,
     }
+
+
+def _training_families(target_family, training_scope):
+    if target_family not in FAMILY_ORDER:
+        raise KeyError(target_family)
+    if training_scope == "leave_one_family_out":
+        return [
+            family for family in FAMILY_ORDER
+            if family != target_family
+        ]
+    if training_scope == "within_family":
+        return [target_family]
+    raise ValueError(f"unknown training scope: {training_scope}")
 
 
 @torch.no_grad()
@@ -549,10 +562,20 @@ def _self_check():
     deranged = _derange_rows(torch.arange(30).reshape(10, 3))
     fixed_rows = int(torch.all(
         deranged == torch.arange(30).reshape(10, 3), dim=1).sum())
+    target_family = FAMILY_ORDER[0]
+    loo_families = _training_families(
+        target_family, "leave_one_family_out")
+    within_families = _training_families(
+        target_family, "within_family")
+    scope_pass = bool(
+        target_family not in loo_families
+        and len(loo_families) == len(FAMILY_ORDER) - 1
+        and within_families == [target_family])
     passed = bool(
         relative_error < 1e-4
         and fixed_rows == 0
-        and len(splits["test"]) == TEST_N)
+        and len(splits["test"]) == TEST_N
+        and scope_pass)
     if not passed:
         raise AssertionError(
             "predictive conditional transport self-check failed")
@@ -560,34 +583,44 @@ def _self_check():
         "relative_linear_recovery_error": relative_error,
         "derangement_fixed_rows": fixed_rows,
         "test_rows": len(splits["test"]),
+        "training_scope_check": scope_pass,
         "pass": passed,
     }
 
 
 @torch.no_grad()
-def run_delta_predictive_conditional_transport(
+def _run_predictive_transport(
         model_path, out_dir,
-        model_key="qwen7b_predictive_conditional_transport",
+        model_key,
+        protocol,
+        protocol_sha256,
+        experiment_stage,
+        training_scope,
+        verdict_map=None,
         quantization="8bit", device_map=None, max_memory=None,
         n_world=12, self_test_only=False):
     os.makedirs(out_dir, exist_ok=True)
     if int(n_world) != TEST_N:
         raise ValueError("v1 is frozen to exactly 12 held-out histories")
+    if training_scope not in (
+            "leave_one_family_out", "within_family"):
+        raise ValueError(f"unknown training scope: {training_scope}")
     self_check = _self_check()
     if self_test_only:
         result = {
-            "stage": "delta_predictive_conditional_transport",
-            "protocol_sha256": PROTOCOL_SHA256,
+            "stage": experiment_stage,
+            "protocol_sha256": protocol_sha256,
+            "training_scope": training_scope,
             "self_check": self_check,
             "verdict": "SELF_CHECK_PASS",
         }
         path = os.path.join(
-            out_dir, "predictive_conditional_transport_self_check.json")
+            out_dir, f"{experiment_stage}_self_check.json")
         with open(path, "w") as handle:
             json.dump(result, handle, indent=2)
         log(
-            f"PREDICTIVE-CONDITIONAL-TRANSPORT self-check pass "
-            f"protocol={PROTOCOL_SHA256}")
+            f"{experiment_stage} self-check pass "
+            f"protocol={protocol_sha256}")
         return result
     model, tok = load_model_and_tokenizer(
         _resolve(model_path), quantization=quantization,
@@ -601,7 +634,7 @@ def run_delta_predictive_conditional_transport(
     donor_data = {}
     donor_hb = Heartbeat(
         len(FAMILY_ORDER) * 2 * 2 * 2,
-        "predictive_transport_donor_capture",
+        f"{experiment_stage}_donor_capture",
         every_sec=30, out_dir=out_dir)
     for family in FAMILY_ORDER:
         spec = {**FAMILY_SPECS[family], "values": VALUES}
@@ -628,14 +661,14 @@ def run_delta_predictive_conditional_transport(
     predictors = {}
     predictor_metadata = {}
     for target_family in FAMILY_ORDER:
-        donors = [
-            family for family in FAMILY_ORDER
-            if family != target_family
-        ]
+        donors = _training_families(
+            target_family, training_scope)
         predictors[target_family] = {}
         predictor_metadata[target_family] = {
-            "donor_families": donors,
+            "training_scope": training_scope,
+            "training_families": donors,
             "target_family_excluded": target_family not in donors,
+            "test_rows_excluded_from_fit_and_selection": True,
         }
         for direction in DIRECTIONS:
             train_sets = [
@@ -690,7 +723,7 @@ def run_delta_predictive_conditional_transport(
     prediction_arrays = {}
     prediction_hb = Heartbeat(
         len(FAMILY_ORDER) * len(DIRECTIONS) * 2,
-        "predictive_transport_source_only_prediction",
+        f"{experiment_stage}_source_only_prediction",
         every_sec=30, out_dir=out_dir)
     for family_index, family in enumerate(FAMILY_ORDER):
         spec = donor_data[family]["spec"]
@@ -741,19 +774,20 @@ def run_delta_predictive_conditional_transport(
     prediction_hb.done()
 
     prediction_npz = os.path.join(
-        out_dir, f"predictive_transport_predictions_{model_key}.npz")
+        out_dir, f"{experiment_stage}_predictions_{model_key}.npz")
     np.savez_compressed(prediction_npz, **prediction_arrays)
     with open(prediction_npz, "rb") as handle:
         prediction_npz_sha = hashlib.sha256(
             handle.read()).hexdigest().upper()
     prediction_json = os.path.join(
-        out_dir, f"predictive_transport_freeze_{model_key}.json")
+        out_dir, f"{experiment_stage}_freeze_{model_key}.json")
     with open(prediction_json, "w") as handle:
         json.dump({
-            "protocol_sha256": PROTOCOL_SHA256,
+            "protocol_sha256": protocol_sha256,
+            "training_scope": training_scope,
             "statement": (
                 "Frozen before counterpart test-state capture and before "
-                "any test-family causal intervention."),
+                "any test-row causal intervention."),
             "row_splits": rows,
             "predictors": predictor_metadata,
             "prediction_npz_sha256": prediction_npz_sha,
@@ -762,7 +796,7 @@ def run_delta_predictive_conditional_transport(
         prediction_json_sha = hashlib.sha256(
             handle.read()).hexdigest().upper()
     log(
-        f"FROZEN predictive transport sha256={prediction_json_sha} "
+        f"FROZEN {experiment_stage} sha256={prediction_json_sha} "
         f"arrays={prediction_npz_sha}")
 
     # Counterpart states are captured only after the prediction freeze.
@@ -779,7 +813,7 @@ def run_delta_predictive_conditional_transport(
     causal_hb = Heartbeat(
         len(FAMILY_ORDER) * len(arm_names)
         * len(DIRECTIONS) * 2,
-        "predictive_conditional_transport_causal_test",
+        f"{experiment_stage}_causal_test",
         every_sec=30, out_dir=out_dir)
     family_results = {}
     for family_index, family in enumerate(FAMILY_ORDER):
@@ -943,10 +977,16 @@ def run_delta_predictive_conditional_transport(
         for family, value in family_results.items()
     }
     overall = _overall_adjudication(family_adjudication)
+    if verdict_map:
+        base_verdict = overall["verdict"]
+        overall["base_verdict"] = base_verdict
+        overall["verdict"] = verdict_map.get(
+            base_verdict, base_verdict)
     result = {
-        "stage": "delta_predictive_conditional_transport",
-        "protocol": PROTOCOL,
-        "protocol_sha256": PROTOCOL_SHA256,
+        "stage": experiment_stage,
+        "protocol": protocol,
+        "protocol_sha256": protocol_sha256,
+        "training_scope": training_scope,
         "model_key": model_key,
         "model_path": model_path,
         "quantization": quantization,
@@ -961,13 +1001,33 @@ def run_delta_predictive_conditional_transport(
     }
     path = os.path.join(
         out_dir,
-        f"results_delta_predictive_conditional_transport_"
+        f"results_{experiment_stage}_"
         f"{model_key}.json")
     with open(path, "w") as handle:
         json.dump(result, handle, indent=2, default=float)
     log(
-        f"PREDICTIVE-CONDITIONAL-TRANSPORT verdict={result['verdict']} "
+        f"{experiment_stage} verdict={result['verdict']} "
         f"exact={overall['exact_reference_families']} "
         f"predicted={overall['predicted_families']} "
         f"artifact={path}")
     return result
+
+
+@torch.no_grad()
+def run_delta_predictive_conditional_transport(
+        model_path, out_dir,
+        model_key="qwen7b_predictive_conditional_transport",
+        quantization="8bit", device_map=None, max_memory=None,
+        n_world=12, self_test_only=False):
+    return _run_predictive_transport(
+        model_path, out_dir,
+        model_key=model_key,
+        protocol=PROTOCOL,
+        protocol_sha256=PROTOCOL_SHA256,
+        experiment_stage="delta_predictive_conditional_transport",
+        training_scope="leave_one_family_out",
+        quantization=quantization,
+        device_map=device_map,
+        max_memory=max_memory,
+        n_world=n_world,
+        self_test_only=self_test_only)

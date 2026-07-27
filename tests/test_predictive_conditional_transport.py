@@ -11,6 +11,7 @@ from causal_maps.delta_predictive_conditional_transport import (
     _predict_low_rank,
     _row_splits,
     _select_predictor,
+    _training_families,
 )
 
 
@@ -34,6 +35,15 @@ def test_frozen_splits_are_pair_disjoint():
 def test_predictor_interface_cannot_receive_counterpart_state():
     assert list(inspect.signature(_predict_low_rank).parameters) == [
         "predictor", "origin_states"]
+
+
+def test_training_scope_is_exact_and_unambiguous():
+    target = FAMILY_ORDER[3]
+    within = _training_families(target, "within_family")
+    cross = _training_families(target, "leave_one_family_out")
+    assert within == [target]
+    assert target not in cross
+    assert set(cross) == set(FAMILY_ORDER) - {target}
 
 
 def test_reduced_rank_predictor_recovers_state_conditioned_displacement():
