@@ -2572,3 +2572,45 @@ Protocol SHA-256:
 `DE5EE58776084C01CE54777B8C5FAB9379367586FBB004CD4305C4C71CD2E038`.
 Uploaded source ZIP SHA-256:
 `CDB38F960FF5CABD1ED9FEE61E3BD5F7D8C367AEAF1D6FCC9C70C65A76036F5E`.
+
+## 2026-07-27: three-mode selector calibration — selector rejected
+
+The frozen T4 run completed normally with verdict
+`CALIBRATION_SELECTOR_NULL`. This was a prospective scientific rejection, not
+a crash or behavioral ineligibility. All calibration baselines retained
+`100%` value accuracy.
+
+L18 was the best of the five frozen early layers, but its minimum
+destination-specific score was `-0.0625`, below the preregistered `+0.10`
+gate. The destination programs caused positive movement in every calibration
+cell (`L21 = 0.297` to `0.378`; processed `L27 = 0.180` to `0.330`), but code
+identity did not reliably determine where that movement went.
+
+The sharpest failures were transitions involving communication:
+
+- temporal-slot search to communication: intended-code L27 progress `0.203`,
+  competing-code progress `0.195`, margin `0.008`, target-versus-decoy
+  accuracy `7/16`;
+- temporal-slot communication to epistemic: `0.180` versus `0.170`, margin
+  `0.009`, target-versus-decoy accuracy `7/16`;
+- constraint-elimination search to communication: `0.195` versus `0.134`,
+  margin `0.061`, target-versus-decoy accuracy `7/16`.
+
+The patched L27 state remained closest to its original source mode in almost
+every calibration cell, even when it moved toward the intended target. Thus
+the result is graded source perturbation or partial route drift, not
+destination-addressed selection. The held-out KNOW/SAY/LOOK target
+activations were never evaluated, as required by the frozen prediction
+boundary.
+
+Decision: do not lower the calibration threshold or modify the prompt to
+rescue this selector. Together with the binary sign-reversal and random-code
+results, this closes the present mean-additive destination-code hypothesis.
+The retained scientific lead is the binary-evaluation confound itself:
+two-mode steering can report apparently directional success when an
+intervention merely destabilizes the source or causes nonspecific route
+drift. Establishing that as a broader result requires a prospective
+multi-destination audit, not another fitted selector.
+
+Result artifact:
+`runs/delta_three_mode_selector/results_delta_three_mode_selector_qwen7b_three_mode_selector.json`.
