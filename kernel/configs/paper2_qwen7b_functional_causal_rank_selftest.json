@@ -1,0 +1,8 @@
+{
+  "model_path": "/unused/self-test-only",
+  "model_key": "qwen7b_functional_causal_rank_selftest",
+  "quantization": "8bit",
+  "n_world": 12,
+  "self_test_only": true,
+  "required_gpu": "Tesla T4"
+}

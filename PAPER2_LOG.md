@@ -2330,3 +2330,65 @@ Protocol SHA-256:
 `46477A04C5D9BF650E1942167AA2A4CAD7D83FBC4EE7D56031C89672E4E1FCA0`.
 Uploaded source ZIP SHA-256:
 `77FEF163539EA40085098B34A7787F7C87346C7EAE793AB4CC16F8AE2274F974`.
+
+## 2026-07-27: causal atlas completed — simple atlas rejected
+
+The frozen T4 run completed with verdict
+`NO_LOW_COMPLEXITY_CAUSAL_ATLAS`.
+
+The assay was eligible: exact matched L21 state transport passed seven of
+eight families. The PCA/Procrustes atlas passed zero families and the full
+algebraic package passed zero. Mean causal atlas progress ranged from `+0.070`
+to `+0.258`, recovering only `9.5%` to `42.4%` of exact progress. The atlas
+did beat all 19 row-shuffled offline controls (`p = 0.05`), so it retained a
+weak structured signal, but it did not beat the causal baselines or preserve
+content strongly enough to support a coordinate-map mechanism.
+
+The rank selector chose rank 32 in seven families and rank 16 in one.
+Held-in validation normalized MSE was only `0.118` to `0.147`, while transfer
+to the held-out lexical panel was weak. This localizes the failure: ordinary
+activation charts fit held-in worlds but do not provide a compact,
+lexically transferable causal law.
+
+Result artifact:
+`runs/delta_causal_atlas/results_delta_causal_atlas_qwen7b_causal_atlas.json`.
+Result SHA-256:
+`11FEE167E4068EF3E0FC7A250A20942D308207391237D436D04D0D65248BA1F6`.
+
+## 2026-07-27: functional causal-rank test — frozen
+
+An audit of all prior rank, projection, Jacobian, quotient, necessity and
+exact-transplant experiments ruled out a generic “causal PCA” rerun. The
+remaining distinct question is functional compression.
+
+The experiment constructs an exact-difference activation basis from
+`BELIEF/SEARCH`, ranks standardized coordinates by central-difference
+processed-L27 response, selects rank on `THINK/FIND`, and tests once on
+disjoint `KNOW/LOOK` worlds. Maximum-score and two-hop pointer are frozen as
+the established bracketing families.
+
+The primary comparison is target-informed causal-order projection versus
+equal-rank activation PCA, the full train-difference span, training means, 19
+random subspaces, exact target states and wrong-position controls. This is a
+capacity test, not a claim of source-only controller synthesis.
+
+A pass would show that functional control is low-dimensional under a causal
+metric even though full-state Euclidean geometry is misleading. Failure of
+the full train span implies lexically novel directions; a high selected rank
+supports distributed control; failure to beat equal-rank PCA/random closes
+the causal-order hypothesis.
+
+Full mathematics, gates and stopping rule are frozen in
+`PAPER2_FUNCTIONAL_CAUSAL_RANK_PROTOCOL.md`.
+
+The final T4-only mathematical guard passed. During validation, an initial
+float32 synthetic Gram solve exposed spurious numerical null axes; both small
+Gram eigensystems were moved to float64 before any model experiment. The
+corrected guard verifies low-energy causal-axis recovery, equal-rank PCA
+rejection, full-span reconstruction, disjoint rows, freeze boundary, exact
+random tail and every verdict branch.
+
+Protocol SHA-256:
+`C7A452A587846D7A16AA624F52E65A6740402CD4122D1510DCE1199EA4F85897`.
+Uploaded source ZIP SHA-256:
+`AC0A1588F5C171A9DFE918480551FC4C361A936A7ABB7C0706C13DAFC5F34194`.
