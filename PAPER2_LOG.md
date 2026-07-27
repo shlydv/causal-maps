@@ -2126,3 +2126,38 @@ intervention before measuring its causal outcome.
 
 Offline result JSON SHA-256:
 `4EDD0CE017DA1C9F452712819908D9756B7DC7A4C13D4B29B37301D2C23B6091`.
+
+## 2026-07-27: prospective held-out inverse-control pilot — frozen
+
+The next experiment tests target-blind local system identification, not global
+LLM linearity. Four established computation families construct a rank-four
+L21 probe basis, a training-only processed L27 operation target and
+operation-specific shared response maps. Minimum-score comparison and set
+intersection are new held-out prompt families.
+
+For each held-out family and direction, generic positive/negative probes on
+six identification pairs estimate one family-direction response map. A frozen
+ridge inverse predicts one intervention. Six additional pairs per direction
+are never probed; the same predicted intervention is applied unchanged to
+both of their histories.
+
+The design enforces a durable prediction boundary. Held-out test
+opposite-operation batches cannot be rendered or evaluated until prediction
+JSON and NPZ artifacts have been written, hashed and reloaded. Training,
+identification and causal-test directed pairs are mutually disjoint.
+
+Controls are the shared-map inverse, a norm-matched other-family inverse, a
+norm-matched same-family opposite-origin inverse, the negative intervention
+and three norm-matched random rank-four directions. Exact L21 interchange,
+training-basis projection of the exact target and a target-informed local
+inverse are available only after the prediction hash as diagnostic oracles.
+
+This pilot predicts processed hidden-state transport. A pass licenses a
+separate route/behavior confirmation; it is not itself the final Paper 2
+claim. Full mathematics, prompts, thresholds and failure taxonomy are frozen
+in `PAPER2_HELDOUT_INVERSE_CONTROL_PROTOCOL.md`.
+
+T4-only self-test passed under protocol SHA-256
+`490A2C297BDFF4FA875D7485B484249961A31D86FFC1591009A2E78C067656CE`.
+The uploaded source ZIP SHA-256 is
+`1647091E473858F923FB127603F7D4A5530697FE856B62F4DF29038687133CF8`.

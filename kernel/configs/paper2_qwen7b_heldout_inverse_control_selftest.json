@@ -1,0 +1,8 @@
+{
+  "model_path": "/kaggle/input/**/qwen2-5-7b-instruct/config.json",
+  "model_key": "qwen7b_heldout_inverse_control_selftest",
+  "quantization": "8bit",
+  "n_world": 6,
+  "required_gpu": "Tesla T4",
+  "self_test_only": true
+}
