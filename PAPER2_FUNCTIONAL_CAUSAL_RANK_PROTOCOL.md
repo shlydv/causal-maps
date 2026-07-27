@@ -151,5 +151,6 @@ Implementation:
 
 The final T4-only mathematical guard passed under protocol SHA-256
 `C7A452A587846D7A16AA624F52E65A6740402CD4122D1510DCE1199EA4F85897`.
-The uploaded source ZIP SHA-256 is
-`AC0A1588F5C171A9DFE918480551FC4C361A936A7ABB7C0706C13DAFC5F34194`.
+After the documented direct-state tensor-shape repair, the guard passed again.
+The repaired uploaded source ZIP SHA-256 is
+`5E47A18CA7235ACA38F7D6A653AA6FBDA9C1624975DBF92F5E619DFB58F48229`.

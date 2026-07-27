@@ -297,9 +297,16 @@ def _response_rotation(responses):
 
 
 def _processed(cache, checkpoint, direct):
+    if direct.ndim == 3:
+        direct_value = direct[:, -1, :]
+    elif direct.ndim == 2:
+        direct_value = direct
+    else:
+        raise ValueError(
+            f"direct state must be rank two or three, got {direct.ndim}")
     return (
         cache[f"checkpoint_{checkpoint}"].float()
-        - direct[:, -1, :].float()
+        - direct_value.float()
     )
 
 
@@ -968,6 +975,19 @@ def _self_check():
         _verdict_from_counts(4, 4, 0, 1.0, 0),
     }
     rows = _functional_rows()
+    synthetic_cache = {
+        f"checkpoint_{PRIMARY_CHECKPOINT}": torch.randn(
+            3, 7, generator=generator)
+    }
+    synthetic_direct = torch.randn(
+        3, PATCH_WIDTH, 7, generator=generator)
+    processed_shape_equivalence = torch.equal(
+        _processed(
+            synthetic_cache, PRIMARY_CHECKPOINT,
+            synthetic_direct),
+        _processed(
+            synthetic_cache, PRIMARY_CHECKPOINT,
+            synthetic_direct[:, -1, :]))
     checks = {
         "causal_recovery": bool(torch.allclose(
             causal, test, atol=1e-4, rtol=1e-4)),
@@ -981,6 +1001,8 @@ def _self_check():
             len(rows["calibration"]) == CALIBRATION_N
             and len(rows["selection"]) == SELECTION_N
             and len(rows["test"]) == TEST_N),
+        "direct_state_shape_equivalence":
+            processed_shape_equivalence,
     }
     passed = all(checks.values())
     if not passed:
@@ -1006,6 +1028,7 @@ def _self_check():
         "random_tail_check": True,
         "verdict_taxonomy_check": True,
         "row_split_check": True,
+        "direct_state_shape_check": True,
         "pass": True,
     }
 

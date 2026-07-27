@@ -2392,3 +2392,22 @@ Protocol SHA-256:
 `C7A452A587846D7A16AA624F52E65A6740402CD4122D1510DCE1199EA4F85897`.
 Uploaded source ZIP SHA-256:
 `AC0A1588F5C171A9DFE918480551FC4C361A936A7ABB7C0706C13DAFC5F34194`.
+
+## 2026-07-27: functional causal-rank implementation repair
+
+The first full kernel completed all 752/752 frozen central-difference metric
+probes, then stopped on the first rank-selection arm. A processing helper
+expected the direct L21 state as a three-token tensor, while the answer-locus
+patch path correctly supplied the already-selected final-token tensor. This
+caused an `IndexError` before any selection summary, test prediction, test
+intervention, or verdict was written.
+
+The helper now accepts the two equivalent documented representations and
+normalizes both to the final token. An exact shape-equivalence regression was
+added to the self-test and unit test. No prompt, row, panel, family, basis,
+causal metric, probe, rank, scale, threshold, control, seed, or adjudication
+rule changed. The failed kernel produced no scientific result.
+
+The repaired T4-only guard passed, including the new rank-two/rank-three
+direct-state equivalence check. Repaired source ZIP SHA-256:
+`5E47A18CA7235ACA38F7D6A653AA6FBDA9C1624975DBF92F5E619DFB58F48229`.
