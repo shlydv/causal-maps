@@ -2072,3 +2072,57 @@ Artifacts:
   `7BC9AA6460ABE18E94200B1FFF68A094FE8F574F5D2F4D2A41185C474911F5C0`
 - response-map NPZ SHA-256:
   `49B64B7A97B87E1EC90595B8B29E5A75D7F66B15C06EAAA5B01F138D742EFF72`
+
+## 2026-07-27: shared-plus-context offline audit — completed
+
+This was a preregistered-within-analysis, zero-GPU decomposition of the saved
+response maps. It is exploratory and does not change the width screen's
+frozen `NO_DEEPER_BRANCH_LICENSED` verdict.
+
+All 70 grouped four-row/four-row splits were evaluated. Both histories for a
+row were kept together, and no test row entered any predictor. A training-only
+same-family response map was compared with a leave-family-out shared map and
+with norm-matched wrong-family corrections.
+
+At the primary L27 checkpoint:
+
+- median train/test family-residual cosine was `0.925`;
+- all eight family-operation cells had positive residual cosine;
+- the family correction reduced unseen-row squared error by `57.4%` versus
+  shared-only;
+- all eight cells improved over shared-only;
+- it reduced error by `78.1%` versus the mean norm-matched wrong-family
+  correction;
+- median correction norm was `0.738` times shared-map norm.
+
+The result was broad rather than driven by one computation. Per-cell residual
+cosines ranged from `0.891` to `0.969`, and shared-only error reductions ranged
+from `36.4%` to `81.2%`. L24 replicated the result: residual cosine `0.921`,
+shared-only error reduction `56.7%`, and wrong-context advantage `78.9%`.
+
+The full-data L27 variance decomposition also showed material structure on
+both sides. The shared grand mean accounted for `68.4%` of mean sample energy
+for BELIEF and `50.9%` for SEARCH. Between-family differences accounted for
+`50.6%` and `59.1%`, respectively, of centered variation. Across the eight
+family-operation deviations, ranks one, two and four captured `56.7%`,
+`71.3%` and `88.1%` of deviation energy.
+
+Frozen offline verdict:
+`PROSPECTIVE_INVERSE_CONTROL_DESIGN_LICENSED`.
+
+Interpretation: the original total-map cosine gate was not passed because a
+substantial shared component keeps total maps mutually similar. After
+subtracting that shared component, the family residual is large and highly
+reproducible on unseen rows. It is not accurately described as a *small*
+correction: in one cell its norm exceeded the shared map.
+
+This does not yet show zero-shot control of a new computation. The local
+correction was estimated from generic positive/negative probes in the same
+family, and the frozen probe basis had been constructed using calibration
+examples from all four families. A decisive next experiment must construct
+the basis without the held-out computation, must never observe its
+opposite-operation state, and must use only generic local probes to predict an
+intervention before measuring its causal outcome.
+
+Offline result JSON SHA-256:
+`4EDD0CE017DA1C9F452712819908D9756B7DC7A4C13D4B29B37301D2C23B6091`.

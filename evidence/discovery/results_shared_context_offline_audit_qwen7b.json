@@ -1,0 +1,331 @@
+{
+  "analysis": "paper2_shared_context_offline_audit",
+  "checkpoints": {
+    "24": {
+      "cells": {
+        "constraint_elimination/belief": {
+          "median_context_error_reduction_vs_shared": 0.5489747358858605,
+          "median_context_error_reduction_vs_wrong": 0.7765016386876434,
+          "median_context_prediction_cosine": 0.8916626280119055,
+          "median_context_relative_squared_error": 0.20563155098101776,
+          "median_correction_to_shared_norm": 0.6572812993610552,
+          "median_residual_cosine": 0.9194888463755775,
+          "median_shared_prediction_cosine": 0.7416101470023505,
+          "median_shared_relative_squared_error": 0.45454555147628634,
+          "median_wrong_prediction_cosine": 0.5368412202379177,
+          "median_wrong_relative_squared_error": 0.9110930510420179
+        },
+        "constraint_elimination/search": {
+          "median_context_error_reduction_vs_shared": 0.5532371323473567,
+          "median_context_error_reduction_vs_wrong": 0.7759654492187035,
+          "median_context_prediction_cosine": 0.8999490714959879,
+          "median_context_relative_squared_error": 0.1912560392303737,
+          "median_correction_to_shared_norm": 0.6911441156832927,
+          "median_residual_cosine": 0.9205167082639588,
+          "median_shared_prediction_cosine": 0.7548722560314469,
+          "median_shared_relative_squared_error": 0.4299643410632957,
+          "median_wrong_prediction_cosine": 0.5357439266013303,
+          "median_wrong_relative_squared_error": 0.8503542736442047
+        },
+        "maximum_score/belief": {
+          "median_context_error_reduction_vs_shared": 0.5711604765734373,
+          "median_context_error_reduction_vs_wrong": 0.7939045730572595,
+          "median_context_prediction_cosine": 0.8821033294026626,
+          "median_context_relative_squared_error": 0.2229093954242239,
+          "median_correction_to_shared_norm": 0.6897626715494464,
+          "median_residual_cosine": 0.9207718322178674,
+          "median_shared_prediction_cosine": 0.7069311755231864,
+          "median_shared_relative_squared_error": 0.5188362171638903,
+          "median_wrong_prediction_cosine": 0.4902895378335888,
+          "median_wrong_relative_squared_error": 1.0845984467172807
+        },
+        "maximum_score/search": {
+          "median_context_error_reduction_vs_shared": 0.6665614511372618,
+          "median_context_error_reduction_vs_wrong": 0.8519819171049406,
+          "median_context_prediction_cosine": 0.91026268064336,
+          "median_context_relative_squared_error": 0.17239715422543506,
+          "median_correction_to_shared_norm": 0.8282917311017366,
+          "median_residual_cosine": 0.9340987894994146,
+          "median_shared_prediction_cosine": 0.6966011182232819,
+          "median_shared_relative_squared_error": 0.516964528987284,
+          "median_wrong_prediction_cosine": 0.40327316159078974,
+          "median_wrong_relative_squared_error": 1.163088647268632
+        },
+        "private_belief/belief": {
+          "median_context_error_reduction_vs_shared": 0.5628510018663178,
+          "median_context_error_reduction_vs_wrong": 0.784972552653805,
+          "median_context_prediction_cosine": 0.8891816247165686,
+          "median_context_relative_squared_error": 0.21091764463437546,
+          "median_correction_to_shared_norm": 0.6448821640887278,
+          "median_residual_cosine": 0.9221194674616059,
+          "median_shared_prediction_cosine": 0.7320311472231469,
+          "median_shared_relative_squared_error": 0.47999707536739655,
+          "median_wrong_prediction_cosine": 0.5379704936586108,
+          "median_wrong_relative_squared_error": 0.9767359712353363
+        },
+        "private_belief/search": {
+          "median_context_error_reduction_vs_shared": 0.5862631419557002,
+          "median_context_error_reduction_vs_wrong": 0.796763890208319,
+          "median_context_prediction_cosine": 0.8918521106336124,
+          "median_context_relative_squared_error": 0.20532994492291362,
+          "median_correction_to_shared_norm": 0.6935880864877018,
+          "median_residual_cosine": 0.9272345861380495,
+          "median_shared_prediction_cosine": 0.7174967432152977,
+          "median_shared_relative_squared_error": 0.49512571287976326,
+          "median_wrong_prediction_cosine": 0.5123414838268509,
+          "median_wrong_relative_squared_error": 1.0093393399993125
+        },
+        "two_hop_pointer/belief": {
+          "median_context_error_reduction_vs_shared": 0.4617211983232369,
+          "median_context_error_reduction_vs_wrong": 0.7109793756620166,
+          "median_context_prediction_cosine": 0.8734617556987629,
+          "median_context_relative_squared_error": 0.2387443131658432,
+          "median_correction_to_shared_norm": 0.6167556457057448,
+          "median_residual_cosine": 0.9042438937816916,
+          "median_shared_prediction_cosine": 0.7470320110259994,
+          "median_shared_relative_squared_error": 0.444781777214309,
+          "median_wrong_prediction_cosine": 0.5677827481551583,
+          "median_wrong_relative_squared_error": 0.8273863392931449
+        },
+        "two_hop_pointer/search": {
+          "median_context_error_reduction_vs_shared": 0.6388806180819171,
+          "median_context_error_reduction_vs_wrong": 0.8349245638143112,
+          "median_context_prediction_cosine": 0.8582977809290768,
+          "median_context_relative_squared_error": 0.265425058029706,
+          "median_correction_to_shared_norm": 0.7560115287476707,
+          "median_residual_cosine": 0.9425742507539844,
+          "median_shared_prediction_cosine": 0.615168655119843,
+          "median_shared_relative_squared_error": 0.7303557943293526,
+          "median_wrong_prediction_cosine": 0.40753437617637367,
+          "median_wrong_relative_squared_error": 1.5995304040892018
+        }
+      },
+      "summary": {
+        "median_context_error_reduction_vs_shared": 0.5670057392198775,
+        "median_context_error_reduction_vs_wrong": 0.7894385628555323,
+        "median_correction_to_shared_norm": 0.6904533936163695,
+        "median_residual_cosine": 0.9214456498397366,
+        "positive_context_improvement_cells": 8,
+        "positive_residual_cosine_cells": 8,
+        "positive_wrong_control_advantage_cells": 8
+      },
+      "variance_decomposition": {
+        "by_operation": {
+          "belief": {
+            "between_family_fraction_of_centered_variation": 0.4593737782692207,
+            "between_family_sum_squares": 13.812203168869019,
+            "shared_energy_fraction_of_mean_sample_energy": 0.6586980373287635,
+            "shared_grand_mean_energy": 0.9067016243934631,
+            "within_family_fraction_of_centered_variation": 0.5406262217307792,
+            "within_family_sum_squares": 16.255257844924927
+          },
+          "search": {
+            "between_family_fraction_of_centered_variation": 0.536956191721326,
+            "between_family_sum_squares": 21.546396732330322,
+            "shared_energy_fraction_of_mean_sample_energy": 0.6305352112676056,
+            "shared_grand_mean_energy": 1.0700206756591797,
+            "within_family_fraction_of_centered_variation": 0.463043808278674,
+            "within_family_sum_squares": 18.580520629882812
+          }
+        },
+        "family_operation_deviation_energy_fractions": [
+          0.3096592479972303,
+          0.2025175367323506,
+          0.15345444224615434,
+          0.1302130994455615,
+          0.11080126950334525,
+          0.09335440407535801,
+          3.148731022839529e-17,
+          0.0
+        ],
+        "family_operation_deviation_singular_values": [
+          0.8272362662216646,
+          0.6689888146328166,
+          0.5823408698896219,
+          0.5364322463997059,
+          0.4948344263608313,
+          0.45420817217543824,
+          8.341714463272393e-09,
+          0.0
+        ],
+        "rank1_deviation_energy": 0.3096592479972303,
+        "rank2_deviation_energy": 0.512176784729581,
+        "rank4_deviation_energy": 0.7958443264212968
+      }
+    },
+    "27": {
+      "cells": {
+        "constraint_elimination/belief": {
+          "median_context_error_reduction_vs_shared": 0.8115100839433951,
+          "median_context_error_reduction_vs_wrong": 0.9302163209686113,
+          "median_context_prediction_cosine": 0.864417080531362,
+          "median_context_relative_squared_error": 0.25577127605679123,
+          "median_correction_to_shared_norm": 0.7450020769905205,
+          "median_residual_cosine": 0.9672045917051395,
+          "median_shared_prediction_cosine": 0.5906765666286821,
+          "median_shared_relative_squared_error": 1.359057042279794,
+          "median_wrong_prediction_cosine": 0.42442654533951407,
+          "median_wrong_relative_squared_error": 3.6054758804519356
+        },
+        "constraint_elimination/search": {
+          "median_context_error_reduction_vs_shared": 0.5708032398073941,
+          "median_context_error_reduction_vs_wrong": 0.7668862459258238,
+          "median_context_prediction_cosine": 0.8705383909827881,
+          "median_context_relative_squared_error": 0.24288272071523387,
+          "median_correction_to_shared_norm": 0.7678844330414538,
+          "median_residual_cosine": 0.9178523293241169,
+          "median_shared_prediction_cosine": 0.6683566366749057,
+          "median_shared_relative_squared_error": 0.5686977795393224,
+          "median_wrong_prediction_cosine": 0.47752054927791443,
+          "median_wrong_relative_squared_error": 1.04248780741956
+        },
+        "maximum_score/belief": {
+          "median_context_error_reduction_vs_shared": 0.5741825298981321,
+          "median_context_error_reduction_vs_wrong": 0.7898270760442716,
+          "median_context_prediction_cosine": 0.9244324266710935,
+          "median_context_relative_squared_error": 0.1660834326096079,
+          "median_correction_to_shared_norm": 0.6716367571531696,
+          "median_residual_cosine": 0.9436874701606986,
+          "median_shared_prediction_cosine": 0.7935619933829471,
+          "median_shared_relative_squared_error": 0.3870234827352004,
+          "median_wrong_prediction_cosine": 0.5755112326417965,
+          "median_wrong_relative_squared_error": 0.7991784434877248
+        },
+        "maximum_score/search": {
+          "median_context_error_reduction_vs_shared": 0.6496873125275189,
+          "median_context_error_reduction_vs_wrong": 0.8262141103505727,
+          "median_context_prediction_cosine": 0.8643601453867734,
+          "median_context_relative_squared_error": 0.2550323403249957,
+          "median_correction_to_shared_norm": 0.870229196846241,
+          "median_residual_cosine": 0.9289603702977166,
+          "median_shared_prediction_cosine": 0.5816181916163534,
+          "median_shared_relative_squared_error": 0.7266631836953538,
+          "median_wrong_prediction_cosine": 0.36761022972581925,
+          "median_wrong_relative_squared_error": 1.4689498166983856
+        },
+        "private_belief/belief": {
+          "median_context_error_reduction_vs_shared": 0.46328977877531996,
+          "median_context_error_reduction_vs_wrong": 0.692037050218655,
+          "median_context_prediction_cosine": 0.9250179539067952,
+          "median_context_relative_squared_error": 0.15376826550756442,
+          "median_correction_to_shared_norm": 0.5455881997003915,
+          "median_residual_cosine": 0.909749896428792,
+          "median_shared_prediction_cosine": 0.8607651035763539,
+          "median_shared_relative_squared_error": 0.2812103614523027,
+          "median_wrong_prediction_cosine": 0.7237215103573481,
+          "median_wrong_relative_squared_error": 0.5036293403096559
+        },
+        "private_belief/search": {
+          "median_context_error_reduction_vs_shared": 0.57424971276497,
+          "median_context_error_reduction_vs_wrong": 0.7715828904574622,
+          "median_context_prediction_cosine": 0.8461849995609161,
+          "median_context_relative_squared_error": 0.28692252981863064,
+          "median_correction_to_shared_norm": 0.7308488526439811,
+          "median_residual_cosine": 0.9206867806325713,
+          "median_shared_prediction_cosine": 0.6337099259530277,
+          "median_shared_relative_squared_error": 0.6722889650231203,
+          "median_wrong_prediction_cosine": 0.46627146249237456,
+          "median_wrong_relative_squared_error": 1.2521082320689616
+        },
+        "two_hop_pointer/belief": {
+          "median_context_error_reduction_vs_shared": 0.36408938221877385,
+          "median_context_error_reduction_vs_wrong": 0.6202570101081075,
+          "median_context_prediction_cosine": 0.8985590780357195,
+          "median_context_relative_squared_error": 0.2199511262902593,
+          "median_correction_to_shared_norm": 0.5384179777667923,
+          "median_residual_cosine": 0.8910526697859796,
+          "median_shared_prediction_cosine": 0.8231241645560289,
+          "median_shared_relative_squared_error": 0.34949976076186096,
+          "median_wrong_prediction_cosine": 0.6983276564852019,
+          "median_wrong_relative_squared_error": 0.5917136545179678
+        },
+        "two_hop_pointer/search": {
+          "median_context_error_reduction_vs_shared": 0.7422048974851919,
+          "median_context_error_reduction_vs_wrong": 0.9012064309222061,
+          "median_context_prediction_cosine": 0.897526951844482,
+          "median_context_relative_squared_error": 0.2139522372770178,
+          "median_correction_to_shared_norm": 1.446136490836798,
+          "median_residual_cosine": 0.9687415508902091,
+          "median_shared_prediction_cosine": 0.43119644677189906,
+          "median_shared_relative_squared_error": 0.839603563939163,
+          "median_wrong_prediction_cosine": -0.0878341637872399,
+          "median_wrong_relative_squared_error": 2.3294215621494234
+        }
+      },
+      "summary": {
+        "median_context_error_reduction_vs_shared": 0.5742161213315511,
+        "median_context_error_reduction_vs_wrong": 0.7807049832508669,
+        "median_correction_to_shared_norm": 0.7379254648172509,
+        "median_residual_cosine": 0.9248235754651439,
+        "positive_context_improvement_cells": 8,
+        "positive_residual_cosine_cells": 8,
+        "positive_wrong_control_advantage_cells": 8
+      },
+      "variance_decomposition": {
+        "by_operation": {
+          "belief": {
+            "between_family_fraction_of_centered_variation": 0.5061476115701464,
+            "between_family_sum_squares": 123.37171363830566,
+            "shared_energy_fraction_of_mean_sample_energy": 0.6840817355247945,
+            "shared_grand_mean_energy": 8.246918678283691,
+            "within_family_fraction_of_centered_variation": 0.4938523884298536,
+            "within_family_sum_squares": 120.37479591369629
+          },
+          "search": {
+            "between_family_fraction_of_centered_variation": 0.5914108762889313,
+            "between_family_sum_squares": 165.08738708496094,
+            "shared_energy_fraction_of_mean_sample_energy": 0.509337903949892,
+            "shared_grand_mean_energy": 4.527600288391113,
+            "within_family_fraction_of_centered_variation": 0.40858912371106865,
+            "within_family_sum_squares": 114.05422782897949
+          }
+        },
+        "family_operation_deviation_energy_fractions": [
+          0.5665852907789499,
+          0.14679520180058267,
+          0.09075602929255627,
+          0.07681491247458493,
+          0.0625290025385883,
+          0.05651956311473786,
+          6.260172481861908e-17,
+          5.3904189454146355e-17
+        ],
+        "family_operation_deviation_singular_values": [
+          3.1960589190344457,
+          1.626814592183855,
+          1.2791452793895823,
+          1.176806068147767,
+          1.061751491069776,
+          1.0094423641899315,
+          3.35950489878273e-08,
+          3.117406159304726e-08
+        ],
+        "rank1_deviation_energy": 0.5665852907789499,
+        "rank2_deviation_energy": 0.7133804925795326,
+        "rank4_deviation_energy": 0.8809514343466738
+      }
+    }
+  },
+  "gates": {
+    "l24_directional_replication": true,
+    "residual_reproducibility": true,
+    "unseen_row_improvement": true,
+    "wrong_context_control": true
+  },
+  "source_npz": "evidence\\discovery\\context_geometry_response_maps_qwen7b_context_geometry_width_screen.npz",
+  "source_npz_sha256": "49B64B7A97B87E1EC90595B8B29E5A75D7F66B15C06EAAA5B01F138D742EFF72",
+  "split_policy": {
+    "histories_grouped_by_row": true,
+    "number_of_row_splits": 70,
+    "test_row_ids_per_split": 4,
+    "training_row_ids_per_split": 4
+  },
+  "status": "exploratory_zero_gpu",
+  "thresholds": {
+    "minimum_median_error_reduction": 0.1,
+    "minimum_median_residual_cosine": 0.3,
+    "minimum_median_wrong_control_advantage": 0.1,
+    "minimum_positive_cells": 6
+  },
+  "verdict": "PROSPECTIVE_INVERSE_CONTROL_DESIGN_LICENSED"
+}
